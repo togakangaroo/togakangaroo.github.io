@@ -6,16 +6,16 @@
     <atom:link href="http://domain/rss.xml" rel="self" type="application/rss+xml" />
     <description></description>
     <language>en-au</language>
-    <pubDate>Sat, 02 Aug 2014 15:14:09 %z</pubDate>
-    <lastBuildDate>Sat, 02 Aug 2014 15:14:09 %z</lastBuildDate>
+    <pubDate>Sat, 02 Aug 2014 15:23:50 %z</pubDate>
+    <lastBuildDate>Sat, 02 Aug 2014 15:23:50 %z</lastBuildDate>
 
     
     <item>
       <title>Talk Roundup - Be the Javascriptiest</title>
-      <link>http://domain/2014/08/02/myfirstpost.html</link>
+      <link>http://domain/2014/08/02/be-the-javascriptiest.html</link>
       <pubDate>Sat, 02 Aug 2014 00:00:00 %z</pubDate>
       <author>Author</author>
-      <guid>http://domain/2014/08/02/myfirstpost.html</guid>
+      <guid>http://domain/2014/08/02/be-the-javascriptiest.html</guid>
       <description><h2>Be the Javascriptiest</h2>
 <p>This is a writeup of my talk at [Sql Saturday #324 - Baton Rouge]. This talk started as a joke, or rather as <a href="http://geekswithblogs.net/mikehuguet/Default.aspx">Mike Huguet</a> bugging me to submit something on javascript to which I responded with a flurry of serious submissions along with this silly, silly thing. To nobody's surprise but my own, it of course got selected. Oh well.</p>
 <p>Fortunately I've got a lot to say. About Javascript especially.</p>
