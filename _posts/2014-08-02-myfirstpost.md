@@ -38,8 +38,23 @@ We're going to make a reusable collapser widget. This is what we're going for
 
 Click around. Nice, huh?
 
-For simplicity's sake we're going to assume jquery. We're also going to start with the 
+For simplicity's sake we're going to assume jquery. We're also going to start with the html and css already written because...eh, I'm not interested in writing it again. It's pretty straightforward. Check it out
 
-<a class="jsbin-embed" href="http://jsbin.com/zatey/3/embed">JS Bin</a>
+So firt of, we cannot achieve a collapser with css alone. We need to add some html, let's start by considering the html we would like to achieve. For each `.should-collapse` we want to wrap their contents in a new `<span class=collapsible-collapse-area>` and we want to prepend a new `<button class=collapsible-collapse-handle>`. And that's it. Our CSS will take care of the rest.
+
+<a class="jsbin-embed" href="http://jsbin.com/weniqu/1/embed?html,output">Html we would like to achieve</a>
+
+Ok, great! Next let's consider our desired API. What we need is...a function. That will take an element. And make it collapsible. `makeCollapsible` sounds like a good function name for this, yeah?
+
+<a class="jsbin-embed" href="http://jsbin.com/weniqu/23/embed?js">Desired API</a>
+
+Good? Great.
+
+Ok, let's get coding. So to start with [let's create an IIFE](http://en.wikipedia.org/wiki/Immediately-invoked_function_expression), create a stub function in the global scope, select some elements and invoke the stub on each.
+
+<a class="jsbin-embed" href="http://jsbin.com/weniqu/6/embed?js">Stubbed Usage</a>
+
+That looks nice, don't it? Straightforward. Keep in mind that if you need to export anything out of an IIFE you always want to do it at the very end.
+
 
 <script src="http://static.jsbin.com/js/embed.js" async defer></script>

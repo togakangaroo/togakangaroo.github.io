@@ -3,7 +3,7 @@
   <title>Feed Name</title>
   <link href="http://domain/"/>
   <link type="application/atom+xml" rel="self" href="http://domain/atom.xml"/>
-  <updated>8/2/2014 2:21:22 PM</updated>
+  <updated>8/2/2014 3:14:09 PM</updated>
   <id>http://domain/</id>
   <author>
     <name>Author</name>
@@ -38,9 +38,18 @@
 <li>Dynamic function signatures</li>
 </ul>
 <p>Rather than 30 slides about which I will blab for an hour I decided to do that thing that new presenters are always cautioned against - I decided to live code. I decided to live code a real life component that demonstrate why these things are awesome.</p>
-<p>We're going to make a reusable collapser widget. This is what we're going for:</p>
-<p><a class="jsbin-embed" href="http://jsbin.com/weniqu/20/embed?output">JS Bin</a></p>
-<p><a class="jsbin-embed" href="http://jsbin.com/zatey/3/embed">JS Bin</a></p>
+<p>We're going to make a reusable collapser widget. This is what we're going for</p>
+<p><a class="jsbin-embed" href="http://jsbin.com/weniqu/20/embed?output">Final desired output</a></p>
+<p>Click around. Nice, huh?</p>
+<p>For simplicity's sake we're going to assume jquery. We're also going to start with the html and css already written because...eh, I'm not interested in writing it again. It's pretty straightforward. Check it out</p>
+<p>So firt of, we cannot achieve a collapser with css alone. We need to add some html, let's start by considering the html we would like to achieve. For each <code>.should-collapse</code> we want to wrap their contents in a new <code>&lt;span class=collapsible-collapse-area&gt;</code> and we want to prepend a new <code>&lt;button class=collapsible-collapse-handle&gt;</code>. And that's it. Our CSS will take care of the rest.</p>
+<p><a class="jsbin-embed" href="http://jsbin.com/weniqu/1/embed?html,output">Html we would like to achieve</a></p>
+<p>Ok, great! Next let's consider our desired API. What we need is...a function. That will take an element. And make it collapsible. <code>makeCollapsible</code> sounds like a good function name for this, yeah?</p>
+<p><a class="jsbin-embed" href="http://jsbin.com/weniqu/23/embed?js">Desired API</a></p>
+<p>Good? Great.</p>
+<p>Ok, let's get coding. So to start with <a href="http://en.wikipedia.org/wiki/Immediately-invoked_function_expression">let's create an IIFE</a>, create a stub function in the global scope, select some elements and invoke the stub on each.</p>
+<p><a class="jsbin-embed" href="http://jsbin.com/weniqu/6/embed?js">Stubbed Usage</a></p>
+<p>That looks nice, don't it? Straightforward. Keep in mind that if you need to export anything out of an IIFE you always want to do it at the very end.</p>
 <p><script src="http://static.jsbin.com/js/embed.js" async defer></script></p>
 </content>
   </entry>
