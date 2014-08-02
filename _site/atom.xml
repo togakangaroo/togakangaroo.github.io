@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Feed Name</title>
+  <link href="http://domain/"/>
+  <link type="application/atom+xml" rel="self" href="http://domain/atom.xml"/>
+  <updated>8/2/2014 1:51:57 PM</updated>
+  <id>http://domain/</id>
+  <author>
+    <name>Author</name>
+    <email>Email</email>
+  </author>
+
+  
+  <entry>
+    <id>http://domain//2014/08/02/myfirstpost.html</id>
+    <link type="text/html" rel="alternate" href="http://domain//2014/08/02/myfirstpost.html"/>
+    <title>Talk Roundup - Be the Javascriptiest</title>
+    <updated>8/2/2014 12:00:00 AM</updated>
+    <author>
+      <name>Author</name>
+      <uri>http://domain/</uri>
+    </author>
+    <content type="html"><h2>Be the Javascriptiest</h2>
+<p>This is a writeup of my talk at [Sql Saturday #324 - Baton Rouge].</p>
+<p><a class="jsbin-embed" href="http://jsbin.com/zatey/3/embed">JS Bin</a></p>
+<p><script src="http://static.jsbin.com/js/embed.js" async defer></script></p>
+</content>
+  </entry>
+  
+</feed>

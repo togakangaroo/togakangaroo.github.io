@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+    <title>Feed Name</title>
+    <link>http://domain/</link>
+    <atom:link href="http://domain/rss.xml" rel="self" type="application/rss+xml" />
+    <description></description>
+    <language>en-au</language>
+    <pubDate>Sat, 02 Aug 2014 13:51:57 %z</pubDate>
+    <lastBuildDate>Sat, 02 Aug 2014 13:51:57 %z</lastBuildDate>
+
+    
+    <item>
+      <title>Talk Roundup - Be the Javascriptiest</title>
+      <link>http://domain/2014/08/02/myfirstpost.html</link>
+      <pubDate>Sat, 02 Aug 2014 00:00:00 %z</pubDate>
+      <author>Author</author>
+      <guid>http://domain/2014/08/02/myfirstpost.html</guid>
+      <description><h2>Be the Javascriptiest</h2>
+<p>This is a writeup of my talk at [Sql Saturday #324 - Baton Rouge].</p>
+<p><a class="jsbin-embed" href="http://jsbin.com/zatey/3/embed">JS Bin</a></p>
+<p><script src="http://static.jsbin.com/js/embed.js" async defer></script></p>
+</description>
+    </item>
+    
+
+  </channel> 
+</rss>
