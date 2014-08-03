@@ -2,7 +2,7 @@
 layout: post
 title: "Talk Roundup - Be the Javascriptiest"
 author: "George Mauer"
-comments: true
+comments: false
 ---
 
 ## Be the Javascriptiest
@@ -46,15 +46,42 @@ So firt of, we cannot achieve a collapser with css alone. We need to add some ht
 
 Ok, great! Next let's consider our desired API. What we need is...a function. That will take an element. And make it collapsible. `makeCollapsible` sounds like a good function name for this, yeah?
 
-<a class="jsbin-embed" href="http://jsbin.com/weniqu/23/embed?js">Desired API</a>
+<pre><code class="javascript">
+//Pass in jQuery
+makeCollapsible( $('.should-collapse').first() );
+//Pass in a DOM element
+makeCollapsible( document.querySelector('.should-collapse') );
+//Pass in an options object that overrides defaults
+makeCollapsible( '.should-collapse', { 
+  collapsed: true //should the initial state be collapsed?
+} );
+</code></pre>
 
 Good? Great.
 
 Ok, let's get coding. So to start with [let's create an IIFE](http://en.wikipedia.org/wiki/Immediately-invoked_function_expression), create a stub function in the global scope, select some elements and invoke the stub on each.
 
-<a class="jsbin-embed" href="http://jsbin.com/weniqu/6/embed?js">Stubbed Usage</a>
+<pre><code class="javascript">
+(function(){
 
-That looks nice, don't it? Straightforward. Keep in mind that if you need to export anything out of an IIFE you always want to do it at the very end.
+  function makeCollapsible(el) {
+    
+  }
+  
+  window.makeCollapsible = makeCollapsible;
+})()
+
+////////////////////////////////////////////
+
+$(function(){
+  
+  $('.should-collapse').toArray()
+  		.map(function(el){ makeCollapsible(el) })
+  
+})
+</code></pre>
+
+That looks nice, don't it? Straightforward. Keep in mind that if you need to export anything out of an IIFE you always want to do it at the very end. Also note that I call `toArray` on the jquery elements (called a matched set) and use the js array's built-in `.map`. This is because jquery - which preceeded the builtin map function - screwed up and inverted the parameters into the callback thereby making it harder to work with the 90% use case. Its almost entirely a matter of preference.
 
 
 <script src="http://static.jsbin.com/js/embed.js" async defer></script>
