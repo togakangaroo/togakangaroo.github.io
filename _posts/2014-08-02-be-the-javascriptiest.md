@@ -7,11 +7,11 @@ comments: true
 
 ## Be the Javascriptiest
 
-This is a writeup of my talk at [Sql Saturday #324 - Baton Rouge]. This talk started as a joke, or rather as [Mike Huguet](http://geekswithblogs.net/mikehuguet/Default.aspx) bugging me to submit something on javascript to which I responded with a flurry of serious submissions along with this silly, silly thing. To nobody's surprise but my own, it of course got selected. Oh well.
+This is a writeup of my talk at [Sql Saturday #324 - Baton Rouge](http://sqlsaturday.com/324/eventhome.aspx). This talk started as a joke, or rather as [Mike Huguet](http://geekswithblogs.net/mikehuguet/Default.aspx) bugging me to submit something on javascript to which I responded with a flurry of serious submissions along with this silly, silly thing. To nobody's surprise but my own, it of course got selected. Oh well.
 
 Fortunately I've got a lot to say. About Javascript especially.
 
-But before I start, any time you want to talk javascript it's good to understand it's history as a baseline. Rather than rehashing the exact thing I said, [here's a series](https://www.w3.org/community/webed/wiki/A_Short_History_of_JavaScript) of actually factual articles](http://dailyjs.com/history-of-javascript.html). The general gist is this: *Brendan Eich was given ten days by Netscape to invent a browser language. He based it on Scheme. Marketing decided that it should look like Java, so it got some angle brackets.* The reason it is important to know this - there are parts of Javascript simply make no sense except in the historical context.
+But before I start, any time you want to talk javascript it's good to understand it's history as a baseline. Rather than rehashing the exact thing I said, [here's a series](https://www.w3.org/community/webed/wiki/A_Short_History_of_JavaScript) of actually [factual articles](http://dailyjs.com/history-of-javascript.html). The general gist is this: *Brendan Eich was given ten days by Netscape to invent a browser language. He based it on Scheme. Marketing decided that it should look like Java, so it got some angle brackets.* The reason it is important to know this - there are parts of Javascript simply make no sense except in the historical context.
 
 Another note. If you have not read this book. 
 
