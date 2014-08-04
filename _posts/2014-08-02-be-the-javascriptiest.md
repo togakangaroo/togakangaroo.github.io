@@ -5,7 +5,6 @@ author: "George Mauer"
 comments: false
 ---
 
-
 ## Be the Javascriptiest
 
 While there is some general philosophizing here, this is largely a step-by-step for building your own jquery collapsing widget. It is a writeup of my talk at [Sql Saturday #324 - Baton Rouge](http://sqlsaturday.com/324/eventhome.aspx). As such, it might seem lengthy and rambling. But the talk was over an hour so...
