@@ -447,6 +447,43 @@ and between function composition and the extend pattern are generally not necess
 			</div>
 		</li>
     
+		<li>
+			<div class="idea">
+				
+					<h2><a class="postlink" href="/2013/04/29/stop-that-equals-this-ing.html">Stop that = this'ing</a></h2>
+					<div class="postdate">29      April, 2013
+						<ul>
+						
+						</ul>
+					</div>
+					<p>From our chatlogs at Surge (editted for berevity and to make me seem like a better debater/speller).</p>
+<blockquote>
+<p>GM: Can I just say, I hate </p>
+<pre><code>that = this
+
+or
+
+self = this
+</code></pre>
+
+<p>GM: Don't anyone do that</p>
+<p>GM: The pattern is fine, but at least give it a meaningful name</p>
+<p>JA: Hmmm.....I'll bite, devil's advocate</p>
+<p>JA: Why not folow an established convention? When javascript programmers see a variable name &quot;that&quot;, they immediately know what's happening</p>
+<p>TS: anyone who has worked in JS for more than 10 seconds does :)</p>
+<p>GM: @TS -  right, they know that here is a variable passed in from a broader scope. However, when you use a variable you care far more about what it reperesents than where it came from, and in order to learn what &quot;that&quot; represents you have to scan the whole file, find the line that assings <code>var that = this;</code> then figure out in your head what <code>this</code> refers to.</p>
+<p>SP: yeah. it can get frustrating</p>
+<p>GM: It really takes like 2 seconds to think of an appropriate name for the variable. I usually prefix with an _ just so that it sticks out a bit visually: _userModel, _slideViewer, _dialogWidget. Its not perfect but its a heck of a lot better than &quot;that&quot;.</p>
+<p>GM: Variables should almost always be named after what they do/represent, not how they're implemented. Clearly we are breaking this guideline if we've got variables named &quot;that&quot; in different files having nothing to do with each other. The argument that it's a well known pattern isn't wrong, just that there's really no reason not to give it an even <em>more</em> descriptive name and not even have to think of the pattern.</p>
+<p>GM: So I guess my real point is name things properly, it will be better for everyone always and &quot;that&quot;, &quot;self&quot; are just not great names.</p>
+</blockquote>
+
+					
+					<a href="/2013/04/29/stop-that-equals-this-ing.html#disqus_thread">Comments</a>
+				
+			</div>
+		</li>
+    
 </ul>
 <h3>OLDER</h3>
 <ul class="postArchive">
