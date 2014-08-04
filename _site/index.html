@@ -129,7 +129,7 @@ function toggle(shouldShow) {
 toggle(true);
 </code></pre>
 <p>So we first select the content area which we know to be the element that follows our $collapseHandler, and use <a href="http://api.jquery.com/toggle/"><code>$.fn.toggle</code></a> to hide or show it. And then we <a href="http://api.jquery.com/toggleClass/"><code>$.fn.toggleClass</code></a> to mark the element collapsed or not. Go ahead, try this out, change the <code>toggle(true)</code> below to <code>toggle(false)</code>.</p>
-<p><a class="jsbin-embed" href="http://jsbin.com/weniqu/24/embed?js,output">Basic functionality</a></p>
+<p><a class="jsbin-embed" href="http://jsbin.com/weniqu/29/embed?js,output">Basic functionality</a></p>
 <h3>Closure scoping</h3>
 <p>I think this would have been confusing only three years ago but I feel like the concept of lambdas and closures is by now natural enough that most people aren't questioning why $collapseHandle and <code>$el</code> are available here. One thing that's nice about javascript functions, is they're dirt simple. Forget what you know about java or c# scoping, just scan up the levels of indentation - exactly what you would think should be available, is.</p>
 <p>This might seem limiting - without private, protected, and internal modifiers it would seem we're pretty limited in our attempts at data hiding. As we will see, this is not true and this simple concept can yield largely the same results.</p>
@@ -146,6 +146,57 @@ console.log(foo); //error
 </code></pre>
 <p>this can cause subtle bugs if you reuse a variable or function name in the same function, but it can also be used wisely. Here's the thing - function declarations (as opposed to assignments), can't be automatically split from their variable. So they are both declared <strong>and defined</strong> at the function top. This means that function declarations can appear <strong>anywhere</strong> within a function body and be used everywhere else, more to the point, it means that - much like in class-based languages, we can create many private helper methods am move them away from the code governing what the function actually does. </p>
 <p>Since the details of what <code>toggle</code> does are far less important than what we're actually doing with it, I moved that code toward the bottom of my function. The specifics of how the html structure is imposed are similarly secondary to the fact that it happens, these also go in their own private function and are bumped to the bottom.</p>
+<p>Overall this is the strucutre I recommend for any function:</p>
+<ol>
+<li>var declarations, usually no more at one line each (create a private function if needed)</li>
+<li>followed by thing the function actually does - trying to boil it down to the bare workflow mechanics</li>
+<li>followed by as many private functions as your heart desires. </li>
+</ol>
+<p>The advantage is that tihs makes it very clear what any dependencies are (they are picked out toward the top), and <em>very</em> clear what the actual workflow is. And that's what I'm usually after when I read code, not the details of how you did something, but the gist of what it is that you are doing. If I want to dig into specifics I will do so only after understanding the context.</p>
+<p>So I suppose we should make the darn thing actually react to click events huh? Well that can be as simple as adding</p>
+<pre><code class="javascript">
+  $collapseHandle.on('click', function(){
+    toggle(...uhhh...what should go here?)
+  })
+</code></pre>
+<p>hmm...seems like we need to maintain state somewhere. Lots of options here - we could test for the <code>.collapsed</code> class, or store it in the element's data. Or just create a simple variable tracking it! Closure rules to the rescue, we create an <code>isOpen</code> variable inside of our <code>makeCollapsible</code> function and voila.</p>
+<p><a class="jsbin-embed" href="http://jsbin.com/weniqu/30/embed?js,output">Clicking works</a></p>
+<p>We have the basics of a reusable clickable collapser.</p>
+<p>Not very customizable though, is it? How about we add an option to set the initial state to collapsed.</p>
+<pre><code class="javascript">
+  $('.should-collapse').toArray().map(function(el, index){ 
+    makeCollapsible(el, {
+      collapsed: index > 0
+    }) 
+  })
+</code></pre>
+<p>So every midget after the first one should be collapsed at initialization.</p>
+<p><aside></p>
+<h3>Json Object Notation</h3>
+<p>is really cool here. What we want is named parameters. What we have is a json object. Which, minus the braces - looks exactly like named parameters. The fact that these objects are so lightweight works strongly in our favor as it is fairly easy to create and use these for an optional parameters object.
+</aside></p>
+<p>Speaking of which, let's take an options object as input</p>
+<pre><code class="javascript">
+  function makeCollapsible(el, options) {
+    var $el = $(el).addClass('collapsible');
+    var $collapseHandle = createStructure();
+    var isOpen = !options.collapsed;
+    ...
+</code></pre>
+<p>This will work great even when calling <code>makeCollapsed(el, {})</code> since in that case <code>collapsed</code> is undefined which the <code>!</code> operator converts to <code>false</code>. </p>
+<p>Thanks to</p>
+<p><aside></p>
+<h3>Boolean Coercion</h3>
+<p>We do however have a problem when going back to our old usage <code>makeCollapsed(el)</code> throws an error since in this case <code>options</code> itself doesn't exist for us to attempt to draw the <code>collapsed</code> property from.</p>
+<p>There is a bunch of ways to set parameter defaults and here is my favorite one.</p>
+<pre><code class="javascript">
+  function makeCollapsible(el, options) {
+    options || (options = {});
+    ...
+</code></pre>
+<p>So, if options coerces to true (eg it is an object), continue; otherwise assign <code>{}</code> to options.</p>
+<p>Yes, it doesn't handle a bunch of edge case scenarios quite properly, and an api released to the public I might be more stringent, but its simple and very visually distinctive. Within the internals of my code, where I can reasonably control my inputs, this works fine.
+</aside></p>
 <p><script src="http://static.jsbin.com/js/embed.js" async defer></script></p>
 
 					<br />

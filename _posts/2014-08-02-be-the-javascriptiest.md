@@ -131,7 +131,7 @@ toggle(true);
 
 So we first select the content area which we know to be the element that follows our $collapseHandler, and use [`$.fn.toggle`](http://api.jquery.com/toggle/) to hide or show it. And then we [`$.fn.toggleClass`](http://api.jquery.com/toggleClass/) to mark the element collapsed or not. Go ahead, try this out, change the `toggle(true)` below to `toggle(false)`.
 
-<a class="jsbin-embed" href="http://jsbin.com/weniqu/24/embed?js,output">Basic functionality</a>
+<a class="jsbin-embed" href="http://jsbin.com/weniqu/29/embed?js,output">Basic functionality</a>
 
 ###Closure scoping
 
@@ -158,15 +158,77 @@ this can cause subtle bugs if you reuse a variable or function name in the same 
 
 Since the details of what `toggle` does are far less important than what we're actually doing with it, I moved that code toward the bottom of my function. The specifics of how the html structure is imposed are similarly secondary to the fact that it happens, these also go in their own private function and are bumped to the bottom.
 
+Overall this is the strucutre I recommend for any function:
 
+1. var declarations, usually no more at one line each (create a private function if needed)
+2. followed by thing the function actually does - trying to boil it down to the bare workflow mechanics
+3. followed by as many private functions as your heart desires. 
 
+The advantage is that tihs makes it very clear what any dependencies are (they are picked out toward the top), and *very* clear what the actual workflow is. And that's what I'm usually after when I read code, not the details of how you did something, but the gist of what it is that you are doing. If I want to dig into specifics I will do so only after understanding the context.
 
+So I suppose we should make the darn thing actually react to click events huh? Well that can be as simple as adding
 
+<pre><code class="javascript">
+  $collapseHandle.on('click', function(){
+    toggle(...uhhh...what should go here?)
+  })
+</code></pre>
 
+hmm...seems like we need to maintain state somewhere. Lots of options here - we could test for the `.collapsed` class, or store it in the element's data. Or just create a simple variable tracking it! Closure rules to the rescue, we create an `isOpen` variable inside of our `makeCollapsible` function and voila.
 
+<a class="jsbin-embed" href="http://jsbin.com/weniqu/30/embed?js,output">Clicking works</a>
 
+We have the basics of a reusable clickable collapser.
 
+Not very customizable though, is it? How about we add an option to set the initial state to collapsed.
 
+<pre><code class="javascript">
+  $('.should-collapse').toArray().map(function(el, index){ 
+    makeCollapsible(el, {
+      collapsed: index > 0
+    }) 
+  })
+</code></pre>
+
+So every midget after the first one should be collapsed at initialization.
+
+<aside>
+###Json Object Notation
+
+is really cool here. What we want is named parameters. What we have is a json object. Which, minus the braces - looks exactly like named parameters. The fact that these objects are so lightweight works strongly in our favor as it is fairly easy to create and use these for an optional parameters object.
+</aside>
+
+Speaking of which, let's take an options object as input
+
+<pre><code class="javascript">
+  function makeCollapsible(el, options) {
+    var $el = $(el).addClass('collapsible');
+    var $collapseHandle = createStructure();
+    var isOpen = !options.collapsed;
+    ...
+</code></pre>
+
+This will work great even when calling `makeCollapsed(el, {})` since in that case `collapsed` is undefined which the `!` operator converts to `false`. 
+
+Thanks to
+
+<aside>
+###Boolean Coercion
+
+We do however have a problem when going back to our old usage `makeCollapsed(el)` throws an error since in this case `options` itself doesn't exist for us to attempt to draw the `collapsed` property from.
+
+There is a bunch of ways to set parameter defaults and here is my favorite one.
+
+<pre><code class="javascript">
+  function makeCollapsible(el, options) {
+    options || (options = {});
+    ...
+</code></pre>
+
+So, if options coerces to true (eg it is an object), continue; otherwise assign `{}` to options.
+
+Yes, it doesn't handle a bunch of edge case scenarios quite properly, and an api released to the public I might be more stringent, but its simple and very visually distinctive. Within the internals of my code, where I can reasonably control my inputs, this works fine.
+</aside>
 
 
 
