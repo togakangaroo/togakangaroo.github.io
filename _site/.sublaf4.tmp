@@ -1,11 +1,36 @@
---- 
-layout: post
-title: "On this and new"
-author: "George Mauer"
-comments: false
----
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta content="en-au" http-equiv="Content-Language" />
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Blog Feed" />
+		<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Blog Feed" />
 
-This is the pattern that a lot things recommend
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<title>On this and new</title>
+		<link rel="stylesheet" type="text/css" href="/css/style.css" />
+		<link rel="shortcut icon" href="/img/favicon.ico" />
+	</head>
+	<body>
+		<div id="container">
+			<div id="side">
+				<a href="/" id="home" title="home" alt="home"><img src="/img/logo.png" alt="Site Name" /></a>
+				<div id="hometext"><a href="/" >George Mauer's Blog</a></div>
+				<div class="section">
+					<ul>
+						<li><a href="/about.html">about</a></li>
+						<li><a href="/rss.xml"><img src="/img/25.png" /> feed</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id="content">
+				<div class="entry-container">
+	<div class='entry'>
+		<h1> On this and new </h1>
+		<span class="postdate">
+			
+		</span>
+		This is the pattern that a lot things recommend
  
 <pre><code class="javascript">
     function Person(firstName, lastName) {
@@ -34,7 +59,7 @@ The problem is that despite what you think `this` doesn't reference scope. It is
  
 <pre><code class="javascript">
     myFunc(1,2,3); 
-</code></pre>
+
  
 is really just a facade for how javascript **really** invokes methods
  
@@ -98,3 +123,36 @@ As a whole these benefits certainly don't excuse introducing two whole new conce
 
 I think it is probably only fair to amend that I'm usually opposed to javascript class systems in general. They require the use of `new` (though not necessarily of `this` - I'll write up how later)
 and between function composition and the extend pattern are generally not necessary for either organizing or building performant code in 90% of cases.
+	</div>
+</div>
+<div id="page-navigation"> 
+	<div class="left">  </div> 
+	<div class="right">  </div> 
+	<div class="clear">&nbsp;</div>
+</div> 
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'togakangaroo'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+			</div>
+
+		</div>
+	</body>
+</html>

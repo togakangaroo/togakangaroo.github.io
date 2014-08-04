@@ -392,13 +392,13 @@ $(function(){
 <p>Huh? But that's insane.....exactly.</p>
 <p>What about <code>this</code>? How can that be confusing.</p>
 <p>The problem is that despite what you think <code>this</code> doesn't reference scope. It is really just a parameter like any other. This becomes a lot more clear if you realize that</p>
-<p><pre><code class="javascript">
+<pre><code class="javascript">
     myFunc(1,2,3); 
-<pre><code class="javascript"></p>
+</code></pre>
 <p>is really just a facade for how javascript <strong>really</strong> invokes methods</p>
-<p><pre><code class="javascript">
+<pre><code class="javascript">
     myFunc.call(whateverThisIs, 1, 2, 3);
-<pre><code class="javascript"></p>
+</code></pre>
 <p>So all that <code>this</code> is, is just the first parameter passed into <code>.call()</code>. That's it - no magic, no language-support, it's just a parameter.</p>
 <p>Worse, if you use the simpler syntax, javascript will pick what the value of that parameter should be at runtime. The rules aren't terribly complex but they're often not what you want. As an example:</p>
 <pre><code class="javascript">
