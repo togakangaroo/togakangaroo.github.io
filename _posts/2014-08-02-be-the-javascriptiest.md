@@ -230,6 +230,130 @@ So, if options coerces to true (eg it is an object), continue; otherwise assign 
 Yes, it doesn't handle a bunch of edge case scenarios quite properly, and an api released to the public I might be more stringent, but its simple and very visually distinctive. Within the internals of my code, where I can reasonably control my inputs, this works fine.
 </aside>
 
+Of course this opens up a whole bunch of intriguing opportunities.
+
+For example, what if the user wanted to provide a **custom** way for our area to appear or disappear? Something like
+
+<pre><code class="javascript">
+  $('.should-collapse').toArray().map(function(el, index){ 
+    makeCollapsible(el, {
+      collapsed: index > 0,
+      toggleArea: function($area, shouldOpen) {
+        if(shouldOpen)
+          $area.fadeIn();
+        else
+          $area.fadeOut();
+      }
+    }) 
+  })
+</code></pre>
+
+Well we could do this by checking explicitly
+
+<pre><code class="javascript">
+  function makeCollapsible(el, options) {
+    options || (options = {});
+    options.toggleArea || (options.toggleArea = defaultToggleArea)
+    ...
+    function toggle(shouldShow) {
+      options.toggleArea($collapseHandle.next(), shouldShow);
+      $el.toggleClass( 'collapsed', !shouldShow );
+      isOpen = shouldShow
+    }
+    ...
+  }
+  function defaultToggleArea($area, shouldShow) {
+      $area.toggle( shouldShow );    
+  }
+</code></pre>
+
+and while that's ok, options is starting to get messy. Let's clean that up.
+
+
+<pre><code class="javascript">
+(function(){
+  var defaultOptions = {
+    collapsed: false,
+    toggleArea: defaultToggleArea
+  };
+
+  function makeCollapsible(el, op) {
+    var options = $.extend({}, defaultOptions, op);
+    ...
+    toggle(isOpen);
+    
+    /////////////////////////    
+    function toggle(shouldShow) {
+      options.toggleArea($collapseHandle.next(), shouldShow);
+      $el.toggleClass( 'collapsed', !shouldShow );
+      isOpen = shouldShow
+    }
+    ...
+  }
+  function defaultToggleArea($area, shouldShow) {
+      $area.toggle( shouldShow );    
+  }
+  
+  window.makeCollapsible = makeCollapsible;
+})()
+</code></pre>
+
+A lot happened here, so lets take it step by step. Outside the `makeCollapsible` function but inside our module (so it is private) we created the `defaultOptions` variable with all of our defaults set. In order to do this we needed to move `defaultToggleArea` to the parent closure, but as it was not using any variables except those passed to it, this is not a problem.
+
+Next we have that wierd `$.extend` call. I love the `$.extend` function. In fact, everyone does. It's so awesome that every single library that I can think of implements a version of it. So what does this ubiquitously useful function do? 
+
+It merges objects.
+
+<aside>
+###Objects are Just Hashes
+
+It's likely that you've heard this before, but here it really starts to make sense. to merge `var foo = {a: 1, b: 2}` and `var bar = {a: 1, c: 3}` simply iterate through each property of `bar` and write its value to the same property name of `foo` resulting in `{a: 1, b: 2, c: 3}`.
+
+This is all that `extend` does. Starts with the second parameter and merges it into the first, then it merges the third parameter into that, etc.
+
+This ends up being insanely useful, for example, have you ever wondered how to share functions between various objects without using javascript's crazy "class" system (in quotes because it doesn' t work the way most people think it does and should be avoided). Simple, just place the reusable methods in an object, and extend any others
+
+<pre><code class="javascript">
+var animalBehavior = {
+  eat: function() {...}
+  sleep: function() {...}
+}
+...
+var cat = $.extend(catSpecificBehavior, animalBehavior);
+var dog = $.extend(dogSpecificBehavior, animalBehavior);
+</code></pre>
+
+Disadvantages over prototypes and the `new` keyword? It doesn't show up in stacktraces as an isntance of `animalBehavior` and it's slightly slow (but really its so slight, that you shouldn't care). Advantages - far fewer bugs and unexpected behaviors as very few people understand [what the `new` keyword *actually* does](http://stackoverflow.com/a/3658673/5056).
+
+`new` is wierd and anti-intuitive, and introduces a sizable host of new concepts to keep track of. `extend` is dirt simple.
+</aside>
+<aside>
+###Dynamic Function Signatures
+
+As a matter of fact `extend` is so easy let's take a moment and implement our own naive version now. 
+
+<pre><code class="javascript">
+function extend(obj) {
+  for(var i=1; i < arguments.length; i+=1) //iterate through all but the first (obj) argument
+    for(var key in arguments[i])
+      obj[key] = first[key];    //just copy all its properties
+  return obj;
+}
+</code></pre>
+
+Isn't that awesome? And thanks to dynamic funciton signatures we can call it with one, two, three, or any number of parameters, it will just work!
+</aside>
+
+And while we're at it, let's kick this party up another notch
+
+<a class="jsbin-embed" href="http://jsbin.com/weniqu/34/embed?js,output">defaultOptions object that is locally or globaly configurable</a>
+
+Here we've modified the above to add `defaultOptions` directly to the `makeCollapsible` function. I think most people are aware that its possible to add properties to functions but there is usually little reason to do it. In this case we decided that people might want to set defaults site-wide to achieve a consistent look and feel. We would therefore have to export `defaultOptions`. While we could create another global variable, in this case it feels natural to group both the function and its defaults together using the function as a sort of namespace.
+
+This allows our widget's users to easily find and modify defaults.
+
+And while we're at it, since we're now embracing the objects-are-just-hashes philosophy we can take the time and remove some duplciation from our fadein/out custom function. Since the only thing that is different is the name of the property we're invoking, we can select it in a one-liner [with a ternary if](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
+
 
 
 

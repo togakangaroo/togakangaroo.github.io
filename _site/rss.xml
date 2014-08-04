@@ -6,8 +6,8 @@
     <atom:link href="http://domain/rss.xml" rel="self" type="application/rss+xml" />
     <description></description>
     <language>en-au</language>
-    <pubDate>Sun, 03 Aug 2014 22:58:45 %z</pubDate>
-    <lastBuildDate>Sun, 03 Aug 2014 22:58:45 %z</lastBuildDate>
+    <pubDate>Mon, 04 Aug 2014 00:02:45 %z</pubDate>
+    <lastBuildDate>Mon, 04 Aug 2014 00:02:45 %z</lastBuildDate>
 
     
     <item>
@@ -176,6 +176,104 @@ console.log(foo); //error
 <p>So, if options coerces to true (eg it is an object), continue; otherwise assign <code>{}</code> to options.</p>
 <p>Yes, it doesn't handle a bunch of edge case scenarios quite properly, and an api released to the public I might be more stringent, but its simple and very visually distinctive. Within the internals of my code, where I can reasonably control my inputs, this works fine.
 </aside></p>
+<p>Of course this opens up a whole bunch of intriguing opportunities.</p>
+<p>For example, what if the user wanted to provide a <strong>custom</strong> way for our area to appear or disappear? Something like</p>
+<pre><code class="javascript">
+  $('.should-collapse').toArray().map(function(el, index){ 
+    makeCollapsible(el, {
+      collapsed: index > 0,
+      toggleArea: function($area, shouldOpen) {
+        if(shouldOpen)
+          $area.fadeIn();
+        else
+          $area.fadeOut();
+      }
+    }) 
+  })
+</code></pre>
+<p>Well we could do this by checking explicitly</p>
+<pre><code class="javascript">
+  function makeCollapsible(el, options) {
+    options || (options = {});
+    options.toggleArea || (options.toggleArea = defaultToggleArea)
+    ...
+    function toggle(shouldShow) {
+      options.toggleArea($collapseHandle.next(), shouldShow);
+      $el.toggleClass( 'collapsed', !shouldShow );
+      isOpen = shouldShow
+    }
+    ...
+  }
+  function defaultToggleArea($area, shouldShow) {
+      $area.toggle( shouldShow );    
+  }
+</code></pre>
+<p>and while that's ok, options is starting to get messy. Let's clean that up.</p>
+<pre><code class="javascript">
+(function(){
+  var defaultOptions = {
+    collapsed: false,
+    toggleArea: defaultToggleArea
+  };
+
+  function makeCollapsible(el, op) {
+    var options = $.extend({}, defaultOptions, op);
+    ...
+    toggle(isOpen);
+    
+    /////////////////////////    
+    function toggle(shouldShow) {
+      options.toggleArea($collapseHandle.next(), shouldShow);
+      $el.toggleClass( 'collapsed', !shouldShow );
+      isOpen = shouldShow
+    }
+    ...
+  }
+  function defaultToggleArea($area, shouldShow) {
+      $area.toggle( shouldShow );    
+  }
+  
+  window.makeCollapsible = makeCollapsible;
+})()
+</code></pre>
+<p>A lot happened here, so lets take it step by step. Outside the <code>makeCollapsible</code> function but inside our module (so it is private) we created the <code>defaultOptions</code> variable with all of our defaults set. In order to do this we needed to move <code>defaultToggleArea</code> to the parent closure, but as it was not using any variables except those passed to it, this is not a problem.</p>
+<p>Next we have that wierd <code>$.extend</code> call. I love the <code>$.extend</code> function. In fact, everyone does. It's so awesome that every single library that I can think of implements a version of it. So what does this ubiquitously useful function do? </p>
+<p>It merges objects.</p>
+<p><aside></p>
+<h3>Objects are Just Hashes</h3>
+<p>It's likely that you've heard this before, but here it really starts to make sense. to merge <code>var foo = {a: 1, b: 2}</code> and <code>var bar = {a: 1, c: 3}</code> simply iterate through each property of <code>bar</code> and write its value to the same property name of <code>foo</code> resulting in <code>{a: 1, b: 2, c: 3}</code>.</p>
+<p>This is all that <code>extend</code> does. Starts with the second parameter and merges it into the first, then it merges the third parameter into that, etc.</p>
+<p>This ends up being insanely useful, for example, have you ever wondered how to share functions between various objects without using javascript's crazy &quot;class&quot; system (in quotes because it doesn' t work the way most people think it does and should be avoided). Simple, just place the reusable methods in an object, and extend any others</p>
+<pre><code class="javascript">
+var animalBehavior = {
+  eat: function() {...}
+  sleep: function() {...}
+}
+...
+var cat = $.extend(catSpecificBehavior, animalBehavior);
+var dog = $.extend(dogSpecificBehavior, animalBehavior);
+</code></pre>
+<p>Disadvantages over prototypes and the <code>new</code> keyword? It doesn't show up in stacktraces as an isntance of <code>animalBehavior</code> and it's slightly slow (but really its so slight, that you shouldn't care). Advantages - far fewer bugs and unexpected behaviors as very few people understand <a href="http://stackoverflow.com/a/3658673/5056">what the <code>new</code> keyword <em>actually</em> does</a>.</p>
+<p><code>new</code> is wierd and anti-intuitive, and introduces a sizable host of new concepts to keep track of. <code>extend</code> is dirt simple.
+</aside>
+<aside></p>
+<h3>Dynamic Function Signatures</h3>
+<p>As a matter of fact <code>extend</code> is so easy let's take a moment and implement our own naive version now. </p>
+<pre><code class="javascript">
+function extend(obj) {
+  for(var i=1; i < arguments.length; i+=1) //iterate through all but the first (obj) argument
+    for(var key in arguments[i])
+      obj[key] = first[key];    //just copy all its properties
+  return obj;
+}
+</code></pre>
+<p>Isn't that awesome? And thanks to dynamic funciton signatures we can call it with one, two, three, or any number of parameters, it will just work!
+</aside></p>
+<p>And while we're at it, let's kick this party up another notch</p>
+<p><a class="jsbin-embed" href="http://jsbin.com/weniqu/34/embed?js,output">defaultOptions object that is locally or globaly configurable</a></p>
+<p>Here we've modified the above to add <code>defaultOptions</code> directly to the <code>makeCollapsible</code> function. I think most people are aware that its possible to add properties to functions but there is usually little reason to do it. In this case we decided that people might want to set defaults site-wide to achieve a consistent look and feel. We would therefore have to export <code>defaultOptions</code>. While we could create another global variable, in this case it feels natural to group both the function and its defaults together using the function as a sort of namespace.</p>
+<p>This allows our widget's users to easily find and modify defaults.</p>
+<p>And while we're at it, since we're now embracing the objects-are-just-hashes philosophy we can take the time and remove some duplciation from our fadein/out custom function. Since the only thing that is different is the name of the property we're invoking, we can select it in a one-liner <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator">with a ternary if</a>.</p>
 <p><script src="http://static.jsbin.com/js/embed.js" async defer></script></p>
 </description>
     </item>
