@@ -5,9 +5,12 @@ author: "George Mauer"
 comments: false
 ---
 
+
 ## Be the Javascriptiest
 
-This is a writeup of my talk at [Sql Saturday #324 - Baton Rouge](http://sqlsaturday.com/324/eventhome.aspx). This talk started as a joke, or rather as [Mike Huguet](http://geekswithblogs.net/mikehuguet/Default.aspx) bugging me to submit something on javascript to which I responded with a flurry of serious submissions along with this silly, silly thing. To nobody's surprise but my own, it of course got selected. Oh well.
+While there is some general philosophizing here, this is largely a step-by-step for building your own jquery collapsing widget. It is a writeup of my talk at [Sql Saturday #324 - Baton Rouge](http://sqlsaturday.com/324/eventhome.aspx). As such, it might seem lengthy and rambling. But the talk was over an hour so...
+
+It all started as a joke, or rather as [Mike Huguet](http://geekswithblogs.net/mikehuguet/Default.aspx) bugging me to submit something on javascript to which I responded with a flurry of serious submissions along with this silly, silly title. To nobody's surprise but my own, it of course got selected. I didn't know what to do with it. Oh well.
 
 Fortunately I've got a lot to say. About Javascript especially.
 
@@ -30,11 +33,11 @@ But there are good parts. In my opinion here they are:
 * Hoisting
 * Dynamic function signatures
 
-Rather than 30 slides about which I will blab for an hour I decided to do that thing that new presenters are always cautioned against - I decided to live code. I decided to live code a real life component that demonstrate why these things are awesome.
+Rather than 30 slides about which I will blab for an hour I decided to do that thing that new presenters are always cautioned against - I decided to live-code. I decided to live-code a real life component that demonstrates why these things are awesome.
 
 We're going to make a reusable collapser widget. This is what we're going for
 
-<a class="jsbin-embed" href="http://jsbin.com/weniqu/20/embed?output">Final desired output</a>
+<a class="jsbin-embed" href="http://jsbin.com/zatey/5/embed?output">Final desired output</a>
 
 Click around. Nice, huh?
 
@@ -89,6 +92,82 @@ Ok, fun. Now let's get things actually working. First let's consider the html we
     &lt;/span&gt;
 &lt;/p&gt;
 </code></pre>
+
+We want to wrap the element contents in a new `<span class=collapsible-collapse-area>` and we want to prepend a new `<button class=collapsible-collapse-handle>`. And that's it. Our CSS will take care of the rest.
+
+Creating this is helped tremendously by the existence of the jquery functions [`$.fn.wrapInner`](http://api.jquery.com/wrapinner/) and [`$.fn.prependTo`](http://api.jquery.com/prependTo/), and the jquery api for [creating elements](http://api.jquery.com/jquery/#jQuery2).
+
+<pre><code class="javascript">
+function makeCollapsible(el) {
+	var $el = $(el);
+	$el.addClass(&#039;collapsible&#039;);
+
+	$el.wrapInner( $(&#039;&lt;span&gt;&#039;, {&#039;class&#039;: &#039;collapsible-collapse-area&#039;}) );
+	var $collapseHandle = $(&#039;&lt;button&gt;&#039;, {&#039;class&#039;: &#039;collapsible-collapse-handle&#039;});
+								.prependTo($el)
+}
+</code></pre>
+
+For those familiar with the above methods this should be fairly straightforward. 
+
+An additional thing to note is the `var $el = $(el)` rewrapping toward the top. 
+
+First on the `$name` convention - this is my convention for anything I know to be a jquery element. Usually I don't bother with [hungarian notation](http://en.wikipedia.org/wiki/Hungarian_notation) but since you often use more than one jquery function on a single matched set it seems to make sense in this case.
+
+Next on that re-wrapping. This is dynamic function signatures at work. You can pass anything into a jQuery function! It will just work. How do they achieve this? Why a large yet cleverly written if statement of course. There's no function overloading or pattern matching in javascript but who cares? [It's not all that bad](https://github.com/jquery/jquery/blob/c869a1ef8a031342e817a2c063179a787ff57239/src/core/init.js#L16) and javascript benefits from a lower concept count. Don't get me wrong, I appreciate pattern matching and the like, its just that it frequently ends up being a nicer syntax for if statements. And there's a lot of rules and syntax to learn. It's definitely not a must-have language feature.
+
+Now back to the problem at hand.
+
+Perhaps we should make it actually work?
+
+<pre><code class="javascript">
+function toggle(shouldShow) {
+  $collapseHandle.next().toggle( !shouldShow );
+  $el.toggleClass( 'collapsed', !shouldShow );
+}
+
+toggle(true);
+</code></pre>
+
+So we first select the content area which we know to be the element that follows our $collapseHandler, and use [`$.fn.toggle`](http://api.jquery.com/toggle/) to hide or show it. And then we [`$.fn.toggleClass`](http://api.jquery.com/toggleClass/) to mark the element collapsed or not. Go ahead, try this out, change the `toggle(true)` below to `toggle(false)`.
+
+<a class="jsbin-embed" href="http://jsbin.com/weniqu/24/embed?js,output">Basic functionality</a>
+
+###Closure scoping
+
+I think this would have been confusing only three years ago but I feel like the concept of lambdas and closures is by now natural enough that most people aren't questioning why $collapseHandle and `$el` are available here. One thing that's nice about javascript functions, is they're dirt simple. Forget what you know about java or c# scoping, just scan up the levels of indentation - exactly what you would think should be available, is.
+
+This might seem limiting - without private, protected, and internal modifiers it would seem we're pretty limited in our attempts at data hiding. As we will see, this is not true and this simple concept can yield largely the same results.
+
+###Hoisting 
+
+I took the opportunity for some cleanup. Javascript has this interesting concept called [hoisting](http://elegantcode.com/2010/12/24/basic-javascript-part-5-hoisting/). It can be dangerous but it has some interesting uses as well. It works something like this - the only thing that limits a variable's scope in javascript is being inside of a function; not for loops; not declaration order. This is implemented as follows.
+
+When the javascript interpreter encounters a function it makes two passes. It first looks for any variable and function declarations in the immediate body and declares them. This is why can refer to variables in the same function before they are var'ed (even though the value might be undefined); 
+
+<pre><code class="javscript">
+console.log(foo); //error
+(function(){
+	console.log(foo); //undefined
+	var foo = 5;
+	console.log(foo); //5
+})()
+</code></pre>
+
+this can cause subtle bugs if you reuse a variable or function name in the same function, but it can also be used wisely. Here's the thing - function declarations (as opposed to assignments), can't be automatically split from their variable. So they are both declared **and defined** at the function top. This means that function declarations can appear **anywhere** within a function body and be used everywhere else, more to the point, it means that - much like in class-based languages, we can create many private helper methods am move them away from the code governing what the function actually does. 
+
+Since the details of what `toggle` does are far less important than what we're actually doing with it, I moved that code toward the bottom of my function. The specifics of how the html structure is imposed are similarly secondary to the fact that it happens, these also go in their own private function and are bumped to the bottom.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
