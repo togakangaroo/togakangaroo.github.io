@@ -52,8 +52,9 @@
 <p>We're going to make a reusable collapser widget. This is what we're going for</p>
 <p><a class="jsbin-embed" href="http://jsbin.com/zatey/5/embed?output">Final desired output</a></p>
 <p>Click around. Nice, huh?</p>
-<p>For simplicity's sake we're going to assume jquery. We're also going to start with the html and css already written because I'll assume you can get that knowledge elsewhere (and leave a comment if you would like another article on this).</p>
-<p>Now let's consider our desired API. What we need is...a function. That will take an element. And make it collapsible. <code>makeCollapsible</code> sounds like a good function name for this, yeah?</p>
+<p>For simplicity's sake we're going to assume jquery. We're also going to start with the html and css already written because I'll assume you can get that knowledge elsewhere (and leave a comment if you would like another article on this). I will also purposefully avoid making this a jquery plugin - although that would be natural here, there are several things I would like to do that are easier demo'ed by a plain and simple function.</p>
+<h2>Desired API</h2>
+<p>So first, let's consider how we need this thing to work. We need a function. That will take an element. And make it collapsible. <code>makeCollapsible</code> sounds like a good function name for this, yeah?</p>
 <pre><code class="javascript">
 //Pass in jQuery
 makeCollapsible( $('.should-collapse').first() );
@@ -65,7 +66,8 @@ makeCollapsible( '.should-collapse', {
 } );
 </code></pre>
 <p>Good? Great.</p>
-<p>Ok, let's get coding. So to start with <a href="http://en.wikipedia.org/wiki/Immediately-invoked_function_expression">let's create an IIFE</a>, create a stub function in the global scope, select some elements and invoke the stub on each.</p>
+<p>Ok, let's get coding. So to start with, since <code>makeCollapsible</code> will be reusable, we want it in its own module.</p>
+<p>If you have a module system such as requirejs or browserify in place, by all means use it here, if not then you should still try to emulate it <a href="http://en.wikipedia.org/wiki/Immediately-invoked_function_expression">with an IIFE</a>. Create a stub function inside of there, export it to the global scope, select some elements and invoke it on each.</p>
 <pre><code class="javascript">
 (function(){
 
@@ -86,6 +88,7 @@ $(function(){
 })
 </code></pre>
 <p>That looks nice, don't it? Straightforward. Keep in mind that if you need to export anything out of an IIFE you always want to do it at the very end. Also note that I call <code>toArray</code> on the jquery elements (called a matched set) and use the js array's built-in <code>.map</code>. This is because jquery - which preceeded the builtin map function - screwed up and inverted the parameters into the callback thereby making it harder to work with the 90% use case. Its almost entirely a matter of preference.</p>
+<h2>Working Basics</h2>
 <p>Ok, fun. Now let's get things actually working. First let's consider the html we want to achieve. If someone later uses javascript to remove the element entirely from the page we want it to remove cleanly, that means that everything has to go inside the element. We also want the triangle button to be visible when the element is collapsed - we therefore need it to be outside the area we will actually be collapsing. So what we're aiming for is something like this</p>
 <pre><code class="html">
 &lt;p class=&quot;should-collapse collapsible&quot;&gt;
@@ -146,6 +149,7 @@ console.log(foo); //error
 <li>followed by as many private functions as your heart desires. </li>
 </ol>
 <p>The advantage is that tihs makes it very clear what any dependencies are (they are picked out toward the top), and <em>very</em> clear what the actual workflow is. And that's what I'm usually after when I read code, not the details of how you did something, but the gist of what it is that you are doing. If I want to dig into specifics I will do so only after understanding the context.</p>
+<h2>Make it Work Better</h2>
 <p>So I suppose we should make the darn thing actually react to click events huh? Well that can be as simple as adding</p>
 <pre><code class="javascript">
   $collapseHandle.on('click', function(){
@@ -155,6 +159,7 @@ console.log(foo); //error
 <p>hmm...seems like we need to maintain state somewhere. Lots of options here - we could test for the <code>.collapsed</code> class, or store it in the element's data. Or just create a simple variable tracking it! Closure rules to the rescue, we create an <code>isOpen</code> variable inside of our <code>makeCollapsible</code> function and voila.</p>
 <p><a class="jsbin-embed" href="http://jsbin.com/weniqu/30/embed?js,output">Clicking works</a></p>
 <p>We have the basics of a reusable clickable collapser.</p>
+<h2>Adding Optional Parameters</h2>
 <p>Not very customizable though, is it? How about we add an option to set the initial state to collapsed.</p>
 <pre><code class="javascript">
   $('.should-collapse').toArray().map(function(el, index){ 
@@ -223,6 +228,7 @@ console.log(foo); //error
   }
 </code></pre>
 <p>and while that's ok, options is starting to get messy. Let's clean that up.</p>
+<h2>Better Optional Parameters</h2>
 <pre><code class="javascript">
 (function(){
   var defaultOptions = {
@@ -288,6 +294,60 @@ function extend(obj) {
 <p>Here we've modified the above to add <code>defaultOptions</code> directly to the <code>makeCollapsible</code> function. I think most people are aware that its possible to add properties to functions but there is usually little reason to do it. In this case we decided that people might want to set defaults site-wide to achieve a consistent look and feel. We would therefore have to export <code>defaultOptions</code>. While we could create another global variable, in this case it feels natural to group both the function and its defaults together using the function as a sort of namespace.</p>
 <p>This allows our widget's users to easily find and modify defaults.</p>
 <p>And while we're at it, since we're now embracing the objects-are-just-hashes philosophy we can take the time and remove some duplciation from our fadein/out custom function. Since the only thing that is different is the name of the property we're invoking, we can select it in a one-liner <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator">with a ternary if</a>.</p>
+<p>So what's left? Our collapse/expand all I supose.</p>
+<h2>Exposing public functionality</h2>
+<p>Something like this would be nice</p>
+<pre><code class="javascript">
+$(function(){
+  makeCollapsible.defaultOptions.toggleArea = toggleAreaByFading
+  var collapsers = $('.should-collapse').toArray().map(makeElementACollapser);
+
+  $('.collapse-all').on('click', function(){
+    collapsers.map(function(c){ c.collapse() });
+  });
+  $('.expand-all').on('click', function(){
+    collapsers.map(function(c){ c.expand() });
+  });
+  
+  
+  function makeElementACollapser(el, index){ 
+    return makeCollapsible(el, {
+      collapsed: index > 0
+    }) 
+  }
+  function toggleAreaByFading($area, shouldShow) {
+    $area[shouldShow ? 'fadeIn' : 'fadeOut']()
+  }
+})
+</code></pre>
+<p>Well there you have it folks. We now need to have makeCollapsers return an object with methods. Surely this is a job for classes, right? Or not. Turns out that we can just return from <code>makeCollapsible</code> an object...with some methods...</p>
+<pre><code class="javascript">
+  $collapseHandle.on('click', function(){ toggle(!isOpen) })
+  toggle(isOpen);
+  
+  return {
+    collapse: function() { toggle(false) },
+    expand: function() { toggle(true) }
+  }
+</code></pre>
+<p>Almost disappointing how easy it is, ain't it? And yet I've seen many people struggle with how to achieve this for long minutes during interviews. </p>
+<p>It's the classical inheritance knowledge getting in the way, making you think there's somethign you're missing. Yet no, using simple closures and lightweight objects, we have in effect mimicked a  constructor (the <code>makeCollapsible</code> method itself), private methods (<code>toggle</code>, <code>createStructure</code>), and public methods (<code>collapse</code>, <code>expand</code>). All without having to bring in concepts like <em>classes</em>, <em>instances</em>, or <em>access modifiers</em>.</p>
+<p>Well since that was so easy let's go one step further and clean up the remaining code</p>
+<h2>Final Cleanup</h2>
+<p><a class="jsbin-embed" href="http://jsbin.com/weniqu/34/embed?js,output">Final Cleanup and Working Demo</a></p>
+<p>Notice that I changed <code>function() { toggle(true) }</code> to <code>toggle.bind(null, true)</code> using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind">Function.prototype.bind</a> to create a new function, with that parameter curried to true. It's a bit of a judgement call whether this is simpler or not, but I tend to like it.</p>
+<p>More interesting is how we cleared up the redundant code that would iterate the collapsers to call expand or contract</p>
+<pre><code class="javascript">
+  $('.collapse-all').on('click', invokeOnAll(collapsers, 'collapse'));
+  $('.expand-all').on('click', invokeOnAll(collapsers, 'expand'));
+  
+  function invokeOnAll(objects, methodName) { return function invokeOnAll() {
+    return objects.map(function(x) { return x[methodName]() });
+  }}  
+</code></pre>
+<p>A function that returns a function! You can learn more about this technique in Reginald Braithwaite's <a href="https://leanpub.com/javascript-allonge/read">Javascript Allongé</a> and I think it cleans up this nicely. You might note that I named the returned function <code>invokeOnAll</code> as well. This is a tiny bit of defensive coding that doesn't actually do anything. Instead it ensures that the function has a name, so that when viewing debugging stack traces I see the name rather than <code>&amp;lt;anonymous function&amp;gt;</code>. It's nice.</p>
+<p>So there we have it, the basics of achieving a collapsible area widget. You can easily imagine adding features to it. The ability to specify how you want the handle built so you can collapse to a heading, the ability to detect when the collapsing animation has finished (if one was used). The ability to name animations (eg <code>toggleArea: 'slide'</code>), and of course making it a jquery widget (though I would very much recommend here going a step further and using a <a href="http://learn.jquery.com/plugins/stateful-plugins-with-widget-factory/">jquery ui widget factory</a> which will take care of much of this for you).</p>
+<p>All these things are achievable and made quite simple with the basic techniques outlined above. This is <strong>really</strong> javascript the good parts - the ability to eschew more complex concepts, and still build simple, flexible, and awesome things.</p>
 <p><script src="http://static.jsbin.com/js/embed.js" async defer></script></p>
 
 	</div>
