@@ -38,13 +38,9 @@ We're going to make a reusable collapser widget. This is what we're going for
 
 Click around. Nice, huh?
 
-For simplicity's sake we're going to assume jquery. We're also going to start with the html and css already written because...eh, I'm not interested in writing it again. It's pretty straightforward. Check it out
+For simplicity's sake we're going to assume jquery. We're also going to start with the html and css already written because I'll assume you can get that knowledge elsewhere (and leave a comment if you would like another article on this).
 
-So firt of, we cannot achieve a collapser with css alone. We need to add some html, let's start by considering the html we would like to achieve. For each `.should-collapse` we want to wrap their contents in a new `<span class=collapsible-collapse-area>` and we want to prepend a new `<button class=collapsible-collapse-handle>`. And that's it. Our CSS will take care of the rest.
-
-<a class="jsbin-embed" href="http://jsbin.com/weniqu/1/embed?html,output">Html we would like to achieve</a>
-
-Ok, great! Next let's consider our desired API. What we need is...a function. That will take an element. And make it collapsible. `makeCollapsible` sounds like a good function name for this, yeah?
+Now let's consider our desired API. What we need is...a function. That will take an element. And make it collapsible. `makeCollapsible` sounds like a good function name for this, yeah?
 
 <pre><code class="javascript">
 //Pass in jQuery
@@ -82,6 +78,19 @@ $(function(){
 </code></pre>
 
 That looks nice, don't it? Straightforward. Keep in mind that if you need to export anything out of an IIFE you always want to do it at the very end. Also note that I call `toArray` on the jquery elements (called a matched set) and use the js array's built-in `.map`. This is because jquery - which preceeded the builtin map function - screwed up and inverted the parameters into the callback thereby making it harder to work with the 90% use case. Its almost entirely a matter of preference.
+
+Ok, fun. Now let's get things actually working. First let's consider the html we want to achieve. If someone later uses javascript to remove the element entirely from the page we want it to remove cleanly, that means that everything has to go inside the element. We also want the triangle button to be visible when the element is collapsed - we therefore need it to be outside the area we will actually be collapsing. So what we're aiming for is something like this
+
+<pre><code class="html">
+&lt;p class=&quot;should-collapse collapsible&quot;&gt;
+    &lt;button class=&quot;collapsible-collapse-handle&quot; type=button&gt;&lt;/button&gt;
+    &lt;span class=&quot;collapsible-collapse-area&quot;&gt;
+        Text to collapse....
+    &lt;/span&gt;
+&lt;/p&gt;
+</code></pre>
+
+
 
 
 <script src="http://static.jsbin.com/js/embed.js" async defer></script>
