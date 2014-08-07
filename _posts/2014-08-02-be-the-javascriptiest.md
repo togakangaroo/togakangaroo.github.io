@@ -7,15 +7,15 @@ comments: false
 
 ## Be the Javascriptiest
 
-While there is some general philosophizing here, this is largely a step-by-step for building your own jquery collapsing widget. It is a writeup of my talk at [Sql Saturday #324 - Baton Rouge](http://sqlsaturday.com/324/eventhome.aspx). As such, it might seem lengthy and rambling. But the talk was over an hour so...
+While there is some general philosophizing here, this is largely a step-by-step for building your own jquery collapsing widget. It is a writeup of my talk at [Sql Saturday #324 - Baton Rouge](http://sqlsaturday.com/324/eventhome.aspx). As such, it might seem lengthy and rambling. But the talk was over an hour so that's where we're at.
 
-It all started as a joke, or rather as [Mike Huguet](http://geekswithblogs.net/mikehuguet/Default.aspx) bugging me to submit something on javascript to which I responded with a flurry of serious submissions along with this silly, silly title. To nobody's surprise but my own, it of course got selected. I didn't know what to do with it. Oh well.
+This talk started as a joke, or rather as [Mike Huguet](http://geekswithblogs.net/mikehuguet/Default.aspx) bugging me to submit something on javascript to which I responded with a flurry of serious submissions along with this silly, silly title. The fact that it got selected should probably not surprise me, yet it did all too much. I scratched my head over what I wanted to present. You see, for the last three or four years I've repeatedly given talks of how javascript is not all that complicated. I've given talks on Underscore, jQuery, and Javascript basics, constantly emphasizing that if you stick to the simpler concepts; perhaps its time to try something new? How about some live coding? 
 
-Fortunately I've got a lot to say. About Javascript especially.
+Yeah, that sounds fun.
 
-But before I start, any time you want to talk javascript it's good to understand it's history as a baseline. Rather than rehashing the exact thing I said, [here's a series](https://www.w3.org/community/webed/wiki/A_Short_History_of_JavaScript) of actually [factual articles](http://dailyjs.com/history-of-javascript.html). The general gist is this: *Brendan Eich was given ten days by Netscape to invent a browser language. He based it on Scheme. Marketing decided that it should look like Java, so it got some angle brackets.* The reason it is important to know this - there are parts of Javascript simply make no sense except in the historical context.
+Before I start, any time you want to talk javascript it's good to understand it's history as a baseline. [Here's a series](https://www.w3.org/community/webed/wiki/A_Short_History_of_JavaScript) of actually [factual articles](http://dailyjs.com/history-of-javascript.html). However, the general gist is this: *Brendan Eich was given ten days by Netscape to invent a browser language. He based it on Scheme. Marketing decided that it should look like Java, so it got some angle brackets.* It's imiportant to keep this abbreviated history in mind as some parts of Javascript make sense only in this context.
 
-Another note. If you have not read this book. 
+Oh, and another note, if you have not read this book. 
 
 ![Javascript the Good Parts](http://ecx.images-amazon.com/images/I/518QVtPWA7L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU01_.jpg) 
 
