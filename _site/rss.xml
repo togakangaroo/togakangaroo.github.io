@@ -6,8 +6,8 @@
     <atom:link href="http://domain/rss.xml" rel="self" type="application/rss+xml" />
     <description></description>
     <language>en-au</language>
-    <pubDate>Thu, 07 Aug 2014 13:05:26 %z</pubDate>
-    <lastBuildDate>Thu, 07 Aug 2014 13:05:26 %z</lastBuildDate>
+    <pubDate>Mon, 11 Aug 2014 20:58:52 %z</pubDate>
+    <lastBuildDate>Mon, 11 Aug 2014 20:58:52 %z</lastBuildDate>
 
     
     <item>
@@ -16,15 +16,21 @@
       <pubDate>Sat, 02 Aug 2014 00:00:00 %z</pubDate>
       <author>Author</author>
       <guid>http://domain/2014/08/02/be-the-javascriptiest.html</guid>
-      <description><h2>Be the Javascriptiest</h2>
-<p>While there is some general philosophizing here, this is largely a step-by-step for building your own jquery collapsing widget. It is a writeup of my talk at <a href="http://sqlsaturday.com/324/eventhome.aspx">Sql Saturday #324 - Baton Rouge</a>. As such, it might seem lengthy and rambling. But the talk was over an hour so that's where we're at.</p>
-<p>This talk started as a joke, or rather as <a href="http://geekswithblogs.net/mikehuguet/Default.aspx">Mike Huguet</a> bugging me to submit something on javascript to which I responded with a flurry of serious submissions along with this silly, silly title. The fact that it got selected should probably not surprise me, yet it did all too much. I scratched my head over what I wanted to present. You see, for the last three or four years I've repeatedly given talks of how javascript is not all that complicated. I've given talks on Underscore, jQuery, and Javascript basics, constantly emphasizing that if you stick to the simpler concepts; perhaps its time to try something new? How about some live coding? </p>
-<p>Yeah, that sounds fun.</p>
-<p>Before I start, any time you want to talk javascript it's good to understand it's history as a baseline. <a href="https://www.w3.org/community/webed/wiki/A_Short_History_of_JavaScript">Here's a series</a> of actually <a href="http://dailyjs.com/history-of-javascript.html">factual articles</a>. However, the general gist is this: <em>Brendan Eich was given ten days by Netscape to invent a browser language. He based it on Scheme. Marketing decided that it should look like Java, so it got some angle brackets.</em> It's imiportant to keep this abbreviated history in mind as some parts of Javascript make sense only in this context.</p>
+      <description><p><style>
+  aside {
+    border: 1px dashed grey;
+    margin: 0 1em;
+    padding: .5em;
+  }
+</style></p>
+<h2>Be the Javascriptiest</h2>
+<p>While there is some general philosophizing here, this is largely a step-by-step for building your own jquery collapsing widget. It is a writeup of my talk at <a href="http://sqlsaturday.com/324/eventhome.aspx">Sql Saturday #324 - Baton Rouge</a>. As such, it might seem lengthy and rambling. But the talk was over an hour so there you have it.</p>
+<p>You might be able to tell from the title, this talk did not start out completely seriously. For the last three or four years I have talked at this event, each time trying to braindump my understanding of javascript, or underscore, or knockout, or jquery; trying to convince rooms full of people that 90% of the useful stuff in each you can learn in an hour. While I still fully believe this, this time I wanted to do something different. I decided to live-code and demonstrate how the 90%-simple-and-useful-parts of javascript that I love can be composted into something both clean and powerful.</p>
+<p>But first, any time you want to talk javascript it's good to understand it's history. <a href="https://www.w3.org/community/webed/wiki/A_Short_History_of_JavaScript">Here's a series</a> of actually <a href="http://dailyjs.com/history-of-javascript.html">factual articles</a>. However, the general gist is this: <em>Brendan Eich was given ten days by Netscape to invent a browser language. He based it on Scheme and Self. Marketing decided that it should look like Java, so it got some angle brackets. Then for a long time nobody bothered to update it.</em> It's important to keep this abbreviated history in mind as some parts of Javascript only make sense in this context.</p>
 <p>Oh, and another note, if you have not read this book. </p>
 <p><img src="http://ecx.images-amazon.com/images/I/518QVtPWA7L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU01_.jpg" alt="Javascript the Good Parts" /> </p>
-<p>Read it. It's an easy read and covers most of the things you need to know. <a href="http://it-ebooks.info/book/274/">Hey, here it is for free.</a></p>
-<p>So why this presentation at all? Well, despite the title. Javascript the Good Parts is mostly about the bad parts of Javascript. It's about all the stuff that was cludged into it by marketing, or all the mistakes that were made as a result of the insanely hurried timeframe, or all the things that have just staled over the last fifteen years of non-evolution.</p>
+<p>Do. It's an easy read and covers most of the things you need to know. <a href="http://it-ebooks.info/book/274/">Hey, here it is for free.</a></p>
+<p>So then, why this presentation at all? Well, despite the title. Javascript the Good Parts is mostly about the bad parts of Javascript. It's about all the stuff that was cludged into it by marketing, or all the mistakes that were made as a result of the insanely hurried timeframe, or all the things that have just staled over the last fifteen years of non-evolution.</p>
 <p>But there are good parts. In my opinion here they are:</p>
 <ul>
 <li>Use functions for everything</li>
@@ -34,8 +40,7 @@
 <li>Hoisting</li>
 <li>Dynamic function signatures</li>
 </ul>
-<p>Rather than 30 slides about which I will blab for an hour I decided to do that thing that new presenters are always cautioned against - I decided to live-code. I decided to live-code a real life component that demonstrates why these things are awesome.</p>
-<p>We're going to make a reusable collapser widget. This is what we're going for</p>
+<p>No slides, let's see these in action. We're going to make a reusable collapser widget. This is what we're going for</p>
 <p><a class="jsbin-embed" href="http://jsbin.com/zatey/5/embed?output">Final desired output</a></p>
 <p>Click around. Nice, huh?</p>
 <p>For simplicity's sake we're going to assume jquery. We're also going to start with the html and css already written because I'll assume you can get that knowledge elsewhere (and leave a comment if you would like another article on this). I will also purposefully avoid making this a jquery plugin - although that would be natural here, there are several things I would like to do that are easier demo'ed by a plain and simple function.</p>
@@ -53,7 +58,7 @@ makeCollapsible( '.should-collapse', {
 </code></pre>
 <p>Good? Great.</p>
 <p>Ok, let's get coding. So to start with, since <code>makeCollapsible</code> will be reusable, we want it in its own module.</p>
-<p>If you have a module system such as requirejs or browserify in place, by all means use it here, if not then you should still try to emulate it <a href="http://en.wikipedia.org/wiki/Immediately-invoked_function_expression">with an IIFE</a>. Create a stub function inside of there, export it to the global scope, select some elements and invoke it on each.</p>
+<p>If you have a module system such as requirejs or browserify in place, by all means use it here, if not then you should still try to emulate it <a href="http://en.wikipedia.org/wiki/Immediately-invoked_function_expression">with an IIFE</a>. Let's create a stub function inside of an IIFE, export it to the global scope, select some elements, and invoke it on each.</p>
 <pre><code class="javascript">
 (function(){
 
@@ -73,9 +78,10 @@ $(function(){
   
 })
 </code></pre>
-<p>That looks nice, don't it? Straightforward. Keep in mind that if you need to export anything out of an IIFE you always want to do it at the very end. Also note that I call <code>toArray</code> on the jquery elements (called a matched set) and use the js array's built-in <code>.map</code>. This is because jquery - which preceeded the builtin map function - screwed up and inverted the parameters into the callback thereby making it harder to work with the 90% use case. Its almost entirely a matter of preference.</p>
+<p>That looks nice, don't it? Note that I did the <code>window.makeCollapsible</code> export at the end of the IIFE. I strongly recommend that if you need to export anything out of one of these you always want to do it at the very end. We're doing this all in one screen, but in real life you would likely put our <code>makeCollapsible</code> module in its own file.</p>
+<p>Also note that I call <code>toArray</code> on the jquery elements (called a matched set) and use the js array's built-in <code>.map</code>. This is because jquery - which preceeded the builtin map function - screwed up and inverted the parameters into the callback thereby making it harder to work with the 90% use case. Its almost entirely a matter of preference. Also I use <code>map</code> instead of <code>forEach</code>. Don't worry about that. It's cause I know what's coming.</p>
 <h2>Working Basics</h2>
-<p>Ok, fun. Now let's get things actually working. First let's consider the html we want to achieve. If someone later uses javascript to remove the element entirely from the page we want it to remove cleanly, that means that everything has to go inside the element. We also want the triangle button to be visible when the element is collapsed - we therefore need it to be outside the area we will actually be collapsing. So what we're aiming for is something like this</p>
+<p>Ok, fun. Now let's get things actually working. First let's consider the html we want to achieve. If someone later uses javascript to remove the element entirely from the page we want it to remove cleanly, that means that everything has to be contained by our element. We also want the triangle button to be visible when the element is collapsed - we therefore need it to be outside the area we will actually be collapsing. So what we're aiming for is something like this</p>
 <pre><code class="html">
 &lt;p class=&quot;should-collapse collapsible&quot;&gt;
     &lt;button class=&quot;collapsible-collapse-handle&quot; type=button&gt;&lt;/button&gt;
@@ -96,12 +102,13 @@ function makeCollapsible(el) {
 								.prependTo($el)
 }
 </code></pre>
-<p>For those familiar with the above methods this should be fairly straightforward. </p>
-<p>An additional thing to note is the <code>var $el = $(el)</code> rewrapping toward the top. </p>
-<p>First on the <code>$name</code> convention - this is my convention for anything I know to be a jquery element. Usually I don't bother with <a href="http://en.wikipedia.org/wiki/Hungarian_notation">hungarian notation</a> but since you often use more than one jquery function on a single matched set it seems to make sense in this case.</p>
-<p>Next on that re-wrapping. This is dynamic function signatures at work. You can pass anything into a jQuery function! It will just work. How do they achieve this? Why a large yet cleverly written if statement of course. There's no function overloading or pattern matching in javascript but who cares? <a href="https://github.com/jquery/jquery/blob/c869a1ef8a031342e817a2c063179a787ff57239/src/core/init.js#L16">It's not all that bad</a> and javascript benefits from a lower concept count. Don't get me wrong, I appreciate pattern matching and the like, its just that it frequently ends up being a nicer syntax for if statements. And there's a lot of rules and syntax to learn. It's definitely not a must-have language feature.</p>
-<p>Now back to the problem at hand.</p>
-<p>Perhaps we should make it actually work?</p>
+<p>If you're not familiar with the above metnods you should read the jQuery docs, but regardless I think the gist is fairly straightforward.</p>
+<p><aside title="Dynamic Function Signatures">
+An additional thing to note is the <code>var $el = $(el)</code> rewrapping toward the top. Regarding, the convention of prefixing with a <code>$</code> - this is my convention for anything I know to be a jquery element. Usually I don't bother with <a href="http://en.wikipedia.org/wiki/Hungarian_notation">hungarian notation</a> but since you often use more than one jquery function on a single matched set it seems to make sense.</p>
+<p>Next on that <code>$(el)</code> re-wrapping. This is <strong>dynamic function signatures</strong> at work. Did you know that you can pass just about anything into a jQuery function and it will just work? How do they achieve this? Why a large yet cleverly written if statement of course. There's no function overloading or pattern matching in javascript but who cares? <a href="https://github.com/jquery/jquery/blob/c869a1ef8a031342e817a2c063179a787ff57239/src/core/init.js#L16">It's not all that bad</a> and beginners to javascript benefit from a lower concept count. Don't get me wrong, I appreciate pattern matching and the like, its just that it frequently ends up being a nicer syntax for if statements. And there's a lot of rules and syntax to learn. It's definitely not a must-have language feature.</p>
+<p>Now back to the problem at hand.
+</aside></p>
+<p>Perhaps we should make it actually work, yes?</p>
 <pre><code class="javascript">
 function toggle(shouldShow) {
   $collapseHandle.next().toggle( !shouldShow );
@@ -112,11 +119,12 @@ toggle(true);
 </code></pre>
 <p>So we first select the content area which we know to be the element that follows our $collapseHandler, and use <a href="http://api.jquery.com/toggle/"><code>$.fn.toggle</code></a> to hide or show it. And then we <a href="http://api.jquery.com/toggleClass/"><code>$.fn.toggleClass</code></a> to mark the element collapsed or not. Go ahead, try this out, change the <code>toggle(true)</code> below to <code>toggle(false)</code>.</p>
 <p><a class="jsbin-embed" href="http://jsbin.com/weniqu/29/embed?js,output">Basic functionality</a></p>
-<h3>Closure scoping</h3>
-<p>I think this would have been confusing only three years ago but I feel like the concept of lambdas and closures is by now natural enough that most people aren't questioning why $collapseHandle and <code>$el</code> are available here. One thing that's nice about javascript functions, is they're dirt simple. Forget what you know about java or c# scoping, just scan up the levels of indentation - exactly what you would think should be available, is.</p>
-<p>This might seem limiting - without private, protected, and internal modifiers it would seem we're pretty limited in our attempts at data hiding. As we will see, this is not true and this simple concept can yield largely the same results.</p>
-<h3>Hoisting</h3>
-<p>I took the opportunity for some cleanup. Javascript has this interesting concept called <a href="http://elegantcode.com/2010/12/24/basic-javascript-part-5-hoisting/">hoisting</a>. It can be dangerous but it has some interesting uses as well. It works something like this - the only thing that limits a variable's scope in javascript is being inside of a function; not for loops; not declaration order. This is implemented as follows.</p>
+<p><aside title="Closure Scoping">
+I think this would have been confusing only three years ago but I feel like the concept of lambdas and closures is by now natural enough that most people aren't questioning why $collapseHandle and <code>$el</code> are available here. One thing that's nice about javascript functions, is they're dirt simple. Forget what you know about java or c# scoping, just scan up the levels of indentation - exactly what you would think should be available, is.</p>
+<p>This might seem limiting - without private, protected, and internal modifiers it would seem we're pretty limited in our attempts at data hiding. As we will see, this is not true and this simple concept can yield largely the same results.
+</aside></p>
+<p><aside title="Hoisting">
+I took the opportunity for some cleanup. Javascript has an interesting concept called <a href="http://elegantcode.com/2010/12/24/basic-javascript-part-5-hoisting/">hoisting</a>. It can be dangerous but it has some intriguing uses as well. It works something like this - the only thing that limits a variable's scope in javascript is being inside of a function; not for loops; not declaration order and it is spec'ed as follows:</p>
 <p>When the javascript interpreter encounters a function it makes two passes. It first looks for any variable and function declarations in the immediate body and declares them. This is why can refer to variables in the same function before they are var'ed (even though the value might be undefined); </p>
 <pre><code class="javscript">
 console.log(foo); //error
@@ -126,27 +134,28 @@ console.log(foo); //error
 	console.log(foo); //5
 })()
 </code></pre>
-<p>this can cause subtle bugs if you reuse a variable or function name in the same function, but it can also be used wisely. Here's the thing - function declarations (as opposed to assignments), can't be automatically split from their variable. So they are both declared <strong>and defined</strong> at the function top. This means that function declarations can appear <strong>anywhere</strong> within a function body and be used everywhere else, more to the point, it means that - much like in class-based languages, we can create many private helper methods am move them away from the code governing what the function actually does. </p>
-<p>Since the details of what <code>toggle</code> does are far less important than what we're actually doing with it, I moved that code toward the bottom of my function. The specifics of how the html structure is imposed are similarly secondary to the fact that it happens, these also go in their own private function and are bumped to the bottom.</p>
+<p>this can cause subtle bugs if you reuse a variable or function name within the same function, but it can also be used wisely. Here's the thing - function declarations (as opposed to assignments), can't be automatically split from their variable. So they are both declared <strong>and defined</strong> at the function top. This means that function declarations can appear <strong>anywhere</strong> within a function body and be used everywhere else, more to the point, it means that - much like in class-based languages, we can create many private helper methods am move them away from the code governing what the function actually does. </p>
+<p>Since the details of what <code>toggle</code> does are far less important than what we're actually doing with it, I moved that code toward the bottom of my function. The specifics of how the html structure is imposed are similarly secondary to the fact html restructuring is done so these also go in their own function and are bumped to the bottom.</p>
 <p>Overall this is the strucutre I recommend for any function:</p>
 <ol>
 <li>var declarations, usually no more at one line each (create a private function if needed)</li>
 <li>followed by thing the function actually does - trying to boil it down to the bare workflow mechanics</li>
 <li>followed by as many private functions as your heart desires. </li>
 </ol>
-<p>The advantage is that tihs makes it very clear what any dependencies are (they are picked out toward the top), and <em>very</em> clear what the actual workflow is. And that's what I'm usually after when I read code, not the details of how you did something, but the gist of what it is that you are doing. If I want to dig into specifics I will do so only after understanding the context.</p>
-<h2>Make it Work Better</h2>
-<p>So I suppose we should make the darn thing actually react to click events huh? Well that can be as simple as adding</p>
+<p>The advantage is that this makes it very clear what any dependencies are (they are picked out toward the top), and <em>very</em> clear what the actual workflow is. And that's what I'm usually after when I read code, not the details of how you did something, but the gist of what it is that you are doing. If I want to dig into specifics I will do so only after understanding the context.
+</aside></p>
+<h2>Make It Work, But Better</h2>
+<p>So I suppose we should make the darn thing clickable, huh? So that the collapser will...collapse? Well that can be as simple as adding</p>
 <pre><code class="javascript">
   $collapseHandle.on('click', function(){
     toggle(...uhhh...what should go here?)
   })
 </code></pre>
-<p>hmm...seems like we need to maintain state somewhere. Lots of options here - we could test for the <code>.collapsed</code> class, or store it in the element's data. Or just create a simple variable tracking it! Closure rules to the rescue, we create an <code>isOpen</code> variable inside of our <code>makeCollapsible</code> function and voila.</p>
+<p>hmm...seems like we need to maintain state somewhere. Lots of options here - we could test for the <code>.collapsed</code> class, or store it in the element's data. Or just create a simple variable tracking it! So following our simple just-like-you-think-it-is closure rules, we create an <code>isOpen</code> variable inside of our <code>makeCollapsible</code> function and voila.</p>
 <p><a class="jsbin-embed" href="http://jsbin.com/weniqu/30/embed?js,output">Clicking works</a></p>
 <p>We have the basics of a reusable clickable collapser.</p>
 <h2>Adding Optional Parameters</h2>
-<p>Not very customizable though, is it? How about we add an option to set the initial state to collapsed.</p>
+<p>Not very customizable though, is it? If we want to use it throughout our application we need some options. How about we add one to set the initial state to collapsed?</p>
 <pre><code class="javascript">
   $('.should-collapse').toArray().map(function(el, index){ 
     makeCollapsible(el, {
@@ -154,10 +163,9 @@ console.log(foo); //error
     }) 
   })
 </code></pre>
-<p>So every midget after the first one should be collapsed at initialization.</p>
-<p><aside></p>
-<h3>Json Object Notation</h3>
-<p>is really cool here. What we want is named parameters. What we have is a json object. Which, minus the braces - looks exactly like named parameters. The fact that these objects are so lightweight works strongly in our favor as it is fairly easy to create and use these for an optional parameters object.
+<p>So every widget after the first one should be collapsed at initialization.</p>
+<p><aside title="Json Object Notation">
+<strong>Json Notation</strong> really works in our favor here. What we want is named parameters. What we have is a json object. Which, minus the braces - looks exactly like named parameters. The fact that these objects are so lightweight works strongly in our favor as it is fairly easy to create and use these everywhere and for everything.
 </aside></p>
 <p>Speaking of which, let's take an options object as input</p>
 <pre><code class="javascript">
@@ -167,12 +175,11 @@ console.log(foo); //error
     var isOpen = !options.collapsed;
     ...
 </code></pre>
-<p>This will work great even when calling <code>makeCollapsed(el, {})</code> since in that case <code>collapsed</code> is undefined which the <code>!</code> operator converts to <code>false</code>. </p>
-<p>Thanks to</p>
-<p><aside></p>
-<h3>Boolean Coercion</h3>
-<p>We do however have a problem when going back to our old usage <code>makeCollapsed(el)</code> throws an error since in this case <code>options</code> itself doesn't exist for us to attempt to draw the <code>collapsed</code> property from.</p>
-<p>There is a bunch of ways to set parameter defaults and here is my favorite one.</p>
+<p><aside title="Boolean Coercion">
+This will work great even when calling <code>makeCollapsed(el, {})</code> since in that case <code>collapsed</code> is undefined which the <code>!</code> operator converts to <code>false</code>. </p>
+<p>This is <em>boolean coercion</em>.</p>
+<p>We do however have a problem when going back to our old usage <code>makeCollapsed(el)</code>. This now throws an error since in this case <code>options</code> itself doesn't exist for us to attempt to draw the <code>collapsed</code> property from. Not very optional then is it?</p>
+<p>There is a bunch of ways to set parameter defaults and here is my favorite one</p>
 <pre><code class="javascript">
   function makeCollapsible(el, options) {
     options || (options = {});
@@ -182,7 +189,7 @@ console.log(foo); //error
 <p>Yes, it doesn't handle a bunch of edge case scenarios quite properly, and an api released to the public I might be more stringent, but its simple and very visually distinctive. Within the internals of my code, where I can reasonably control my inputs, this works fine.
 </aside></p>
 <p>Of course this opens up a whole bunch of intriguing opportunities.</p>
-<p>For example, what if the user wanted to provide a <strong>custom</strong> way for our area to appear or disappear? Something like</p>
+<p>For example, what if the user wanted to provide a <strong>custom</strong> way for our collapsible area to appear or disappear? Something like</p>
 <pre><code class="javascript">
   $('.should-collapse').toArray().map(function(el, index){ 
     makeCollapsible(el, {
@@ -242,14 +249,15 @@ console.log(foo); //error
   window.makeCollapsible = makeCollapsible;
 })()
 </code></pre>
-<p>A lot happened here, so lets take it step by step. Outside the <code>makeCollapsible</code> function but inside our module (so it is private) we created the <code>defaultOptions</code> variable with all of our defaults set. In order to do this we needed to move <code>defaultToggleArea</code> to the parent closure, but as it was not using any variables except those passed to it, this is not a problem.</p>
-<p>Next we have that wierd <code>$.extend</code> call. I love the <code>$.extend</code> function. In fact, everyone does. It's so awesome that every single library that I can think of implements a version of it. So what does this ubiquitously useful function do? </p>
+<p>A lot happened here, so lets take it step by step. </p>
+<p>Outside the <code>makeCollapsible</code> function but inside our module (so it is private) we created the <code>defaultOptions</code> variable with all of our defaults set. In order to do this we needed to move <code>defaultToggleArea</code> to the parent closure, but it was not using any variables except those passed to it so this is not a problem.</p>
+<p>Next we have that weird <code>$.extend</code> call. I love the <code>$.extend</code> function. In fact, everyone does. It's so awesome that every single library that I can think of implements a version of it. So what does this ubiquitously useful function do? </p>
 <p>It merges objects.</p>
-<p><aside></p>
-<h3>Objects are Just Hashes</h3>
+<p><aside title="Objects are Just Hashes">
+And objects are just hashes.</p>
 <p>It's likely that you've heard this before, but here it really starts to make sense. to merge <code>var foo = {a: 1, b: 2}</code> and <code>var bar = {a: 1, c: 3}</code> simply iterate through each property of <code>bar</code> and write its value to the same property name of <code>foo</code> resulting in <code>{a: 1, b: 2, c: 3}</code>.</p>
-<p>This is all that <code>extend</code> does. Starts with the second parameter and merges it into the first, then it merges the third parameter into that, etc.</p>
-<p>This ends up being insanely useful, for example, have you ever wondered how to share functions between various objects without using javascript's crazy &quot;class&quot; system (in quotes because it doesn' t work the way most people think it does and should be avoided). Simple, just place the reusable methods in an object, and extend any others</p>
+<p>And at it's core this is all that <code>extend</code> does: Start with the second parameter and merges it into the first, if there's a third parameter merge it into the first one again, etc.</p>
+<p>This ends up being insanely useful, for example, have you ever wondered how to share functions between various objects without using javascript's crazy &quot;class&quot; system? (In quotes because it doesn' t work the way most people think it does and should be avoided). Simple, just place the reusable methods in an object, and extend any others</p>
 <pre><code class="javascript">
 var animalBehavior = {
   eat: function() {...}
@@ -259,11 +267,10 @@ var animalBehavior = {
 var cat = $.extend(catSpecificBehavior, animalBehavior);
 var dog = $.extend(dogSpecificBehavior, animalBehavior);
 </code></pre>
-<p>Disadvantages over prototypes and the <code>new</code> keyword? It doesn't show up in stacktraces as an isntance of <code>animalBehavior</code> and it's slightly slow (but really its so slight, that you shouldn't care). Advantages - far fewer bugs and unexpected behaviors as very few people understand <a href="http://stackoverflow.com/a/3658673/5056">what the <code>new</code> keyword <em>actually</em> does</a>.</p>
-<p><code>new</code> is wierd and anti-intuitive, and introduces a sizable host of new concepts to keep track of. <code>extend</code> is dirt simple.
-</aside>
-<aside></p>
-<h3>Dynamic Function Signatures</h3>
+<p>Well that's simple, but are they disadvantages over prototypes and the <code>new</code> keyword? Well yes, it doesn't show up in stacktraces as an isntance of <code>animalBehavior</code> and it's slightly slower (but really its so slight, that you shouldn't care). Advantages - far fewer bugs and unexpected behaviors as very few people understand <a href="http://stackoverflow.com/a/3658673/5056">what the <code>new</code> keyword <em>actually</em> does</a>.</p>
+<p><code>new</code> is wierd and anti-intuitive, and introduces a sizable host of new concepts to keep track of. <code>extend</code> is dirt simple, just use that.
+</aside></p>
+<p><aside title="Dynamic Function Signatures"></p>
 <p>As a matter of fact <code>extend</code> is so easy let's take a moment and implement our own naive version now. </p>
 <pre><code class="javascript">
 function extend(obj) {
@@ -273,15 +280,15 @@ function extend(obj) {
   return obj;
 }
 </code></pre>
-<p>Isn't that awesome? And thanks to dynamic funciton signatures we can call it with one, two, three, or any number of parameters, it will just work!
+<p>Isn't that awesome? And thanks to <strong>dynamic funciton signatures</strong> we can call it with one, two, three, or any number of parameters, it will just work!
 </aside></p>
 <p>And while we're at it, let's kick this party up another notch</p>
 <p><a class="jsbin-embed" href="http://jsbin.com/weniqu/34/embed?js,output">defaultOptions object that is locally or globaly configurable</a></p>
 <p>Here we've modified the above to add <code>defaultOptions</code> directly to the <code>makeCollapsible</code> function. I think most people are aware that its possible to add properties to functions but there is usually little reason to do it. In this case we decided that people might want to set defaults site-wide to achieve a consistent look and feel. We would therefore have to export <code>defaultOptions</code>. While we could create another global variable, in this case it feels natural to group both the function and its defaults together using the function as a sort of namespace.</p>
 <p>This allows our widget's users to easily find and modify defaults.</p>
 <p>And while we're at it, since we're now embracing the objects-are-just-hashes philosophy we can take the time and remove some duplciation from our fadein/out custom function. Since the only thing that is different is the name of the property we're invoking, we can select it in a one-liner <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator">with a ternary if</a>.</p>
-<p>So what's left? Our collapse/expand all I supose.</p>
-<h2>Exposing public functionality</h2>
+<p>So what's left? Our collapse/expand all buttons I supose.</p>
+<h2>Exposing Public Functionality</h2>
 <p>Something like this would be nice</p>
 <pre><code class="javascript">
 $(function(){
@@ -306,7 +313,8 @@ $(function(){
   }
 })
 </code></pre>
-<p>Well there you have it folks. We now need to have makeCollapsers return an object with methods. Surely this is a job for classes, right? Or not. Turns out that we can just return from <code>makeCollapsible</code> an object...with some methods...</p>
+<p>And there you have it. We now need to have makeCollapsers return an object with methods. Surely this is a job for classes, right? </p>
+<p>Or not. Turns out that we can just return from <code>makeCollapsible</code> an object...with some methods...</p>
 <pre><code class="javascript">
   $collapseHandle.on('click', function(){ toggle(!isOpen) })
   toggle(isOpen);
@@ -321,7 +329,7 @@ $(function(){
 <p>Well since that was so easy let's go one step further and clean up the remaining code</p>
 <h2>Final Cleanup</h2>
 <p><a class="jsbin-embed" href="http://jsbin.com/weniqu/34/embed?js,output">Final Cleanup and Working Demo</a></p>
-<p>Notice that I changed <code>function() { toggle(true) }</code> to <code>toggle.bind(null, true)</code> using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind">Function.prototype.bind</a> to create a new function, with that parameter curried to true. It's a bit of a judgement call whether this is simpler or not, but I tend to like it.</p>
+<p>Notice that I changed <code>function() { toggle(true) }</code> to <code>toggle.bind(null, true)</code> using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind">Function.prototype.bind</a> to create a new function, with it's parameter curried to true. It's a bit of a judgement call whether this is simpler or not, but I tend to like it.</p>
 <p>More interesting is how we cleared up the redundant code that would iterate the collapsers to call expand or contract</p>
 <pre><code class="javascript">
   $('.collapse-all').on('click', invokeOnAll(collapsers, 'collapse'));
@@ -331,8 +339,8 @@ $(function(){
     return objects.map(function(x) { return x[methodName]() });
   }}  
 </code></pre>
-<p>A function that returns a function! You can learn more about this technique in Reginald Braithwaite's <a href="https://leanpub.com/javascript-allonge/read">Javascript Allongé</a> and I think it cleans up this nicely. You might note that I named the returned function <code>invokeOnAll</code> as well. This is a tiny bit of defensive coding that doesn't actually do anything. Instead it ensures that the function has a name, so that when viewing debugging stack traces I see the name rather than <code>&amp;lt;anonymous function&amp;gt;</code>. It's nice.</p>
-<p>So there we have it, the basics of achieving a collapsible area widget. You can easily imagine adding features to it. The ability to specify how you want the handle built so you can collapse to a heading, the ability to detect when the collapsing animation has finished (if one was used). The ability to name animations (eg <code>toggleArea: 'slide'</code>), and of course making it a jquery widget (though I would very much recommend here going a step further and using a <a href="http://learn.jquery.com/plugins/stateful-plugins-with-widget-factory/">jquery ui widget factory</a> which will take care of much of this for you).</p>
+<p>A function that returns a function! You can learn more about this technique in Reginald Braithwaite's <a href="https://leanpub.com/javascript-allonge/read">Javascript Allongé</a>, and I think it cleans up this nicely. You might note that I named the returned function <code>invokeOnAll</code> as well. This is a tiny bit of defensive coding that doesn't actually <em>do</em> anything. Instead it ensures that the function has a name, so that when viewing debugging stack traces I see the name rather than <code>&amp;lt;anonymous function&amp;gt;</code>. It's nice.</p>
+<p>So there we have it, the basics of achieving a collapsible area widget. You can easily imagine adding features to it. The ability to specify how you want the handle built so you can collapse to a heading, the ability to detect when the collapsing animation has finished (if one was used), The ability to name animations (eg <code>toggleArea: 'slide'</code>) rather than pass functions, and of course making it a jquery widget (though I would very much recommend here going a step further and using a <a href="http://learn.jquery.com/plugins/stateful-plugins-with-widget-factory/">jquery ui widget factory</a> which will take care of much of this for you).</p>
 <p>All these things are achievable and made quite simple with the basic techniques outlined above. This is <strong>really</strong> javascript the good parts - the ability to eschew more complex concepts, and still build simple, flexible, and awesome things.</p>
 <p><script src="http://static.jsbin.com/js/embed.js" async defer></script></p>
 </description>
