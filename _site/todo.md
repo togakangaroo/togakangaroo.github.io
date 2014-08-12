@@ -7,3 +7,5 @@
 * Functions that return functions
 * Get the Ui metaphor right
 * Only work si value
+* jqCombinators in Life
+* life with p5.js or processing
