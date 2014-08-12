@@ -3,7 +3,7 @@
   <title>Feed Name</title>
   <link href="http://domain/"/>
   <link type="application/atom+xml" rel="self" href="http://domain/atom.xml"/>
-  <updated>8/11/2014 9:42:23 PM</updated>
+  <updated>8/12/2014 12:18:25 AM</updated>
   <id>http://domain/</id>
   <author>
     <name>Author</name>
@@ -427,6 +427,106 @@ $(function(){
 <p>As a whole these benefits certainly don't excuse introducing two whole new concepts into your code, especially concepts that are as confusing and poorly understood as <code>new</code> and <code>this</code>.</p>
 <p>I think it is probably only fair to amend that I'm usually opposed to javascript class systems in general. They require the use of <code>new</code> (though not necessarily of <code>this</code> - I'll write up how later)
 and between function composition and the extend pattern are generally not necessary for either organizing or building performant code in 90% of cases.</p>
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://domain//2013/09/26/setting-up-require-js.html</id>
+    <link type="text/html" rel="alternate" href="http://domain//2013/09/26/setting-up-require-js.html"/>
+    <title>Setting Up RequireJs</title>
+    <updated>9/26/2013 12:00:00 AM</updated>
+    <author>
+      <name>Author</name>
+      <uri>http://domain/</uri>
+    </author>
+    <content type="html"><p>This talk is a write-up of a lightning talk I gave at <a href="http://barcampnola.com/">BarcampNola 6</a>. <a href="https://github.com/togakangaroo/setting-up-requirejs">See here for a sample project demonstrating this techniqe</a>.</p>
+<p><a href="http://requirejs.org/">RequireJs</a> is an awesome module loader that complies with the AMD standard and in most cases the CommonJs standard as well. For my money, a lot of the &quot;structure&quot; that frameworks like backbone.js provide can also come out of AMD's much simpler, module-based approach.</p>
+<p>But enough with the flame-bait, let's talk about stuff that's indisputable. The RequireJs documentation is comprehensive, informative, and nearly incomprehensible as to how to actually set stuff up.</p>
+<p>In my experience, this is because the it gives bad - or at least misleading - advice. At time of writing, here's what the documentation for bootstrapping your application recommends:</p>
+<pre><code class="html">
+     &lt;script data-main="scripts/app" src="scripts/require.js"&gt;&lt;/script&gt;
+</code></pre>
+<p>That is to say <em>&quot;load require and then use it to load scripts/app.js&quot;</em> It is virtually identical therefore to</p>
+<pre><code class="html">
+     &lt;script src="scripts/require.js"&gt;&lt;/script&gt;
+     &lt;script&gt;
+         require(['scripts/app']);
+     &lt;/script&gt;
+</code></pre>
+<p>This is the part that most people don't understand and where a lot of people get in trouble. <code>data-main</code> is just a facade for a very simple <code>require()</code> invocation. And its certainly not the <strong>only</strong> way to do things.</p>
+<h2>The Problem</h2>
+<p>To be sure, if you are building a truly single-page application this is not an issue. Go ahead and use <code>data-main</code>. In my experience however, very few SPAs truly have only one page; there are frequently different &quot;areas&quot;. For example it is common for the transition between administrator and a user-facing areas to be full page requests with entirely different resource sets for each.</p>
+<p>The problem is that while the resources and modules used might vary, the configuration (the <code>requirejs.config()</code> call required to configure what directory scripts are in, any shims, path aliases, etc) is likely exactly the same for the two. </p>
+<p>Another issue emerges when using the <a href="http://requirejs.org/docs/optimization.html">RequireJs optimizer</a>. The way this works is that during deployment, you point the optimizer at a javascript file containing a RequireJs module that starts your application. It will then walk the dependency tree concatenating, ordering, and optionally minifying all referenced modules. The result is your entire application in a single bootstrapping javascript file thereby minimizing both HTTP request count and size.</p>
+<p>Of course once you have multiple pages, walking the dependencies for each will generate bundles which contain overlapping code for common libraries such as <code>jQuery</code>. This eats up many of those same bytes that we saved by minifying to begin with!</p>
+<h2>The Solution</h2>
+<p>The solution is to differentiate <em>global</em> scripts such as <code>jQuery</code> and your <code>requirejs.config()</code> from your page-specific ones. Ultimately your pages in deployment will be producing three javascript HTTP requests</p>
+<ol>
+<li>The RequireJs library itself</li>
+<li>Configuration and modules used globally across all areas of your application</li>
+<li>Modules required within the specific area</li>
+</ol>
+<p>The first two can safely be cached by the browser and will likely change relatively little.</p>
+<p>The global modules bootstrapper would look something like this:</p>
+<pre><code class="javascript">
+    requirejs.config({
+         baseUrl: '/scripts'
+        ,shim: {
+            underscore: {exports: '_'}
+        }
+        ,paths: {
+            jquery: 'jquery-2.0.0'
+        }
+    });
+    require(['jquery', 'underscore', 'globalHelpers']); 
+</code></pre>
+<p>the require statement at the end does double-duty here. When running the application unoptimized it starts requirejs on loading these global files immediately so they are cashed by the time other parts of the application request them. When deploying, in the meantime, the configuration will be bundled along with these globally used scripts into a single file. These scripts can then be excluded from the bundle for the page itself (see addendum for more on this).</p>
+<p>With this in place, your script includes end up looking like this</p>
+<pre><code class="html">
+     &lt;script src="scripts/require.js"&gt;&lt;/script&gt;
+     &lt;script&gt;
+         require(['scripts/global'], function(){
+              require(['clientApp']);  //or adminApp for the admin area, etc.
+         });
+     &lt;/script&gt;
+</code></pre>
+<p>It is a bit more code, but now everything can be grouped easily into three logical request chains and - after being optimized - three logical bundles.</p>
+<p>Nothing else needs to change.</p>
+<h2>Addendum</h2>
+<p>I should say that I'm not fully satisfied with all aspects of this system. Specifically, the global bootstrapper above and the build configuration file used by the optimizer are very similar, but different enough that one cannot be substituted for the other. For example, given the above, the build configuration will probably look something like this</p>
+<pre><code class="javascript">
+    {
+         baseUrl: '../app/scripts'                //where to find all our scripts
+        ,dir: '../build/scripts'                      //where to output scripts
+
+        ,optimize: 'uglify2'
+        ,generateSourceMaps: true
+
+        ,shim: {
+            underscore: {exports: '_'}
+        }
+        ,paths: {
+            jquery: 'jquery-2.0.0'
+        }
+
+        ,modules: [  //what should actually be built into bundles
+            {
+                name: 'global'               //the global bundle
+            }
+            ,{
+                 name: 'client'               //the client page bundle
+                ,exclude: ['jquery', 'underscore', 'globalHelpers']
+            }
+            ,{
+                 name: 'admin'               //the admin page bundle
+                ,exclude: ['jquery', 'underscore', 'globalHelpers']
+            }
+        ]
+    }
+</code></pre>
+<p><a href="https://github.com/jrburke/r.js/blob/master/build/example.build.js">This example build configuration file is useful for learning all the optimizer configuration properties</a>.</p>
+<p>Note the many similarities! The shims and paths are exactly the same. But while <code>global.js</code> is a javascript file, this one is passed through a JSON parser. In addition, while the list of globals is explicitly included in <code>globals.js</code>, in the build configuration it is explicitly <em>excluded</em> from all other modules.</p>
+<p>This is all sorts of awkward. I solved the issue with a custom template written for my build system that generates both files, but that is an article for another day.</p>
 </content>
   </entry>
   
