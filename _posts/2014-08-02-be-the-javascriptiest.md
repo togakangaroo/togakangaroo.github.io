@@ -2,7 +2,7 @@
 layout: post
 title: "Talk Roundup - Be the Javascriptiest"
 author: "George Mauer"
-comments: false
+comments: true
 ---
 <style>
   aside {
