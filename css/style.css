@@ -40,6 +40,10 @@ li
 	padding:0; 
 	list-style-type:none;
 }
+.idea {
+	max-height: 65em;
+	overflow: hidden;
+}
 .entry ul, .idea ul 
 {
 	margin-left:10px; 
