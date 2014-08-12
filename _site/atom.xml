@@ -3,7 +3,7 @@
   <title>Feed Name</title>
   <link href="http://domain/"/>
   <link type="application/atom+xml" rel="self" href="http://domain/atom.xml"/>
-  <updated>8/12/2014 12:18:25 AM</updated>
+  <updated>8/12/2014 12:29:15 AM</updated>
   <id>http://domain/</id>
   <author>
     <name>Author</name>
@@ -427,6 +427,79 @@ $(function(){
 <p>As a whole these benefits certainly don't excuse introducing two whole new concepts into your code, especially concepts that are as confusing and poorly understood as <code>new</code> and <code>this</code>.</p>
 <p>I think it is probably only fair to amend that I'm usually opposed to javascript class systems in general. They require the use of <code>new</code> (though not necessarily of <code>this</code> - I'll write up how later)
 and between function composition and the extend pattern are generally not necessary for either organizing or building performant code in 90% of cases.</p>
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://domain//2013/10/09/open-iis-to-the-network.html</id>
+    <link type="text/html" rel="alternate" href="http://domain//2013/10/09/open-iis-to-the-network.html"/>
+    <title>Open IIS Express to the Network</title>
+    <updated>10/9/2013 12:00:00 AM</updated>
+    <author>
+      <name>Author</name>
+      <uri>http://domain/</uri>
+    </author>
+    <content type="html"><p>How many times have I run into this?</p>
+<p>A css error that is only happening on the tablet and me with no <a href="http://www.browserstack.com/">Browserstack</a> account. 
+Js errors <a href="http://jsconsole.com/">I can handle</a> and heck, I even know how to <a href="http://people.apache.org/~pmuellr/weinre/docs/latest/Installing.html">set up a pseudo remote-debugging environment 
+to the tablet</a>. But I still need to open up
+my webserver to off-machine requests and love it as I do, <a href="https://ngrok.com">ngrok</a> is not going to fit this bill.</p>
+<p>Since I'm in Microsoft-world usually running IIS Express in my dev environment this requires a whole lot of messing around with
+unfriendly and undocumented configurations. </p>
+<p>I run all my development tools in a virtual machine so the following is my process to do this. If you do not, just take out the virtual machine and port forwarding parts.</p>
+<ol>
+<li>Determine the port number you want to access your application on. In my case it's 1352 and I make sure its hard coded to that in my web project properties. While in there (under the Web section) you might want to make sure that you're indeed using iisexpress</li>
+<li>
+<p>Clean up your netsh urlacl. In an admin powershell console: </p>
+<p><code>netsh http show urlacl | select-string 1352</code></p>
+<p>for each one of these you will want to run a delete</p>
+<p><code>netsh http delete urlacl url=http://each-listed-ip:1352/</code></p>
+</li>
+<li>
+<p>Allow wildcard urlacl</p>
+<p><code>netsh http add urlacl url=http://*:1352/ user=everyone</code></p>
+<p><strong>I don't know what this does, don't ask.</strong> But it <strong><em>is</em></strong> necessary.</p>
+</li>
+<li>
+<p>Setup a wildcard iis express binding in your iis applicationhosts file. Usually in <code>~\Documents\IISExpress\config\applicationhost.config</code>.
+   Find the xml node corresponding to your project. Something along the lines of</p>
+<pre><code>&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;
+    &lt;site name=&quot;YourProject.Web&quot; id=&quot;11&quot;&gt;
+        &lt;application path=&quot;/&quot; applicationPool=&quot;Clr4IntegratedAppPool&quot;&gt;
+            &lt;virtualDirectory path=&quot;/&quot; physicalPath=&quot;c:\yourproject\YourProject.Web&quot; /&gt;
+        &lt;/application&gt;
+        &lt;bindings&gt;
+            &lt;binding protocol=&quot;http&quot; bindingInformation=&quot;*:1352:localhost&quot; /&gt;
+        &lt;/bindings&gt;
+    &lt;/site&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
+
+<p>modify the binding node to a wildcard:</p>
+<pre><code>&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;
+    &lt;binding protocol=&quot;http&quot; bindingInformation=&quot;*:1352:&quot; /&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
+
+</li>
+<li>
+<p>At this point you should be able to access your site using http://ip-address:1352 from the same machine that hosts your iis express (where ip-address is the ip address of the webserver machine). </p>
+</li>
+<li>
+<p>Open up your firewall. Go to Windows Firewall and to the Advanced Settings. Create a new inbound rule allowing through your port.</p>
+</li>
+<li>
+<p>If you are not running a virtual machine or are running the webserver inside of a VM and your internet connection is bridged (check your VM's network configuration) you should be done. If however you are using Network Address Translation (NAT) you have some work remaining. </p>
+<ol>
+<li>Firstly you will need to configure port forwarding in your network settings. I recommend forwarding each port to itself so in my example I would be using 1352 -&gt; 1352.</li>
+<li>Configure your host machine's Windows Firewall the same way that you configured your guest previously. You must allow through the inbound port that you hope to hit from an external device or else the firewall will stop requests before the VM ever gets a chance to process them.</li>
+</ol>
+</li>
+</ol>
+<p>Congratulations, in just a dozen easy steps you have now opened up iis express! You should now be able to navigate to it from any device connected to the same network using http://your-host-machine-ip:1352. When you are not using a VM or using a bridged network configuration that will be http://your-webserver-machine-ip:1352. </p>
+<h2>Notes</h2>
+<p>Note that some networks might be configured specifically to not allow inter-network access but this is not a common configuration.</p>
+<p>From David Woods: You should add that if you are trying to open up iisexpress on a VM, and the location is on a shared folder, then you need to reference it with the UNC path (//vmware-shared/something/blah) instead of the shared drive (Z:/something/blah).</p>
 </content>
   </entry>
   
