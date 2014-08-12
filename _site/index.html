@@ -30,14 +30,47 @@
 		<li>
 			<div class="idea">
 				
-					<h1><a href="/2014/08/02/be-the-javascriptiest.html">Talk Roundup - Be the Javascriptiest</a></h1>
+					<h1><a href="/2014/08/11/use-simple-modules.html">Use Simple Modules To Fix Up Your Ugly Brownfield App</a></h1>
 					
-					<div class="postdate">2      August, 2014
+					<div class="postdate">11      August, 2014
 						<ul>
 						
 						</ul>
 					</div>
 					
+					<p>At <a href="http://surgeforward.com/">Surge Consulting</a> we have a mentoring program that I'm pretty proud of. In the course of this I get to review a lot of code and it's not always...shall we say...good. With me prostelitizing javascript modules all the time, I frequently get asked for help adding requirejs to existing codebases.</p>
+<ul>
+<li>CommonJs-based systems like browserify fail because they require you to bundle your packages and run a build process. And if you're in a place where you can do this then you <strong>absolutely should use browserify</strong>, but the projects I'm targetting are typically not there.</li>
+<li>Requirejs/AMD-based systems are great. In my opionion that's what modules on the web should be like. But for the projects we're dealing with here that expect globals all over the place, the asychony is a killer. Its possible to refactor but I find that I cannot teach people to catch this fish for themselves. It is hard, and it requires a sort of javascript experience and fluency that anyone asking me for help likely has yet to achieve.</li>
+</ul>
+<p>The thing is none of the existing solutions work. <a href="https://github.com/togakangaroo/simple-modules">So I wrote my own module system</a>. </p>
+<h2>Goals of Simple Modules</h2>
+<p>Here were my goals in writing this micro-library</p>
+<ul>
+<li>It should look as much like existing module systems as possible. The idea is that once a project has moved to this, it's much easier to move off to a more fully featured module system.</li>
+<li>It should be as small as possible. It should be possible to drop the entire thing in an inline script tag in the page head without any real degredation of preformance. An added benefit is that even beginners can and should be able to read the code and understand it fully.</li>
+<li>It should be synchronous. This means it won't do module loading, users will have to handle that themselves</li>
+<li>It should not require any serverside processing. I want this to be as useful from php as it is from c#, and since most the projects I'm targeting have no (custom) build step, I don't want to impose one.</li>
+</ul>
+<p>At time of writing I've helped introduce this into three projects, all three were started without modules, have globals all over the place, and are suffering from severe tech debt. In all three I was able to get their developer up and running with simple-modules and to understand how to gradually refactor their system going forward. </p>
+<p>At this point, I'm willing to call the success repeatable.</p>
+<h2>Refactoring to Simple Modules</h2>
+
+					<br />
+					<a href="/2014/08/11/use-simple-modules.html#disqus_thread">Comments</a>
+				
+			</div>
+		</li>
+    
+		<li>
+			<div class="idea">
+				
+					<h2><a class="postlink" href="/2014/08/02/be-the-javascriptiest.html">Talk Roundup - Be the Javascriptiest</a></h2>
+					<div class="postdate">2      August, 2014
+						<ul>
+						
+						</ul>
+					</div>
 					<p><style>
   aside {
     border: 1px dashed grey;
@@ -366,7 +399,7 @@ $(function(){
 <p>All these things are achievable and made quite simple with the basic techniques outlined above. This is <strong>really</strong> javascript the good parts - the ability to eschew more complex concepts, and still build simple, flexible, and awesome things.</p>
 <p><script src="http://static.jsbin.com/js/embed.js" async defer></script></p>
 
-					<br />
+					
 					<a href="/2014/08/02/be-the-javascriptiest.html#disqus_thread">Comments</a>
 				
 			</div>
