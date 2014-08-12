@@ -9,6 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 		<title>Talk Roundup - Be the Javascriptiest</title>
 		<link rel="stylesheet" type="text/css" href="/css/style.css" />
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
 		<link rel="shortcut icon" href="/img/favicon.ico" />
 	</head>
 	<body>
@@ -24,12 +25,13 @@
 				</div>
 			</div>
 			<div id="content">
-				<div class="entry-container">
+				<article class="entry-container">
 	<div class='entry'>
 		<h1> Talk Roundup - Be the Javascriptiest </h1>
 		<span class="postdate">
 			
 		</span>
+		<div class="entry-content">
 		<p><style>
   aside {
     border: 1px dashed grey;
@@ -357,18 +359,15 @@ $(function(){
 <p>So there we have it, the basics of achieving a collapsible area widget. You can easily imagine adding features to it. The ability to specify how you want the handle built so you can collapse to a heading, the ability to detect when the collapsing animation has finished (if one was used), The ability to name animations (eg <code>toggleArea: 'slide'</code>) rather than pass functions, and of course making it a jquery widget (though I would very much recommend here going a step further and using a <a href="http://learn.jquery.com/plugins/stateful-plugins-with-widget-factory/">jquery ui widget factory</a> which will take care of much of this for you).</p>
 <p>All these things are achievable and made quite simple with the basic techniques outlined above. This is <strong>really</strong> javascript the good parts - the ability to eschew more complex concepts, and still build simple, flexible, and awesome things.</p>
 <p><script src="http://static.jsbin.com/js/embed.js" async defer></script></p>
-
+			
+		</div>
 	</div>
-</div>
+</article>
 <div id="page-navigation"> 
 	<div class="left">  </div> 
 	<div class="right">  </div> 
 	<div class="clear">&nbsp;</div>
 </div> 
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
 
 
 <div id="disqus_thread"></div>
@@ -388,6 +387,8 @@ $(function(){
 
 			</div>
 
+			<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
+			<script>hljs.initHighlightingOnLoad();</script>
 		</div>
 	</body>
 </html>

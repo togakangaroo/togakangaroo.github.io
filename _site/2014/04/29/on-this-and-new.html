@@ -9,6 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 		<title>On this and new</title>
 		<link rel="stylesheet" type="text/css" href="/css/style.css" />
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
 		<link rel="shortcut icon" href="/img/favicon.ico" />
 	</head>
 	<body>
@@ -24,12 +25,13 @@
 				</div>
 			</div>
 			<div id="content">
-				<div class="entry-container">
+				<article class="entry-container">
 	<div class='entry'>
 		<h1> On this and new </h1>
 		<span class="postdate">
 			
 		</span>
+		<div class="entry-content">
 		<p>This is the pattern that a lot things recommend</p>
 <pre><code class="javascript">
     function Person(firstName, lastName) {
@@ -98,18 +100,15 @@
 <p>As a whole these benefits certainly don't excuse introducing two whole new concepts into your code, especially concepts that are as confusing and poorly understood as <code>new</code> and <code>this</code>.</p>
 <p>I think it is probably only fair to amend that I'm usually opposed to javascript class systems in general. They require the use of <code>new</code> (though not necessarily of <code>this</code> - I'll write up how later)
 and between function composition and the extend pattern are generally not necessary for either organizing or building performant code in 90% of cases.</p>
-
+			
+		</div>
 	</div>
-</div>
+</article>
 <div id="page-navigation"> 
 	<div class="left">  </div> 
 	<div class="right">  </div> 
 	<div class="clear">&nbsp;</div>
 </div> 
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
 
 
 <div id="disqus_thread"></div>
@@ -129,6 +128,8 @@ and between function composition and the extend pattern are generally not necess
 
 			</div>
 
+			<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
+			<script>hljs.initHighlightingOnLoad();</script>
 		</div>
 	</body>
 </html>
