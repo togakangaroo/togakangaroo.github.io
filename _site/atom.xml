@@ -3,7 +3,7 @@
   <title>Feed Name</title>
   <link href="http://domain/"/>
   <link type="application/atom+xml" rel="self" href="http://domain/atom.xml"/>
-  <updated>8/12/2014 12:43:49 AM</updated>
+  <updated>8/12/2014 8:25:48 AM</updated>
   <id>http://domain/</id>
   <author>
     <name>Author</name>
@@ -694,6 +694,28 @@ While looking through some of your committed code I noticed quite a few (a quick
 <p>.....</p>
 <p>A bit harsh perhaps, but I feel like for all the reasons above the immensity of this mistake cannot be overstated.  If you are doing this in your code STOP NOW and apologize to the maintenance gods!  You might even need to sacrifice a goat to appease them.  It’s that bad.</p>
 <p>In any case, the recent commit has only 38 instances of this error.  So at least we’re getting better!</p>
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://domain//2008/05/12/quicktime-and-a-tiff-uncompressed-decompressor-are-needed.html</id>
+    <link type="text/html" rel="alternate" href="http://domain//2008/05/12/quicktime-and-a-tiff-uncompressed-decompressor-are-needed.html"/>
+    <title>QuickTime and a TIFF (Uncompressed) decompressor are needed to see this picture</title>
+    <updated>5/12/2008 12:00:00 AM</updated>
+    <author>
+      <name>Author</name>
+      <uri>http://domain/</uri>
+    </author>
+    <content type="html"><p>Microsoft Office on a Mac can’t save imagesQuickTime and a TIFF (Uncompressed) decompressor are needed to see this picture</p>
+<p>I have run into this problem a few times and I figured I’d blog about it both to vent my frustration and to make a note for the next time this comes back to haunt me.</p>
+<p>So you get a shiny new Macintosh, you fire it up to discover that the friendly folks over at apple have pre-loaded it with the Mac version of Microsoft Office. Including Excel, PowerPoint, and your favorite word processor Microsoft Word! (Oh just admit it, you’ve never tried a different one.) So you fire it up and start pumping out document after document. It’s wonderful; you get the familiarity of MS Office with the slickness of a Mac. You format up your word file, place a nice logo or banner image as a header and you send it to your friends, or Wendy down in marketing, or even worse your boss. They are of course not enlightened like you; they’re still using that old bludgeon, a Windows PC. Oh well, at least you’ll get to brag to them later about your increased productivity and transcendent, almost religious, user experience. And then you get the call: “These pictures aren’t working!” they cry. You send them the file again – perhaps it got corrupted in email transit – but no, the problems persist. After half a day of this you are forced to trek over to the foolish nonce’s computer to witness for yourself how they are possibly managing to screw this simple process up. You make sure the files are identical – same checksum, no corruption and you open it up to see…to see:</p>
+<pre><code>    “QuickTime and a TIFF (Uncompressed) decompressor are needed to see this picture.”
+</code></pre>
+
+<p>Huh? Excuse me? Where are your images? Does QuickTime suddenly have something to do with Word? Does the Word spelling dictionary even recognize ‘decompressor’ as a valid term? The answers are, in order: They’re there but invisible, it does on a Mac, and an emphatic no.</p>
+<p>I don’t know if it was laziness, an evil marketing ploy, or what but it seems like the team responsible for the Mac version of MS Office used QuickTime image compression for storing some formats of embedded image files. The upshot of this is that those images are not visible on a PC, will never be visible on a PC, and you’re going to be left feeling frustrated, embarrassed, and probably a little violated. God forbid this was a powerpoint file.</p>
+<p><a href="http://www.le.ac.uk/av/pms12/ppt/qt_decompressor.html">The solutions to this quandary aren’t good</a>. You basically have to either reinsert the images into the file on a PC or convert the images on the Mac to uncompressed bitmaps, re-insert them, and re-save the file with no compression. Needless to say this is awful programming. Really like mid-90s Windows 95 level bad. I actually would not be surprised if this WAS a dickish screw you to Mac users from somewhere deep in the Microsoft psyche (read marketing). Either that or they just didn’t feel like porting that part of the software properly. This has also been a problem for a long time with no effort by the powers that be for a resolution. Just when I was starting to think that Micro$oft ain’t all that bad. Sigh.</p>
+<p>So in conclusion what’s the final word? Well there is one solution, and – you might have guessed it by now – <a href="http://download.openoffice.org/">it’s called Open Office</a>. Presto! Now don’t you definitely feel better than that silly co-worker/boss of yours?</p>
 </content>
   </entry>
   
