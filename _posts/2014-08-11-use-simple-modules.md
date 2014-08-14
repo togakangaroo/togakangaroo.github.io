@@ -26,3 +26,24 @@ At time of writing I've helped introduce this into three projects, all three wer
 At this point, I'm willing to call the success repeatable.
 
 ## Refactoring to Simple Modules
+
+Refactoring to Simple Modules is a matter of iterations of the following process.
+
+1. Identify a chunk of code that could be identified as a module (whether it is in its own file or not). Ideally this is code that sets up a function or variable that is used by other code
+2. Surround it with a define statement. From inside the define statement either return the variable that is set up or a function that will do something.
+3. Immediately after the define statement require the module and re-assign it to the variable it was creating before. This will keep any existing code from breaking.
+4. Identify any dependencies of this module. Require them as early in the module as possible.
+5. Repeat for anything that is global
+6. Eventually remove the global re-declaration
+
+### Require and Define keywords
+
+### Trying It Out
+
+### Identifying Modules
+
+### Defining Modules
+
+### Requiring Dependencies
+
+### Rinse, Repeat, Cleanup
