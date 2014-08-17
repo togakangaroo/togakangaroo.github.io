@@ -9,3 +9,4 @@
 * Only work si value
 * jqCombinators in Life
 * life with p5.js or processing
+* Promises explained

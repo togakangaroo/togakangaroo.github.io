@@ -38,12 +38,15 @@ Refactoring to Simple Modules is a matter of iterations of the following process
 
 ### Require and Define keywords
 
+
 ### Trying It Out
 
 ### Identifying Modules
 
 ### Defining Modules
+#### Promises When Things are Asynchronous
 
 ### Requiring Dependencies
+#### Embedded Server Values
 
 ### Rinse, Repeat, Cleanup
