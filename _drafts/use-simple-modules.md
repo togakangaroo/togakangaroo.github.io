@@ -38,15 +38,65 @@ Refactoring to Simple Modules is a matter of iterations of the following process
 
 ### Require and Define keywords
 
+These are the two functions exposed by simple-modules. 
+
+* `define(moduleName, moduleDefinition)` - Register a module with the given name. The moduleDefinition will run once and only once the first time a module of this name is `require`d.
+* `var module = require(moduleName)` - Request the module that was registered under that name. Will return anything that was returned from the moduleDefinition function.
 
 ### Trying It Out
 
+To demonstrate this let's refactor some confusing brownfield code to use simple-modules. Consider this code to create a chatroom using a madeup `AwesomeCommunicationsLibrary.` It's a mess of global variables, html, php, and javascript. It uses no modelbinding, no client-side mvc framework, and yet I maintain that the best thing for it, the single thing that would help most, is the introduction of modules.
+
+First thing first, the code has some obvious dependencies, let's register these. This will not remove them from the global namespace, but will at least include them in the simple-modules system so that they can be required.
+
+	<script src="jquery.js"></script>
+	<script src="AwesomeCommunicationsLibrary"></script>
+	<script>
+		define('jquery', function() { return window.jQuery });
+		define('AwesomeCommunicationsLibrary', function(){ return window.AwesomeCommunicationsLibrary });
+	</script>	
+
+we will now be able to require these from simple-modules directly.
+
+	var $ = require('jquery');
+	var AwesomeCommunicationsLibrary = require('AwesomeCommunicationsLibrary');
+
 ### Identifying Modules
 
+Looking at the code, a few things jump to mind as immeidate possiblities for modules. The functions in the `helperfuncs.js` file are simple, contain few dependencies, and are used in multiple places throughout.
+
+	define('showDialog', function(){
+		var $ = require('jquery');
+		
+		return function showDialog(text) {
+		   	return $('<div>').text(text).dialog();
+		}
+	});
+	window.showDialog = require('showDialog');
+
+We can start using these right away
+
+   	var url = require('getUrlVars')();
+	var roomId = url.roomId;
+	var sessionId = url.sessId;
+
+and 
+
+	var showDialog = require('showDialog');
+   	showDialog("Join the chat and press space to start talking");
+
+That covers all uses of `showDialog` in our application. We can now remove the final global re-declaration
+
+	window.showDialog = require('showDialog');
+
 ### Defining Modules
+
+Well those were easy, they were independent, stateless, functions, short of the jquery reference they were modules already. Let's do something harder. It would be nice to isolate the code that initializes the communications library and configures the username. We could move it out into its own file even.
+
+#### Embedded Server Values
+
 #### Promises When Things are Asynchronous
 
 ### Requiring Dependencies
-#### Embedded Server Values
 
 ### Rinse, Repeat, Cleanup

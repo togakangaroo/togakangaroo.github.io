@@ -17,3 +17,6 @@ Those who have worked with me probably have heard me say this
 
 > The most important refactoring is rename.
 
+Conversely, the most harmful thing to a code base is developers being imprecise with variable, function, and class names.
+
+Code

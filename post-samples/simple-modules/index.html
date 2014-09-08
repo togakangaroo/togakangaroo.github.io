@@ -1,0 +1,105 @@
+<html>
+<head>
+	<script src="jquery.js"></script>
+	<script src="jquery-ui.combined.js"></script>
+	<script src="AwesomeCommunicationsLibrary"></script>
+	<script src="helperFuncs.js"></script>
+</head>
+<body>
+
+<input id="my-username" placeholder="Your Username" >
+<script type="text/javascript">
+	$('#my-username').val('<?php echo(default_username) ?>');
+   	var spaceIsPressed = false;
+	var roomId = getUrlVars().roomId;
+	var sessionId = getUrlVars().sessId;
+	var userJoinedEmphasizedFor = 60 * 1000;
+	
+   //If it is possible ot talk, start transmitting audio when space is pressed down
+	$(document).on('keydown', function(e){
+		if(!audioChannel || e.keyCode != 32)
+			return
+		spaceIsPressed = true
+		$('#microphone-enabled-notification').show();
+		audioChannel.startTransmitting();
+	}).on('keyup', function(e){
+		if(!audioChannel || e.keyCode != 32 || !spaceIsPressed)
+			return;
+		spaceIsPressed = false;
+		$('#microphone-enabled-notification').hide();
+		audioChannel.stopTransmitting();
+	});
+
+   //Initialize communicationsLib
+	var config = {
+		apiKey: '<?php echo(comm_library_api_key); ?>'
+	};
+	communicationsLib = new AwesomeCommunicationsLibrary(config);
+	communicationsLib.setUsername( $('#my_username').val() );
+
+   //Change the username used by communicationsLib if the username input changes
+	$('#my_username').on('blur', function(){
+		communicationsLib.setUsername( $('#my_username').val() );
+	});
+</script>
+
+<section id="current-messages">
+	<ul></ul>
+</section>
+<section id="current-user-list">
+	<ul class="users">
+	</ul>
+</section>
+
+<button class="join-conversation">Join the Conversation</button>
+<form id="send-message" action="/#">
+	<input placeholder="Your Message" />
+	<button type=submit>Send</button>
+</form>
+
+<script>
+   //local helper function to add messages
+	function addMessage(text) {
+		$('<li>').text(text).appendTo('#current-messages>ul');
+	}
+
+   //need to get this from communicationsLib, used to send audio
+	var audioChannel = null; 
+
+	$('button.join-conversation').click(function(e){
+		e.preventDefault();
+      //Join the configured room. once that is done we can
+      //populate the ui and get the audioChannel
+		communicationsLib.joinRoom(getUrlVars().roomName, function(room){
+			addMessage("Joined room "+room.name);
+   		room.currentUsers.map(function(u) { showInRoom(u, true) })
+   		room.pastMessages.map(addMessage);
+   		room.getAudioChannel(function(channel) {
+   			audioChannel = channel;
+   		});
+			room.on('user-joined', showInRoom);
+			room.on('message-recieved', addMessage);
+			var $sendMsg = $('form#send-message').on('submit', function(e){
+				e.preventDefault();
+				var $inpt = $('input', $sendMsg);
+				room.send($inpt.val());
+				addMessage("You: "+$inpt.val());
+				$sendMsg[0].reset();
+			})
+		});
+	});
+
+	function showInRoom(user, previouslyInRoom) {
+		var $el = $('<li>').text(user.name).appendTo('#current-user-list>ul.users');
+		if(previouslyInRoom)
+			return;
+   		$el.addClass('just-joined');
+   		setTimeout(function(){ $el.removeClass('just-joined')}, userJoinedEmphasizedFor);
+	}
+</script>
+
+<script>
+   	showDialog("Join the chat and press space to start talking");
+</script>
+</body>
+</html>
