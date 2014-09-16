@@ -4,13 +4,6 @@ title: "Talk Roundup - Be the Javascriptiest"
 author: "George Mauer"
 comments: true
 ---
-<style>
-  aside {
-    border: 1px dashed grey;
-    margin: 0 1em;
-    padding: .5em;
-  }
-</style>
 
 ## Be the Javascriptiest
 
@@ -120,13 +113,12 @@ function makeCollapsible(el) {
 
 If you're not familiar with the above metnods you should read the jQuery docs, but regardless I think the gist is fairly straightforward.
 
-<aside title="Dynamic Function Signatures">
+
 An additional thing to note is the `var $el = $(el)` rewrapping toward the top. Regarding, the convention of prefixing with a `$` - this is my convention for anything I know to be a jquery element. Usually I don't bother with [hungarian notation](http://en.wikipedia.org/wiki/Hungarian_notation) but since you often use more than one jquery function on a single matched set it seems to make sense.
 
 Next on that `$(el)` re-wrapping. This is **dynamic function signatures** at work. Did you know that you can pass just about anything into a jQuery function and it will just work? How do they achieve this? Why a large yet cleverly written if statement of course. There's no function overloading or pattern matching in javascript but who cares? [It's not all that bad](https://github.com/jquery/jquery/blob/c869a1ef8a031342e817a2c063179a787ff57239/src/core/init.js#L16) and beginners to javascript benefit from a lower concept count. Don't get me wrong, I appreciate pattern matching and the like, its just that it frequently ends up being a nicer syntax for if statements. And there's a lot of rules and syntax to learn. It's definitely not a must-have language feature.
 
 Now back to the problem at hand.
-</aside>
 
 Perhaps we should make it actually work, yes?
 
@@ -143,13 +135,10 @@ So we first select the content area which we know to be the element that follows
 
 <a class="jsbin-embed" href="http://jsbin.com/weniqu/29/embed?js,output">Basic functionality</a>
 
-<aside title="Closure Scoping">
 I think this would have been confusing only three years ago but I feel like the concept of lambdas and closures is by now natural enough that most people aren't questioning why $collapseHandle and `$el` are available here. One thing that's nice about javascript functions, is they're dirt simple. Forget what you know about java or c# scoping, just scan up the levels of indentation - exactly what you would think should be available, is.
 
 This might seem limiting - without private, protected, and internal modifiers it would seem we're pretty limited in our attempts at data hiding. As we will see, this is not true and this simple concept can yield largely the same results.
-</aside>
 
-<aside title="Hoisting">
 I took the opportunity for some cleanup. Javascript has an interesting concept called [hoisting](http://elegantcode.com/2010/12/24/basic-javascript-part-5-hoisting/). It can be dangerous but it has some intriguing uses as well. It works something like this - the only thing that limits a variable's scope in javascript is being inside of a function; not for loops; not declaration order and it is spec'ed as follows:
 
 When the javascript interpreter encounters a function it makes two passes. It first looks for any variable and function declarations in the immediate body and declares them. This is why can refer to variables in the same function before they are var'ed (even though the value might be undefined); 
@@ -174,7 +163,6 @@ Overall this is the strucutre I recommend for any function:
 3. followed by as many private functions as your heart desires. 
 
 The advantage is that this makes it very clear what any dependencies are (they are picked out toward the top), and *very* clear what the actual workflow is. And that's what I'm usually after when I read code, not the details of how you did something, but the gist of what it is that you are doing. If I want to dig into specifics I will do so only after understanding the context.
-</aside>
 
 ## Make It Work, But Better
 
@@ -206,9 +194,7 @@ Not very customizable though, is it? If we want to use it throughout our applica
 
 So every widget after the first one should be collapsed at initialization.
 
-<aside title="Json Object Notation">
 **Json Notation** really works in our favor here. What we want is named parameters. What we have is a json object. Which, minus the braces - looks exactly like named parameters. The fact that these objects are so lightweight works strongly in our favor as it is fairly easy to create and use these everywhere and for everything.
-</aside>
 
 Speaking of which, let's take an options object as input
 
@@ -221,7 +207,6 @@ Speaking of which, let's take an options object as input
 </code></pre>
 
 
-<aside title="Boolean Coercion">
 This will work great even when calling `makeCollapsed(el, {})` since in that case `collapsed` is undefined which the `!` operator converts to `false`. 
 
 This is *boolean coercion*.
@@ -239,7 +224,6 @@ There is a bunch of ways to set parameter defaults and here is my favorite one
 So, if options coerces to true (eg it is an object), continue; otherwise assign `{}` to options.
 
 Yes, it doesn't handle a bunch of edge case scenarios quite properly, and an api released to the public I might be more stringent, but its simple and very visually distinctive. Within the internals of my code, where I can reasonably control my inputs, this works fine.
-</aside>
 
 Of course this opens up a whole bunch of intriguing opportunities.
 
@@ -318,8 +302,7 @@ Next we have that weird `$.extend` call. I love the `$.extend` function. In fact
 
 It merges objects.
 
-<aside title="Objects are Just Hashes">
-And objects are just hashes.
+**And objects are just hashes.**
 
 It's likely that you've heard this before, but here it really starts to make sense. to merge `var foo = {a: 1, b: 2}` and `var bar = {a: 1, c: 3}` simply iterate through each property of `bar` and write its value to the same property name of `foo` resulting in `{a: 1, b: 2, c: 3}`.
 
@@ -340,9 +323,7 @@ var dog = $.extend(dogSpecificBehavior, animalBehavior);
 Well that's simple, but are they disadvantages over prototypes and the `new` keyword? Well yes, it doesn't show up in stacktraces as an isntance of `animalBehavior` and it's slightly slower (but really its so slight, that you shouldn't care). Advantages - far fewer bugs and unexpected behaviors as very few people understand [what the `new` keyword *actually* does](http://stackoverflow.com/a/3658673/5056).
 
 `new` is wierd and anti-intuitive, and introduces a sizable host of new concepts to keep track of. `extend` is dirt simple, just use that.
-</aside>
 
-<aside title="Dynamic Function Signatures">
 
 As a matter of fact `extend` is so easy let's take a moment and implement our own naive version now. 
 
@@ -356,7 +337,6 @@ function extend(obj) {
 </code></pre>
 
 Isn't that awesome? And thanks to **dynamic funciton signatures** we can call it with one, two, three, or any number of parameters, it will just work!
-</aside>
 
 And while we're at it, let's kick this party up another notch
 
@@ -435,7 +415,7 @@ More interesting is how we cleared up the redundant code that would iterate the 
   }}  
 </code></pre>
 
-A function that returns a function! You can learn more about this technique in Reginald Braithwaite's [Javascript Allongé](https://leanpub.com/javascript-allonge/read), and I think it cleans up this nicely. You might note that I named the returned function `invokeOnAll` as well. This is a tiny bit of defensive coding that doesn't actually *do* anything. Instead it ensures that the function has a name, so that when viewing debugging stack traces I see the name rather than `&lt;anonymous function&gt;`. It's nice.
+A function that returns a function! You can learn more about this technique in Reginald Braithwaite's [Javascript Allongé](https://leanpub.com/javascript-allonge/read), and I think it cleans up this nicely. You might note that I named the returned function `invokeOnAll` as well. This is a tiny bit of defensive coding that doesn't actually *do* anything. Instead it ensures that the function has a name, so that when viewing debugging stack traces I see the name rather than `<anonymous function>`. It's nice.
 
 So there we have it, the basics of achieving a collapsible area widget. You can easily imagine adding features to it. The ability to specify how you want the handle built so you can collapse to a heading, the ability to detect when the collapsing animation has finished (if one was used), The ability to name animations (eg `toggleArea: 'slide'`) rather than pass functions, and of course making it a jquery widget (though I would very much recommend here going a step further and using a [jquery ui widget factory](http://learn.jquery.com/plugins/stateful-plugins-with-widget-factory/) which will take care of much of this for you).
 

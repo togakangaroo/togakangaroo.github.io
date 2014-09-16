@@ -9,24 +9,7 @@
 		define('AwesomeCommunicationsLibrary', function(){ return window.AwesomeCommunicationsLibrary });
 	</script>	
 	<script src="helperFuncs.js"></script>
-	<script>
-	define('initializeCommunications', function(){
-		var AwesomeCommunicationsLibrary = require('AwesomeCommunicationsLibrary');
-		var $ = require('jquery');
-
-		var $username = $('#my-username');
-
-		return function initializeCommunications(config) {
-			var communicationsLib = new AwesomeCommunicationsLibrary(config);
-			$username.on('blur', resetUsername);
-			resetUsername();
-
-			function resetUsername(){
-				communicationsLib.setUsername( $username.val() );
-			}
-		}
-	})
-	</script>
+	<script src="chatpage.refactored.js"></script>
 </head>
 <body>
 
