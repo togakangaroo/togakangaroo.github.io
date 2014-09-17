@@ -4,8 +4,8 @@ define('initializeCommunications', function(){
 
 	var $username = $('#my-username');
 
-	return function initializeCommunications(config) {
-		var communicationsLib = new AwesomeCommunicationsLibrary(config);
+	return function initializeCommunications(apiKey) {
+		var communicationsLib = new AwesomeCommunicationsLibrary(apiKey);
 		$username.on('blur', resetUsername);
 		resetUsername();
 

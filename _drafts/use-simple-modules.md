@@ -63,7 +63,7 @@ we will now be able to require these from simple-modules directly.
 
 ### Identifying Modules
 
-Looking at the code, a few things jump to mind as immeidate possiblities for modules. The functions in the `helperfuncs.js` file are simple, contain few dependencies, and are used in multiple places throughout.
+Looking at the code, a few things jump to mind as immediate possiblities for modules. The functions in the `helperfuncs.js` file are simple, contain few dependencies, and are used in multiple places throughout.
 
 	define('showDialog', function(){
 		var $ = require('jquery');
@@ -91,9 +91,40 @@ That covers all uses of `showDialog` in our application. We can now remove the f
 
 ### Defining Modules
 
-Well those were easy, they were independent, stateless, functions, short of the jquery reference they were modules already. Let's do something harder. It would be nice to isolate the code that initializes the communications library and configures the username. We could move it out into its own file even.
+Well those were easy, they were independent, stateless, functions, short of the jquery reference they were modules already. Let's do something harder. It would be nice to isolate the code that initializes the communications library and configures the username. 
+
+We could move it out into its own file even. Let's do that. We create a new chatpage.refactored.js file and include it with a regular `<script>` tag. From inside the file we then declare a module. From there we can require our communications-library and jquery and do the initialization. 
+
+	define('initializeCommunications', function(){
+		var AwesomeCommunicationsLibrary = require('AwesomeCommunicationsLibrary');
+		var $ = require('jquery');
+
+		// initialize
+	})
 
 #### Embedded Server Values
+
+Here we run into a problem. In order to initialize the library we need the api key, and the api key comes from a server variable and you typically can't generate server variables into javascript. I'd wager that's why this code was inline with the html to begin with.
+
+So what then? Well, we still have available to us the old way of passing dependencies - via plain, old, unexciting funciton parameters. So why have the module expose an `initializeCommunications` function which can take the key as a parameter.
+
+    return {
+    	initializeCommunications: function(apiKey) {
+    		//...
+    	}
+    }
+
+ since we are only going to have a single function available, we can just export it directly
+
+	return function initializeCommunications(apiKey) {
+		var communicationsLib = new AwesomeCommunicationsLibrary(apiKey);
+		$username.on('blur', resetUsername);
+		resetUsername();
+
+		function resetUsername(){
+			communicationsLib.setUsername( $username.val() );
+		}
+	}
 
 #### Promises When Things are Asynchronous
 
