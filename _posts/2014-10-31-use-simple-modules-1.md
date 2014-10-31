@@ -1,6 +1,6 @@
 --- 
 layout: post
-title: "Use Simple Modules To Fix Up Your Ugly Brownfield App (Part 1)"
+title: "Use Simple Modules To Fix Up Your Ugly Brownfield App 1"
 author: "George Mauer"
 comments: true
 ---
