@@ -1,0 +1,95 @@
+---
+layout: layout
+---
+<style>
+.game { 
+	display: table;
+	width: 100%;
+	overflow: hidden;
+}
+.game > * {
+	width: 50%;
+	box-sizing: border-box;
+	padding: 0 1em;
+	display: table-cell;
+	vertical-align: top;
+}
+#workspace {
+	width: 100%;
+	height: 100%;
+}
+</style>
+<article class="game">
+	<div><textarea id="workspace">
+One pill makes you larger
+And one pill makes you small
+And it's pretty good
+And the ones that mother gives you
+Don't do anything at all
+When she’s ten feet tall
+
+And if you go chasing rabbits
+And you know you're going to fall
+Tell them a hookah smoking caterpillar has given you the call
+Call Artice
+When she was just small
+
+When the men on the chess board 
+get up and tell you where to go
+And you just had some kind of mushroom
+And your mind is moving slow
+Go ask Alice
+I think she'll know
+
+When logic and proportion
+Have fallen sloppy dead
+And the white knight is talking backwards
+And the Red Queen's "Off with her head!"
+Remember what the dormouse said
+
+Feed your head
+Feed your head		
+	</textarea></div>
+	<pre id="target">
+One pill makes you larger
+And one pill makes you small
+And the ones that mother gives you
+Don't do anything at all
+Go ask Alice
+When she’s ten feet tall
+
+And if you go chasing rabbits
+And you know you're going to fall
+Tell them a hookah smoking caterpillar has given you the call
+Call Alice 
+When she was just small
+
+When the men on the chess board 
+get up and tell you where to go
+And you just had some kind of mushroom
+And your mind is moving slow
+Go ask Alice
+I think she'll know
+
+When logic and proportion
+Have fallen sloppy dead
+And the white knight is talking backwards
+And the Red Queen's "Off with her head!"
+Remember what the dormouse said
+
+Feed your head
+Feed your head		
+	</pre>
+</article>
+
+<script src="bower_components/jsdiff/diff.js"></script>
+
+<script>
+!function(){
+	var workspace = document.querySelector('#workspace').innerHTML;
+	var target = document.querySelector('#target').innerHTML;
+	console.log(JsDiff.diffLines(workspace, target, function() {
+		console.log(arguments);
+	}));
+}()
+</script>
