@@ -12,9 +12,10 @@ function filterChange(cm, e) {
 }
 
 $(() => $.when($.get('seed.txt'), $.get('target.txt')).then(([lhs], [rhs]) => {
+  let $game = $('#cut-copy-paste');
   let setValue = (val) => (setValue) => setValue(val);
 
-  $('#cut-copy-paste').mergely({
+  $game.mergely({
     cmsettings: { lineNumbers: true }, //actually mandatory that this key exists for lhs/rhs versions to work
       
     lhs_cmsettings: {  },
@@ -23,8 +24,7 @@ $(() => $.when($.get('seed.txt'), $.get('target.txt')).then(([lhs], [rhs]) => {
     rhs: setValue(rhs),
   }); 
 
-  let wait = (ms) => (fn) => setTimeout(fn, ms)
-  wait(100)(() =>
-    $('#cut-copy-paste-editor-lhs .CodeMirror')[0].CodeMirror.on('beforeChange', filterChange)
-  );
+  let cm = $('#cut-copy-paste-editor-lhs .CodeMirror')[0].CodeMirror;
+  cm.on('beforeChange', filterChange);
+  cm.on('change', () => $game.mergely('diff').trim() === "" && $game.parent().toggleClass('won'))
 }) );  				

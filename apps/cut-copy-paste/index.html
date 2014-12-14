@@ -41,6 +41,16 @@ kbd {
     margin: .2em;
     border-radius: 3px;
 }
+.congratulations {
+	max-height: 0;
+	color: yellow;
+	background-color: darkgreen;
+	transition: max-height 1s;
+	display: block;
+}
+.won .congratulations {
+	max-height: 100%;
+}
 </style>
 <header>
 	<p>
@@ -61,6 +71,7 @@ kbd {
 		Practice these commands by making the text on the left match the text on the right. You may also <kbd>ctrl+z</kbd> (undo), <kbd>ctrl+shirt+z</kbd> (redo), and use the enter key.
 	</p>
 </header>
+<aside class=congratulations>Congratulations. You Win!</aside>
 <article id="cut-copy-paste">
 	
 </article>

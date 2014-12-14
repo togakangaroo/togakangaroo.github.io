@@ -23,13 +23,14 @@ $(function () {
     var _ref4 = _toArray(_ref3);
 
     var rhs = _ref4[0];
+    var $game = $("#cut-copy-paste");
     var setValue = function (val) {
       return function (setValue) {
         return setValue(val);
       };
     };
 
-    $("#cut-copy-paste").mergely({
+    $game.mergely({
       cmsettings: { lineNumbers: true }, //actually mandatory that this key exists for lhs/rhs versions to work
 
       lhs_cmsettings: {},
@@ -37,13 +38,10 @@ $(function () {
       lhs: setValue(lhs),
       rhs: setValue(rhs) });
 
-    var wait = function (ms) {
-      return function (fn) {
-        return setTimeout(fn, ms);
-      };
-    };
-    wait(100)(function () {
-      return $("#cut-copy-paste-editor-lhs .CodeMirror")[0].CodeMirror.on("beforeChange", filterChange);
+    var cm = $("#cut-copy-paste-editor-lhs .CodeMirror")[0].CodeMirror;
+    cm.on("beforeChange", filterChange);
+    cm.on("change", function () {
+      return $game.mergely("diff").trim() === "" && $game.parent().toggleClass("won");
     });
   });
 });
