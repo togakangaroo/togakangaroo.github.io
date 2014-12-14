@@ -1,0 +1,3 @@
+[submodule "apps/cut-copy-paste/Mergely"]
+	path = apps/cut-copy-paste/Mergely
+	url = git@github.com:togakangaroo/Mergely.git
