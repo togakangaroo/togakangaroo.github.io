@@ -1,95 +1,47 @@
 ---
 layout: layout
 ---
+<link href="//cdn.rawgit.com/togakangaroo/Mergely/master/lib/mergely.css" type="text/css" rel=stylesheet />
+<link href="//cdn.rawgit.com/togakangaroo/Mergely/master/lib/codemirror.css" type="text/css" rel=stylesheet />
+
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//cdn.rawgit.com/togakangaroo/Mergely/master/lib/codemirror.js"></script>
+<script src="//cdn.rawgit.com/togakangaroo/Mergely/master/lib/mergely.js"></script>
+
 <style>
-.game { 
-	display: table;
-	width: 100%;
-	overflow: hidden;
+body {
+    width: auto;
 }
-.game > * {
-	width: 50%;
-	box-sizing: border-box;
-	padding: 0 1em;
-	display: table-cell;
-	vertical-align: top;
+
+#container {
+    display: flex;
+    flex-direction: column;
 }
-#workspace {
-	width: 100%;
-	height: 100%;
+
+#content {
+    height: 100%;
+    width: 92%;
+    margin: 0 auto;
+}
+
+#side {
+    float: none;
+    display: flex;
+}	
+#side img {
+	width: 70%;
+}
+#side li {
+	display: inline-block;
 }
 </style>
-<article class="game">
-	<div><textarea id="workspace">
-One pill makes you larger
-And one pill makes you small
-And it's pretty good
-And the ones that mother gives you
-Don't do anything at all
-When she’s ten feet tall
-
-And if you go chasing rabbits
-And you know you're going to fall
-Tell them a hookah smoking caterpillar has given you the call
-Call Artice
-When she was just small
-
-When the men on the chess board 
-get up and tell you where to go
-And you just had some kind of mushroom
-And your mind is moving slow
-Go ask Alice
-I think she'll know
-
-When logic and proportion
-Have fallen sloppy dead
-And the white knight is talking backwards
-And the Red Queen's "Off with her head!"
-Remember what the dormouse said
-
-Feed your head
-Feed your head		
-	</textarea></div>
-	<pre id="target">
-One pill makes you larger
-And one pill makes you small
-And the ones that mother gives you
-Don't do anything at all
-Go ask Alice
-When she’s ten feet tall
-
-And if you go chasing rabbits
-And you know you're going to fall
-Tell them a hookah smoking caterpillar has given you the call
-Call Alice 
-When she was just small
-
-When the men on the chess board 
-get up and tell you where to go
-And you just had some kind of mushroom
-And your mind is moving slow
-Go ask Alice
-I think she'll know
-
-When logic and proportion
-Have fallen sloppy dead
-And the white knight is talking backwards
-And the Red Queen's "Off with her head!"
-Remember what the dormouse said
-
-Feed your head
-Feed your head		
-	</pre>
+<header>
+	<p>
+		Programmers spend a lot of time typing. Many hours a day in fact. 
+	</p>
+</header>
+<article id="cut-copy-paste">
+	
 </article>
 
-<script src="bower_components/jsdiff/diff.js"></script>
-
-<script>
-!function(){
-	var workspace = document.querySelector('#workspace').innerHTML;
-	var target = document.querySelector('#target').innerHTML;
-	console.log(JsDiff.diffLines(workspace, target, function() {
-		console.log(arguments);
-	}));
-}()
-</script>
+<script src="game.js"></script>
