@@ -1,59 +1,6 @@
 ---
-layout: layout
+layout: merge-game
 ---
-<link href="//cdn.rawgit.com/togakangaroo/Mergely/master/lib/mergely.css" type="text/css" rel=stylesheet />
-<link href="//cdn.rawgit.com/togakangaroo/Mergely/master/lib/codemirror.css" type="text/css" rel=stylesheet />
-
-<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
-<script src="//cdn.rawgit.com/togakangaroo/Mergely/master/lib/codemirror.js"></script>
-<script src="//cdn.rawgit.com/togakangaroo/Mergely/master/lib/mergely.js"></script>
-
-<style>
-body {
-    width: auto;
-}
-
-#container {
-    display: flex;
-    flex-direction: column;
-}
-
-#content {
-    height: 100%;
-    width: 92%;
-    margin: 0 auto;
-}
-
-#side {
-    float: none;
-    display: flex;
-}	
-#side img {
-	width: 70%;
-}
-#side li {
-	display: inline-block;
-}
-kbd {
-    background-color: #ddd;
-    padding: .2em .4em;
-    border: 1px solid #333;
-    margin: .2em;
-    border-radius: 3px;
-}
-.congratulations {
-	max-height: 0;
-	color: yellow;
-	background-color: darkgreen;
-	transition: max-height 1s;
-	-webkit-transition: max-height 1s;
-	display: block;
-}
-.won .congratulations {
-	max-height: 100%;
-}
-</style>
 <header>
 	<p>
 		Programmers spend a lot of time typing. Many hours a day in fact. Saving a few seconds by learning a shortcut for something you do often will pay you back almost immediately.
@@ -79,7 +26,6 @@ kbd {
 <article id="cut-copy-paste">
 </article>
 
-<script src="../merge-game/game.js"></script>
 <script>
 	window.setupMergeGame('#cut-copy-paste', { 
 		allowCutCopyPaste: true, allowUndoRedo: true, allowEnter: true
