@@ -1,30 +1,46 @@
-let eq = (val, ...vals) => vals.length == 0 || ( (val == vals[0]) && eq.apply(null, [val].concat(vals.slice(1))) );
-function filterChange(cm, e) {
-  if(!(
-        (e.origin=='cut')
-     || (e.origin=='copy')
-     || (e.origin=='paste')
-     || (e.origin=='undo')
-     || (e.origin=='redo')
-     || (e.origin=='+input' && e.text.length == 2 && eq("", e.text[0], e.text[1])) //enter key
-  ))
-    e.cancel();
-}
+(($, _) => {
+  let eq = (val, ...vals) => vals.length == 0 || ( (val == vals[0]) && eq.apply(null, [val].concat(vals.slice(1))) );
 
-$(() => $.when($.get('seed.txt'), $.get('target.txt')).then(([lhs], [rhs]) => {
-  let $game = $('#cut-copy-paste');
-  let setValue = (val) => (setValue) => setValue(val);
+  let setupMergeGame = (gameElement, op = {}, customFilter = null, mergelyOptions = {}) => {
+    customFilter || (customFilter = () => true);
+    _.defaults(mergelyOptions, {
+        cmsettings: { lineNumbers: true }, //actually mandatory that this key exists for lhs/rhs versions to work
+          
+        lhs_cmsettings: {  },
+        rhs_cmsettings: { readOnly: true },
+      }); 
 
-  $game.mergely({
-    cmsettings: { lineNumbers: true }, //actually mandatory that this key exists for lhs/rhs versions to work
-      
-    lhs_cmsettings: {  },
-    rhs_cmsettings: { readOnly: true },
-    lhs: setValue(lhs),
-    rhs: setValue(rhs),
-  }); 
+    let filters = _.pick(setupMergeGame.changeDetectors, _.intersection(_.keys(op), _.keys(setupMergeGame.changeDetectors)))
+    let filterFns = _.values(filters).concat([customFilter]);
+    let filterChange = (cm, e) => { 
+      if( _.any(filterFns, (f) => f(cm, e)) )
+        return;
+      e.cancel();
+    }
 
-  let cm = $('#cut-copy-paste-editor-lhs .CodeMirror')[0].CodeMirror;
-  cm.on('beforeChange', filterChange);
-  cm.on('change', () => $game.mergely('diff').trim() === "" && $game.parent().toggleClass('won'))
-}) );  				
+    $(() => $.when($.get('seed.txt'), $.get('target.txt')).then(([lhs], [rhs]) => {
+      let $game = $(gameElement);
+      let setValue = (val) => (setValue) => setValue(val);
+
+      $game.mergely(_.extend(mergelyOptions, {
+        lhs: setValue(lhs),
+        rhs: setValue(rhs),      
+      })); 
+
+      let cm = $game.find('.CodeMirror')[0].CodeMirror;
+      cm.on('beforeChange', filterChange);
+      cm.on('change', () => $game.mergely('diff').trim() === "" && $game.parent().toggleClass('won'))
+    }) );  				
+  };
+
+  setupMergeGame.changeDetectors = {
+    allowCutCopyPaste: (cm, e) => _.contains(['cut', 'copy', 'paste'], e.origin),
+    allowUndoRedo: (cm, e)  => _.contains(['undo', 'redo'], e.origin),
+    allowEnter: (cm, e) => e.origin=='+input' && e.text.length == 2 && eq("", e.text[0], e.text[1]),
+  };
+
+  window.setupMergeGame = setupMergeGame;
+})($, _)
+
+
+setupMergeGame('#cut-copy-paste', { allowCutCopyPaste: true, allowUndoRedo: true, allowEnter: true}, () => false);
