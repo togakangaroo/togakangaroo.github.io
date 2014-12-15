@@ -1,0 +1,87 @@
+---
+layout: layout
+---
+<link href="//cdn.rawgit.com/togakangaroo/Mergely/master/lib/mergely.css" type="text/css" rel=stylesheet />
+<link href="//cdn.rawgit.com/togakangaroo/Mergely/master/lib/codemirror.css" type="text/css" rel=stylesheet />
+
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+<script src="//cdn.rawgit.com/togakangaroo/Mergely/master/lib/codemirror.js"></script>
+<script src="//cdn.rawgit.com/togakangaroo/Mergely/master/lib/mergely.js"></script>
+
+<style>
+body {
+    width: auto;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+}
+
+#content {
+    height: 100%;
+    width: 92%;
+    margin: 0 auto;
+}
+
+#side {
+    float: none;
+    display: flex;
+}	
+#side img {
+	width: 70%;
+}
+#side li {
+	display: inline-block;
+}
+kbd {
+    background-color: #ddd;
+    padding: .2em .4em;
+    border: 1px solid #333;
+    margin: .2em;
+    border-radius: 3px;
+}
+.congratulations {
+	max-height: 0;
+	color: yellow;
+	background-color: darkgreen;
+	transition: max-height 1s;
+	-webkit-transition: max-height 1s;
+	display: block;
+}
+.won .congratulations {
+	max-height: 100%;
+}
+</style>
+<header>
+	<p>
+		When programming indentation is really useful for helping you keep track of things. Usually, if a part of the program is contained in another part, you will want to indent it.
+	</p>
+	<pre><code class="html">
+&lt;p&gt;
+	like this!
+&lt;p&gt;
+	</code></pre>
+	<pre><code class="javascript">
+function anExample() {
+	return "or like this";
+}
+	</code></pre>
+	<p>
+		This is true for html, css, and javascript (although what "inside of" means is different for each one).
+	</p>
+	<p>
+		Practice proper indentation by making the code on the left match the code on the right. Do this by focusing on using the <kbd>Tab</kbd>, <kbd>Enter</kbd>, and <kbd>Backspace</kbd> keys. Don't forget that you can quickly move through through code with the keyboard by using <kbd>ctrl+&lt;-</kbd> and <kbd>ctrl+-&gt;</kbd>.
+	</p>
+</header>
+
+<aside class=congratulations>Congratulations. You Win!</aside>
+
+<article id="indentation-merge">
+</article>
+
+<script src="../merge-game/game.js"></script>
+<script>
+window.setupMergeGame('#indentation-merge', {}, function() { return true}, { cmsettings: { mode: 'text/html' }});
+</script>

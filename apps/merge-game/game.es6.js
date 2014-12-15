@@ -3,12 +3,12 @@
 
   let setupMergeGame = (gameElement, op = {}, customFilter = null, mergelyOptions = {}) => {
     customFilter || (customFilter = () => true);
-    _.defaults(mergelyOptions, {
+    mergelyOptions = _.merge({
         cmsettings: { lineNumbers: true }, //actually mandatory that this key exists for lhs/rhs versions to work
           
         lhs_cmsettings: {  },
         rhs_cmsettings: { readOnly: true },
-      }); 
+      }, mergelyOptions); 
 
     let filters = _.pick(setupMergeGame.changeDetectors, _.intersection(_.keys(op), _.keys(setupMergeGame.changeDetectors)))
     let filterFns = _.values(filters).concat([customFilter]);

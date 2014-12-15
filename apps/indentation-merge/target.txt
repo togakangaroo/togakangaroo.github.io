@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<title>
+			My cool game
+		</title>
+		<style>
+			main {
+				background-color: cornsilk;
+				width: 100%;
+			}
+			.target {
+				background-color: blue;
+				border: 1px;
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<img src="mylogo.png">
+			<h1>
+				I'm making a game
+			</h1>
+		</header>
+		<main>
+			<div class="target"></div>
+		</main>
+		<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script>
+			$(function() {
+				var position;
+				position = 0;
+				window.setInterval(function() {
+					position = position + 10;
+					$('.target').css('left', position);
+				});
+			});
+		</script>
+	</body>
+</html>

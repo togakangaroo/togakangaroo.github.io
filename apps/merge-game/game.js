@@ -19,11 +19,11 @@ var _slice = Array.prototype.slice;
     customFilter || (customFilter = function () {
       return true;
     });
-    _.defaults(mergelyOptions, {
+    mergelyOptions = _.merge({
       cmsettings: { lineNumbers: true }, //actually mandatory that this key exists for lhs/rhs versions to work
 
       lhs_cmsettings: {},
-      rhs_cmsettings: { readOnly: true } });
+      rhs_cmsettings: { readOnly: true } }, mergelyOptions);
 
     var filters = _.pick(setupMergeGame.changeDetectors, _.intersection(_.keys(op), _.keys(setupMergeGame.changeDetectors)));
     var filterFns = _.values(filters).concat([customFilter]);
