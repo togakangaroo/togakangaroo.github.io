@@ -8,6 +8,9 @@
           
         lhs_cmsettings: {  },
         rhs_cmsettings: { readOnly: true },
+
+        editor_width: '45%',
+        editor_height: '100%',
       }, mergelyOptions); 
 
     let filters = _.pick(setupMergeGame.changeDetectors, _.intersection(_.keys(op), _.keys(setupMergeGame.changeDetectors)))

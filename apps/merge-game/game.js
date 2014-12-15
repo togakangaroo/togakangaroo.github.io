@@ -23,7 +23,10 @@ var _slice = Array.prototype.slice;
       cmsettings: { lineNumbers: true }, //actually mandatory that this key exists for lhs/rhs versions to work
 
       lhs_cmsettings: {},
-      rhs_cmsettings: { readOnly: true } }, mergelyOptions);
+      rhs_cmsettings: { readOnly: true },
+
+      editor_width: "45%",
+      editor_height: "100%" }, mergelyOptions);
 
     var filters = _.pick(setupMergeGame.changeDetectors, _.intersection(_.keys(op), _.keys(setupMergeGame.changeDetectors)));
     var filterFns = _.values(filters).concat([customFilter]);
