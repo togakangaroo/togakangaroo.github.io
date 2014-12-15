@@ -12,7 +12,7 @@ var _slice = Array.prototype.slice;
     return vals.length == 0 || ((val == vals[0]) && eq.apply(null, [val].concat(vals.slice(1))));
   };
 
-  var _setupMergeGame = function (gameElement, op, customFilter, mergelyOptions) {
+  var setupMergeGame = function (gameElement, op, customFilter, mergelyOptions) {
     if (op === undefined) op = {};
     if (customFilter === undefined) customFilter = null;
     if (mergelyOptions === undefined) mergelyOptions = {};
@@ -25,7 +25,7 @@ var _slice = Array.prototype.slice;
       lhs_cmsettings: {},
       rhs_cmsettings: { readOnly: true } });
 
-    var filters = _.pick(_setupMergeGame.changeDetectors, _.intersection(_.keys(op), _.keys(_setupMergeGame.changeDetectors)));
+    var filters = _.pick(setupMergeGame.changeDetectors, _.intersection(_.keys(op), _.keys(setupMergeGame.changeDetectors)));
     var filterFns = _.values(filters).concat([customFilter]);
     var filterChange = function (cm, e) {
       if (_.any(filterFns, function (f) {
@@ -62,7 +62,7 @@ var _slice = Array.prototype.slice;
     });
   };
 
-  _setupMergeGame.changeDetectors = {
+  setupMergeGame.changeDetectors = {
     allowCutCopyPaste: function (cm, e) {
       return _.contains(["cut", "copy", "paste"], e.origin);
     },
@@ -73,10 +73,5 @@ var _slice = Array.prototype.slice;
       return e.origin == "+input" && e.text.length == 2 && eq("", e.text[0], e.text[1]);
     } };
 
-  window.setupMergeGame = _setupMergeGame;
+  window.setupMergeGame = setupMergeGame;
 })($, _);
-
-
-setupMergeGame("#cut-copy-paste", { allowCutCopyPaste: true, allowUndoRedo: true, allowEnter: true }, function () {
-  return false;
-});

@@ -47,6 +47,7 @@ kbd {
 	color: yellow;
 	background-color: darkgreen;
 	transition: max-height 1s;
+	-webkit-transition: max-height 1s;
 	display: block;
 }
 .won .congratulations {
@@ -72,9 +73,15 @@ kbd {
 		Practice these commands by making the text on the left match the text on the right. You may also <kbd>ctrl+z</kbd> (undo), <kbd>ctrl+shift+z</kbd> (redo), and use the enter key.
 	</p>
 </header>
+
 <aside class=congratulations>Congratulations. You Win!</aside>
+
 <article id="cut-copy-paste">
-	
 </article>
 
-<script src="game.js"></script>
+<script src="../merge-game/game.js"></script>
+<script>
+	window.setupMergeGame('#cut-copy-paste', { 
+		allowCutCopyPaste: true, allowUndoRedo: true, allowEnter: true
+	}, function() { return false});
+</script>

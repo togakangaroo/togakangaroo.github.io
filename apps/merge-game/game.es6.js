@@ -41,6 +41,3 @@
 
   window.setupMergeGame = setupMergeGame;
 })($, _)
-
-
-setupMergeGame('#cut-copy-paste', { allowCutCopyPaste: true, allowUndoRedo: true, allowEnter: true}, () => false);
