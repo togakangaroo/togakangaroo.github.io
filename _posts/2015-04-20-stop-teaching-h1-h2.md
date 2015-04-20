@@ -25,25 +25,27 @@ Except that they don't do outlining the same way the rest of html does.
 
 Consider the following
 
-```html
-  <div>Writers</div>
-  <div>Comedians</div>
-```
+<pre><code class="html">
+&lt;div&gt;
+  &lt;Writers&gt;
+  &lt;Comedians&gt;
+&lt;/div&gt;
+</code></pre>
 
 Is this indicating that a comedian is a type of writer or that they are separate categories of equal weight? Well standard html would indicate it's of course the latter. The standard way of denoting a contains relationship is with nesting.
 
-```html
-  <div>Writers
-    <div>Comedians</div>
-  </div>
-```
+<pre><code class="html">
+  &lt;div&gt;Writers
+    &lt;div&gt;Comedians&lt;/div&gt
+  &lt;/div&gt>
+</code></pre>
 
 This is how nearly all other outlining works. Except for `h` elements.
 
-```html
-  <h1>Writers</h1>
-  <h2>Comedians</h1>
-```
+<pre><code class="html">
+  &lt;h1&gt;Writers&lt;/h1&gt;
+  &lt;h2&gt;Comedians&lt;/h1&gt;
+</code></pre>
 
 So great, we're teaching html outlining using the one tag that doesn't function the way most html outlining does.
 
@@ -63,7 +65,7 @@ And then we turn around and teach a lesson on an element which for all intents a
 
 Of course it's not *actually* determining styling is it? It's actually the default stylesheet that all browsers include. For example in chrome I have the default rules
 
-```css
+<pre><code class="css">
 h1 {
 	display: block;
 	font-size: 2em;
@@ -73,7 +75,7 @@ h1 {
 	-webkit-margin-start: 0px;
 	-webkit-margin-end: 0px;
 }
-```
+</code></pre>
 
 So it actually *is* still CSS determining style, you see? Every browser has these stylesheets that set default style, and some do different things so people like to reset them, and this entire discussion is totally not a waste of time that will only make a beginner's head spin.
 
@@ -83,16 +85,16 @@ With `ul` and `li` elements it kind of makes sense. The styling isn't so in your
 
 Have you ever placed an `h2` element on a page with no `h1`? Of course you have, we all have, but what does that mean? It doesn't quite make a ton of sense does it? What about the following, what does this mean?
 
-```html
-	<div>
-		<h3>Puppies<h3>
-		<p>I love puppies</p>
-		<div>
-			<h1>Animals</h1>
-			<p>Animals are ok too I guess</p>
-		</div>
-	</div>
-```
+<pre><code class="html">
+	&lt;div&gt;
+		&lt;h3&gt;Puppies&lt;h3&gt;
+		&lt;p&gt;I love puppies&lt;/p&gt;
+		&lt;div&gt;
+			&lt;h1&gt;Animals&lt;/h1&gt;
+			&lt;p&gt;Animals are ok too I guess&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+</code></pre>
 
 It's still perfectly legal html of course and we all write it, but it makes no sense. We could come up with all sorts of constructions that just are nothing but confusing.
 
