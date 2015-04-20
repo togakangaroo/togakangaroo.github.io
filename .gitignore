@@ -1,2 +1,5 @@
 *.sublime-workspace
 _site/
+
+*.swp
+*~
