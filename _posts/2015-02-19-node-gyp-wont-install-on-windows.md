@@ -23,6 +23,6 @@ Nonsense! I have Visual Studio 2013. Why do I need 2010 to install ... what is t
 
 So, annoying defaults aside, here's the solution.
 
-   npm install -g node-inspector --msvs-version=2013
+    npm install -g node-inspector --msvs-version=2013
 
 That works. Annoying, but thats the solution for now.
