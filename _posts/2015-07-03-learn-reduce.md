@@ -53,6 +53,7 @@ Clear the current number paper and the previous card again and keep doing this u
 You've now answered the question by iteratively *reducing* the number of items in the hat.
 
 In `reduce` function terms
+
 * The number you drew is the **item**
 * The "previous" card the **accumulator**
 * The question you're asking is the **reducing function**
