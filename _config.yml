@@ -1,2 +1,5 @@
+name: Oh, thoughts, you know
+description: George Mauer's (mostly?) programming blog
+url: http://togakangaroo.github.io
 pretzel: 
     engine: liquid
