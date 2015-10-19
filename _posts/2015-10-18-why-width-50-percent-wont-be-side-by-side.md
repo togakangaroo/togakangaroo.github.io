@@ -29,8 +29,8 @@ And voila! If we still want to stack the html we can do something like
 
 <pre>
 <code>
-<div class="half left"></div><!--
---><div class="half right"></div>
+&lt;div class="half left"&gt;&lt;/div&gt;&lt;!--
+--&gt;&lt;div class="half right"&gt;&lt;/div&gt;
 </code>
 </pre>
 
