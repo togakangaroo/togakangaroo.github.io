@@ -27,10 +27,13 @@ So what's the solution? Well, to start with, simply get rid of that whitespace:
 
 And voila! If we still want to stack the html we can do something like
 
-```
-<div class="half left"></div><!--
---><div class="half right"></div>
-```
+<pre>
+<code>
+&lt;div class="half left"&gt;&lt;/div&gt;&lt;!--
+--&gt;&lt;div class="half right"&gt;&lt;/div&gt;
+</code>
+</pre>
+
 It's not pretty but it works.
 
 So there we go. A css mystery solved!
