@@ -73,6 +73,6 @@ I have done many contracts, shorter fill-in projects, and projects with companie
 
 ### LED
 
-Certain projects sponsorted in part by the Louisina Office of Economic Development.
+Certain projects sponsored in part by the Louisina Office of Economic Development.
 
-<img src="/img/led/logo.jpg" />
+<img src="/img/LED/logo.jpg" />
