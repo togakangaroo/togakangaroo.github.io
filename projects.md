@@ -1,18 +1,14 @@
 ---
 layout: post
-title: About Me
+title: Projects
 comments: false
 ---
 
-I'm George Mauer
-
-This is my low effort blog. Mostly about software development. I regularly do presentations at various usergroups. I sometimes do them to my cat.
-
-## Bio
-
-I am a software developer, speaker, teacher, writer, and comedian with an interest in the various techniques that can make software simple, extensible, and communicative. I'm the owner of Humble Pi Software and currently a senior developer with [Surge Consulting Group](http://www.surgeforward.com/). I teach and help build curriculum with [Operation Spark](https://operationspark.org/). I speak regularly on Javascript, C#, MVC, testing, interviewing, etc at conferences, usergroups, and to my cat.
-
-[Find me on Twitter](https://twitter.com/togakangaroo) or try out the Disqus forms on my posts and let me know if they work. In general, it's not very hard to find a way to contact me.
+<style>
+	sup > a[href="#led"]:after {
+		content: " LED";
+	}
+</style>
 
 ## Projects
 
@@ -43,11 +39,11 @@ I have done many contracts, shorter fill-in projects, and projects with companie
 	* A fully-featured and white-label time-tracking and invoicing application.
 * AppleHms
 	* Web-based application to operate a medical supplier's business including ordering, inventory, patient management, and billing.
-* OGRE*
+* OGRE<sup><a href="#led"></a></sup>
 	* Web-based IDE to enable business consultants to design and end-users to generate data-driven, parametrized presentation-style slide reports in Html and exportable to Pdf and Powerpoint.
 * Broan Testing
 	* Desktop application to support testing of new oven-hood designs by analyzing video for percentage of smoke captured.
-* Erwin Penland - Dynamic Builder Suite*
+* Erwin Penland - Dynamic Builder Suite<sup><a href="#led"></a></sup>
 	* Dynamic Web Builder
 		* White-label software to manage generation of advertising assets (eg, mailings, posters, flyers) by configuring InDesign templates including complex management-approval and form-building workflows.
 	* Presentation Builder
@@ -73,84 +69,10 @@ I have done many contracts, shorter fill-in projects, and projects with companie
 * Thesis - SEGWORK
 	* Working with advisor Dr Bill Buckles under a missle defense research grant, I did research in distinguishing land from soil and buildings from their surroundings via LIDAR overhead data. While this was of limited success, for my thesis I produced a framework for doing image segmentation using Matlab.
 
-## CSS-Only Wheeeee
+## Thanks and more
 
-<section id="wheee">
-	<div>George</div>
-	<div>Mauer</div>
-	<style>
-		#wheee div {
-			display: flex;
-			justify-content: center;
-			margin: 10px;
-			padding: 10px;
-			border-radius: 5px;
-			display: inline-block;
-			animation-iteration-count: infinite;
-			animation-timing-function: linear;
-			animation-duration: 2s;
-			height: 1.5em;
-			top: 100px;
-			position: relative;
-			background-image: url(/img/about/wood.jpg);
-			color: #FFF;
-		}
-		#wheee {
-			display: flex;
-		}
-		#wheee div:nth-child(1) {
-			width: 50%;
-			animation-name: rotateInstigation;
-			left: 2em;
-			transform-origin: 7px 19px;
-		}
-		#wheee div:nth-child(1):before {
-			content: "᛭";
-			margin-right: 15px;
-		}
-		@keyframes rotateInstigation {
-		    0% {
-		        transform: rotateZ(0deg);
-		    }
-			  100% {
-				  transform: rotateZ(360deg);
-			  }
-		}
+### LED
 
-		#wheee div:nth-child(2) {
-			width: 25%;
-			padding 7px 10px;
-			animation-name: rotateInResponse;
-			background-position: -100px 79px;
-			position: relative;
-			left: -3%;
-			margin-top: 10px;
-		}
-		#wheee div:nth-child(2):before {
-			content: "᛭";
-			position: absolute;
-			left: calc(50% - 5px);
-			top: calc(50% - 10px);
-		}
-		@keyframes rotateInResponse {
-		    0% {
-		        transform: rotateZ(-10deg);
-		    }
-				20% {
-		        transform: rotateZ(-250deg);
-				}
-				25% {
-		        transform: rotateZ(-306deg);
-				}
-		    50% {
-		        transform: rotateZ(-343deg);
-		    }
-				75% {
-					  transform: rotateZ(-363deg);
-				}
-			  100% {
-				  transform: rotateZ(-370deg);
-			  }
-		}
-	</style>
-</section>
+Certain projects sponsorted in part by the Louisina Office of Economic Development.
+
+<img src="img/led/logo.jpg" />
