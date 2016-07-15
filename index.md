@@ -18,7 +18,7 @@ title : SiteName
 						</ul>
 					</div>
 					
-					{{ post.content }}
+					{{ post.content | split:'<!--break-->' | first }}
 					<br />
 					<a href="{{ post.url}}#disqus_thread">Comments</a>
 				{% else %}
@@ -30,7 +30,7 @@ title : SiteName
 						{% endfor %}
 						</ul>
 					</div>
-					{{ post.content }}
+					{{ post.content | split:'<!--break-->' | first }}
 					
 					<a href="{{ post.url }}#disqus_thread">Comments</a>
 				{% endif %}

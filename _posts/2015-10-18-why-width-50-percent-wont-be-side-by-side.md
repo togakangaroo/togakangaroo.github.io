@@ -13,6 +13,8 @@ I'll assure you that the previous paragraph's logic checks out. So what is going
 
 Finally, [with some help from StackOverflow](http://stackoverflow.com/questions/32765943/why-arent-two-border-box-50-divs-side-by-side) I've got it. And as wierd as it is, it makes sense!
 
+<!--break-->
+
 The clue is in that white-space between the red and blue box. There's no margins nor borders, so where does this white stripe come from? Well it's right there, in the html. Do you see it? If not consider this bit of html
 
 <a class="jsbin-embed" href="http://jsbin.com/potefimeve/1/embed?html,output">Two lines of text</a>
