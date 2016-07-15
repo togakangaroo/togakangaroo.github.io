@@ -35,13 +35,13 @@ So, maybe if we can arrange our html like this we can take advantage of things. 
 
 <a class="jsbin-embed" href="http://jsbin.com/sinaxu/2/embed?html,css,output">Just the facts straightforward HTML and CSS</a>
 
-Of course tabs need to go first, so lets re-arrange things with flexbox's order property
+Of course tabs need to go first, so lets re-arrange things with flexbox's order property.
 
 <a class="jsbin-embed" href="http://jsbin.com/sinaxu/4/embed?html,css,output">Position tabs first with flexbox order</a>
 
-Note that we start ordering at 1, not 0...this will come up later.
+Note that we start ordering at 1, not 0...this will come up later. Also note the technique we've undertaken to ennsure the content does not flow up to the tab line - we make all articles take up `100%` of their container and allow the flex direction to wrap using `flex-wrap`. This is a somewhat awkward but necessary feature for working with this particular scheme.
 
-Well, that being figured out, we already know how to show only the targetted tab content. Go ahead and click the tabs below.
+With that being figured out, we already know how to show only the targetted tab content. Go ahead and click the tabs below.
 
 <a class="jsbin-embed" href="http://jsbin.com/sinaxu/6/embed?html,css,output">Show only the the selected tab content</a>
 
@@ -76,14 +76,16 @@ We're so close! But it's still wierd. Usually, when a page loads the *first* tab
 
 And we're done! [We even have hash linking](http://output.jsbin.com/sinaxu/10).
 
-So there's a few pros and cons to this approach
+While [other implementations of css tabs exist](https://css-tricks.com/css3-tabs/), this is the only one I've seen that will work **without having to hard-code ids into your css**.
 
-* **Pros: **
+So before we finish up, there's a few pros and cons to this approach that ought to be mentioned.
+
+* **Pros:**
 	* No javascript at all. No javascript libraries, not even any glue code. This is the lowest overhead possible.
 	* Nice, declarative system. No procedural javascript. Just plain ol' CSS. There is no chance of some sequence of events not firing a handler and things not working
 	* Naturally flows with how HTML and CSS *are originally meant to work*.
-* **Disadvantages:**
-	* This only shows/hides what is already on the page. There are no transition hooks, no hooks to load data, all data is on the page at the same time.
+* **Cons:**
+	* This only shows/hides what is already on the page. There are no transition hooks, no hooks to load data, no cancelling navigation, all data is on the page at the same time.
 	* `flex-wrap` is necessary but weird. There is no way to actually tell the content to "take up the rest of the page" as often is with flexbox. This is the one thing you kind of have to hack around if that is the behavior you want.
 	* If you are using a js framework that highjacks url hashes this will screw it up
 		* This can be adddressed via a slightly different strategy - Using [radio buttons and `:checked` selectors instead of `:target`](http://jsbin.com/yuhidon/1/edit?html,css,output).
