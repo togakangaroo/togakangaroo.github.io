@@ -17,7 +17,7 @@ You're wrong.
 
 That is not your biggest hole. Honestly, it's hardly a hole. Hardly anyone actually has to work with applications "at scale". Maybe if you work at Netflix, and even then, the only person who *really* works at that level is named Magnus, has an office on the top floor and can read bit streams raw.
 
-<figure style="float: left;" width="350">
+<figure style="float: left; width: 500px">
 	<img src="/img/you-dont-need-map-reduce/jp-grandmas-boy.jpg" alt="grandma's boy jp's chair" />
 	<figcaption>Magnus...probably</figcaption>
 </figure>
