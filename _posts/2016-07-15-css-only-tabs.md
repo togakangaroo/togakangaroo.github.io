@@ -1,8 +1,15 @@
+---
+layout: post
+title: "CSS Only Tabs"
+author: "George Mauer"
+comments: true
+---
+
 There is a tendency of web developers to prefer javascript over other tools of the trade. A lot of this is based in the need to support older browsers or - even more often - the *percieved* need to support old browsers. Just as often however, it is due to fear and ignorance of how the tools of the internet are meant to work.
 
 A great example is ui tabbing systems. I've participated in half-hour long hoarse-yelled "discussions" on which tabbing widget is the best. Which is ironic, because the true answer is: you probably don't need a javascript tabbing widget at all. If you understand CSS, you can assemble your own easily enough. Let's do that now.
 
-So we want [a fully functioning tab system with url navigation](http://output.jsbin.com/yudoyi). Lets figure out how to do that.
+So we want [a fully functioning tab system with url navigation](http://output.jsbin.com/sinaxu/10). Lets figure out how to do that.
 
 <!--break-->
 
@@ -38,30 +45,49 @@ Well, that being figured out, we already know how to show only the targetted tab
 
 <a class="jsbin-embed" href="http://jsbin.com/sinaxu/6/embed?html,css,output">Show only the the selected tab content</a>
 
-We even know how to style the selected tab itself using the `+` selector
+We even know how to style the selected tab itself using the `+` selector. Click around.
 
 <a class="jsbin-embed" href="http://jsbin.com/sinaxu/8/embed?html,css,output">Style the selected tab</a>
 
-* This solves almost everything except that when the page loads initially nothing is selected
-	* We could make the first thing visible by default but then how do we make it invisible? 
-	* Observation #3
-		* You can style the last element the same as the targetted element and override that styling on all elements *that eventually follow* a targetted element
-		* http://jsbin.com/madile/3/edit?html,css,output
-		* Note that we can only override *following* items, not preceeding ones. This means the first selected item *has* to be last
-		* We can do this to show and override the last article and style the tabs appropriately
-		* http://jsbin.com/sinaxu/9/edit?html,css,output
-* Of course when the page loads we should have the first tab be selected. We can do this with css ordering!
-	* http://jsbin.com/sinaxu/10/edit?html,css,output
-* And we're done! We even have hash linking
-	* Advantages: 
-		* No javascript at all. No javascript libraries, not even any glue code. Super low overhead
-		* Naturally flows with how HTML and CSS *are meant to work*
-		* Supports linking within the page. You can bookmark these links etc.
-	* Disadvantages:
-		* This only shows/hides what is already on the page. There are no transition hooks, no hooks to load data
-		* flex-wrap is weird. There is no way to actually tell the content to "take up the rest of the page" as often is with flexbox
-		* If you ARE using a js framework that highjacks url hashes this will screw it up
-			* This can be adddressed via a slightly different strategy - Using radio buttons and :checked selectors instead of :target 
-				* http://jsbin.com/yuhidon/1/edit?html,css,output
+And so we have a working CSS-only tabs implementation! But not really. Because **nothing** is targetted on initial page load, no content is initally loaded. We could of course solve this with javascript:
+
+```js
+	if(!window.location.hash) 
+		window.location.hash = document.querySelector('main > article').id
+```
+
+But that's cheating. We want a fully no-javascript implementation.
+
+**Observation #3**
+
+You can style the last element as if it was targetted. Then, if another element *is* targetted, override that styling on all subsequent elements.
+
+<a class="jsbin-embed" href="http://jsbin.com/madile/3/embed?html,css,output">Style last element in an overridable manner</a>
+
+Note that we can only override *following* items, not preceeding ones. This means the element selected on first page load *has* to be the last in the list.
+
+But knowing this, we can have article content show when the page is first loaded.
+
+<a class="jsbin-embed" href="http://jsbin.com/sinaxu/9/embed?html,css,output">Article content visible when page first loaded</a>
+
+We're so close! But it's still wierd. Usually, when a page loads the *first* tab is selected. This is something we can solve with css ordering!
+
+<a class="jsbin-embed" href="http://jsbin.com/sinaxu/10/embed?html,css,output">A fully working CSS tabs implementation</a>
+
+And we're done! [We even have hash linking](http://output.jsbin.com/sinaxu/10).
+
+So there's a few pros and cons to this approach
+
+* **Pros: **
+	* No javascript at all. No javascript libraries, not even any glue code. This is the lowest overhead possible.
+	* Nice, declarative system. No procedural javascript. Just plain ol' CSS. There is no chance of some sequence of events not firing a handler and things not working
+	* Naturally flows with how HTML and CSS *are originally meant to work*.
+* **Disadvantages:**
+	* This only shows/hides what is already on the page. There are no transition hooks, no hooks to load data, all data is on the page at the same time.
+	* `flex-wrap` is necessary but weird. There is no way to actually tell the content to "take up the rest of the page" as often is with flexbox. This is the one thing you kind of have to hack around if that is the behavior you want.
+	* If you are using a js framework that highjacks url hashes this will screw it up
+		* This can be adddressed via a slightly different strategy - Using [radio buttons and `:checked` selectors instead of `:target`](http://jsbin.com/yuhidon/1/edit?html,css,output).
+
+So don't forget. Javascript might not be necessary. Just take the time to understand the tools that the designers of the web made available to us.
 
 <script src="http://static.jsbin.com/js/embed.min.js?3.37.0" async defer></script>	
