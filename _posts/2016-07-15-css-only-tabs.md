@@ -25,11 +25,11 @@ Go ahead and [check out the full-screen view](http://output.jsbin.com/kijudu) to
 
 You can select elements that follow `:target`
 
-<a class="jsbin-embed" href="http://jsbin.com/jiyaka/embed?html,css,output">Selecting following elements</a>
+<a class="jsbin-embed" href="http://jsbin.com/jiyaka/3/embed?html,css,output">Selecting following elements</a>
 
 And even elements that *eventually* follow it
 
-<a class="jsbin-embed" href="http://jsbin.com/kijudu/embed?html,css,output">Selecting eventually following elements</a>
+<a class="jsbin-embed" href="http://jsbin.com/kijudu/10/embed?html,css,output">Selecting eventually following elements</a>
 
 So, maybe if we can arrange our html like this we can take advantage of things. We'll start with some really simple html and some basic styling:
 
