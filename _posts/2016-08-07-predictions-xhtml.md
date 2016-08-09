@@ -42,7 +42,7 @@ In this blog post series I'm going to make some hopefully non-obvious prediction
 
 When I was starting out professionally in 2006, XHTML was the bane of my, and many other developers', existance. You would write your page, test it in Internet Explorer and Firefox, struggle to get things layed out properly, ensure that any server or clientside errors would be hidden from the user. Then you would launch a test site and pass the results of your days of work through the [XHTML validator](https://validator.w3.org/#validate_by_uri+with_options)...only to be told that you have roughly 127 validation errors. You suck. 
 
-And the worst part was that the site *already looked good*. What was the point of the whole XHTML thing if it didn't help you a*chieve what you wanted? And then XHTML2 was supposed to be **backwards incompatible**!!? No Thank you. Like many others, I cheered when the effort was finally discontinued.
+And the worst part was that the site *already looked good*. What was the point of the whole XHTML thing if it didn't help you achieve what you wanted? And then XHTML2 was supposed to be **backwards incompatible**!!? No Thank you. Like many others, I cheered when the effort was finally discontinued.
 
 But here's the thing. XHTML was a *good idea*. HTML was initially [descended from SGML](https://en.wikipedia.org/wiki/Standard_Generalized_Markup_Language) which is a sort of document markup meta-language. This is where we get angle brackets from and why our web pages look 
 
