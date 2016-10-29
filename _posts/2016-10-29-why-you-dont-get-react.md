@@ -87,12 +87,7 @@ When people who rave over React, they're likely not talking about those specific
 
 And this also explains the other part of Emad's complaint. Why does every single React example look different? Well here we get this now-old chestnut
 
-<figure style="display: flex; justify-content: center;">
-  ![React is not a framework](https://pbs.twimg.com/media/CGmggYDXAAEbBC-.png:small)
-  <figcaption>
-    [-@jaffathecake](https://twitter.com/jaffathecake/status/606064895805792256)
-  </figcaption>
-</figure>
+[![React is not a framework](https://pbs.twimg.com/media/CGmggYDXAAEbBC-.png:small)](https://twitter.com/jaffathecake/status/606064895805792256)
 
 And now it almost even makes sense. The React community isn't a framework, so much as a set of concepts that are useful for assembling your own framework. So if you want true parity to compare with something like Angular or Ember you have to look elsewhere.
 
