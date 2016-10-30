@@ -83,16 +83,16 @@ Now, I am not super into Redux. I have no problem with the project itself, and I
 
 So that's what I think Emad is missing. I doubt very much that he dislikes virtual-dom, and it seems unlikely he unilaterally dislikes the entire *concept* of Redux. Sure, Facebook's conventions might not be to his liking. And that's fine. The category of React-style-system is a lot more than that and I don't think that Facebook has necessarily hit on the best abstractions. In fact it seems doubtful that a single one-size-fits-all abstraction is even possible.
 
-When people who rave over React, they're likely not talking about those specific conventions but poorly distinguishing between its various components. Therefore, you and they might not actually be talking about the same things...which would explain much.
+When people rave over React, they're likely focused more on the broader ideas and not really talking about the React specific conventions. Of course these conventions might be all they know and they have no scope of reference for what else is possible within the arena, but it seems quite possible that they might not be talking about React in the same context as you are.
 
 And this also explains the other part of Emad's complaint. Why does every single React example look different? Well here we get this now-old chestnut
 
 [![React is not a framework](https://pbs.twimg.com/media/CGmggYDXAAEbBC-.png:small)](https://twitter.com/jaffathecake/status/606064895805792256)
 
-And now it almost even makes sense. The React community isn't a framework, so much as a set of concepts that are useful for assembling your own framework. So if you want true parity to compare with something like Angular or Ember you have to look elsewhere.
+And now it almost even makes sense. The above isn't a framework so much as a set of concepts that are useful for assembling your own framework. Yes there are some conventions that get you half way there, but you still have to complete the other half, and if you don't like these conventions you're free to pick and chose your own. So if you want true parity to compare with something like Angular or Ember you have to look beyond simply "React".
 
 **But here's the thing**
 
 The concepts are few in number and extremely powerful. The fact that all React-style systems tend to rely on Javascript for as much as possible, and that the virtual-dom and immutable data flow concepts are simple and almost universal in these, make it incredibly easy to transfer knowledge from one system to another. Knowing React well, you should be able to pick up Dio or Preact in about an hour; Reframe was also not a problem for me working through a Clojure workshop. Even in a language I'm largely unfamiliar with, it only took understanding their concept of a subscription and I was able to work with it in confidence. I haven't tried Om or CycleJs yet, but I wouldn't be surprised to find these with a smooth learning curve as well.
 
-And that's the power and elegance that people are talking about.
+And that's the power and elegance that people are talking about and the thing that you might be missing if you don't investigate the community further.
