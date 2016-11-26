@@ -43,7 +43,7 @@ This key point can be illustrated with following code which should look familiar
 The meaning here is straightforward
 
    1. Log a message
-   2. Load `./list-of-users.js` from the harddrive, run it, and stick the exported value into the `users` constant
+   2. Load `./list-of-users.js` from the hard drive, run it, and stick the exported value into the `users` constant
    3. Log a message about the number of users
 
 It seems straightforward to map that to code running in a browser
@@ -52,7 +52,7 @@ It seems straightforward to map that to code running in a browser
    2. Load `./list-of-users.js` **over the network**, run it, and stick the exported value into the `users` constant
    3. Log a message about the number of users
 
-It is at point 2 that we encounter a problem, wheras in the first case the time to read from a disk is measured in nano or at most milliseconds, in the latter, a network load can be on the order of millions times longer. In Node's case it is reasonable to ask the Javascript process to sit idle while things are loaded, but in the browser, with such high latency, we run into issues. For example what if we have
+It is at point 2 that we encounter a problem, whereas in the first case the time to read from a disk is measured in nano or at most milliseconds, in the latter, a network load can be on the order of millions times longer. In Node's case it is reasonable to ask the Javascript process to sit idle while things are loaded, but in the browser, with such high latency, we run into issues. For example what if we have
 
     console.log(`How many users are in the system?`)
     const users = require('./list-of-users.js')
@@ -84,9 +84,9 @@ with them loaded in the old-school way from `index.html`
 
 This is pretty much exactly what both AngularJs dependency injection and my own [simple-modules library](https://github.com/togakangaroo/simple-modules) does and if that's really all you need you can use it (but probably shouldn't - read the `simple-modules` docs).
 
-Of course this is uabashedly simple. For example, when you create a new module, you not only have to remember to manually add a script tag, but to also add it in the right *order*. When you go to deploy to production, bundling and minification is still 100% on you.
+Of course this is unabashedly simple. For example, when you create a new module, you not only have to remember to manually add a script tag, but to also add it in the right *order*. And when you go to deploy to production, bundling and minification is still 100% on you.
 
-The next obvious move is to add a build step which - depending on where you're coming from - will be either a completely obvious, or a seemingly unnecissarily complex process. With such a system you might point a tool at a directory of javascript files and tell it to auto-wrap all files in `define(...)` statement based on the file name, concatenate all the files, and add-in a `define` and `require` function definition at the top. Now you can dump this "bundled" file into a `build/app.js` and load it via script tag to get your application up and running.
+The next obvious move is to add a build step which - depending on where you're coming from - will be either a completely obvious, or a seemingly unnecessarily complex process. With such a system you might point a tool at a directory of javascript files and tell it to auto-wrap all files in `define(...)` statement based on the file name, concatenate all the files, and add-in a `define` and `require` function definition at the top. Now you can dump this "bundled" file into a `build/app.js` and load it via script tag to get your application up and running.
 
     <script src="/build/app.js"></script>
 
@@ -102,7 +102,7 @@ This is exactly what tools like [Browserify](http://browserify.org/) and [Rollup
     var data = [1, 2, 2, 3, 4, 5, 5, 5, 6];
     console.log(unique(data));
 
-Observe how the first line contains a bunch of code essentially creating module wrappers, then the code above wrapped in a closure with the `require` function provided via a parameter, and finally the implementation of the `uinq` module all in one file. This should give you a pretty good idea of how the browserify process works.
+Observe how the first line contains a bunch of code essentially creating module wrappers, then the code above wrapped in a closure with the `require` function provided via a parameter, and finally the implementation of the `uniq` module all in one file. This should give you a pretty good idea of how the browserify process works.
 
 I strongly recommend writing some code, running a bundling tool, and examining the output yourself to get a feel for the process.
 
@@ -157,13 +157,13 @@ with `index.html` serving only to load requirejs and bootstrap the application b
 
 Let's talk through what happens here as it is quite different.
 
-1. First we load the requirejs library and configure any global options (this is often the most frustrating part of the process)
+1. First we load the RequireJs library and configure any global options (this is often the most frustrating part of the process)
 2. Then we call `require('main')` which will load `/js/main.js` via Ajax as text
 3. The define clause in `main.js` indicates a dependency on two other modules...
-4. ...threfore, before evaluation `main`, both `/js/list-of-users.js` and `/js/list-of-products.js` will be loaded. If these have any dependencies, RequireJs will continue processing the tree of dependencies and loading files until all have been brought into the browser.
-5. Once all dependencies have been loaded, they will be evaluated in the reverse order. By the time the loader works it's way up to the `main` module, both its dependencies will have been evaluated and the `users` and `products` parameters will be provided from the retrun value of each module.
+4. ...therefore, before evaluation `main`, both `/js/list-of-users.js` and `/js/list-of-products.js` will be loaded. If these have any dependencies, RequireJs will continue processing the tree of dependencies and loading files until all have been brought into the browser.
+5. Once all dependencies have been loaded, they will be evaluated in the reverse order. By the time the loader works it's way up to the `main` module, both its dependencies will have been evaluated and the `users` and `products` parameters will be provided from the return value of each module.
 
-Note that while conceptually more complex, there is a certain elegance with this approach that removes the need for cludges such as the build process (this isn't 100% true as we'll see below) and it just-works™.
+Note that while conceptually more complex, there is a certain elegance with this approach that removes the need for kludges such as the build process (this isn't 100% true as we'll see below) and it just-works™.
 
 ## The Benefits of Loading-As-Text
 
@@ -202,7 +202,7 @@ The first is the [module syntax](http://www.2ality.com/2014/09/es6-modules-final
 
 This portion is defined, standardized and agreed upon. However, it is still not usable since there is currently no spec for the module loader itself. That is to say, there is no agreement on what a browser should do when it encounters the above statement and `list-of-users.js` has not yet been loaded from the server. We now that it will involve a new global `System` object but [enough of the details](http://jrburke.com/2015/02/13/how-to-know-when-es-modules-are-done/) remain to be worked out that currently implementation is not even slated for es2017.
 
-An alternate successful approach is one taken by [Webpack](https://webpack.github.io/), which follows the same principles as bundling systems like Browserify but uses javascript module sytnax rather than CommonJs. It also attempts to speed build times up to be nearly instantaneous, and to extend the concept to the bundling of css and other files.
+An alternate successful approach is one taken by [Webpack](https://webpack.github.io/), which follows the same principles as bundling systems like Browserify but uses javascript module syntax rather than CommonJs. It also attempts to speed build times up to be nearly instantaneous, and to extend the concept to the bundling of css and other files.
 
 # SystemJs and Modern Js Modules
 
@@ -243,7 +243,7 @@ And that's about it! In fact many of the configuration options (`SystemJs.config
 As before, all the same pluses and minuses apply and you realistically will want a build step before shipping to production but you do not need one in development.
 
 <aside>
-  SystemJs has an ineteresting alternative step that exists in some AMD loaders - though not in Require that I'm aware of - in that rather than generating a bundle, a tool can walk the dependency tree and generate simply a list of all modules in the system. This can then be added to the loader configuration via a <code>depcache</code> node indicating to the loader all the modules that it should fetch in parallel up-front. With Http/2 enabled systems, this approach can see enormous speed boosts and is certainly worth keeping in mind. At time of writing this feature mostly works with some occasional bugs.
+  SystemJs has an interesting alternative step that exists in some AMD loaders - though not in Require that I'm aware of - in that rather than generating a bundle, a tool can walk the dependency tree and generate simply a list of all modules in the system. This can then be added to the loader configuration via a <code>depcache</code> node indicating to the loader all the modules that it should fetch in parallel up-front. With Http/2 enabled systems, this approach can see enormous speed boosts and is certainly worth keeping in mind. At time of writing this feature mostly works with some occasional bugs.
 </aside>
 
 In most ways, SystemJs supplants RequireJs and 95% of the time is a more future-proof tool with great feature parity.
@@ -256,7 +256,7 @@ The summary on the Jspm page isn't wrong, but with the background of this articl
 
 **Jspm is a CLI (Command Line Interface) for configuring SystemJs**
 
-I glossed over it before, but configuring both SystemJs and Require - and especially configuring it in a way that third party modules are nice to work with - can be a *beast*. Jspm makes that much easier. When you do `jspm install jquery` for example, the tool will download `jquery` into your `jspm_packages/` folder, structure it to optimize its loading via modules, and add the proper configuration to a `config.js` file containing your `SystemJs.config(...)` call. When it comes time to deploy to production, the jspm cli further provides a nice api for bundling and for generating dependency caches.
+I glossed over it before, but configuring both SystemJs and Require - and especially configuring it in a way that third party modules are nice to work with - can be a *beast*. Jspm makes that much easier. When you do `jspm install jquery` for example, the tool will download `jquery` into your `jspm_packages/` folder, structure it to optimize its loading via modules, and add the proper configuration to a `config.js` file containing your `SystemJs.config(...)` call. When it comes time to deploy to production, the jspm CLI further provides a nice api for bundling and for generating dependency caches.
 
 Even nicer, `jspm init` will walk you through downloading and setting up SystemJs for the first time, including doing the hard work of setting up a client-side Babel or Typescript compiler if you so wish.
 
@@ -273,11 +273,11 @@ If...
     * choose SystemJs with Jspm
   * or you are ok with a build process and want things to just-work as easily as possible with good documentation but with potential for more difficult to debug errors down the line
 	* choose Webpack
-* You are ok with a build process, want to understand and have great good control over it, and would like an experience as close as possible to nodejs
+* You are ok with a build process, want to understand and have great good control over it, and would like an experience as close as possible to NodeJs
   * choose Rollup (although earlier we largely talked about Browserify, Rollup seems to supplant it in nearly all respects)
 * Your project is in the tiny minority which needs [advanced features](http://jrburke.com/2015/02/13/how-to-know-when-es-modules-are-done/) like nested dependency containers and dynamic loading of modules
   * choose RequireJs
-* You just want to get running, dont have all that much javascript to write anyways, and don't want to spend time on this nonsense
+* You just want to get running, don't have all that much javascript to write anyways, and don't want to spend time on this nonsense
   * Just use script tags like you did before, don't worry about any of this, its not for you
-  
+
 Hopefully this clarifies the whats, hows, and whys of a confusing paradigm and is useful to developers as they learn how to wield this most powerful tool in the javascript arsenal.
