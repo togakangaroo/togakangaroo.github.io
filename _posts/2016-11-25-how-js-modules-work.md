@@ -200,7 +200,7 @@ The first is the [module syntax](http://www.2ality.com/2014/09/es6-modules-final
 
     import users from `./list-of-users`
 
-This portion is defined, standardized and agreed upon. However, it is still not usable since there is currently no spec for the module loader itself. That is to say, there is no agreement on what a browser should do when it encounters the above statement and `list-of-users.js` has not yet been loaded from the server. We now that it will involve a new global `System` object but [enough of the details](http://jrburke.com/2015/02/13/how-to-know-when-es-modules-are-done/) remain to be worked out that currently implementation is not even slated for es2017.
+This portion is defined, standardized and agreed upon. However, it is still not usable since there is currently no spec for the module loader itself. That is to say, there is no agreement on what a browser should do when it encounters the above statement and `list-of-users.js` has not yet been loaded from the server. We know that it will involve a new global `System` object but [enough of the details](http://jrburke.com/2015/02/13/how-to-know-when-es-modules-are-done/) remain to be worked out that currently implementation is not even slated for es2017.
 
 An alternate successful approach is one taken by [Webpack](https://webpack.github.io/), which follows the same principles as bundling systems like Browserify but uses javascript module syntax rather than CommonJs. It also attempts to speed build times up to be nearly instantaneous, and to extend the concept to the bundling of css and other files.
 
