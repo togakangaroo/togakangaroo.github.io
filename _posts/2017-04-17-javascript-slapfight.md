@@ -12,7 +12,7 @@ It started with a Quora question. [Which is the better Language, C# or Javascrip
 For whatever reason, I chose to reply in depth [I replied](https://www.quora.com/Which-is-the-better-coding-language-C-or-JavaScript/answer/George-Mauer?srid=tcE)
 Which is the better language? C#, I have no qualms about saying this. It’s not even a contest. Just examine their origins.
 
-<!-- break -->
+<!--break-->
 
 C# was designed at Microsoft - a huge and very successful company with a ton of resources as a part of one of their flagship engineering efforts; the introduction of the .Net Framework. Its chief architect is Anders Hejlsberg - one of the top language designers in the world - who had previously worked on two successful languages: Turbo Pascale and Delphi. The C# team has lead the language with a steady hand, developing an ecosystem, and fully integrated tooling including the ubiquitous-in-the-space Visual Studio IDE. In addition they’ve had two incredibly powerful models to draw on: Java, which C# was patterned on and which had serious deficiencies which C# arguably fixed; and F#, a fantastic academic language based on OCaml that serves as a sort of “minor league” for C# features, trying these out before they are rolled into C#.
 
