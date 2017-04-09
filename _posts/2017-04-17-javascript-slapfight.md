@@ -68,7 +68,7 @@ Oh that hacker noon article? You mean the one where the guy trashes JavaScript w
 
 Turns out, the author of the Quora answer, and the hacker noon article were one and the same Richard Kenneth Eng. I've really stepped into it now, as he responded with some additional citations and a reinforcment of his argument.
 
-<figure width="400" style="margin: auto">
+<figure style="margin: auto">
   <img src="/img/javascript-slapfight/rke-dont-like-js.jpg">
   <figcaption>What I imagine Richard Kenneth Eng looks like as I write this</figcaption>
 </figure>
