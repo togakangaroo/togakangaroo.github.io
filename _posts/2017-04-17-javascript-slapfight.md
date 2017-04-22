@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A Javascript Slapfight"
+title: "On Javascript vs C# and the importance of community"
 author: "George Mauer"
 comments: true
 ---
