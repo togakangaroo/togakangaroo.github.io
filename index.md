@@ -1,6 +1,6 @@
 ---
 layout : layout
-title : SiteName
+title : George Mauer's Blog
 ---
 
 <ul class="posts">
