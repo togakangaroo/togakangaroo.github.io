@@ -21,6 +21,8 @@ Burn this into your brain: In javascript, __`this` is just a function parameter 
 
 Its a mind-warp so let me try and guide you through it.
 
+<!--break-->
+
 ## Talking regular `functions`
 
 Lets take the time machine back to 2013 when arrow functions were just a coffeescript thing and the only way we had of creating a function in javascript is with the gross long-form `function` keyword.
@@ -284,3 +286,4 @@ render( el ) {
 All of the above will work and which you use is largely a matter of preference and project-wide convention but understanding how `this` works and being able to diagnose and repair errors with its usage is absolutely mandatory so long as people keep using these patterns.
 
 * Btw, I mentioned there was another error that occurred when you actually clicked on the list items. Can you find and diagnose that?
+
