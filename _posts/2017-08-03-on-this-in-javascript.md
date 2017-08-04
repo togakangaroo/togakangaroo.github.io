@@ -7,7 +7,7 @@ comments: true
 
 Nobody listens to me.
 
-I've been saying for years that the constructor pattern, any use of the `new` keyword or function constructors in Javascript should be considered extremely advanced and not generally worth the rise in complexity in your code. I've been telling people about simple objects, and avoiding the `this` keyword. I've been trying to spread that gospel far and wide. But Javascript went ahead anyways and introduced the `class` keyword, ReactJs compounds thier jsx mistake by recommending inheritance-based component syntax, and I keep helping dozens upon dozens of beginners fix their broken code by explaining patiently the correct incantation of symbols that is needed to get their functions to bind properly when really they just needed functions, objects, and variables.
+I've been saying for years that the constructor pattern, any use of the `new` keyword or function constructors in Javascript should be considered extremely advanced and not generally worth the rise in complexity in your code. I've been telling people about simple objects, and avoiding the `this` keyword. I've been trying to spread that gospel far and wide. But Javascript went ahead anyways and introduced the `class` keyword, ReactJs compounds their jsx mistake by recommending inheritance-based component syntax, and I keep helping dozens upon dozens of beginners fix their broken code by explaining patiently the correct incantation of symbols that is needed to get their functions to bind properly when really they just needed functions, objects, and variables.
 
 Nobody listens to me.
 
