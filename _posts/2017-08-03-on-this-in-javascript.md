@@ -213,7 +213,9 @@ class App {
   }
 }
 
-new App().render( document.querySelector('body') )
+const app = new App();
+const body = document.querySelector('body');
+app.render( body );
 ```
 
 Got it?
@@ -228,11 +230,11 @@ Play around with it here and try to fix things
 
 Got your guesses in? Ok.
 
-The first error is due to in `this.names.map( this._renderListItemName )` but confusingly throws an error elsewhere entirely! Remember that `_renderListItemName` is a function - and we are giving it to `.map()` to call at will. We are at the mercy of `.map()` to call it *correctly* in a way that passes the `this` parameter properly - and `.map()` simply has no idea that its supposed to do that. Nor - if you think of how `.map()` might be implemented - does it even have a reference to our App class instance to bind it wanted to.
+The first error is due to in `this.names.map( this._renderListItemName )` but confusingly throws an error elsewhere entirely! Remember that `_renderListItemName` is a function - and we are giving it to `.map()` to call at will. We are at the mercy of `.map()` to call it *correctly* in a way that passes the `this` parameter properly - and `.map()` simply has no idea that its supposed to do that. Nor - if you think of how `.map()` might be implemented - does it even have a reference to our App class instance to bind if it wanted to.
 
 So when the `.map()` function calls `_renderListItemName`...well it makes its best available move and sets `this` as `undefined`. And thats why we get our error here `li.addEventListener( 'click', this._logClick );` - we're in effect trying to take the `_logClick` property of `undefined`.
 
-The solution? Well the most straightforward one is to wrap the whole thing in a function (arrow or otherwise) so we can make sure that dot-and-invoke sets the `this` parameter properly
+The solution? Well the most straightforward one is to wrap the whole thing in an arrow function so we can make sure that dot-and-invoke sets the `this` parameter properly
 
 ```js
 this.names
@@ -240,7 +242,11 @@ this.names
     .forEach( li => ul.appendChild(li) );
 ```
 
-That will allow things to render.
+<aside style="float: right; margin: 1em; width: 15em;">
+  Note, that this assumes `app.render()` is called properly. As a counter-example if we had done <code>const render = app.render; render(body);</code>, <code>this</code> would be set to <code>undefined</code> and <code>this.names</code> would no longer reference the <code>names</code> field on our <code>app</code> instance. Yep, it is all quite confusing.
+<aside>
+
+By using an arrow function, when we reference `this`, it looks one scope up to the `render` function and - assuming that was called properly - it will be bound properly to the intance of our app. Once done, that will allow things to render.
 
 Another solution is to use the function's `.bind()` function which will generate a *new* function based on the old one but with `this` nailed down (conceptually, this is a more automatic version of alternative 1)
 
