@@ -105,7 +105,7 @@ Ok, well that's weird, but not all *that* confusing. Is there more to the story?
 So anyone who's worked with javascript objects knows about the dot operator `foo.bar` gets the object in the variable `foo` and then gets the value in it's property `bar`.
 
 <aside style="float: right; margin: 1em; width: 15em;">
-  I'm beng a bit loose with my language here, it's not <em>the dot syntax itself that does this</em>. Using <code>foo["doBar"]()</code> will have the exact same effect. It is the actual porcess of getting and invoking an object property all in one go that causes things to get funky.
+  I'm beng a bit loose with my language here, it's not <em>the dot syntax itself that does this</em>. Using <code>foo["doBar"]()</code> will have the exact same effect. It is the actual process of getting and invoking an object property all in one go that causes things to get funky.
 </aside>
 
 But it does a bit more than that when combined with invocation
