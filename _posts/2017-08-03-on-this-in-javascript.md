@@ -149,7 +149,7 @@ Oh you __know__ that there are.
 
 Now I'll say this: arrow functions are a great addition to the language. But the above situation, combined with common misinformation about how they work has not made things any easier.
 
-So an arrow function is just like a regular function, except that it *does not have a secret `this` variable (or secret `arguments`, `super`, or `new.target` variables, but that's outside the scope of this article).
+So an arrow function is just like a regular function, except that it *does not have a secret `this` variable* (or secret `arguments`, `super`, or `new.target` variables, but that's outside the scope of this article).
 
 But hold on, you say, you've definitely used `this` inside arrow functions! Isn't there something about arrows giving `this` lexical scope?
 
