@@ -243,7 +243,7 @@ this.names
 ```
 
 <aside style="float: right; margin: 1em; width: 15em;">
-  Note, that this assumes `app.render()` is called properly. As a counter-example if we had done <code>const render = app.render; render(body);</code>, <code>this</code> would be set to <code>undefined</code> and <code>this.names</code> would no longer reference the <code>names</code> field on our <code>app</code> instance. Yep, it is all quite confusing.
+  Note, that this assumes `app.render()` is called properly. As a counter-example if we had done <code>const render = app.render; render(body);</code>, then <code>this</code> would be set to <code>undefined</code> and <code>this.names</code> would no longer reference the <code>names</code> field on our <code>app</code> instance. Yep, it is all quite confusing, but cool everyone - keep using these features.
 </aside>
 
 By using an arrow function, when we reference `this`, it looks one scope up to the `render` function and - assuming that was called properly - it will be bound properly to the intance of our app. Once done, that will allow things to render.
