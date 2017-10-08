@@ -3,23 +3,24 @@ layout: layout
 ---
 
 <article class="entry-container">
-	<div class='entry'>
-		<h1> {{page.title}} </h1>
-		<span class="postdate">{{ page.date | date: "%e %B, %Y"  }}
-			{% for tag in page.tags %}
-				<li><a href="/tag/{{ tag }}">{{ tag }}</a></li>
-			{% endfor %}
-		</span>
-		<div class="entry-content">
-		{{ content }}			
-		</div>
-	</div>
+  <div class='entry'>
+    <h1> {{page.title}} </h1>
+    <span class="postdate">{{ page.date | date: "%e %B, %Y"  }}
+      {% for tag in page.tags %}
+        <li><a href="/tag/{{ tag }}">{{ tag }}</a></li>
+      {% endfor %}
+    </span>
+    <div class="entry-content">
+        {{ content }}
+        <div style="clear: both"></div>
+    </div>
+  </div>
 </article>
-<div id="page-navigation"> 
-	<div class="left"> {% if page.previous.url %} <a href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}">&larr; {{page.previous.title}}</a> {% endif %} </div> 
-	<div class="right"> {% if page.next.url %} <a href="{{page.next.url}}" title="next Post: {{page.next.title}}">{{page.next.title}} &rarr; </a> {% endif %} </div> 
-	<div class="clear">&nbsp;</div>
-</div> 
+<div id="page-navigation">
+  <div class="left"> {% if page.previous.url %} <a href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}">&larr; {{page.previous.title}}</a> {% endif %} </div>
+  <div class="right"> {% if page.next.url %} <a href="{{page.next.url}}" title="next Post: {{page.next.title}}">{{page.next.title}} &rarr; </a> {% endif %} </div>
+  <div class="clear">&nbsp;</div>
+</div>
 
 {% if page.comments %}
 <div id="disqus_thread"></div>

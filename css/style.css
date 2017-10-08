@@ -108,7 +108,7 @@ img
 }
 
 article {
-		margin-bottom: 2em;
+	margin-bottom: 2em;
 }
 
 /* min-device-width: 800px instead? */
@@ -123,4 +123,8 @@ article {
 	#home { display: none;  }
 	#hometext a { display: inline;  }
 	h1 { margin-top: -0px;}
+}
+
+figcaption {
+	padding-top: .5em
 }
