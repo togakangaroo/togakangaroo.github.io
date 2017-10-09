@@ -5,6 +5,17 @@ author: "George Mauer"
 comments: true
 ---
 
+<style>
+@media screen and (max-width: 480px) {
+  #csv-injection-google-note {
+    width: 10em !important;
+  }
+  h1 {
+    word-wrap: break-word;
+  }
+}
+</style>
+
 I've been doing the local usergroup circuit with this lately and have been asked to write it up.
 
 In some ways this is old news, but in other ways...well, I think few realize how absolutely devastating and omnipresent this vulnerability can be. It is an attack vector available in every application I've ever seen that takes user input and allows administrators to bulk export to CSV.
@@ -127,7 +138,7 @@ So who's fault is all of this anyways?
 
 Well it's not the CSV format's. The format itself couldn't be more clear that automatically executing anything that "looks like a formula" is not an intended usage. The bug therefore lies in popular Spreadsheet programs for doing the exact wrong thing. Of course Google Sheets must maintain feature parity with Excel, and Excel must do support millions of complex spreadsheets already in existance. Also - I'm not going to research this but - even odds that Excel behavior came from something ancient like Lotus Notes. Getting all spreadsheet programs to change this behavior at this point is a pretty big mountain to counquer. I suppose that it's everyone else that must change.
 
-<aside style="float: right; width: 20em; padding: 1em;">
+<aside style="float: right; width: 20em; padding: 1em;" id="csv-injection-google-note">
   <p>
     I did report this to Google as a vulnerability in their Sheets product. They agreed to it, but claimed to already be aware. While I'm sure they understand it is a vulnerability, I got the distinct impression that they had not really pondered how badly this could be abused in practice. Google Sheets should at least issue a warning when a CSV import is about to preform an external request.
   </p>
@@ -159,3 +170,4 @@ The nasty end result is that when generating the csv export you **must know how 
 * If you do not know or if it is to be used in a spreadsheet application and then later that spreadsheet will be used as an import source for software, give up, swear off the world, get yourself a cabin with the woods and maybe try being friends with squirrels for a while. (Alternately, use Excel but *always* disconnect from the network and follow all security prompts while doing any work).
 
 It's a nightmare of a scenario, it's sinister, damaging, and with no clear solution. Its also something that should be far far better known than it currently is.
+
