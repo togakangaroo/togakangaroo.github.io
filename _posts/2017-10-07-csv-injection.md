@@ -167,7 +167,7 @@ The nasty end result is that when generating the csv export you **must know how 
 
 * If it is to be used in a spreadsheet application by a user to calculate things visually, you should escape things with a tab. This is actually even more important since you wouldn't want the string "-2+3" in a programming language appearing as `1` when exported to a spreadsheet.
 * If it is to be used as an interchange format then do not escape anything.
-* If you do not know or if it is to be used in a spreadsheet application and then later that spreadsheet will be used as an import source for software, give up, swear off the world, get yourself a cabin with the woods and maybe try being friends with squirrels for a while. (Alternately, use Excel but *always* disconnect from the network and follow all security prompts while doing any work).
+* If you do not know or if it is to be used in a spreadsheet application or then later that spreadsheet will be used as an import source for software, give up, swear off the world, get yourself a cabin with the woods and maybe try being friends with squirrels for a while. (Alternately, use Excel but *always* disconnect from the network and follow all security prompts while doing any work).
 
 It's a nightmare of a scenario, it's sinister, damaging, and with no clear solution. Its also something that should be far far better known than it currently is.
 
