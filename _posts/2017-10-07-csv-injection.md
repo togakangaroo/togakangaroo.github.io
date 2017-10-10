@@ -18,7 +18,7 @@ comments: true
 
 I've been doing the local usergroup circuit with this lately and have been asked to write it up.
 
-In some ways this is old news ([Edit: Crecit where due, I've been pointed to this article from 2014 by an actual security pro which discusses some of these vectors](https://www.contextis.com/blog/comma-separated-vulnerabilities)), but in other ways...well, I think few realize how absolutely devastating and omnipresent this vulnerability can be. It is an attack vector available in every application I've ever seen that takes user input and allows administrators to bulk export to CSV.
+In some ways this is old news ([Edit: Credit where due, I've been pointed to this article from 2014 by an actual security pro which discusses some of these vectors](https://www.contextis.com/blog/comma-separated-vulnerabilities)), but in other ways...well, I think few realize how absolutely devastating and omnipresent this vulnerability can be. It is an attack vector available in every application I've ever seen that takes user input and allows administrators to bulk export to CSV.
 
 That is just about every application.
 
