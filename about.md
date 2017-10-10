@@ -10,7 +10,7 @@ This is my low effort blog. Mostly about software development. I regularly do pr
 
 ## Bio
 
-I am a software developer, speaker, teacher, writer, and comedian with an interest in the various techniques that can make software simple, extensible, and communicative. I'm the owner of Humble Pi Software and currently a senior developer with [Surge Consulting Group](http://www.surgeforward.com/). I teach and help build curriculum with [Operation Spark](https://operationspark.org/). I speak regularly on Javascript, C#, MVC, testing, interviewing, etc at conferences, usergroups, and to my cat.
+I am a software developer, speaker, teacher, writer, and comedian with an interest in the various techniques that can make software simple, extensible, and communicative. I'm the owner of Humble Pi Software and currently a Director of Development with [Surge Consulting Group](http://www.surgeforward.com/). I teach and help build curriculum with [Operation Spark](https://operationspark.org/). I mentor with [Operation Code (unrelated)](https://operationcode.org/). I speak regularly on Javascript, C#, MVC, testing, interviewing, etc at conferences, usergroups, and to my cat.
 
 [Find me on Twitter](https://twitter.com/togakangaroo) or try out the Disqus forms on my posts and let me know if they work. In general, it's not very hard to find a way to contact me.
 
@@ -95,3 +95,11 @@ I am a software developer, speaker, teacher, writer, and comedian with an intere
 		}
 	</style>
 </section>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
