@@ -22,7 +22,7 @@ In some ways this is old news, but in other ways...well, I think few realize how
 
 That is just about every application.
 
-([Edit: Credit where due, I've been pointed to this article from 2014 by an actual security pro which discusses some of these vectors](https://www.contextis.com/blog/comma-separated-vulnerabilities), [and another one](http://blog.7elements.co.uk/2013/01/cell-injection.html))
+**Edit:** Credit where due, I've been pointed to [this article from 2014 by an actual security pro which discusses some of these vectors](https://www.contextis.com/blog/comma-separated-vulnerabilities). [And another one](http://blog.7elements.co.uk/2013/01/cell-injection.html).
 
 <!--break-->
 
