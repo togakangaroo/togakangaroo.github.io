@@ -136,7 +136,7 @@ Not ideal.
 
 So who's fault is all of this anyways?
 
-Well it's not the CSV format's. The format itself couldn't be more clear that automatically executing anything that "looks like a formula" is not an intended usage. The bug therefore lies in popular Spreadsheet programs for doing the exact wrong thing. Of course Google Sheets must maintain feature parity with Excel, and Excel must do support millions of complex spreadsheets already in existance. Also - I'm not going to research this but - even odds that Excel behavior came from something ancient like Lotus Notes. Getting all spreadsheet programs to change this behavior at this point is a pretty big mountain to counquer. I suppose that it's everyone else that must change.
+Well it's not the CSV format's. The format itself couldn't be more clear that automatically executing anything that "looks like a formula" is not an intended usage. The bug therefore lies in popular Spreadsheet programs for doing the exact wrong thing. Of course Google Sheets must maintain feature parity with Excel, and Excel must support millions of complex spreadsheets already in existance. Also - I'm not going to research this but - even odds that Excel behavior came from something ancient like Lotus Notes. Getting all spreadsheet programs to change this behavior at this point is a pretty big mountain to counquer. I suppose that it's everyone else that must change.
 
 <aside style="float: right; width: 20em; padding: 1em;" id="csv-injection-google-note">
   <p>
