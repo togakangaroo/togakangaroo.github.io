@@ -136,7 +136,7 @@ Not ideal.
 
 So who's fault is all of this anyways?
 
-Well it's not the CSV format's. The format itself couldn't be more clear that automatically executing anything that "looks like a formula" is not an intended usage. The bug therefore lies in popular Spreadsheet programs for doing the exact wrong thing. Of course Google Sheets must maintain feature parity with Excel, and Excel must support millions of complex spreadsheets already in existance. Also - I'm not going to research this but - even odds that Excel behavior came from something ancient like Lotus Notes. Getting all spreadsheet programs to change this behavior at this point is a pretty big mountain to counquer. I suppose that it's everyone else that must change.
+Well it's not the CSV format's. The format itself couldn't be more clear that automatically executing anything that "looks like a formula" is not an intended usage. The bug therefore lies in popular Spreadsheet programs for doing the exact wrong thing. Of course Google Sheets must maintain feature parity with Excel, and Excel must support millions of complex spreadsheets already in existance. Also - I'm not going to research this but - even odds that Excel behavior came from something ancient like Lotus 1-2-3. Getting all spreadsheet programs to change this behavior at this point is a pretty big mountain to counquer. I suppose that it's everyone else that must change.
 
 <aside style="float: right; width: 20em; padding: 1em;" id="csv-injection-google-note">
   <p>
@@ -167,7 +167,7 @@ The nasty end result is that when generating the csv export you **must know how 
 
 * If it is to be used in a spreadsheet application by a user to calculate things visually, you should escape things with a tab. This is actually even more important since you wouldn't want the string "-2+3" in a programming language appearing as `1` when exported to a spreadsheet.
 * If it is to be used as an interchange format then do not escape anything.
-* If you do not know or if it is to be used in a spreadsheet application or then later that spreadsheet will be used as an import source for software, give up, swear off the world, get yourself a cabin with the woods and maybe try being friends with squirrels for a while. (Alternately, use Excel but *always* disconnect from the network and follow all security prompts while doing any work).
+* If you do not know or if it is to be used in a spreadsheet application or then later that spreadsheet will be used as an import source for software, give up, swear off the world, get yourself a cabin with the woods and maybe try being friends with squirrels for a while. (Alternately, use Excel but *always* disconnect from the network and follow all security prompts while doing any work) (Edit: That probably won't work 10% either since someone can still use a macro to overwrite well known files with their own binary. Shit.).
 
 It's a nightmare of a scenario, it's sinister, damaging, and with no clear solution. Its also something that should be far far better known than it currently is.
 
