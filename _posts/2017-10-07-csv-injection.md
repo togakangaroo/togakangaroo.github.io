@@ -97,7 +97,7 @@ And just like that, the attacker has free reign to download a keylogger, install
 
 Ok, the above is cute and all, but it is after all a (little) [known vulnerability](https://www.owasp.org/index.php/CSV_Excel_Macro_Injection). As a security professional, you might make sure to warn all your administrators to be extra careful with Excel and maybe even consider using Google Sheets instead. After all, Sheets can't be affected by macros, can it?
 
-That is indeed correct. So let's pull back on our "run anything we want" ambitions and instead focus on merely stealing data. After all, the premise here is that the attacker is an ordinary user who can access what they input in the system. An Admin has elevated rights in the area and can see everyone's data, can we compromise this somehow?
+That is indeed correct. So let's pull back on our "run anything we want" ambitions and instead focus on merely stealing data. After all, the premise here is that the attacker is an ordinary user who can access only what they themselves input in the system. An Admin has elevated rights and can see everyone's data, can we compromise this somehow?
 
 Well recall that while we cannot run macros in Google Sheets, we *can* absolutely run formulas. And formulas don't have to be limited to simple arithmetic. In fact, are there any Google Sheets commands available in formulas that can send data elsewhere? Why yes, there seem to be quite a few. But lets take a look at [`IMPORTXML`](https://support.google.com/docs/answer/3093342?hl=en) in particular.
 
