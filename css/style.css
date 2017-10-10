@@ -128,3 +128,12 @@ article {
 figcaption {
 	padding-top: .5em
 }
+
+.actions.share {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+}
+		.actions.share > * + * {
+				margin-left: 1em;
+		}
