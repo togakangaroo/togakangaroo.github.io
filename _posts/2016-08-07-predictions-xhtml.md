@@ -40,11 +40,11 @@ In this blog post series I'm going to make some hopefully non-obvious prediction
     <figcaption>A graphical illustration of how sure I am of this particular prediction</figcaption>
 </figure>
 
-When I was starting out professionally in 2006, XHTML was the bane of my, and many other developers', existance. You would write your page, test it in Internet Explorer and Firefox, struggle to get things layed out properly, ensure that any server or clientside errors would be hidden from the user. Then you would launch a test site and pass the results of your days of work through the [XHTML validator](https://validator.w3.org/#validate_by_uri+with_options)...only to be told that you have roughly 127 validation errors. You suck. 
+When I was starting out professionally in 2006, XHTML was the bane of my, and many other developers', existance. You would write your page, test it in Internet Explorer and Firefox, struggle to get things layed out properly, ensure that any server or clientside errors would be hidden from the user. Then you would launch a test site and pass the results of your days of work through the [XHTML validator](https://validator.w3.org/#validate_by_uri+with_options)...only to be told that you have roughly 127 validation errors. You suck.
 
 And the worst part was that the site *already looked good*. What was the point of the whole XHTML thing if it didn't help you achieve what you wanted? And then XHTML2 was supposed to be **backwards incompatible**!!? No Thank you. Like many others, I cheered when the effort was finally discontinued.
 
-But here's the thing. XHTML was a *good idea*. HTML was initially [descended from SGML](https://en.wikipedia.org/wiki/Standard_Generalized_Markup_Language) which is a sort of document markup meta-language. This is where we get angle brackets from and why our web pages look 
+But here's the thing. XHTML was a *good idea*. HTML was initially [descended from SGML](https://en.wikipedia.org/wiki/Standard_Generalized_Markup_Language) which is a sort of document markup meta-language. This is where we get angle brackets from and why our web pages look
 
 
 <pre><code class="html">
@@ -61,7 +61,7 @@ instead of something
 h1("Like This")
 list(
     item("one")
-    itme("two) 
+    itme("two)
 )
 </code></pre>
 
@@ -71,23 +71,25 @@ It *did* start to deviate in both essense and syntax for a variety of reasons. M
 
 <figure style="float: left">
     <img src="/img/predictions-xhtml/marc-andreessen.png" alt="Marc Andreessen" />
-    <figcaption>Pictured: [Reasons](https://eager.io/blog/to-what-extent-did-marc-andreessen-invent-the-internet/)</figcaption>
+    <figcaption>Pictured: <a href="https://eager.io/blog/to-what-extent-did-marc-andreessen-invent-the-internet/">Reasons</a></figcaption>
 </figure>
 
-By the turn of the century the situation was growing untenable. Whereas the early web was teeming with web browsers created and maintained by a single individual, HTML was getting sufficiently complex to require the full resources of a company and many years of development. XHTML was meant to address this at least in part - by making HTML more consistent, it would be easier to parse, andtehreby easier to write new clients both for use by both people and for machines.
+By the turn of the century the situation was growing untenable. Whereas the early web was teeming with web browsers created and maintained by a single individual, HTML was getting sufficiently complex to require the full resources of a company and many years of development. XHTML was meant to address this at least in part - by making HTML more consistent, it would be easier to parse, and thereby easier to write new clients both for use by both people and for machines.
 
-Of course [this was not to be](http://alistapart.com/article/a-brief-history-of-markup). In early 2000, the W3C approved XHTML1 and XHTML1.1 as an interim measure. These tightened restrictions on HTML; ensuring quoted attributes, that the correct tags were closed, that sort of thing. This is the XHTML that I remember and it wasn't near enough, as mentioned XHTML2 was meant to be the one that really made things easy - and to do that, XHTML2 and HTML would necessarily be related but incompatible formats.
+Of course [this was not to be](http://alistapart.com/article/a-brief-history-of-markup). In early 2000, the W3C approved XHTML1 and XHTML1.1 as an interim measure. These tightened restrictions on HTML; ensuring quoted attributes, that the correct tags were closed, that sort of thing. This is the XHTML that I remember and it wasn't nearly enough to make things easy. XHTML2 was the one that was really going to bring all the boys to the yard - and to do that, XHTML2 and HTML would necessarily be related but incompatible formats.
 
-This was a problem for the portion of the internet that had not lost touch with what people actually wanted and in 2004 the WHATWG community was formed with the goal of mapping out the HTML that was actually used and where it could possibly go. The WHATWG was structured to be more agile than the W3C and was able to make strides rapidly. By 2006, to continue to ignore its work the W3C would be risking obsolescense. Therefore they created their own HTML 5 group, whose work would be based on WHATWG's and would drive HTML foreward while XHTML was still not ready. And as HTML 5 progressed, it became clear that not only would XHTML2 not be ready any time soon, but it was rapidly missing its window of relevancy. As this became more and more obvious [the XHTML2 group was de-chartered](https://www.w3.org/News/2009#item119) in favor of more resources put toward HTML 5b.
+This was a problem for the portion of the internet that had not lost touch with reality. In 2005, to reflect what people actually wanted, the WHATWG community was formed with the goal of mapping out the HTML that was actually used and providing some light direction. They called this HTML5. The WHATWG was structured to be more agile than the W3C and was able to make strides rapidly. By 2006, to continue to ignore its work the W3C would be risking obsolescense. Therefore they created their own HTML 5 (with a space!) group, whose work would be based on WHATWG's and would drive HTML foreward while XHTML was still cooking. And as HTML 5 progressed, it became clear that not only would XHTML2 not be ready any time soon, but it was rapidly missing its window of relevancy. As this became more and more obvious [the XHTML2 group was de-chartered](https://www.w3.org/News/2009#item119) in favor of more resources put toward HTML 5.
 
-Yet I'm callinga an XHTML comeback.
+Yet I'm calling an XHTML comeback.
 
-Again, XHTML is a **good idea** and its absence has been a stumbling block in accessibilty tech and the development of the semantic web. XHTML would be great, but history has shown that people don't care to write it. *But people don't write all that much HTML anymore*. 
+Again, XHTML is a **good idea** and its absence has been a stumbling block in accessibilty tech and the development of the semantic web. Developing HTML parsers need not be so difficult as to be the realm of a few dozen groups on earth. XHTML would be great, but history has shown that people don't care to write it. But here's the out: *People don't write all that much HTML anymore*.
 
-I mean obviously they do, but hang with me for the logic here.
+I mean obviously they do, but hang with me here.
 
-An ever-indreasing percentage of sites are nowadays written with virtual-dom or another framework that actually generates the bulk of the markup and it is typically no more difficult for a framework to generate XHTML than any other markup. Now obviously, framework generated HTML will never compose a majority of the web and anyone aspiring to write a general-purpose web browser will still need to parse HTML as before. But many special-purpose clients could absolutely be created to support XHTML alone.
+An ever-increasing percentage of sites are nowadays written with a [virtual-dom](https://github.com/Matt-Esch/virtual-dom) derivative library. This is a good thing and is the natural culmination of the maxim that any markup language eventually becomes a programming one. With virtual-dom you are using a programming language (typically Javascript) not to create HTML directly, but to define the DOM you would like to have (pretty please). The library itself is then in charge of making it so. And if so, it is no more difficult for a framework to generate XHTML than HTML or direct DOM manipulation. It all just depends what options you run the library with.
+
+Now obviously, framework generated HTML will never compose a majority of the web and anyone aspiring to write a general-purpose web browser will still need to parse HTML as before. But many **special-purpose** clients could absolutely be created to support XHTML alone.
 
 What I envision is a future where requests can be examined by webservers running isomorphic web applications. If the [request's `Accepts` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation) is for HTML then, by all means, the web application will be returned as HTML, javascript, and CSS as it currently does. If however the request specifies - let's say XHTML3 - the server will run the application server-side to generate a compatible XML document and return it.
 
-As far as I know, nobody is talking about XHTML3 yet ([this is an awesome joke though](https://www.cs.tut.fi/~jkorpela/html/xhtml3.html)), and not everyone is going to sit down and rewrite their site as isomorphic javascript applications. But within certain industries I could certainly imagine this becoming popular and special-purpose (likely automated or accessibility-specialized) web clients being widely used within that industry. In this way, the old chestnut of semantic web could be pushed forward again bit by bit.
+As far as I know, nobody is talking about XHTML3 yet ([this is an awesome joke though](https://www.cs.tut.fi/~jkorpela/html/xhtml3.html)), and not everyone is going to sit down and rewrite their site as isomorphic javascript applications. But within certain industries and use cases I could certainly imagine this becoming popular and special-purpose (likely automated or accessibility-specialized) web clients being widely used within that industry. In this way, the old chestnut of semantic web could be pushed forward again bit by bit.
