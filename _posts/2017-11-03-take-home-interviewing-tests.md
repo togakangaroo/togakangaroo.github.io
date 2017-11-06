@@ -30,6 +30,10 @@ So take me for example, I know how to do that, I know all the bits and pieces in
 
 What about providing a template then? Well putting together a "starter pack" is nearly impossible in a way that represents what we (at Surge) do. Even within the realm of front-end web development you have a huge variance of tooling. You have webpack, you have jspm, you have native modules, browserify, rollup, rails asset pipeline, webpack dev server+cors, typescript, ember, http/2 preload injection, etc. etc. etc. etc. If we were a product company it *might* benefit us to test them on the tooling that we actually use, but Surge is not - we are consulting - there is no telling which of these a developer is experienced in or would need to know. By forcing a stack from a template, you're throwing a dart as to whom gets a big advantage. That. Sucks.
 
+<figure style="float: left; margin: 1em;">
+  <img src="/img/project-interviews/code-monkeys.jpg" alt="Code Monkeys">
+</figure>
+
 And, since we're not *only* a web development consultancy, how do you even do this in a way that is fair to people who are *not* primarily web developers (think Android, iOS, hardware hackers, or DevOps)? Do each of those get a template as well? Several templates to choose from? Who is going to put that together!?
 
 Which gets to my next point; the time investment to review something like this properly is not trivial. Reviewing a few hundred lines of PR code review can easily take an hour of my time. Here you're talking about what is likely to be a thousand lines in a new project and a less structured format.
@@ -41,6 +45,8 @@ And of course the time required to actually create even a simple project - espec
 Finally, I'm not the first person to have the thoughts above - there's been a movement in the community for a few years now to resist exactly this sort of thing. In fact we occasionally have interviewees balk at the mere mention of a coding exercise (because we *do* do a simple live-coding one during the interview itself). I then explain that I understand their concerns and that what we do is sensitive to the issue while still making sure they can actually write thought-through code. Seeing that we understand the pitfalls pretty much always calms candidates and the interview continues. If we were to start doing take-home projects, I think we'd have a lot more than this small group balking, I think that we would drop our candidate pool to a fraction of its size.
 
 Its not that I think this format is never a good idea - if you're a product company which needs to filter through hundreds of resumes for a couple positions, I can see how it would work. If you need to hire a jr dev out of college, don't care about their time, and need some sort of filter, then go for it. But I don't think its always a good idea. Not by a long shot.
+
+Sure, sometimes project tests are well thought through, sometimes they are relevant, and sometimes they are proven to work. Most of the time? It's laziness by the interviewer. They do not have a process, don't know how to invent one, and figure that judging code is the best way to find *the one*. It of course is not, writing code is only a small part of the job, and such a test can show a real disregard for your applicants abilities.
 
 -----
 
