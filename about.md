@@ -22,20 +22,24 @@ I am a software developer, speaker, teacher, writer, and comedian with an intere
 
 A popular buzzword, CQRS is often misunderstood and more often misused. Less of an architecture than a set of related techniques and an architectural flavor, it is an important and powerful technique to have in your arsenal. This talk discusses traditional CQRS, breaks it down to its essence, and discusses a lightweight alternative by which an application can be created without much of the overhead while maintaining a straightforward transition path to a fully CQRS style.
 
+@ Gnocode
+
 ### History of the Web
 
 [Slides](https://docs.google.com/presentation/d/1qUiHKZtDV-HB8rrP3EUU0HwoP4z2mSKrx8hLguB55Rc/edit#slide=id.p)
 [Bibliography](https://gist.github.com/togakangaroo/3309a873a99397d3e54c8bb55e944c5c)
 
-My most common and well-recieved talk.
-
 In order to understand things at a deeper level, it often helps to understand why things are the way that they are. And the web is a weird place for a lot of weird reasons. This talk is a deep dive into the history of the development web, with plenty of stories, personalities, and original research. Understand the history of HTML, CSS, and Javascript, and use that understanding to predict where we might go in the future.
+
+@ Jazzcon, Sql Saturday, Gnocode, Active 8, Technology Leadership Summit, Barcamp Nola, Opspark, Operation Code, Many various usergroups
 
 ### Personal Security on the Internet
 
 [Slides](https://docs.google.com/presentation/d/1YccuuWBiGZaoRkHjaoyQMhnZRfXY9av72TtZpUJa1WA/edit#slide=id.p)
 
-Borne out of a presentation to bootcampers on personal and web application security and why they are now on the front lines, this lightweight and well recieved talk covers such topics as proper password storage, password management, https, and basic device security.
+Born out of a presentation to bootcampers on personal and web application security and why they are now on the front lines, this lightweight and well recieved talk covers such topics as proper password storage, password management, https, and basic device security.
+
+@ Barcamp Nola, Several usergroups, Opspark
 
 ### Tech Terms for Non-Technical Techies
 
@@ -43,12 +47,16 @@ Borne out of a presentation to bootcampers on personal and web application secur
 
 Originally a presentation for salespeople, this talk covers a lot of the jargon frequently used by software developers, dbas, sysadmins, and other technical specialists, attempting to give the audience a high level understanding of exactly what all this stuff actually means.
 
+@ Barcamp Nola, Internal meetings
+
 ### I Can Hack Spreadsheets and So Can You
 
 [Article](http://georgemauer.net/2017/10/07/csv-injection.html)
 [Slides](https://docs.google.com/presentation/d/1gzCoRUjyUOc8FdZmb4sIj9_ERjh-YgzgMAEqHZNm4ag/edit)
 
 A presentation of my shocking discovery of CSV injection and the absurd degree to which it can cause affect nearly all applications and users.
+
+@ Front End Party, NolaSec
 
 ### Just Use HTML Forms Already
 
@@ -58,6 +66,8 @@ A presentation of my shocking discovery of CSV injection and the absurd degree t
 
 In the age of the javascript framework, its worth to stop and ask - what was wrong with simple HTML forms? Sure there were reasons that we stopped using them, but do those reasons still hold? Covers this as well as some simple and natural alternatives to model binding, unidirectional data-flow, and javascript templating frameworks. Oh and also how the appraoches are not mutually exclusive and can be used with any of thos.
 
+@ Baton Rouge Usergroup, Gnocode, Jazzcon
+
 ### Gimgen - Deep Dive Into Javascript Generators
 
 [Code (with a full explanation)](https://github.com/togakangaroo/gimgen)
@@ -66,11 +76,15 @@ In the age of the javascript framework, its worth to stop and ask - what was wro
 
 For whatever reason, I decided to go absurdly deep with javascript generators. Really Really deep. I've even created my own micro-library. In this talk we walk throught he concept of generators, how it relates to asynchronous programming, co-routines, and then demo the weird, thought-provoking, and useful(?) patterns enabled by a library like gimgen.
 
+@ Front End Party, Jazzcon
+
 ### Interviewing Developers
 
 [Slides](https://docs.google.com/presentation/d/1AQE0cl3pUev2j2z3PN1aZI8fYOSFlD5MQkspZkJEfCs/edit#slide=id.p)
 
 I have personally conducted well over 120 interviews and set up the Surge interviewing process that has seen many more. This talk is about the philosophy of this humanizing process, why I believe it has worked absurdly well for us, and some of the great things that it enables.
+
+@ Devnexus, NYC Code Camp, Barcamp Nola, Gnocode
 
 ### CSS Only Tabs
 
@@ -80,12 +94,16 @@ I have personally conducted well over 120 interviews and set up the Surge interv
 
 As far as I'm aware, I have come up with the best appraoch of doing css-only tabs. Optional url-syncing, basic HTML, no hard coding anything in your css, and completely zero javascript. Really.
 
+@ Barcamp Nola, Jazzcon, Front End Party
+
 ### Be the Es6iest
 
 [Article](http://georgemauer.net/2015/09/12/be-the-es6iest)
 [Video](https://www.youtube.com/watch?v=cC8SKCnorU4&feature=youtu.be)
 
 Remember when es6 was just around the corner? Well this talk was from then! And is actually still relevant as an opinionated **live-coding** tour through some of the best new features of javascript.
+
+@ Houston Techfest, various usergroups
 
 ### Automated Testing
 
@@ -184,6 +202,14 @@ One of my first talks that I toured with on the usefulness of that at-the-time k
 
 Stored procedures - when to use them? Not use them? There was once a time when people needed a talking to about it.
 
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ## CSS-Only Wheeeee
 
