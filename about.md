@@ -33,6 +33,14 @@ In order to understand things at a deeper level, it often helps to understand wh
 
 @ Jazzcon, Sql Saturday, Gnocode, Active 8, Technology Leadership Summit, Barcamp Nola, Opspark, Operation Code, Many various usergroups
 
+### There is No Front End
+
+Less of a talk, more of a rant? There is no such thing as Front End or Back End Development as a job description. Skills? Sure, but not a job. Like I said, less a talk, more of a rant.
+
+@ FrontEnd Party
+
+[Slides](https://docs.google.com/presentation/d/1VHIvpUXXFkcE0_MColGeZTl7Jbybxkn0OxgsNYCFJT8/edit#slide=id.p)
+
 ### Personal Security on the Internet
 
 [Slides](https://docs.google.com/presentation/d/1YccuuWBiGZaoRkHjaoyQMhnZRfXY9av72TtZpUJa1WA/edit#slide=id.p)
