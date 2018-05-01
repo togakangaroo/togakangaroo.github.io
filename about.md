@@ -26,7 +26,8 @@ A popular buzzword, CQRS is often misunderstood and more often misused. Less of 
 
 ### History of the Web
 
-[Slides](https://docs.google.com/presentation/d/1qUiHKZtDV-HB8rrP3EUU0HwoP4z2mSKrx8hLguB55Rc/edit#slide=id.p)
+[More Conferency Slides](https://docs.google.com/presentation/d/16SCFHyzGtVoJMvUCUBuJTCZMnUDi7e0bWWw0XsNXZmg/edit#slide=id.p)
+[More Studenty Slides](https://docs.google.com/presentation/d/1qUiHKZtDV-HB8rrP3EUU0HwoP4z2mSKrx8hLguB55Rc/edit#slide=id.p)
 [Bibliography](https://gist.github.com/togakangaroo/3309a873a99397d3e54c8bb55e944c5c)
 
 In order to understand things at a deeper level, it often helps to understand why things are the way that they are. And the web is a weird place for a lot of weird reasons. This talk is a deep dive into the history of the development web, with plenty of stories, personalities, and original research. Understand the history of HTML, CSS, and Javascript, and use that understanding to predict where we might go in the future.
