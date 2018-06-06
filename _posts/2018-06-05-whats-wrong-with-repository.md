@@ -9,27 +9,24 @@ What follows is an edited down version of a chat conversation in the [Operation 
 
 The question was over repository pattern and I have strong opinions.
 
-Like the best of opinions, this is one I admit to having been wrong about in the past. I used to be a defender of the darling repository pattern. It was likely the first pattern that I felt I understood and back in the late 2010s was on everyone's lips. It was also the subject of debate largely - as I remember it - between [.Net giant Oren Eini](https://ayende.com/blog) and the folks over at [Codebetter](http://codebetter.com/) (unfortunately no longer particularly active). Oren argued that with the advent of robust Object Relational Mapping (ORM) libraries, the need for the pattern was largely gone and that it was certainly over and misused. Despite [arguing to the contrary in more than one comment thread](http://codebetter.com/gregyoung/2009/04/23/repository-is-dead-long-live-repository/), over time I've become convinced of Oren's point.
+Like the best of opinions, this is one that I admit to having been wrong about in the past. I used to be a defender of the [darling repository pattern](https://martinfowler.com/eaaCatalog/repository.html). It was likely the first pattern that I felt I understood. Back in 2009 it was also the subject of debate largely - as I remember it - between [.Net giant Oren Eini](https://ayende.com/blog) and the folks over at [Codebetter](http://codebetter.com/) (unfortunately no longer particularly active). Oren argued that with the advent of robust Object Relational Mapping (ORM) libraries, the need for the pattern was largely gone and that it was certainly over and misused. Despite [arguing to the contrary in more than one comment thread](http://codebetter.com/gregyoung/2009/04/23/repository-is-dead-long-live-repository/), over time I've become convinced of Oren's point.
 
-But I can explain it better.
+But I can explain it better than he can.
 
-So the issue is explaining the repository pattern and specifically how it is defined, how it might be implemented in a manner true to it's intent, and finally, how it is often (mis)implement and the unfortunate consequences. The context for the following is that of a .Net application but, patterns being what they are, this applies elsewhere as well.
-
-Let's begin.
+So the issue is explaining the repository pattern and specifically differentiating between how it is defined, how it might be implemented in a manner true to it's intent, and how it is often (mis)implement with unfortunate consequences. The context for the following is that of a .Net application but, patterns being what they are, this applies elsewhere as well.
 
 <!--break-->
-
+Let's Begin.
 
 # The Intent of Repository
 
-
-Imagine that you didn’t have to worry about databases; you still have an application with objects but everything was in memory.
+Imagine that you didn't have to worry about databases; you still have an application with objects but everything was in memory.
 
 So you want to keep a list of people in the system, you could do so with a simple list `List<Person>`.
 
-If you want to modify a person you’d find the object in your list. You change it and ... that’s really it. If you want to delete one, you remove it from the list, if you want to add one, you create a new `Person` and add it to the list. All incredibly straightforward.
+If you want to modify a person you’d find the object in your list. You change it and ... that's really it. If you want to delete one, you remove it from the list, if you want to add one, you create a new `Person` and add it to the list. All incredibly straightforward.
 
-In-memory list being the simplest form of storage, the intent of a repository is to create an implementation that will be as close to that experience as possible. In the ideal world-that-doesn’t-exist you would be able to implement something like `IList<Person>` with a repository and have it behind the scenes talking to a database, if they don't they can just provide an implementation of a regular ol' `List<Person>`.
+In-memory list being the simplest form of storage, the intent of a repository is to create an implementation that will be as close to that experience as possible. In the ideal world-that-doesn't-exist you would be able to implement something like `IList<Person>` with a repository and have it behind the scenes talking to a database, if they don't they can just provide an implementation of a regular ol' `List<Person>`.
 
 Now the first wrinkle.
 
@@ -57,7 +54,7 @@ uow.People.Add(new Person());
 uow.SaveChanges(); // try to apply changes to actualPeopleList at once and make sure they're undone on error
 ```
 
-I'm doing some handwaving as exactly how this would work but hopefully it seems largely doable, just maybe not straightforward.
+I'm doing some hand-waving as exactly how this would work but hopefully it seems largely doable, just maybe not straightforward.
 
 So cool; the above is a bit different than working with a list, but not too different and it actually introduces a useful new feature. The key here is that the repository knows nothing about the unit of work, the latter exposes and fully controls the former, *never* the other way around.
 
@@ -96,7 +93,7 @@ SELECT TOP 1 p.* FROM people p OFFSET 2
 
 and so on.
 
-Of course when you have a million people, that means you will be doing a million queries, slowly, one by one. Not great for preformance at all.
+Of course when you have a million people, that means you will be doing a million queries, slowly, one by one. Not great for performance at all.
 
 2. The other option is that on the *first* enumeration, a single SQL statement loads all data
 
@@ -118,7 +115,7 @@ with `Frank` as a parameter.
 
 Lets say that we’re talking .Net 1.0 or Java - languages where LINQ and/or s-expression-based-macros are not a thing.
 
-So ok, we can’t possibly get a trully list-like interface that preforms well in this situation, so how about we compromise? Rather than having a list which you can enumerate and and it _just works_, how about we instead have an object which implements methods:
+So ok, we can’t possibly get a truly list-like interface that performs well in this situation, so how about we compromise? Rather than having a list which you can enumerate and and it _just works_, how about we instead have an object which implements methods:
 
 ```
 public interface IPersonRepository {
@@ -152,7 +149,7 @@ Eventually we have an ORM like Hibernate come around. This ORM might have a few 
 orm.Query<Person>("where Name == ?", "Frank");
 ```
 
-The tool can parse that specification string to figure out that it is selecing from the `people` table and specifying that the `Name` column match the parameter.
+The tool can parse that specification string to figure out that it is selecting from the `people` table and specifying that the `Name` column match the parameter.
 
 Rather than placing more and more methods on the `IPersonRepository` interface
 
@@ -168,7 +165,7 @@ maybe just expose a single one
 IEnumerable<Person> GetAll(string specification, params object[] queryParameters);
 ```
 
-That's nice and but its a pretty siginficant compromise. Now implementing that same thing but with a list is more difficult. Still doable, but definitely more complex.
+That's nice and but its a pretty significant compromise. Now implementing that same thing but with a list is more difficult. Still doable, but definitely more complex.
 
 And then we have LINQ come around. With LINQ you can do
 
@@ -201,15 +198,15 @@ This has all of the desired features and `db.People` is a repository pattern tha
 
 Interesting...and the .Net developer might well be thinking
 
-> Hell...that looks pretty much exactly like Entity Framework, doesn’t it?
+> Hell...that looks pretty much exactly like Entity Framework, doesn't it?
 
 And that's true. Entity Framework’s `DbContext` *is* a (mostly) correct implementation of unit-of-work and Entity Framework’s `DbSet` *is* a (mostly) correct implementation of the repository pattern. Its not perfect, but its damn close.
 
-Unfortunately it can be a bit difficult to mock out (because of all those comprimises made) for testing, but [there are ways around that](http://entityframework-effort.net/).
+Unfortunately it can be a bit difficult to mock out (because of all those compromises made) for testing, but [there are ways around that](http://entityframework-effort.net/).
 
 # How Repository is Used
 
-And for now the epilog.
+And for now the epilogue.
 
 A common implementation might include something like this:
 
@@ -255,13 +252,13 @@ void CheckOutBook(Guid personId, Guid bookId) {
 }
 ```
 
-Not elegant, but fairly simple. Good workman-like code. You need to implement things with raw sql or in-memory? Well then you change this method. Icky, but fine.
+Not elegant, but fairly simple. Good workman-like code. You need to implement things with raw SQL or in-memory? Well then you change this method. Icky, but fine.
 
 What about the commonly used improper repository implementation then? Two entities, both need to change - what do we do? Do we use the `PersonRepository` or the `BookRepository`? Do we compose them somehow? How do we pull transaction management out so that they use the same unit of work? Does one call the other perhaps? Do we create a third repository class?
 
 Difficult questions to answer as they do not have a good answer! At that point you have painted yourself into a corner and any attempt to get out is going to take you further and further away from the use-it-like-a-list ideal. Short of [rethinking how you structure your domain](https://vaughnvernon.co/?p=838), you're stuck.
 
-My general contention is that if you are trying to do repositories *improperly* you’re better off sticking to transaction scripts, and if you’re trying to do them properly you’re going to mostly replicate and/or wrap entity framework. Why bother?
+My general contention is that if you are trying to do repositories *improperly* you're better off sticking to transaction scripts, and if you're trying to do them properly you're going to mostly replicate and/or wrap entity framework. Why bother?
 
 # Recommendation
 
