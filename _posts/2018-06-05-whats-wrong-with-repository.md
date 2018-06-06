@@ -7,7 +7,7 @@ comments: true
 
 What follows is an edited down version of a chat conversation in the [Operation Code slack](https://operationcode.org/). The context is that of someone studying up on .Net but, patterns being what they are, this applies elsewhere as well.
 
-The question was over explaining the repository pattern. I have strong opinions here and differentiate between how repository is defined, how it might be implemented in a manner true to it's intent, and how it is often (mis)implement with unfortunate consequences.
+The question was over explaining the repository pattern. I have strong opinions here and differentiate between how repository is defined, how it might be implemented in a manner true to it's intent, and how it is often (mis)implemented with unfortunate consequences.
 
 The best opinions are changed opinions and this is one that I admit to having been wrong about. I used to be a defender of the [repository pattern](https://martinfowler.com/eaaCatalog/repository.html). It was likely the first pattern that I felt I understood. Back in 2009 it was also the subject of debate largely - as I remember it - between [.Net giant Oren Eini](https://ayende.com/blog) and the folks over at [Codebetter](http://codebetter.com/) (blog unfortunately no longer particularly active). Oren argued that with the advent of robust Object Relational Mapping (ORM) libraries, the need for the pattern was largely gone and that it was certainly over and misused. Despite [arguing to the contrary in more than one comment thread](http://codebetter.com/gregyoung/2009/04/23/repository-is-dead-long-live-repository/), over time I've become convinced of Oren's point.
 
