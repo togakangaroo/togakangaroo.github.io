@@ -13,6 +13,8 @@ I've always been a fan of history, my favorite book [is a non-fiction history bo
 
 It's not a super good argument.
 
+<!--break-->
+
 In the meantime, back in January of this year I read an [article about spaced repetition memorization techniques](https://medium.freecodecamp.org/use-spaced-repetition-with-anki-to-learn-to-code-faster-7c334d448c3c) which recommended using Anki. [Anki](https://ankiweb.net/) is a flashcard memorization platform with a surprising amount of depth, incorporating academic research to calculate when and how often to show you which cards. It's got apps for desktop, Android, and iOS, has a mechanism for sharing flashcard decks and - best of all - is free and open source!
 
 I'm a sucker for reasearchy passion projects like this, and browsing the shared decks showed up plenty of stuff that was already in my "I always wanted to learn that" pile. And heck, a mobile app that I can use while in front of the TV (or on the toilet), why on earth not? I dug in and grabbed my first deck, [memorizing all 33 Chinese provinces and capitals](https://ankiweb.net/shared/info/3066506982). I was shocked at how easily it came. So I kept going, powering through [all the world's countries, capitals, and flags](https://ankiweb.net/shared/info/2109889812); [rivers, lakes, and oceans](https://ankiweb.net/shared/info/1399758390); and even a massive list of [assorted dates and facts of world history](https://ankiweb.net/shared/info/2401376321).
