@@ -9,11 +9,11 @@ My academic career is that of an alight student. Perennially in the `A-` to `B-`
 
 During the past year, my opinion on this has been evolving.
 
+<!--break-->
+
 I've always been a fan of history, my favorite book [is a non-fiction history book](https://www.amazon.com/Why-West-Rules-Now-Patterns/dp/0312611692) and my Audible library (yes I mostly do audiobooks, I suck) is full of what are essentially text books. Yet I've found that I often don't retain things well. I can listen through an entire book only to walk away realizing that I can really recall all of 3 facts. I've long assumed this was due to a relatively poor memory and the fact that I listen to books on 2.5x speed - often while partially distracted. And that's ok, I would tell myself, after all, I'm retaining the general gist and understanding the "momentum of history" is more important than specifics.
 
 It's not a super good argument.
-
-<!--break-->
 
 In the meantime, back in January of this year I read an [article about spaced repetition memorization techniques](https://medium.freecodecamp.org/use-spaced-repetition-with-anki-to-learn-to-code-faster-7c334d448c3c) which recommended using Anki. [Anki](https://ankiweb.net/) is a flashcard memorization platform with a surprising amount of depth, incorporating academic research to calculate when and how often to show you which cards. It's got apps for desktop, Android, and iOS, has a mechanism for sharing flashcard decks and - best of all - is free and open source!
 
