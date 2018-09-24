@@ -29,7 +29,9 @@ The goal here is not completeness or even precision. While it may prove to be us
 
 Look, I don't know. I'm not telling anyone how to do things, I just feel like we could all be learning better and those of us who teach software development could be teaching it better. We need to think harder, and innovate. This is such an attempt, and I think for the reasons above it should help.
 
-So today I am launching the Tech Terms Memorization Project.
+So today I am launching the **Tech Terms Memorization Project**.
+
+<img src="/img/announcing-tech-terms/tech-terms-on-anki.png" alt="Anki on Android screenshot">
 
 The project itself is [up on Github](https://github.com/togakangaroo/tech-terms) and the list of terms [is viewable as a simple webpage](https://github.com/togakangaroo/tech-terms/blob/master/terms.org) rendered from a straightforward and easily editable org table. The terms are also exported as flashcards [and shared in the Anki shared decks repository](https://ankiweb.net/shared/info/40916824). The whole thing is open source, takes pull requests, and the content is licensed via the [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
