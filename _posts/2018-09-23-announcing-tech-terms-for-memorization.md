@@ -13,7 +13,7 @@ TLDR; I created a project to help students in software development via memorizat
 
 Read on for background!
 
-My academic career is that of an alight student. Perennially in the `A-` to `B-` range, good at understanding concepts, and able to cram just hard enough to do fine on tests. I never understood the point of doing much more. I always regarded "deep understanding" and rote memorization to be wholly independent of each other with the latter being helpful for tests and little else. Many people parrot back facts without any understanding whatsoever, merely impersonating intelligence without the ability to synthesize anything new. At the same time, you can really understand things while having a shit memory; the internet exists, we can always look things up.
+My academic career is that of an all right student. Perennially in the `A-` to `B-` range, good at understanding concepts, and able to cram just hard enough to do fine on tests. I never understood the point of doing much more. I always regarded "deep understanding" and rote memorization to be wholly independent of each other with the latter being helpful for tests and little else. Many people parrot back facts without any understanding whatsoever, merely impersonating intelligence without the ability to synthesize anything new. At the same time, you can really understand things while having a shit memory; the internet exists, we can always look things up.
 
 During the past year, my opinion on this has been evolving.
 
