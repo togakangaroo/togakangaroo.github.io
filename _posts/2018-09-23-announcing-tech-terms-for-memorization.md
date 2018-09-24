@@ -25,13 +25,13 @@ This started me thinking. I work quite often with software development novices; 
 
 I had actually tried a version of this before, even doing a series of talks called ["Tech Terms for non-technical techies"](https://docs.google.com/presentation/d/1z9j9jUH8wgRcV__5SubmkEA9YZe2wIDb25Mf8DwD7QI/edit#slide=id.p) where I just went through and defined the terminology that you hear flying around constantly. But what if I leaned into this even further? In May I asked around in the [Operation Code chat](https://operationcode.org/) if there would be significant interest if I were to put together a big list of industry terms along with straightforward, memorizable definitions. This was met with a pretty resounding yes. So over the summer I put together a big list of technical terms (520 at time of writing), and went through defining each in 220 characters or less. I then created some scripts exporting the whole thing to an Anki shared deck.
 
+<img src="/img/announcing-tech-terms/tech-terms-on-anki.png" alt="Anki on Android screenshot" style="float: right;">
+
 The goal here is not completeness or even precision. While it may prove to be useful as a refresher, full definitions can be looked up in better places. Instead, this is orientation. I think of it as useful for beginners, but also for sales, recruiters, project managers, and other development-adjacent people. **It is certainly not meant to be used in isolation.** The goal is is to load up people's brains with enough pre-built industry terminology to ease their path as they continue on their journey. So that when they hear BackboneJs or .Net Core, or Spring Boot, they are not interrupting what they were doing in a rush to Mr. Google but immediately know the rough context and can retain their focus.
 
 Look, I don't know. I'm not telling anyone how to do things, I just feel like we could all be learning better and those of us who teach software development could be teaching it better. We need to think harder, and innovate. This is such an attempt, and I think for the reasons above it should help.
 
 So today I am launching the **Tech Terms Memorization Project**.
-
-<img src="/img/announcing-tech-terms/tech-terms-on-anki.png" alt="Anki on Android screenshot">
 
 The project itself is [up on Github](https://github.com/togakangaroo/tech-terms) and the list of terms [is viewable as a simple webpage](https://github.com/togakangaroo/tech-terms/blob/master/terms.org) rendered from a straightforward and easily editable org table. The terms are also exported as flashcards [and shared in the Anki shared decks repository](https://ankiweb.net/shared/info/40916824). The whole thing is open source, takes pull requests, and the content is licensed via the [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
