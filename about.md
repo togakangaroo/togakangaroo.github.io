@@ -16,13 +16,37 @@ I am a software developer, speaker, teacher, writer, and comedian with an intere
 
 ## Talks I've Done / Do
 
+### Someone Asked Me To Talk About Open Source
+
+[Slides](https://docs.google.com/presentation/d/19FGLKFGa8PCVXdyRtAmGVNgjyqxEer2JUxWmPttw__Q/)
+
+A lecture prepared for Tulane communications students introducing them to the idea of open source software, how it works, its history, licensing structures, and major concerns of the time.
+
+@ Tulane Communications
+
+### What's the Deal With Javascript
+
+[Slides](https://docs.google.com/presentation/d/18jzlXGe2gik75bAWC6BfZP1FUXDSTinZa1T7eA9jYGQ/)
+
+A lecture and small workshop introducing Computer Science students to the what and why of Javascript.
+
+@ Tulane Computer Science
+
+### React Context, Storybook, and Other Tips
+
+[Slides as a Storybook](http://georgemauer.net/react-context-storybook/storybook-static/)
+
+The new React Context API is incredibly powerful and yet little understood. This talk explains how the concept is really just a form of the extremely-powerful but rarely-used technique of dynamic scoping, and the many powers and uses this enables. And it does all this in a Storybook!
+
+@ Front End Party, Gnocode
+
 ### CQRS, Lite and Otherwise
 
 [Slides](https://docs.google.com/presentation/d/1LUaS3ABgkw5tjdofnerNNq1EWLU41Zb2nOraoRprt1U/edit#slide=id.p)
 
 A popular buzzword, CQRS is often misunderstood and more often misused. Less of an architecture than a set of related techniques and an architectural flavor, it is an important and powerful technique to have in your arsenal. This talk discusses traditional CQRS, breaks it down to its essence, and discusses a lightweight alternative by which an application can be created without much of the overhead while maintaining a straightforward transition path to a fully CQRS style.
 
-@ Gnocode
+@ Gnocode, Baton Rouge .Net Usergroup, Sql Saturday Baton Rouge
 
 ### History of the Web
 
