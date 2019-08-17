@@ -16,6 +16,13 @@ I am a software developer, speaker, teacher, writer, and comedian with an intere
 
 ## Talks I've Done / Do
 
+### TDD With No More Tears
+A shift in perspective. How to do Test Driven Development/Design in a more human manner treating it as an actual specification technique, not the end result in itself.
+
+[Sample Code](https://github.com/togakangaroo/tdd-with-no-tears) [Slides with Notes](https://docs.google.com/presentation/d/1mvzBX_vYvcfqSPNpMmYSwRzy__IstOfDiClxa_9iMRc/edit#slide=id.g5dfe60e86f_0_82)
+
+@ Surge Dev Meeting, SQL Saturday Baton Rouge
+
 ### Someone Asked Me To Talk About Open Source
 
 [Slides](https://docs.google.com/presentation/d/19FGLKFGa8PCVXdyRtAmGVNgjyqxEer2JUxWmPttw__Q/)
