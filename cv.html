@@ -25,6 +25,42 @@
                  " header   experience   ";
              grid-gap: 20px;
          }
+         @media print {
+             body {
+                 grid-template-areas:
+                     "header      "
+                     "objective   "
+                     "buzzwords   "
+                     "achievements"
+                     "experience  ";
+                 font-size: 80%;
+             }
+             #contact {
+                 display: grid;
+                 grid-auto-flow: column;
+                 grid-gap: 10px;
+             }
+             .blog a, .github a, .stackoverflow a, .linkedin a {
+                 display: none;
+             }
+             #contact .blog:before {
+                 content: "georgemauer.net";
+             }
+             #contact .github:before {
+                 content: "github.com/togakangaroo";
+             }
+             #contact .stackoverflow:before {
+                 content: "stackoverflow.com/users/5056";
+             }
+             #contact .linkedin:before {
+                 content: "linkedin.com/in/george-mauer/";
+             }
+         }
+         #contact {
+             text-align: center;
+             font-size: 80%;
+         }
+
          body > header {
              grid-area: header;
          }
@@ -39,6 +75,7 @@
          }
          #experience {
              grid-area: experience;
+             page-break-inside: initial;
          }
          article {
              page-break-inside: avoid;
@@ -54,6 +91,9 @@
              list-style-type: none;
              padding: 0;
              margin: 0;
+         }
+         details {
+             page-break-inside: avoid;
          }
          details > summary:before {
              content: "▼ ";
