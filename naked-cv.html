@@ -9,12 +9,6 @@
     </head>
     <body>
         <style>
-         details > summary {
-             list-style: none;
-         }
-         details > summary::-webkit-details-marker {
-             display: none;
-         }
          a {
              color: inherit;
          }
@@ -25,10 +19,10 @@
 
              display: grid;
              grid-template-areas: 
-                " header   objective    "
-                " header   buzzwords    "
-                " header   achievements "
-                " header   experience   ";
+                 " header   objective    "
+                 " header   buzzwords    "
+                 " header   achievements "
+                 " header   experience   ";
              grid-gap: 20px;
          }
          body > header {
@@ -45,6 +39,28 @@
          }
          #experience {
              gird-area: experience;
+         }
+         details > summary {
+             list-style: none;
+         }
+         details > summary::-webkit-details-marker {
+             display: none;
+         }
+         #experience ul {
+             list-style-type: none;
+             padding: 0;
+             margin: 0;
+         }
+         details > summary:before {
+             content: "▼ ";
+             font-family: monospace;
+             cursor: pointer;
+         }
+         details[open] > summary:before {
+             content: "";
+         }
+         .job-title {
+             display: inline;
          }
         </style>
 
