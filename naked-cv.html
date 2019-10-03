@@ -18,6 +18,34 @@
          a {
              color: inherit;
          }
+         body {
+             min-height: 100vh;
+             margin: 0;
+             padding: 20px;
+
+             display: grid;
+             grid-template-areas: 
+                " header   objective    "
+                " header   buzzwords    "
+                " header   achievements "
+                " header   experience   ";
+             grid-gap: 20px;
+         }
+         body > header {
+             grid-area: header;
+         }
+         #objective {
+             gird-area: objective;
+         }
+         #buzzwords {
+             gird-area: buzzwords;
+         }
+         #achievements {
+             gird-area: achievements;
+         }
+         #experience {
+             gird-area: experience;
+         }
         </style>
 
         <header>
