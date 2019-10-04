@@ -26,7 +26,7 @@
                  " header   experience   ";
              grid-gap: 20px;
          }
-         @media print {
+         @media print, (max-width: 500px) {
              body {
                  grid-template-areas:
                      "header      "
@@ -34,6 +34,10 @@
                      "buzzwords   "
                      "achievements"
                      "experience  ";
+             }
+         }
+         @media print {
+             body {
                  font-size: 80%;
                  max-width: auto;
              }
@@ -194,7 +198,7 @@
                     Most Viewed Author on Quora in Javascript and Web Development
                 </li>
                 <li>
-                    Frequently interviewed and cited over article and thoughts on how to do <a href="http://georgemauer.net/2017/11/03/take-home-interviewing-tests.html">and not structure developer interviews</a>
+                    Frequently interviewed and cited over article and thoughts on how to <a href="http://georgemauer.net/2017/11/03/take-home-interviewing-tests.html">and not to structure developer interviews</a>
                 </li>
                 <li>
                     Former co-organizer for New Orleans' regional tech and entrepreneur conference: BarcampNola
@@ -209,13 +213,13 @@
                     Former leader of New Orleans .NET Usergroup: In charge of recruitment, speaker selection, organization, advertising, etc.
                 </li>
                 <li>
-                    Committer and owner of many open source projects
+                    Committer to and creator of many open source projects
                 </li>
                 <li>
                     Presented at the 2006 AAAI Conference on Human-Robot Interaction
                 </li>
                 <li>
-                    Research Stipend for Graduate School
+                    Research Stipend for Graduate School at Tulane University
                 </li>
                 <li>
                     Awarded a Jiu-Jitsu blue belt by Rodrigo Gracie
