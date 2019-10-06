@@ -24,7 +24,8 @@
                  " header   buzzwords    "
                  " header   achievements "
                  " header   experience   "
-                 " header   projects     ";
+                 " header   projects     "
+                 " header   actions      ";
              grid-gap: 20px;
          }
          @media print, (max-device-width: 600px), (max-width: 500px) {
@@ -35,7 +36,8 @@
                      "buzzwords   "
                      "achievements"
                      "experience  "
-                     "projects    ";
+                     "projects    "
+                     "actions     ";
              }
          }
          @media print {
@@ -62,6 +64,9 @@
              }
              #contact .linkedin:before {
                  content: "linkedin.com/in/george-mauer/";
+             }
+             #actions {
+                 display: none;
              }
          }
          #contact {
@@ -116,6 +121,10 @@
          }
          .job-title, .title {
              display: inline;
+         }
+         #actions {
+             display: flex;
+             justify-content: flex-end;
          }
         </style>
 
@@ -474,5 +483,8 @@
             </ul>
         </article>
 
+        <footer id="actions">
+            <button onClick="document.querySelectorAll('details').forEach(el => el.open = true)">Expand All</button>
+        </footer>
     </body>
 </html>
