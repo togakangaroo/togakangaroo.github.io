@@ -23,7 +23,8 @@
                  " header   objective    "
                  " header   buzzwords    "
                  " header   achievements "
-                 " header   experience   ";
+                 " header   experience   "
+                 " header   projects     ";
              grid-gap: 20px;
          }
          @media print, (max-device-width: 600px), (max-width: 500px) {
@@ -33,7 +34,8 @@
                      "objective   "
                      "buzzwords   "
                      "achievements"
-                     "experience  ";
+                     "experience  "
+                     "projects    ";
              }
          }
          @media print {
@@ -93,7 +95,7 @@
          details > summary::-webkit-details-marker {
              display: none;
          }
-         #experience ul {
+         #experience ul, #projects ul {
              list-style-type: none;
              padding: 0;
              margin: 0;
@@ -112,7 +114,7 @@
          details[open] > summary:before {
              content: "";
          }
-         .job-title {
+         .job-title, .title {
              display: inline;
          }
         </style>
@@ -382,6 +384,91 @@
                                 Co-founded Resultsoft LLC and authored a Small Business Innovation Research (SBIR) Grant proposal to the Institute of Education Sciences (IES) for an educational videogame capable of using specific modern game-design concepts capable of rousing student interest in mathematics to an unprecedented level.
                             </p>
                         </div>
+                    </details>
+                </li>
+            </ul>
+        </article>
+
+        <article id="projects">
+            <h1>Projects and Volunteering</h1>
+            <ul>
+                <li>
+                    <details>
+                        <summary>
+                            <div class="title"><a href="https://operationcode.org">Operation Code</a></div>
+                            <div class="summary">Mentor</div>
+                        </summary>
+                        <p>
+                            Offer frequent help, mentoring, debugging, and career advice sessions to online community of vets working in or transitioning into tech
+                        </p>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            <div class="title"><a href="https://www.operationspark.org">Operation Spark</a></div>
+                            <div class="summary">Teacher / Curriculum writer / Mentor</div>
+                        </summary>
+                        <p>
+                            Helped build curriculum, designed and taught Boot Camp programs in high schools and the New Orleans Juvenile Detention Center. Lectured and conducted town hall-style meetings with students in classes. Mentored and served as an on-site professional developer resource.
+                        </p>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            <div class="title"><a href="https://tulane.edu">Tulane University</a></div>
+                            <div class="summary">Guest Speaker</div>
+                        </summary>
+                        <p>
+                            Occasional guest speaker in the Tulane University Computer Science and Communication departments. Discussed everything from software architecture, to javascript, and open source.
+                        </p>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            gimgen
+                            <a href="https://github.com/togakangaroo/gimgen">Github</a>
+                        </summary>
+                        <p>
+                            Extremely experimental (yet working) javascript micro-library using generators to invert program flow and generate coroutines. This was the subject of several conference talks and has granted me a deep understanding of the language feature that is unparalleled.
+                        </p>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            Tech Terms Ank Deck
+                            <a href="http://georgemauer.net/2018/09/23/announcing-tech-terms-for-memorization.html">Blog Post</a>
+                            <a href="https://github.com/togakangaroo/tech-terms">Github</a>
+                            <a href="https://crosscuttingconcerns.com/Podcast-105-George-Mauer-Tech-Terms">Podcast</a>
+                        </summary>
+                        <p>
+                            A project for helping students and non-developers to get oriented in the terminology of tech. This is used as part of the curriculum in several courses and study groups.
+                        </p>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            Estimation Checklist
+                            <a href="https://github.com/togakangaroo/estimation-checklist">Github</a>
+                        </summary>
+                        <p>
+                            A massive collaborative checklist of questions one should remeber to ask when doing broad-scale estimation.
+                        </p>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            <code>$.persistState</code>
+                            <a href="https://github.com/togakangaroo/persistState">Github</a>
+                        </summary>
+                        <p>
+                            Extensible jQuery widget to automatically persist the state of UI components in localStorage.
+                        </p>
                     </details>
                 </li>
             </ul>
