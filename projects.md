@@ -14,10 +14,11 @@ comments: false
 
 ### Personal and Open Source
 
-I co-host the weekly [Virtual Brown Bag](http://virtualbrownbag.com/) meetup. Open to all, you should join in!
-
 I am the creator of several open source projects that are hopefully useful to people.
 
+* [The Estimation Checklist](https://github.com/togakangaroo/estimation-checklist) - a checklist to asist with doing estimation
+* [Tech Terms Anki Deck](https://github.com/togakangaroo/tech-terms) - A project for helping students and non-developers to get oriented in the terminology of tech. This is used as part of the curriculum in several courses and study groups. [Blog Post](http://georgemauer.net/2018/09/23/announcing-tech-terms-for-memorization.html), [Podcast](https://crosscuttingconcerns.com/Podcast-105-George-Mauer-Tech-Terms)
+* [gimgen](https://github.com/togakangaroo/gimgen) - a library for using javascript generators for functional reactive programming
 * [persistState Widget](https://bitbucket.org/togakangaroo/ow.persiststate) - is a little jquery widget that will store the state of html widgets in localstorage and restore it on next page visit
 * [simple-modules](https://github.com/togakangaroo/simple-modules) - is a javascript module system micro-library to help messy brownfield projects transition to cleaner code
 * [ApprovalTests.BetterPdfVerification](https://github.com/togakangaroo/ApprovalTests.BetterPdfVerification) - is a set of approvers for the .Net version of the amazing ApprovalTests assertion framework. It makes approving of pdf files actually work as it normalizes out inconsistencies such as timestamps and auto generated ids.
@@ -26,8 +27,8 @@ I am the creator of several open source projects that are hopefully useful to pe
 * [log4net.GrowlAppender](https://bitbucket.org/togakangaroo/log4net.growlappender) - is a simple .Net library that will direct log4net messages to a locally running Growl instance
 * A [bunch of nuget packages](https://www.nuget.org/profiles/togakangaroo)
 * Some [npm packages](https://www.npmjs.com/~togakangaroo)
-* [gimgen](https://github.com/togakangaroo/gimgen) - a library for using javascript generators for functional reactive programming
-* [The Estimation Checklist](https://github.com/togakangaroo/estimation-checklist) - a checklist to asist with doing estimation
+
+I used to co-host the weekly [Virtual Brown Bag](http://virtualbrownbag.com/) meetup. Feel free to <a href="https://www.youtube.com/channel/UCZqgS0olnHMiderRAsvUKBQ">watch the back episodes</a> and keep an eye out for new ones.
 
 I also dabble in software security, virtual reality, and IoT programming
 
@@ -35,8 +36,10 @@ I also dabble in software security, virtual reality, and IoT programming
 
 I have done many contracts, shorter fill-in projects, and projects with companies that are lost to time I chose to list here the ones that I've worked on for a significant amount of time and that shaped my professional career
 
+* Surge Ops
+	* I was lead dev and an informal product manager on our skunkworks providing software for running our internal business operations. This was a microservices platform used for project tracking, staffing request tracking, skill tracking, and a candidate management + interviewing system used for thousands of people for critical business operations. Tech used: ReactJs, NodeJs, Docker, Python, Grpc, .Net, VueJs
 * Meazure2
-	* A fully-featured and white-label time-tracking and invoicing application.
+	* Lead dev and informal product manager on a fully-featured and white-label time-tracking and invoicing application.
 * AppleHms
 	* Web-based application to operate a medical supplier's business including ordering, inventory, patient management, and billing.
 * OGRE<sup><a href="#led"></a></sup>
