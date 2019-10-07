@@ -28,18 +28,6 @@
                  " header   actions      ";
              grid-gap: 20px;
          }
-         @media print, (max-device-width: 600px), (max-width: 500px) {
-             body {
-                 grid-template-areas:
-                     "header      "
-                     "objective   "
-                     "buzzwords   "
-                     "achievements"
-                     "experience  "
-                     "projects    "
-                     "actions     ";
-             }
-         }
          #contact {
              text-align: center;
              font-size: 80%;
@@ -133,6 +121,18 @@
              }
              #actions {
                  display: none;
+             }
+         }
+         @media print, (max-device-width: 600px), (max-width: 500px) {
+             body {
+                 grid-template-areas:
+                     "header      "
+                     "objective   "
+                     "buzzwords   "
+                     "achievements"
+                     "experience  "
+                     "projects    "
+                     "actions     ";
              }
              #projects ul {
                  display: flex;
