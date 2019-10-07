@@ -40,6 +40,72 @@
                      "actions     ";
              }
          }
+         #contact {
+             text-align: center;
+             font-size: 80%;
+         }
+
+         body > header {
+             grid-area: header;
+         }
+         #objective {
+             grid-area: objective;
+         }
+         #buzzwords {
+             grid-area: buzzwords;
+         }
+         #achievements {
+             grid-area: achievements;
+         }
+         #experience {
+             grid-area: experience;
+             page-break-inside: initial;
+         }
+         #projects ul {
+             display: grid;
+             grid-template: 1fr 1fr / 1fr 1fr;
+             grid-gap: 20px;
+         }
+         article {
+             page-break-inside: avoid;
+         }
+         details > summary {
+             list-style: none;
+         }
+         details > summary::-webkit-details-marker {
+             display: none;
+         }
+         #experience ul, #projects ul {
+             list-style-type: none;
+             padding: 0;
+             margin: 0;
+         }
+         details {
+             page-break-inside: avoid;
+         }
+         details > summary:before {
+             content: "▼ ";
+             font-family: monospace;
+             cursor: pointer;
+         }
+         #experience details > summary:before {
+             border-top: 1px solid black;
+             padding-top: 10px;
+             margin-top: 10px;
+         }
+         #experience details > summary {
+             margin-top: 45px;
+         }
+         details[open] > summary:before {
+             content: "";
+         }
+         .job-title, .title {
+             display: inline;
+         }
+         #actions {
+             display: flex;
+             justify-content: flex-end;
+         }
          @media print {
              body {
                  font-size: 80%;
@@ -68,63 +134,10 @@
              #actions {
                  display: none;
              }
-         }
-         #contact {
-             text-align: center;
-             font-size: 80%;
-         }
-
-         body > header {
-             grid-area: header;
-         }
-         #objective {
-             grid-area: objective;
-         }
-         #buzzwords {
-             grid-area: buzzwords;
-         }
-         #achievements {
-             grid-area: achievements;
-         }
-         #experience {
-             grid-area: experience;
-             page-break-inside: initial;
-         }
-         article {
-             page-break-inside: avoid;
-         }
-         details > summary {
-             list-style: none;
-             margin-top: 45px;
-         }
-         details > summary::-webkit-details-marker {
-             display: none;
-         }
-         #experience ul, #projects ul {
-             list-style-type: none;
-             padding: 0;
-             margin: 0;
-         }
-         details {
-             page-break-inside: avoid;
-         }
-         details > summary:before {
-             content: "▼ ";
-             font-family: monospace;
-             cursor: pointer;
-             border-top: 1px solid black;
-             padding-top: 10px;
-             margin-top: 10px;
-         }
-         details[open] > summary:before {
-             content: "";
-         }
-         .job-title, .title {
-             display: inline;
-         }
-         #actions {
-             display: flex;
-             justify-content: flex-end;
+             #projects ul {
+                 display: flex;
+                 flex-direction: column;
+             }
          }
         </style>
 
@@ -477,6 +490,17 @@
                         </summary>
                         <p>
                             Extensible jQuery widget to automatically persist the state of UI components in localStorage.
+                        </p>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            ApprovalTests.BetterPdfVerification
+                            <a href="https://github.com/togakangaroo/ApprovalTests.BetterPdfVerification">Github</a>
+                        </summary>
+                        <p>
+                            A set of approvers for the .Net version of the amazing ApprovalTests assertion framework. It makes approving of pdf files actually work as it normalizes out inconsistencies such as timestamps and auto generated ids.
                         </p>
                     </details>
                 </li>
