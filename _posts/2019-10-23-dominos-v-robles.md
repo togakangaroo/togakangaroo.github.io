@@ -114,5 +114,5 @@ So now that we have background, get back to the meat of the argument at hand.
 
 Domino's argues that no, the ADA does not apply to their or any website. See the language of the ADA - which passed in the same year as the Web was born - is largely over physical locations and there are indeed a smattering of rulings that may support this.
 
-The court here points out that the issue is over *services of a place* not *services in a place*. Does that sound like weird, pedantic minutiae? Sure. 
+The court here points out that the issue is over *services of a place* not *services in a place*. Does that sound like weird, pedantic minutiae? Sure. But it is not limited to this case as I've seen that exact phrasing reference over and over. It seems more a cutesy manner of highlighting responsibilities then some sort of verbal gymnastics to get the law to fit.
 
