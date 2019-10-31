@@ -5,7 +5,7 @@ title : George Mauer's Blog
 
 <ul class="posts">
     {% for post in site.posts  limit:5 %}
-        <li class="{{post.title.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')}}">
+        <li class="{{post.title | slugify}}">
             <div class="idea">
                 {% if forloop.first and post.layout == "post" %}
                     <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>

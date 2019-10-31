@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "The Most Accessible Pizza Pie - Understanding Domino's v Robles"
+title: "Understanding Domino's v Robles"
 author: "George Mauer"
 comments: true
 ---
 
 <style>
-  .posts img, 
+  .posts .understanding-domino-s-v-robles img, 
   .entry img,
   .entry figure {
     margin: 20px;
