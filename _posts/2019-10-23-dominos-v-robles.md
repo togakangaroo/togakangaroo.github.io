@@ -7,7 +7,8 @@ comments: true
 
 <style>
   .posts img, 
-  .entry img {
+  .entry img,
+  .entry figure {
     margin: 20px;
   }
 </style>
