@@ -50,13 +50,13 @@ It is this: Domino's Pizza lost a court case having to do with accessibility of 
 
 The details of this were of course poorly reported and even worse understood. In fact, judging by the reaction of many, you'd think this decision was the end of the world.
 
-Honestly, I can sympathize. **Being sued is scary, accessibility is ambiguous, and accessibility compliance is not even a binary yes or  no thing.** What do they even expect from us!?
+Honestly, I can sympathize. **Being sued is scary, accessibility is ambiguous, and accessibility compliance is not even a binary yes or no thing.** What do they even expect from us!?
 
 And then of course there is the economic argument. How many small businesses might go out of business because they cannot afford the extra cost?! The degree to which you are concerned with that will probably depend on your political inclinations, but surely everyone would agree that we want to keep the amount of red tape that small businesses trying to bootstrap themselves deal with to an absolute minimum.
 
 And then there's the other side of the coin. Fire off the 21-gun-salute, it is the dawning of the Accessibility Age of Aquarius! The good guys have won and everything will be great forever!
 
-Neither of those is exactly true, and telling the wrong story both spreads FUD and sets people up for disappointment.
+Neither of those is exactly true, and telling the wrong story both spreads FUD (Fear Uncertainty and Doubt) and sets people up for disappointment.
 
 But first, let's review...
 
@@ -132,7 +132,7 @@ So Title III specifically says that a public accommodation must:
 
 In other words, you have to *legitimately try* to accommodate disabled people in such a way so that they can use your services to get the same benefits and in the same manner as anyone else.
 
-It is worth mentioning that this not the opinion of a court or regulation issued by a bureaucratic body. **This is the actual law.** In general courts have tried to be fair about applying things but yes, **it is now and has been legal since 1992 to sue over violations.**
+It is worth mentioning that this is not the opinion of a court or regulation issued by a bureaucratic body. **This is the actual law** and carries a significantly higher precedence. In general courts have tried to be fair about applying things but yes, **it is now and has been legal since 1992 to sue over violations.**
 
 So now let's get back to the meat of the case at hand.
 
@@ -206,7 +206,7 @@ To reiterate what happened:
 
 * This particular ruling was not about what is and isn't accessible on the web. It was simply about whether the lawsuit filed by Guillermo Robles against Domino's Pizza LLC may proceed rather than being dismissed out of hand.
 * No law or interpretation of the law therefore changed. Everything is the same as it was since at least 1996 and people continue to be able to sue certain websites for lack of ADA compliance. The only difference is that for a twenty two month period, the district court opinion was available to be cited in some motions to dismiss and it now no longer is.
-* The court can only rule on what was argued and Domino's did not argue that their website is accessible or that a certain standard be or not be adopted, instead they argued that lack of guidance from the DOJ specific to their situation meant they didn't have to follow the law, and the court - while sympathetic to the awkwardness of lack of guidance - pointed out that this is not something unique to the web and either way is simply not how the law works.
+* The court can only rule on what was argued and Domino's did not argue that their website is accessible or that a certain standard be or not be adopted, instead they argued that lack of guidance from the DOJ specific to their situation meant they didn't have to follow the law, and the court - while sympathetic to the awkward lack of guidance - pointed out that this is not something unique to the web and either way is simply not how the law works.
 * Domino's did not lose a lawsuit, they simply have to actually argue the lawsuit. This lawsuit is no different than hundreds of others that have been filed over the years. These lawsuits can also still be dismissed, they simply cannot be dismissed automatically. The Americans with Disabilities Act applies.
 * The Supreme Court did not rule on anything. They simply declined to take up further appeals indicating that they find no flaw in the 9th Circuit court's logic.
 
