@@ -12,26 +12,28 @@ comments: true
     margin: 20px;
   }
   .entry figure img {
-    margin: 0;
   }
   .entry .not-a-lawyer {
     position: absolute;
-    opacity: 0.1;
+    opacity: 0.07;
     transform: rotate(-24deg) translate(-7em, 9em);
     font-family: monospace;
     pointer-events: none;
+    width: 100%;
   }
 </style>
 
 If you don't care to read through a big long article and want to [skip to the end, head on to the conclusion](#conclusion).
 
-I found myself [with some time on my hands](https://twitter.com/togakangaroo/status/1183842162947039232?s=20) earlier this month and thought that - as in my experience the facts rarely match the hype - it might be nice to dive into a high profile and controvercial current events issue in tech. Letting the rantings of friends and acquaintances guide me, I picked up the *Domino's Pizza LLC v Robles* case to see if I could make heads or tails of what actually went down. What follows is a writeup of [a talk I have given on the subject](https://docs.google.com/presentation/d/19DjTcnDmYbToa4x_xaOZ7HRUM-ZF1Ol8LYstdSyfTrQ/edit#slide=id.g65459e8168_0_92).
+I found myself [with some time on my hands](https://twitter.com/togakangaroo/status/1183842162947039232?s=20) earlier this month and thought that it might be nice to dive into a high profile and controversial current events in tech issue as - in my experience - the facts rarely match the hype. Letting the ravings of friends and acquaintances guide me, I picked up the *Domino's Pizza LLC v Robles* case to see if I could make heads or tails of what actually went down. What follows is a writeup of [a talk I have given on the subject](https://docs.google.com/presentation/d/19DjTcnDmYbToa4x_xaOZ7HRUM-ZF1Ol8LYstdSyfTrQ/edit#slide=id.g65459e8168_0_92).
 
 Now before I go much further, I should clarify that I am definitely and 100% **NOT A LAWYER**. I am sure that I got at least some of the following wrong and I stand to be corrected.
 
-I can read ok though, and went through and read the various opinions issued and some more in depth articles on what went on. I also ran my understanding past a friend who *is* a very good lawyer, so I believe that I'm on as firm ground as a non-lawyer can reasonably be.
+I can read ok though, and went through and read the various opinions issued and some of the more in-depth articles on what went on. I also ran my understanding past a friend who *is* a very good lawyer, so I believe that I'm on as firm ground as a non-lawyer can reasonably be.
 
-I'll note that in the following narrative I reference but omit a lot of discussion of specific previous case law and finer points of order. This is long enough and if you're interested in diving down to that level just read the opinion and itself.
+I am also not someone who particularly specializes in web accessibility. It is important and I know the basics, but I do not claim to be an expert. I quite possibly misspell the word accessibility as well.
+
+Finally, I'll note that in the following narrative I occasionally reference but omit a lot of discussion of previous case law and finer points of order. This article is long enough and if you're interested in diving down to that level just [read the opinion and itself](https://www.scotusblog.com/wp-content/uploads/2019/07/18-1539-opinion-below.pdf).
 
 # The Story
 
@@ -41,15 +43,15 @@ So before we get to far into it, what are the basics of the story here?
   <img style="float: left;" src="/img/dominos-v-robles/la-times-headline.jpg" alt="LA Times Headline - Supreme Court allows blind people to sue retailers if their websites are not accessible" />
 </a>
 
-It is this: Domino's Pizza lost a court case having to do with their website of accessibility.
+It is this: Domino's Pizza lost a court case having to do with accessibility of their website.
 
 The details of this were of course poorly reported and even worse understood. In fact, judging by the reaction of many, you'd think this decision was the end of the world.
 
 Honestly, I can sympathize. **Being sued is scary, accessibility is ambiguous, and accessibility compliance is not even a binary yes or  no thing.** What do they even expect from us!?
 
-And then of course there is the economic argument. How many small businesses might go out of business ecause they cannot affrod the extra cost?! The degree to which you are concerned with that will probably depend on your political inclinations, but surely everyone would agree that we want to keep the amount of red tape that businesses trying to bootstrap themselves deal with to an absolute minimum.
+And then of course there is the economic argument. How many small businesses might go out of business because they cannot afford the extra cost?! The degree to which you are concerned with that will probably depend on your political inclinations, but surely everyone would agree that we want to keep the amount of red tape that small businesses trying to bootstrap themselves deal with to an absolute minimum.
 
-And then there's the other side of things. Fire off the 21-gun-salute, it is the dawning of the Accessibility Age of Aquarius! The good guys have won and everything will be great forever!
+And then there's the other side of teh coin. Fire off the 21-gun-salute, it is the dawning of the Accessibility Age of Aquarius! The good guys have won and everything will be great forever!
 
 Neither of those is exactly true, and telling the wrong story both spreads FUD and sets people up for disappointment.
 
@@ -66,30 +68,30 @@ So let's review the basic timeline
 - March 2019 - **appeal** of the 9th Circuit decision is filed with the Supreme Court
 - October 2019 - [**Supreme Court declines to review** the decision](https://www.scotusblog.com/case-files/cases/dominos-pizza-llc-v-robles/)
 
-If you are unaware of how dismissal works, essentially a judge mayb e aske dto dismiss a case for a variety of reasons. If granted, the case stops right there and then. For the most part, a motion to dismiss being granted means that the court agrees that some point of law clearly renders the plantiff's argument moot (and typically that he plantiff has not addressed this).
+If you are unaware of how dismissal works; essentially a judge may be asked to block a case for a variety of reasons. If granted, the case stops right there and then. For the most part, a motion to dismiss being granted means that the court agrees that some point of law clearly renders the plantiff's argument moot (and typically that he plantiff has not addressed this).
 
-If you are unaware of how appeals work, there is a hierarchy of federal courts. If you lose, you can petition an upper court of appeals to review the decision and they are free to take it up or turn down your appeal.
+If you are unaware of how appeals work; there is a hierarchy of federal courts. If you lose, you can petition an upper court of appeals to review the decision and they are free to take it up or turn down your appeal.
 
-So note what happened here. There was wasn't really a rulling over Dominos' website. 
+So note that what happened here did not include a rulling over Dominos' website. 
 
 - Instead, the district court granted a motion to dismiss, meaning they did not hear the case and rule on it
 - The 9th Circuit court overruled the dismissal, saying that yes, you *do* have to hear the case
 - The Supreme Court refused to review the 9th Circuit's decision, in effect agreeing that yes, the case can continue
 
-Note that there was no actual decision on anything other than that a specific lawsuit can continue and be argued. Keep that in mind as we walk through this stuff.
+Again, I want to emphasize that there was no actual decision on anything other than that a specific lawsuit can continue and be argued. Keep that in mind as we walk through this stuff.
 
 <img style="float: right;" src="/img/dominos-v-robles/headlines.gif" alt="So many headlines that are mostly wrong." />
 
-So in October, there was a wide level of outcry and confusion about this decision. Everything from legitimate business concerns to wild-eyed conspiracies.
+So this past October, there was a wide level of outcry and confusion about this decision. Everything from legitimate business concerns to wild-eyed conspiracies.
 
 Most of it was fairly uninformed over what exactly was ruled.
 
-So just fromt he timeline we can already say a few things.
+So just from the timeline we can already say a few things.
 
-- **No major new law or ruling has changed or been issued**
+- **No major new law or ruling has been issued**
 - and **Domiono's didn't actually argue a lawsuit about what was required for accessibility**
 
-So some of these headlines are at least wrong on some level.
+So most of these headlines are at least wrong on some level.
 
 # The 9th Circuit's Opinion
 
@@ -102,6 +104,8 @@ In reviewing the lower court's decision, they broke it down into three questions
 3. Should the court invoke the *Primary Jurisdiction Doctrine* here?
 
 ## The ADA and Title III
+
+<svg class="not-a-lawyer" viewBox="0 0 95 16"><text x="0" y="12">NOT A LAWYER</text></svg>
 
 [The Americans with Disabilities Act](https://en.wikipedia.org/wiki/Americans_with_Disabilities_Act_of_1990) passed by am overwhelming bipartisan majority in 1990 and went into effect in 1992.
 
@@ -198,6 +202,7 @@ To reiterate what happened:
 * No law or interpretation of the law therefore changed. Everything is the same as it was since at least 1996 and people continue to be able to sue certain websites for lack of ADA compliance. The only difference is that for a twenty two month period, the district court opinion was available to be cited in some motions to dismiss and it now no longer is.
 * The court can only rule on what was argued and Domino's did not argue that their website is accessible or that a certain standard be or not be adopted, instead they argued that lack of guidance from the DOJ specific ot their situation meant they didn't have to follow the law, and the court - while sympathetic to the awkwardness of lack of guidance - poitned out that this is not something unique to the web and is either way simply not how the law works.
 * Domino's did not lose a lawsuit, they simply have to actually argue the lawsuit. This lawsuit is no different then hundreds of others that have been filed over the years. These lawsuits can also still be dismissed, they simply cannot be dismissed automatically because the Americans with Disabilities Act does not apply.
+* The Supreme Court did not rule on anything. They simply declined to take up further appeals indicating that they find no flaw in the Circuit Court's logic.
 
 What happens now? Well...Domino's has to actually defend themselves in the lawsuit or settle. Personally (and I can't say this enough, I am not a lawyer) - unless something really incriminating emerges in discovery - it doesn't seem to me like Guillermo Robles' case is all that strong. He might well lose the suit, but he does get his chance to argue it, and there is nothing so obvious or in violation of Domionos' rights here as for the suit to be dismissed out of hand.
 
