@@ -11,6 +11,16 @@ comments: true
   .entry figure {
     margin: 20px;
   }
+  .entry figure img {
+    margin: 0;
+  }
+  .entry .not-a-lawyer {
+    position: absolute;
+    opacity: 0.1;
+    transform: rotate(-24deg) translate(-7em, 9em);
+    font-family: monospace;
+    pointer-events: none;
+  }
 </style>
 
 If you don't care to read through a big long article and want to [skip to the end, head on to the conclusion](#conclusion).
@@ -115,6 +125,11 @@ It is worth mentioning that this not the opinion of a court or regulation issued
 
 So now that we have background, get back to the meat of the argument at hand.
 
+
+<figure style="float: left; border: 1px solid #666;">
+  <img src="/img/dominos-v-robles/ada.jpg" alt="ADA bill of 1990 page 1" />
+</figure>
+
 ## Does the ADA Apply to Websites?
 
 Domino's argues that no, the ADA does not apply to their or any website. See the language of the ADA - which passed in the same year as the Web was born - is largely over physical locations and there are indeed a smattering of rulings that may support this.
@@ -161,6 +176,8 @@ Look - the court is arguing - the way the law works is that you have these oblig
 
 You can even argue that the lawsuit be dismissed because your compliance is so obvious that the suit lacks any merit at all. However, this is not what Domino's is saying here. They are claiming that no official standard exists for them to follow and therefore no lawsuit is possible as their obligations are ambiguous. This the court is having none of - no, they say, your obligations are *flexible* but not ambiguous. To rule it so would fly in the face of a great deal of case law that determines the exact opposite. So while yes, Domino's can reasonably argue that their website is already accessible, they cannot argue that the issue of accessibility itself does not apply - and *that* is what their motion do dismiss is all about.
 
+<img style="float: right;" src="/img/dominos-v-robles/doj.png" alt="Department of Justice Logo" />
+
 ## Primary Jurisdiction Doctrine
 
 The final thrust of the argument is that the court should defer to accessibility and legal experts employed by the Department of Justice to render guidelines or a decision that will either clarify the points at issue in this case or even render it moot. This is referred to as the *Primary Jursidication Doctrine*, is occasionally applied by courts in similar cases, and was cited in the lower court's decision to dismiss the lawsuit without prejudice (meaning a similar suit can be refiled at a later date).
@@ -170,6 +187,8 @@ The 9th circuit points out here that nothing actually *obligates* the court to a
 The appeals court reasons that - as any further guidance from the DOJ will certainly *not* be forthcoming, the original logic that deferred primary jurisdiction certainly does not apply. In any case - as the DOJ clearly does believe that websites *should* be held to accessibility standards - it is difficult to imagine any sort of guidance that might emerge and affect the outcome of a motion to dismiss.
 
 # Conclusion
+
+<svg class="not-a-lawyer" viewBox="0 0 95 16"><text x="0" y="12">NOT A LAWYER</text></svg>
 
 The above is the logic the 9th circuit court of appeals used to overrule the district court's motion to dismiss and honestly...it's pretty solid.
 
