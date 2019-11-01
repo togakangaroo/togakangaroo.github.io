@@ -10,6 +10,8 @@ comments: true
   .entry img,
   .entry figure {
     margin: 20px;
+    display: flex;
+    justify-content: center;
   }
   .entry figure img {
     margin: 0;
@@ -26,7 +28,7 @@ comments: true
 
 This is about the web accessibility-related Domino's v Robles court case in the US court system. If you don't care to read through a big long article and want to [skip to the end, head on to the conclusion](#conclusion).
 
-I found myself [with some time on my hands](https://twitter.com/togakangaroo/status/1183842162947039232?s=20) earlier this month and thought that it might be nice to dive into a high profile and controversial current events in tech issue as - in my experience - the facts rarely match the hype. Letting the ravings of friends and acquaintances guide me, I picked up the *Domino's Pizza LLC v Robles* case to see if I could make heads or tails of what actually went down. What follows is a writeup of [a talk I have given on the subject](https://docs.google.com/presentation/d/19DjTcnDmYbToa4x_xaOZ7HRUM-ZF1Ol8LYstdSyfTrQ/edit#slide=id.g65459e8168_0_92).
+I found myself [with some time on my hands](https://twitter.com/togakangaroo/status/1183842162947039232?s=20) earlier this month and thought that it might be nice to dive into a high profile and controversial current events in tech issue as - in my experience - the facts rarely match the hype. Letting the ravings of friends and acquaintances guide me, I picked up the *Domino's Pizza LLC v Robles* case to see if I could make heads or tails of what actually went down. What follows is a writeup of [a talk I gave on the subject](https://docs.google.com/presentation/d/19DjTcnDmYbToa4x_xaOZ7HRUM-ZF1Ol8LYstdSyfTrQ/edit#slide=id.g65459e8168_0_92).
 
 Now before I go much further, I should clarify that I am definitely and 100% **NOT A LAWYER**. I am sure that I got at least some of the following wrong and I stand to be corrected.
 
@@ -62,7 +64,7 @@ But first, let's review...
 
 So let's review the basic timeline
 
-- September 2016 - Guillermo Robles **files** Robles v. Domiono's Pizza LLC in the *Central Distrinct of California*
+- September 2016 - Guillermo Robles **files** Robles v. Domino's Pizza LLC in the *Central Distrinct of California*
 - March 2017 - [case is **dismissed** without prejudice](https://fashionapparellawblog.lexblogplatformthree.com/wp-content/uploads/sites/194/2017/03/2017-03-20-Docket-42-Order-Granting-Defendant-Domino_s-Pizza_s-Motion-to....pdf) by the district
 - October 2018 - **appeal of the dismissal** [is argued in front of the 9th Circuit Court of Appeals](https://www.ca9.uscourts.gov/media/view_video.php?pk_vid=0000014434)
 - January 2019 - [**dismissal is overruled**](https://www.scotusblog.com/wp-content/uploads/2019/07/18-1539-opinion-below.pdf) by the 9th Circuit
@@ -81,7 +83,9 @@ So note that what happened here did not include a ruling over Domino's website.
 
 Again, I want to emphasize that there was no actual decision on anything other than that a specific lawsuit can continue and be argued. Keep that in mind as we walk through this stuff.
 
-<img style="float: right;" src="/img/dominos-v-robles/headlines.gif" alt="So many headlines that are mostly wrong." />
+<figure>
+  <img src="/img/dominos-v-robles/headlines.png" alt="So many headlines that are mostly wrong." />
+</figure>
 
 So this past October, there was a wide level of outcry and confusion about this decision. Everything from legitimate business concerns to wild-eyed conspiracies.
 
