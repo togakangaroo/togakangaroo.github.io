@@ -44,6 +44,9 @@ li
 	max-height: 65em;
 	overflow: hidden;
 }
+.entry {
+    position: relative; //needed to contain absolutes inside
+}
 .entry ul, .idea ul
 {
 	margin-left:10px;
@@ -64,6 +67,8 @@ li
 	color: #41b1e1;
 	margin-left:50px;
 	padding: 10px 10px 0 0;
+  position: relative;
+  z-index: 1; // needed since .entry is relative
 }
 #side .section
 {
