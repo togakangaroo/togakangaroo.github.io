@@ -36,7 +36,7 @@ I can read ok though, and went through and read the various opinions issued and 
 
 I am also not someone who particularly specializes in web accessibility. It is important and I know the basics, but I do not claim to be an expert. I quite possibly misspell the word accessibility as well.
 
-Finally, I'll note that in the following narrative I occasionally reference but omit a lot of discussion of previous case law and finer points of order. This article is long enough and if you're interested in diving down to that level just [read the opinion and itself](https://www.scotusblog.com/wp-content/uploads/2019/07/18-1539-opinion-below.pdf).
+Finally, I'll note that in the following narrative I occasionally reference but omit a lot of discussion of previous case law and finer points of order. This article is long enough and if you're interested in diving down to that level just [read the opinion itself](https://www.scotusblog.com/wp-content/uploads/2019/07/18-1539-opinion-below.pdf).
 
 # The Story
 
