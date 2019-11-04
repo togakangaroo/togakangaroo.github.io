@@ -150,7 +150,7 @@ Now granted - there can be some ambiguity here. Just not in this case. The court
 
 Additionally, the court points out that yes indeed, the Department of Justice and the courts have held over and over since the mid-90s that the ADA can apply to websites. There have been plenty of similar lawsuits and ink spilled on who has and who doesn't have to be compliant. None of this should come as a surprise to anyone.
 
-And on a personal note - [watching the actual arguments in front of the 9th circuit](https://www.ca9.uscourts.gov/media/view_video.php?pk_vid=0000014434) it seems to me that even the *Domino's lawyer* is unclear on what argument they're making here. It is even pointed out by a judge that they had previously seemed to have conceded the point that yes, websites can be public accommodations and therefore the law applies.
+And on a personal note - [watching the actual arguments in front of the 9th circuit](https://www.ca9.uscourts.gov/media/view_video.php?pk_vid=0000014434) it seems to me that even the *Domino's lawyer* is unclear on what argument they're making here. It is even pointed out by a judge that they seem to have previously conceded the point that yes, websites can be public accommodations and therefore the law applies.
 
 The court therefore concludes that on this point they have no reason and questionable ability to overturn decades of precedent. Yes, Title III has always and currently continues to apply to many websites in general and very much to the Domino's website in particular.
 
