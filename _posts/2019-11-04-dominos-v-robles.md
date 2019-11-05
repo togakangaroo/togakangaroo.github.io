@@ -40,13 +40,13 @@ Finally, I'll note that in the following narrative I occasionally reference but 
 
 # The Story
 
-So before we get to far into it, what are the basics of the story here?
+So before we get too far into it, what are the basics of the story here?
 
 <a href="https://www.latimes.com/politics/story/2019-10-07/blind-person-dominos-ada-supreme-court-disabled">
   <img style="float: left;" src="/img/dominos-v-robles/la-times-headline.jpg" alt="LA Times Headline - Supreme Court allows blind people to sue retailers if their websites are not accessible" />
 </a>
 
-It is this: Domino's Pizza lost a court case having to do with accessibility of their website.
+It is this: Domino's Pizza lost a court case having to do with the accessibility of their website and mobile app.
 
 The details of this were of course poorly reported and even worse understood. In fact, judging by the reaction of many, you'd think this decision was the end of the world.
 
