@@ -1,0 +1,529 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=1024" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <title>George Mauer - CV</title>
+        <meta name="author" content="George Mauer" />
+        <meta name="keywords" content="resume, software developer, management, tech" />
+    </head>
+    <body>
+        <style>
+         a {
+             color: inherit;
+         }
+         article {
+             break-inside: avoid;
+         }
+         details > summary {
+             list-style: none;
+         }
+         details {
+             break-inside: avoid;
+         }
+         details[open] > summary:before {
+             display: none;
+         }
+         body {
+             min-height: 100vh;
+             max-width: 1200px;
+             margin: 0;
+             padding: 20px;
+
+             display: grid;
+             grid-template-areas:
+                 " header   objective    "
+                 " header   buzzwords    "
+                 " header   achievements "
+                 " header   experience   "
+                 " header   projects     "
+                 " header   actions      ";
+             grid-gap: 20px;
+         }
+         .timespan {
+             font-size: 80%;
+             font-style: italic;
+         }
+         .job-title, .title {
+             display: inline;
+         }
+         #contact {
+             text-align: center;
+             font-size: 80%;
+         }
+
+         body > header {
+             grid-area: header;
+         }
+         #objective {
+             grid-area: objective;
+         }
+         #buzzwords {
+             grid-area: buzzwords;
+         }
+         #achievements {
+             grid-area: achievements;
+         }
+         #experience {
+             grid-area: experience;
+             break-inside: auto;
+         }
+         #projects ul {
+             display: grid;
+             grid-template: 1fr 1fr / 1fr 1fr;
+             grid-gap: 20px;
+         }
+         details > summary::-webkit-details-marker {
+             display: none;
+         }
+         #experience ul, #projects ul {
+             list-style-type: none;
+             padding: 0;
+             margin: 0;
+         }
+         details > summary:before {
+             content: "▼ ";
+             width: 1.5em;
+             font-family: monospace;
+             cursor: pointer;
+         }
+         #experience summary {
+             display: flex;
+             flex-wrap: wrap;
+             justify-content: space-between;
+         }
+         #experience .timespan {
+             margin-left: auto;
+         }
+         #experience .employer {
+             width: 100%;
+         }
+         #experience li+li details:before {
+             content: "";
+             display: block;
+             width: 3em;
+             border-top: 1px solid gray;
+             padding-top: 10px;
+             margin-top: 10px;
+         }
+         #actions {
+             display: flex;
+             justify-content: flex-end;
+         }
+         @media print {
+             body {
+                 font-size: 80%;
+                 max-width: auto;
+             }
+             #contact {
+                 display: grid;
+                 grid-auto-flow: column;
+                 grid-gap: 10px;
+             }
+             .blog a, .github a, .stackoverflow a, .linkedin a {
+                 display: none;
+             }
+             #contact .blog:before {
+                 content: "georgemauer.net";
+             }
+             #contact .github:before {
+                 content: "github.com/togakangaroo";
+             }
+             #contact .stackoverflow:before {
+                 content: "stackoverflow.com/users/5056";
+             }
+             #contact .linkedin:before {
+                 content: "linkedin.com/in/george-mauer/";
+             }
+             #actions {
+                 display: none;
+             }
+         }
+         @media print, (max-device-width: 600px), (max-width: 500px) {
+             body {
+                 grid-template-areas:
+                     "header      "
+                     "objective   "
+                     "buzzwords   "
+                     "achievements"
+                     "experience  "
+                     "projects    "
+                     "actions     ";
+             }
+             #projects ul {
+                 display: flex;
+                 flex-direction: column;
+             }
+         }
+        </style>
+
+        <header>
+            <h1>George Mauer</h1>
+            <article id="contact">
+                <p class="city-state">New Orleans, LA 70125</p>
+                <p class="mobile">
+                    <a href="tel:8604638322">860 463 8322</a>
+                </p>
+                <p class="email">
+                    <a href="mailto:gmauer@gmail.com">gmauer@gmail.com</a>
+                </p>
+                <p class="blog">
+                    <a href="http://georgemauer.net">Blog (georgemauer.net)</a>
+                </p>
+                <p class="linkedin">
+                    <a href="https://www.linkedin.com/in/george-mauer/">LinkedIn</a>
+                </p>
+                <p class="stackoverflow">
+                    <a href="https://stackoverflow.com/users/5056/george-mauer">StackOverflow</a>
+                </p>
+                <p class="github">
+                    <a href="https://github.com/togakangaroo/">Github</a>
+                </p>
+            </article>
+        </header>
+
+        <article id="objective">
+            <p>
+                I have been a senior developer with a focus on architecture, simplicity, and building effective teams for over twelve years. As a director at Surge consulting I was involved in many operational duties and decisions and - in addition to software development duties - designed and implemented interviewing processes and was involved in community building that saw it grow from 20 to about 250 developers.
+            </p>
+            <p>
+                I speak at conferences, have mentored dozens of software devs, have written popular articles, and been interviewed for a variety of podcasts and publications. I suppose that makes me an industry leader.
+            </p>
+            <p>
+                I'm particularly interested in remote-friendly companies that can check one or more of the following boxes:
+            </p>
+            <ul>
+                <li>
+                    Funded startups in need of a technical co-founder
+                </li>
+                <li>
+                    Product companies that help people in a non-trite manner
+                </li>
+                <li>
+                    Product companies that make developer or productivity tooling
+                </li>
+                <li>
+                    Companies that do functional programming <em>(especially Clojure or Elixir)</em>
+                </li>
+                <li>
+                    Companies trying to do something interesting with WebAssembly
+                </li>
+            </ul>
+        </article>
+
+        <article id="buzzwords">
+            <h2>Buzzwords</h2>
+            <p>
+                <b>Software Architecture</b>, <b>Web Development</b>, <b>React.js</b>, <b>C#</b>, <b>Python</b>, Agile Methodologies, Test Driven Development, Design Patterns, Database Design, Software Design, Microservices, Project Management, Software Development Life Cycle (SDLC), Cybersecurity, Product Management, Object-Oriented Programming (OOP), Technical Writing, ASP.NET MVC, .NET, HTML, CSS, ASP.NET, jQuery, PHP, Visual Studio, CSS, LINQ, AngularJs, Java, SQL, Python, Powershell, Node.js, Entity Framework, Open Source, Community Development, Public Speaking, Team Building, Mentoring, Community Engagement, Training, Clojure, Functional Programming, Lisp, SqlAlchemy, Domain-Driven Design (DDD), Emacs, TypeScript, Data Science, SOLID Design Principles
+            </p>
+        </article>
+
+        <article id="achievements">
+            <h2>Achievements</h2>
+            <ul>
+                <li>
+                    Committed code to jQuery. Mentioned in the <a href="https://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/">jQuery 2.2 changelog</a>
+                </li>
+                <li>
+                    Discovered a - still unpatched - vulnerability in Excel and Google Sheets which allows exfiltration of data when viewing csv files. <a href="https://www.reddit.com/r/programming/comments/75cupe/the_absurdly_underestimated_dangers_of_csv/">Blog post on this was #1 on Hacker News and Programming Reddit</a>
+                </li>
+                <li>
+                    Presented at many conferences and usergroups - Keynote speaker at Jazzcon 2017
+                </li>
+                <li>
+                    <a href="https://stackoverflow.com/users/5056/george-mauer">Stackoverflow reputation &gt; 52000</a>
+                </li>
+                <li>
+                    Most Viewed Author on Quora in Javascript and Web Development
+                </li>
+                <li>
+                    Frequently interviewed and cited over article and thoughts on how to <a href="http://georgemauer.net/2017/11/03/take-home-interviewing-tests.html">and not to structure developer interviews</a>
+                </li>
+                <li>
+                    Former co-organizer for New Orleans' regional tech and entrepreneur conference: BarcampNola
+                </li>
+                <li>
+                    Former member of the Public Advisory Board for Tulane's School of Continuing Studies Applied Computing Program
+                </li>
+                <li>
+                    Wrote and performed a sketch comedy show in the 2011 New Orleans Fringe Festival
+                </li>
+                <li>
+                    Former leader of New Orleans .NET Usergroup: In charge of recruitment, speaker selection, organization, advertising, etc.
+                </li>
+                <li>
+                    Committer to and creator of many open source projects
+                </li>
+                <li>
+                    Presented at the 2006 AAAI Conference on Human-Robot Interaction
+                </li>
+                <li>
+                    Research Stipend for Graduate School at Tulane University
+                </li>
+                <li>
+                    Awarded a Jiu-Jitsu blue belt by Rodrigo Gracie
+                </li>
+            </ul>
+        </article>
+
+        <article id="experience">
+            <h1>Experience</h1>
+            <ul>
+                <li>
+                    <details open>
+                        <summary>
+                            <div class="job-title">Director of Development</div>
+                            <div class="timespan">November 2016 - October 2019</div>
+                            <div class="employer">
+                                <a href="http://surgeforward.com">Surge Consulting Group</a>
+                            </div>
+                        </summary>
+                        <div class="description">
+                            <p>
+                                Lead a multitude of successful medium and large software projects developing applications for a variety of clients. This included working in C#, Javascript, Node, WPF, Python, Docker, and many other technologies.
+                            </p>
+                            <p>
+                                Designed and implemented an interview process that allowed the company to grow from 20 to almost 250 senior developers. Personally conducted nearly 200 technical interviews. Started and administered a mentoring program. Started and administered a weekly developer show-and-tell to cross-pollinate knowledge.
+                            </p>
+                            <p>
+                                Managed and developed internal skunkworks projects that provided an operations platform on which Surge did invoicing, staffing, and interviewing.
+                            </p>
+                            <p>
+                                Managed developer-related escalations and conducted 1-1s.
+                            </p>
+                            <p>
+                                Was involved in many management-level and direction-setting decisions.
+                            </p>
+                            <p>
+                                Worked with the parent company through a merger to identify and implement ways to improve operations.
+                            </p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details open>
+                        <summary>
+                            <div class="job-title">Senior Software Developer</div>
+                            <div class="timespan">June 2011 - November 2016</div>
+                            <div class="employer">
+                                <a href="http://surgeforward.com">Surge Consulting Group</a>
+                            </div>
+                        </summary>
+                        <div class="description">
+                            <p>Worked on a variety of complex web applications and backend projects with a heavy use of Javascript, AngularJs, c#, React, jQuery, F#, and more.</p>
+                            <p>Led multiple-person teams working with clients such as Verizon, Oliver Wyman, and AppleHms.</p>
+                            <p>Served as an informal developer evangelist within the company helping arrange and leading multiple programs that enabled the Surge developer community to grow</p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            <div class="job-title">Senior Software Developer</div>
+                            <div class="timespan">January 2010 – June 2011</div>
+                            <div class="employer">
+                                <a href="http://www.eps-software.com">CoDE/EPS Software</a>
+                            </div>
+                            <div class="employer-link"></div>
+                        </summary>
+                        <div class="description">
+                            <p>
+                                Worked for the consulting branch of one of the most renowned companies in the .Net space. Worked on large multi-million dollar custom systems ranging from WPF to ASP.Net MVC to the CoDE Milos Framework.
+                            </p>
+                            <p>
+                                Worked on close-knit Agile team with clients, junior staff, and some of the best developers in the industry.
+                            </p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            <div class="job-title">Lead Software Developer / Systems Architect</div>
+                            <div class="timespan">August 2007 – February 2010</div>
+                            <div class="employer"><a href="http://www.westway.com">Westway Holdings</a> </div>
+                        </summary>
+                        <div class="description">
+                            <p>
+                                Designed and developed applications in ASP.NET and WinForms for a large multinational corporation.
+                            </p>
+                            <p>
+                                Refactored legacy code to be more compliant with principles of loose-coupling and separation of concerns.
+                            </p>
+                            <p>
+                                Built relationships with and managed an outsourced team using an Agile approach including iterations, and continuous integration. Instituted previously lacking source control, issue tracking, and test driven development policies.
+                            </p>
+                            <p>
+                                Software development duties spanned all stages of the software lifecycle: gathering of requirements, discussions with domain experts, system architecture, iteration planning, management of developers, implementation, testing, quality assurance, administration, and the gathering and assessment of
+                            </p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            <div class="job-title">Freelance Developer / Owner</div>
+                            <div class="timespan">January 2007 – Present</div>
+                            <div class="employer">Humble Pi LLC</div>
+                        </summary>
+                        <div class="description">
+                            <p>
+                                Consulted customers on requirements and system design. Built software on PHP/MySQL and .NET/SQL Server platforms.
+                            </p>
+                            <p>
+                                Developed web applications through a daily use of PHP, ASP, Oracle and MySQL. Responsibilities included full-blown site and database design, documentation, and some light graphic design
+                            </p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            <div class="job-title">Web Application Developer</div>
+                            <div class="timespan">January 2006 – May 2007</div>
+                            <div class="employer">
+                                <a href="http://www.mudbugmedia.com">Mudbug Media</a>
+                            </div>
+                            <div class="employer-link"></div>
+                        </summary>
+                        <div class="description">
+                            <p>
+                                Developed web applications through a daily use of PHP and ASP. This was typically integrated with an Oracle or MySQL database requiring both back-end and front-end programming in order to generate dynamic, flexible, and maintainable code. Regularly designed and implemented in-browser applications using DHTML and occasionally AJAX. Responsibilities included full-blown site and database design, the writing of documentation, and some light graphic design and image manipulation. Projects were typically done solo or in small teams and ranged the full software development lifecycle of design, implementation, quality assurance, and customer support.
+                            </p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            <div class="job-title">Principal at Resultsoft LLC</div>
+                            <div class="timespan">December 2006 – January 2007</div>
+                        </summary>
+                        <div class="description">
+                            <p>
+                                Co-founded Resultsoft LLC and authored a Small Business Innovation Research (SBIR) Grant proposal to the Institute of Education Sciences (IES) for an educational videogame capable of using specific modern game-design concepts capable of rousing student interest in mathematics to an unprecedented level.
+                            </p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            <div class="job-title">Research Assistant in Image Processing and Analysis</div>
+                            <div class="timespan">September 2004 – September 2005</div>
+                            <div class="employer">Advanced Missile Defense Research Group, Tulane University</div>
+                        </summary>
+                        <div class="description">
+                            <p>
+                                Contributed to all phases of a project for the automation of land surveying through the use of LIDAR (Laser Imaging Detection and Ranging) and other publicly available data.
+                            </p>
+                            <p>
+                                Thesis work - SEGWORK - A Matlab Framework for Image Segmentation: Developed a set of Matlab libraries and an application for processing of LIDAR airborne laser scanner data.  This involved extensive academic research into trends in image processing as well as the implementation of many of these into small modules capable of interacting with each other.
+                            </p>
+                        </div>
+                    </details>
+                </li>
+            </ul>
+        </article>
+
+        <article id="projects">
+            <h1>Projects and Volunteering</h1>
+            <ul>
+                <li>
+                    <details>
+                        <summary>
+                            <div class="title"><a href="https://operationcode.org">Operation Code</a></div>
+                            <div class="summary">Mentor</div>
+                        </summary>
+                        <p>
+                            Offer frequent help, mentoring, debugging, and career advice sessions to online community of vets working in or transitioning into tech
+                        </p>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            <div class="title"><a href="https://www.operationspark.org">Operation Spark</a></div>
+                            <div class="summary">Teacher / Curriculum writer / Mentor</div>
+                        </summary>
+                        <p>
+                            Helped build curriculum, designed and taught Boot Camp programs in high schools and the New Orleans Juvenile Detention Center. Lectured and conducted town hall-style meetings with students in classes. Mentored and served as an on-site professional developer resource.
+                        </p>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            <div class="title"><a href="https://tulane.edu">Tulane University</a></div>
+                            <div class="summary">Guest Speaker</div>
+                        </summary>
+                        <p>
+                            Occasional guest speaker in the Tulane University Computer Science and Communication departments. Discussed everything from software architecture, to javascript, and open source.
+                        </p>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            gimgen
+                            <a href="https://github.com/togakangaroo/gimgen">Github</a>
+                        </summary>
+                        <p>
+                            Extremely experimental (yet working) javascript micro-library using generators to invert program flow and generate coroutines. This was the subject of several conference talks and has granted me a deep understanding of the language feature that is unparalleled.
+                        </p>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            Tech Terms Anki Deck
+                            <a href="http://georgemauer.net/2018/09/23/announcing-tech-terms-for-memorization.html">Blog Post</a>
+                            <a href="https://github.com/togakangaroo/tech-terms">Github</a>
+                            <a href="https://crosscuttingconcerns.com/Podcast-105-George-Mauer-Tech-Terms">Podcast</a>
+                        </summary>
+                        <p>
+                            A project for helping students and non-developers to get oriented in the terminology of tech. This is used as part of the curriculum in several courses and study groups.
+                        </p>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            Estimation Checklist
+                            <a href="https://github.com/togakangaroo/estimation-checklist">Github</a>
+                        </summary>
+                        <p>
+                            A massive collaborative checklist of questions one should remeber to ask when doing broad-scale estimation.
+                        </p>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            <code>$.persistState</code>
+                            <a href="https://github.com/togakangaroo/persistState">Github</a>
+                        </summary>
+                        <p>
+                            Extensible jQuery widget to automatically persist the state of UI components in localStorage.
+                        </p>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            ApprovalTests.BetterPdfVerification
+                            <a href="https://github.com/togakangaroo/ApprovalTests.BetterPdfVerification">Github</a>
+                        </summary>
+                        <p>
+                            A set of approvers for the .Net version of the amazing ApprovalTests assertion framework. It makes approving of pdf files actually work as it normalizes out inconsistencies such as timestamps and auto generated ids.
+                        </p>
+                    </details>
+                </li>
+            </ul>
+        </article>
+
+        <footer id="actions">
+            <button onClick="document.querySelectorAll('details').forEach(el => el.open = true)">Expand All</button>
+        </footer>
+    </body>
+</html>
