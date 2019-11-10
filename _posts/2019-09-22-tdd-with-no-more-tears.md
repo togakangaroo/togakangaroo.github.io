@@ -182,30 +182,78 @@ So, a designer, or the client, or maybe even you, might create a quick sketch ju
 
 So let's start out by writing down a little story for ourselves as to how the lap functionality might work
 
-- When we have a new stopwatch with main and lap slots
-  - when it is started
-    - then it reads 0 in main
-    - when 10s have passed
-      - main slot reads 10s
-      - there are no laps
-      - when 1s has passed
-        - then it reads 11s in main
-        - the are no laps
-      - when lap is hit
-        - then main slot reads 10s
-        - lap1 reads 10s
-        - when 1s has passed
-          - main slot reads 11s
-          - lap1 reads 10s
-          - when lap is hit
-            - main slot reads 11s
-            - lap1 reads 10s
+    - When we have a new stopwatch with main and lap slots
+      - when it is started
+        - then it reads 0 in main
+        - when 10s have passed
+          - main slot reads 10s
+          - there are no laps
+          - when 1s has passed
+            - then it reads 11s in main
+            - the are no laps
             
-So notice there's a couple branching possiblities here - what happens when the 11th second is allowed to pass versus allowed to lap, and assertions at various points to verify that thigns are as we want them to be.
-
-And actually now that I've written it out, there's an obvious specificaiton oversight. What does the main slot read *before* the timer is started? Well we go back to our product owner and...well the answer we get is slightly surprising, it should only read `0` *after* the timer has started. Therefore
+Hmm, actually now that I've written it out, there's an obvious specification oversight. What does the main slot read *before* the timer is started? Well we go back to our product owner and...well the answer we get is slightly surprising, it should only read `0` *after* the timer has started. Therefore
      
 - When we have a new stopwatch with main and lap slots
   - then the main slot should be empty
   - it has no laps
 
+Ok, we should probably flush out what the lapping mechanism does next
+
+          - when lap is hit
+            - then main slot reads 10s
+            - lap1 reads 10s
+            - when 1s has passed
+              - main slot reads 11s
+              - lap1 reads 10s
+              - when lap is hit
+                - main slot reads 11s
+                - lap1 reads 10s
+                - lap2 reads 11s
+                  - when 2s have passed
+                    - main slot reads 12s
+                    - lap1 reads 10s
+                    - lap2 reads 11s
+
+So notice there's a branching possiblity here - after we've accumulated a few laps we can specify what should happen if we were to let the timer run versus what should happen if we were to reset things. I find the ability to do this quite useful, though not strictly mandatory for the technique.
+
+Now, some specifications on what resetting does (kills the tracked time in `main` and `laps`, does not affect the state of the timer).
+
+              - when reset hit
+                - it reads 0 on main
+                - there are no laps
+                - when 2s have passed
+                  - it reads 2s on main
+                  - there are no laps
+
+And finally lets flush out some examples of pausing/resuming 
+
+            - when timer is paused
+              - it reads 10s on main
+              - when 2s have passed
+                - it reads 10s on main
+                - when timer is started
+                  - it reads 10s on main
+                  - when 2s have passed
+                    - it reads 12s on main
+    
+This seems good enough for now. Putting that all together we have a nice little story about what exactly we want this stopwatch to be doing. Now we can start implementing.
+
+But you don't have to.
+
+In fact, what you have now is already *massively valuable*. Commit it!
+
+What is it that you have here?
+
+Well it is a
+
+- Documentation that conveys succinctly and in user-centric terms what the component actually does
+- Acceptance criteria for what it means for the feature to be complete
+- A test plan for how to test against regressions (one that is very valuable even if *not* automated)
+- A blueprint for what you need to implement
+
+I will often start by saving and committing this in a block comment in a test file.
+
+The next step is to actually implement these tests, but it would at this point be perfectly reasonable to make a business decision that implementation might not be worth it for some reason or another and to push it off to tech debt. By carefully structuring requirements up front in a manner such as this, so long as when you implement your code with these tests in mind, you have already achieved a good portion of the benefits to be had from TDD.
+
+This point of view serves well to highlight the difference between TDD and automated testing that I previously alluded to. Technically, test-*driven*-development doesn't even have to be be automated!
