@@ -10,4 +10,4 @@ This is my low effort blog. Mostly about software development. I regularly do pr
 
 {% gist d00002a7ab395e67f3249da4c6ef5aa4 %}
 
-A gist
+A gist of sorts 
