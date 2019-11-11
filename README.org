@@ -1,0 +1,60 @@
+My low effort blog. Compiled to a static site with [[https://jekyllrb.com][Jekyll]].
+
+* Building and Running
+  :PROPERTIES:
+  :header-args: :results output
+  :END:
+  
+** Build Image 
+   
+  First build the image from the local [[file:./Dockerfile][Dockerfile]].
+ 
+  #+begin_src shell
+  docker build -t "jekyll" .
+  #+end_src
+  
+** Create and run container from image 
+   
+  If you would like to run from org mode directly, you will need to have ~ob-async~ installed so the ~:async~ directive below works.
+  
+  #+begin_src emacs-lisp
+  (require 'ob-async)
+  #+end_src
+  
+  Otherwise you can simply copy and paste the following into a shell.
+    
+  We can then run the site with [[./build-site.sh][build-site.sh]]
+
+  #+begin_src shell :async
+  ./build-site.sh --watch
+  #+end_src
+
+  #+RESULTS:
+
+  or if you don't care about watching the file system for changes and recompiling
+
+  #+begin_src shell :async
+  ./build-site.sh
+  #+end_src
+  
+  Give it a minute to start and you can then [[http://localhost:4000][visit the running site]].
+
+  To stop the container run
+
+ #+begin_src shell :results none
+ docker kill blog
+ #+end_src
+
+** Also useful
+
+ List all running containers
+ 
+ #+begin_src shell :results output list
+ docker ps -a
+ #+end_src
+
+ To list all local images
+ 
+ #+begin_src shell :results output table
+ docker images
+ #+end_src
