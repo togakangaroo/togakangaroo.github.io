@@ -257,3 +257,19 @@ I will often start by saving and committing this in a block comment in a test fi
 The next step is to actually implement these tests, but it would at this point be perfectly reasonable to make a business decision that implementation might not be worth it for some reason or another and to push it off to tech debt. By carefully structuring requirements up front in a manner such as this, so long as when you implement your code with these tests in mind, you have already achieved a good portion of the benefits to be had from TDD.
 
 This point of view serves well to highlight the difference between TDD and automated testing that I previously alluded to. Technically, test-*driven*-development doesn't even have to be be automated!
+
+I think now is a good time to talk about 
+
+# What is a unit test anyways?
+
+I can already hear the grumbles:
+
+> But...but...this isn't unit testing, it is integration testing!
+
+and to that, person-I-just-made-up, I roll my eyes at you.
+
+We can spend forever playing around with the definition of what is a unit.
+
+> How silly, it is a single responsibility
+
+A responsibility
