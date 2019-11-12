@@ -142,3 +142,11 @@ figcaption {
 		.actions.share > * + * {
 				margin-left: 1em;
 		}
+
+#page-navigation {
+    display: flex;
+    justify-content: space-between;
+}
+    #page-navigation .clear {
+        display: none;
+    }

@@ -245,7 +245,7 @@ In fact, what you have now is already *massively valuable*. Commit it!
 
 What is it that you have here?
 
-Well it is a
+Well it is
 
 - Documentation that conveys succinctly and in user-centric terms what the component actually does
 - Acceptance criteria for what it means for the feature to be complete
@@ -266,10 +266,24 @@ I can already hear the grumbles:
 
 > But...but...this isn't unit testing, it is integration testing!
 
-and to that, person-I-just-made-up, I roll my eyes at you.
+And to that, person-I-just-made-up; I roll my eyes at you.
 
 We can spend forever playing around with the definition of what is a unit.
 
-> How silly, it is a single responsibility
+Is a unit a single function? Why a function? A unit is meant to be indivisible, but we divide up functions up all the time. [It is the most popular refactoring operation](https://refactoring.com/catalog/extractFunction.html).
 
-A responsibility
+Is a unit a class? Spend some time programming in a class-less paradigm and tell me what is so special about classes. A factory function that returns a tuple does much the same job as a constructor, and we've already tackled functions.
+
+Is it a feature then? How do we even define this?
+
+The BDD definition is also fuzzy. By insisting on naming tests from the user point of view, the unit corresponds more or less to a minimal workflow that a user would find useful.
+
+For me - while I bias toward the latter - I prefer going to first principles. What do we look for in a traditional "unit test"?
+
+* We want it to be reasonably isolated so that a failure can be properly attributed to a failure of the system under test. This means (but doesn't mandate) minimizing any dependencies on external systems like network availability, database servers, or other tests running properly in sequence.
+* We want it to be fast. A major goal here is to tighten the feedback loop between code and verification. If a test suite is so slow that developers are discouraged from running all relevant tests in response to even the smallest change, then it is not serving that purpose.
+* We want the test to be focused so that if it fails, we can have a good idea where an error might reside and can isolate the issue and repair it rapidly. Personally I find this to generally be of lesser importance than the other two, but it is important nevertheless.
+
+If we can keep to these goals while implementing our tests, especially given the intentional broadness of the Behavior Driven Development approach, then what is it to say they are not "unit" but an argument over semantics?
+
+# Let's start implementing
