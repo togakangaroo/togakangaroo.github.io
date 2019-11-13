@@ -287,3 +287,43 @@ For me - while I bias toward the latter - I prefer going to first principles. Wh
 If we can keep to these goals while implementing our tests, especially given the intentional broadness of the Behavior Driven Development approach, then what is it to say they are not "unit" but an argument over semantics?
 
 # Let's start implementing
+
+We will implement this example in javascript but [see my repo for it in other languages](https://github.com/togakangaroo/tdd-with-no-tears).
+
+Lets start by writing down some basics tests.
+
+I like to think of our testing as proceding through several sets of priorities.
+
+## Set up the basic testing flow
+
+The goal at this point is just to build out a shell for our tests. Just get writing *something* that runs and passes.
+
+We start by just inventing some methods that we wish existed.
+
+{% gist af7b76a74eefa676f456c8f9523678e5 %}
+
+We create the stopwatch itself in the `sw` variable from a simple `createStopWatch` method and test a few properties on it - nothing fancy, just what makes sense.
+
+Set up a file watcher to auto-run testas on file change and you can see all our tests now failing. That's our red.
+
+Now we might as well write the code implied by the above.
+
+{% gist 9d2f8ab785ad0de85083072b0e1e9ae6 %}
+
+Now we continue with more tests. At this point our goal is to focus on the red-green. We write testing code, and write enough to get it to pass. We can refactor where the right move is obvious but it is not yet the focus - we will have time for refactoring, but right now we want to focus on building out all the basics we need to get the red-green workflow going.
+
+{% gist f7c0c83d5d70ef094be84cd995b22c2e %}
+
+And now we start to transition to the next set of priorities
+
+## Make writing of tests easier
+
+Now that we're jiving, we are transition to a new phase of our testing. Yes, we still want to red and green, but we now are now starting to see the common patterns within our testing code. Once these become clear we can now introduce refactoring of our *test* code. So we will make the above test but also refactor our tests a bit.
+
+{% gist 0f3cb5bee815e80c984eac80bce469fb %}
+
+As we notice how often we are asserting against both main and lap displays and decide to refactor (my rule-of-thumb is refactoring once I have three uses of a pattern) and so we create a `main_and_laps_should_display` function (yes, underscores aren't the javascript naming standard, but not having your function name look like scriptio continua trumps naming standards, and this is less of an issue for non-public functions).
+
+The idea here is that by identifying common patterns and refactoring, you are creating a mini-library for the generation of further test scenarios. It is not uncommon for me to take hours writing out test stories, an hour or two getting the testing workflow down, and then another hour in this phase of writing tests and refactoring, then once on the other side, generating the remaining majority balance of scenarios and implementations in 30 minutes.
+
+We are coders, we can and should write code that makes it easier for us to write code.
