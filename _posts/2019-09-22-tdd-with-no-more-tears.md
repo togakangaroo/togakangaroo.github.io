@@ -5,11 +5,24 @@ author: "George Mauer"
 comments: true
 ---
 
-This is a writeup of my talk *TDD With No More Tears* and explores what I consider to be an approach to test driven development that is both more practical and easier to actually doing test driven development on a real project.
+<style>
+  .posts .tdd-with-no-more-tears img, 
+  .entry img,
+  .entry figure {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  .entry figure img {
+    margin: 0;
+  }
+</style>
+
+This is a writeup of [Talk of the same title](https://docs.google.com/presentation/d/1mvzBX_vYvcfqSPNpMmYSwRzy__IstOfDiClxa_9iMRc/edit#slide=id.g5dff9559d2_2_835), exploring what I consider to be an approach to test driven development that is both more practical and easier to apply on a non-toy project.
 
 Let's begin.
 
-Test driven development is important. It is useful, it results in better structured code, and - for experienced practitioners - lower development times with fewer bugs. So of course we want to scream
+Test driven development is important. It is useful, it results in better structured code, and - for experienced practitioners - lower development times with fewer bugs. So of course we want to scream:
 
 <figure style="float: left; margin: 1em;">
   <img src="/img/tdd_with_no_more_tears/tdd_all_the_things.jpg" alt="TDD all the things">
@@ -20,31 +33,33 @@ As a rapid aside, let's consider the source of this meme. It comes originally fr
 
 The irony of this image being used to express enthusiasm is...palpable.
 
-So no, I do not actually believe that you should use TDD all the time. Of course and definitively not! Test driven development is a technique and - like all techniques - is useful only so long as it is useful and when it is not, it is useless. I have no idea why this is such a difficult concept for some.
+So no, I do not actually believe that you should use TDD all of the time and for everything. Of course and definitively not! Test driven development is a technique and - like all techniques - is useful only so long as it is useful and when it is not, it is useless. I have no idea why this is seen as a difficult concept.
 
-It is worth acknowledging that there seems to be a split in the community between those who consider themselves champions and advocates of test driven development and the silent majority who doubt their own abilities to wield it properly, consider it confusing and occasionally busywork, and often feel secretly guilty for not being the sort of person that "gets it".
+Awkwardly, there seems to be a split in the community between those who consider themselves champions and advocates of test driven development and the silent majority who doubt their own abilities, consider it confusing and occasionally busywork, and often feel secretly guilty for not being the sort of person that "gets it".
 
 To those people I'll say: It's not just you.
 
+<!--break-->
+
 # The Problem With TDD Education
 
-Think about your standard _"Let's all learn TDD"_ article: four times out of five we're implementing a calculator, right? And not a real calculator of course, that article will take far long to write! We're doing like...addition. Swell!
+Think about your standard _"Let's all learn TDD"_ article: four times out of five we're implementing a calculator, right? And not a real calculator, that article will take far long to write and bloggers are so lazy that I'm going to give up searching for a metaphor! No, it's a simplistic calculator, doing like...addition. Swell!
 
-But even the remaining fifth of the time, the format is always that you're given a method signature or a class interface and now we write tests against that. They're red! We then implement things till they're green! And then - if the tutorial is a halfway decent one and doesn't leave it as an exercise to the reader - we refactor. Go!
+The format is always that you're given a method signature or a class interface and we write tests against that. They're red! We then implement things till they're green! And then - if the tutorial is a halfway decent one and doesn't leave it as an exercise to the reader - we refactor (Foreshadowing - this article will go on to do exactly that). Go!
 
-But here's the thing: We don't often get method signatures or class interfaces and are told to implment them. Instead, we get client requirements. And client requirements are...to put it kindly...a mess. In fact, you might recognize that identifying which methods and classes need to be created **is typically more difficult than implementing them**. That's that whole "software design" bit that no one is all that good at.
+But here's the thing: We don't often get method signatures or class interfaces and are told to implement them. Instead, we get client requirements. And client requirements are...to put it kindly...a mess. In fact, you might recognize that identifying which methods and classes need to be created **is typically more difficult than implementing them**. That's that whole "software design" bit that no one is all that great at.
 
-And yet TDD is [meant](https://www.infoq.com/articles/test-driven-design-java/) [to be](https://www.thoughtworks.com/insights/blog/test-driven-development-best-thing-has-happened-software-design) a [software design](https://stackoverflow.com/questions/80243/does-test-driven-development-take-the-focus-from-design) technique. In fact, many people insist that the acronym is Test Driven **Design**. Most of the world ignores this of course because...well...backronyming a popular acronym in order to subtly highlight a shift in mental focus is a shitty marketing strategy.
+And yet TDD is [meant](https://www.infoq.com/articles/test-driven-design-java/) [to be](https://www.thoughtworks.com/insights/blog/test-driven-development-best-thing-has-happened-software-design) a [software design](https://stackoverflow.com/questions/80243/does-test-driven-development-take-the-focus-from-design) technique. In fact, many people insist that the acronym is [Test Driven **Design**](https://stackoverflow.com/q/7538744/5056). Most of the world ignores this of course because...well...backronyming a popular acronym in order to subtly highlight a shift in mental focus is a shitty marketing strategy.
 
 So if TDD is not a software design technique then what is it? It's about having a test suite to guard against regressions, right? You make a change, you can tell right away if you broke something. That sounds useful and good.
 
-Of course, bugs don't actually care when you wrote the test that catches them, do they? Regression protection applies just as well if you do test-first, test-after, or even just give just pay people money to meticulously follow a script.
+Of course, *bugs don't actually care when you wrote the test that catches them*, do they? Regression protection applies just as well if you wrote your testing code first, after, or even just give just pay people money to meticulously follow a testing script.
 
-Ok, I actually agree with the tdd-is-a-design-technique idea. But not in quite the same way as people often mean. You see, I believe that test driven development as often taught is completely ass-backwards. Don't start with function signatures, **start with requirements**. And not just make-me-a-calculator requirements but realistic requirements. "Ok, I kinda see what you're maybe going for but goddamn does this need a lot of work" style requirements. Test driven development is a software design technique **especially in that it is a good technique for refining requirements.** Start with that.
-
-<aside>
+<aside style="width: 20em; margin: 10px; float: right; border: 1px solid grey; padding: 10px; box-sizing: border-box;">
   <p>Ok, that might be overstating the case somewhat, I have no problem with teaching calculator just to get the basic flow-of-testing down kata-style, but then for goodness sake, don't stop there! At least don't imply that this half-step down the road is somehow all you need to understand to complete the journey.</p>
 </aside>
+
+Ok, I actually agree with the tdd-is-a-design-technique idea. But not in quite the same way as people often mean. You see, I believe that test driven development as often taught is completely ass-backwards. Don't start with function signatures, **start with requirements**. And not just make-me-a-calculator requirements but realistic requirements. "Ok, I kinda see what you're maybe going for but goddamn does this need a lot of work" style requirements. Test driven development is a software design technique **especially in that it is a good technique for sharpening ambiguity.** Start with that.
 
 But before we get into details on how to learn this stuff, lets sidebar.
 
@@ -312,6 +327,8 @@ Now we might as well write the code implied by the above.
 
 Now we continue with more tests. At this point our goal is to focus on the red-green. We write testing code, and write enough to get it to pass. We can refactor where the right move is obvious but it is not yet the focus - we will have time for refactoring, but right now we want to focus on building out all the basics we need to get the red-green workflow going.
 
+Also worth noting that I'm writing all code in the same file as it is simply faster to navigate and import dependencies for. I don't want to get caught up in what subdirectories to put things in, I just want to get the basic flow down.
+
 {% gist f7c0c83d5d70ef094be84cd995b22c2e %}
 
 And now we start to transition to the next set of priorities
@@ -327,3 +344,49 @@ As we notice how often we are asserting against both main and lap displays and d
 The idea here is that by identifying common patterns and refactoring, you are creating a mini-library for the generation of further test scenarios. It is not uncommon for me to take hours writing out test stories, an hour or two getting the testing workflow down, and then another hour in this phase of writing tests and refactoring, then once on the other side, generating the remaining majority balance of scenarios and implementations in 30 minutes.
 
 We are coders, we can and should write code that makes it easier for us to write code.
+
+This in turn makes the next set of tests and implementations much faster and as we churn through are scenarios we find more opportunity to refactor our tests - for example by introducing an `elapses` function to replace a `describe` block which simply advances the timer.
+
+{% gist e7934b00571c397f1c96c009a82cf5e7 %}
+
+You want to use a light touch and not go nuts with refactoring tests. You still want it to be simple for someone new to be able to trace the logic without difficulty and to be able to read the specification as documentation. Remember, the goal is always to [keep things as simple as it makes sense and not a bit more](https://www.youtube.com/watch?v=34_L7t7fD_U). The fact that it makes tests easier to write is more of a pleasant bonus than an end goal.
+
+## Finish and fiddle
+
+As the test mini-library you've created starts falling into place it soon becomes much easier to implement subsequent parts of the story and your red-green loop really starts to fly.
+
+```text
+8537e614da9da830e873c855194b3103a93df6b8 12:11 ticking passing elapses refactored
+d6e2c889de9b930c329230d07ec9a1ad86042f5c 12:16 lap no passing
+7faefff96cb3c52bfad9cbfbaa04339490d16446 12:17 lap passing
+d01457780a6505fe59a41b56e8d9488a70198c7f 12:23 laps implemented and passing
+7e88164c5bf24fbf9440eeb50f6527133551ad9a 12:25 lap reset not passing
+dc8bd60b050951452bf0b6223a9f2f3b8e5e55ef 12:27 lap reset passing
+428d9129704c637f3d94497b283c71a5610e4877 12:30 reset not passing
+e1e3ba32f949979697ca730068db819084bf5e3f 12:31 reset passing
+366622a6acd0bfd7c824e690e4f76e11acf9095f 12:32 stop not passing
+43a8dd971f728b9a98a7084e4bc5960d9c93c624 12:35 basic stop passing
+fa1f4951fba1d40163d8ec7e5d8702bc5e7a2aba 12:36 actually pause timer not passing
+635a6d4108720bead8b81364ab3460c666b63c88 12:37 timer actually stopped passing
+e3b17d29809850903bf00f4a0aeb633410912386 12:38 clock dependencies refactored to be injected
+b00619e4fb07bda021c2a1b2c3d9971e276531e6 12:39 resume paused timer not passing
+109a3db831da5602b7b10b24e032e034dbdc9541 12:42 post pause resume passing
+```
+
+And before long you've TDDed up a whole feature.
+
+{% gist e83139f592a302e24cc7f0bc5ab6a3c7 %}
+
+Now we are ready to do some hardcore refactoring. This is a good time for moving things to their own dedicated files and breaking out utility methods.
+
+It is also a good time to revisit the structures we've created - should we use cascading `setTimeout` versus `setInterval`? Is tracking state by manually queueing the `nextToggle` function something we want to do? Is it a terrible idea to use the `displays` object as the cannonical time for internal calculations?
+
+All good questions and easy-to-hande implementation details that we can modify without affecting our tests at all. And that's the true test here isn't it? One of the biggest pain points about TDD we tend to see is when test *maintanance* is taking significant chunks of time. By focusing on the user's workflows and by taking a hard line to refactoring the testing code itself, we can make it so not only are tests a tool for understanding ambiguous requirements, but that they support our goals, without needing significant refactoring time *even when the underlying implementation changes significantly*. After all, even if our method of tracking time changes, the user's needs - and therefore our scenarios - will not.
+
+# Conclusion
+
+So despite the preachy tone in the above, I'm not really trying to preach here. This sort of setup, where you use tests with a BDD style specifically to attack ambiguous requirements is what has worked well for me. I have also had no shortage of situations where I've gotten neck deep in a problem I thought i could just "knock out" and was wishing I had taken the time to write tests to begin with. Not because tests are any sort of pancea, but because ultimately it would have saved me.
+
+And this is a worthwhile thing to highlight. Test driven development - when done right - will save you time. It will do this not by helping you squash known bugs (after all, test-after will do that too), but by helping you understand requirements to such a degree that you should be avoiding many unforseen bugs to begin with.
+
+This all does take some practice, and you should do that - real dedicated practice is important. Implement the scenarios here as a kata for example. 
