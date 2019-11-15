@@ -11,10 +11,20 @@ comments: true
   .entry figure {
     margin: 20px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
   }
   .entry figure img {
     margin: 0;
+  }
+  .entry .tdd-terms {
+    border: 1px solid gray;
+    display: inline-flex;
+    margin: 0 auto;
+    padding: 10px 30px;
+    position: relative;
+    left: calc(50% - 3em - 15px);
   }
 </style>
 
@@ -24,7 +34,7 @@ Let's begin.
 
 Test driven development is important. It is useful, it results in better structured code, and - for experienced practitioners - lower development times with fewer bugs. So of course we want to scream:
 
-<figure style="float: left; margin: 1em;">
+<figure style="">
   <img src="/img/tdd_with_no_more_tears/tdd_all_the_things.jpg" alt="TDD all the things">
   <figcaption>Amirite?</figcaption>
 </figure>
@@ -35,11 +45,11 @@ The irony of this image being used to express enthusiasm is...palpable.
 
 So no, I do not actually believe that you should use TDD all of the time and for everything. Of course and definitively not! Test driven development is a technique and - like all techniques - is useful only so long as it is useful and when it is not, it is useless. I have no idea why this is seen as a difficult concept.
 
+<!--break-->
+
 Awkwardly, there seems to be a split in the community between those who consider themselves champions and advocates of test driven development and the silent majority who doubt their own abilities, consider it confusing and occasionally busywork, and often feel secretly guilty for not being the sort of person that "gets it".
 
 To those people I'll say: It's not just you.
-
-<!--break-->
 
 # The Problem With TDD Education
 
@@ -67,91 +77,71 @@ But before we get into details on how to learn this stuff, lets sidebar.
 
 Many people reading about testing would have seen the "Triple-A" recommendation. To wit, it is that a test typically has three parts.
 
-<figure>
+<figure class="tdd-terms">
   <p>Act</p>
   <p>Arrange</p>
   <p>Assert</p>
 </figure>
 
-The idea being that you have three parts of any test - one where you **arrange** all the preconditions and context for running the test, another where you **preform the action** that is to be tested, and finally where you **assert** the outcome of that action was as expected.
+The idea being that you **arrange** all the preconditions and context for running the test, **preform the action** that is to be tested, and finally where you **assert** the outcome that was expected.
 
-This makes sense but its also rather...robotic. In the mid-2000s then, [Behavior Driven Development](https://en.wikipedia.org/wiki/Behavior-driven_development) came along and in the subtlest of nods to considering actual requirements made the recommendation of simply subbing in words that people are actually likely to use.
+This makes sense but its also rather...robotic. In the mid-2000s then, [Behavior Driven Development](https://en.wikipedia.org/wiki/Behavior-driven_development) came along and in the subtlest of nods to considering actual requirements made the recommendation of simply subbing in words that skin-and-bone people actually use.
 
-<figure>
+<figure class="tdd-terms">
   <p>Given</p>
   <p>When</p>
   <p>Then</p>
 </figure>
 
-This was a good idea and all part of the goal that when tests are properly arranged they can be read and maybe even written by business people.
+This was a good idea and jived well with the hypothesis that when tests are properly arranged thusly they can be read and maybe even written not only by developers but even business people!
 
-This is a pleasant and laud-worthy dream that I've never seen anyone actually do successfully but you know...you go girl.
-
-I think the "Given...when...then" terminology focuses on what's important a bit better than Triple-A (and again, not a major distinction), but I always find that there's not a super-great distinction between the "Given" and "When" clauses. After all, setting up context could be seen as an action in itself and reflexively, the fact that an action has been performed *is the context for making an assertion. Moreover, it's not exactly clear what the benefit of separating the two is.
-
-So in the interest of simplicity, lets shorten it (and to be clear, I'm not the one who came up with this, though I forget now where i saw it argued first):
+This is a pleasant and laud-worthy dream that I've never seen anyone actually do successfully but you know...
 
 <figure>
+  <img src="/img/tdd_with_no_more_tears/you-go-girl.jpg" alt="New Orleans Graffiti - You Go Girl" />
+  <figcaption>You Go Girl</figcaption>
+</figure>
+
+I think the "Given...when...then" terminology focuses on what's important a bit better than Triple-A, but it's minor and I always find that there's not a super-great distinction between the "Given" and "When" clauses. After all, setting up context could be seen as an action in itself and reflexively, the fact that an action has been performed **is** the context for making an assertion. Moreover, it's not exactly clear what the benefit of separating the two actually is.
+
+So in the interest of simplicity, lets shorten it (and to be clear, I'm not the one who came up with this and I forget where I saw it first argued):
+
+<figure class="tdd-terms">
   <p>When</p>
   <p>Then</p>
 </figure>
 
 This is nice as **Less Complex is More Better**.
 
-So we really only have two clauses now, but as a nod to the experdiency of breaking things down, lets say we can arbitrarily chain together a series of **When** statements (meaing simply a sequential "do this, this, this, this, and this") and a series of **then** statements (meaning a parallel "assert this, that, and this other thing"). It can all be modeled as follows:
+So we really only have two clauses now, but - as a nod to the experdiency of breaking things down - lets say we can arbitrarily chain together a series of **When** statements (meaing simply a sequential "do this, this, this, this, and this") and a series of **then** statements (meaning a parallel "assert this, that, and this other thing"). It can all be modeled for example as follows:
 
-<figure>
-  <ul>
-    <li>
-      When
-      <ul>
-        <li>
-          When
-          <ul>
-            <li>Then</li>
-            <li>
-              When
-              <ul>
-                <li>Then</li>
-                <li>Then</li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li>
-      When
-      <ul>
-        <li>Then</li>
-      </ul>
-    </li>
-  </ul>
-</figure>
+```
+when
+  then
+  when
+    then
+    then
+    when
+      then
+      then
+```
 
 In my experience and **as a very general rule, in computer science when something fits naturally into a tree, you can know you are on the right path.**
 
-<figure>
-  <ul>
-    <li>When ready to cook an omelette for two
-      <ul>
-        <li>then we should have three eggs, grated mozzarella, green onions, salt, and milk on the counter</li>
-        <li>when combining eggs, milk, and a pinch of salt in a bowl
-          <ul>
-            <li>then it should have no eggs left on the counter</li>
-            <li>then it should have approximately 8oz of stuff in the bowl</li>
-            <li>when done beating the eggs with the milk
-              <ul>
-                <li>Thenthen there should be a bowl with a consistent pale yellow color</li>
-                <li>then the original amount of cheese and onions is retained</li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</figure>
+Lets fill those out to a specific example
+
+```
+when ready to cook an omelette for two
+  then we should have three eggs, grated mozzarella, green onions, salt, and milk on the counter
+  when combining eggs, milk, and a pinch of salt in a bowl
+    then it should have no eggs left on the counter
+    then it should have approximately 8oz of stuff in the bowl
+    when done beating the eggs with the milk
+      then there should be a bowl with a consistent pale yellow color
+      then the original amount of cheese and onions is retained
+```
+
+(Cooking example a halfassed tribute to [this amazing article](http://www.lihaoyi.com/post/WhatsFunctionalProgrammingAllAbout.html))
 
 Yep, that looks a lot like jasmine/mocha/jest, what can I say, they got this part right.
 
@@ -171,15 +161,20 @@ So after tons of back-and-forth. After conversations, after [impact mapping](htt
   </p>
 </figure>
 
-OMG! That's not just an feature request pushed into the "story" pile. It is an actual for-real user story with a "because" clause and everything!
+OMG! That's not just an feature request pushed ruluctantly into the "story" pile. It is an actual for-real user story with a "because" clause and everything!
 
-This is important because - and let me be clear -**user stories are not tasks**. They are a placeholder for a conversation between technical and business people and as such, the proposal sandwiched in between the role and the problem statement is the least important part and very subject to change.
+This is important because - and let me be clear -**user stories are not tasks**. They are a placeholder for a conversation between technical and business people and as such, the proposal sandwiched in between the role and the problem statement is the least important part. It is just an illustratory example.
 
-In this case for example, a very reasonable question might be 
+In this case for example, a conversation might include the very reasonable question:
 
 > Well...can we just attach a $2 timer to the floor manager's workstation?
 
-If we can solve the problem so easily we absolutely should! Like there aren't enough actually hard problems to solve.
+If we can solve the problem so easily we absolutely should! Like there aren't enough actually hard problems to solve that we have to make up new ones.
+
+<figure>
+  <img src="/img/tdd_with_no_more_tears/bind-men-elephant.jpg" alt="Blind men describing an elephant" />
+  <figcaption>Elephant description for blind men - now that's a hard problem.</figcaption>
+</figure>
 
 But let's for the sake of argument say there is a good reason to write custom software here. The first thing to ask is:
 
@@ -191,11 +186,13 @@ Which will certainly get you a weird look.
 
 Ah, so a stopwatch, not a timer. This misunderstanding could have let us down a world of dead ends so it's a win to have clarified already.
 
-And this is not unusual! This is the sort of thing that clients might actually give you to work off of. It is hard for non-technical people to understand the degree of specificity needed to write code and really the only way forward is to methodically fill in the gaps you can be reasonably confident you're filling in correctly, ask a lot of questions, and try to double check everything.
+And this is not unusual! This is the sort of thing that clients might actually give you to work off of. It is hard for non-technical people to understand the degree of specificity needed to write code and the only real way forward is to methodically fill in the gaps you can be reasonably confident of, ask a lot of questions, and try to double check everything.
+
+<img style="float: right" src="/img/tdd_with_no_more_tears/stopwatch-mockup.jpg" alt="A crappy stopwatch mockup">
 
 So, a designer, or the client, or maybe even you, might create a quick sketch just of what this darn thing will look like. Maybe not an official design, but just a visual to enhance communication. And that's good. But now you're sitting there, looking at this sketch, the pile of handwritten notes from your last product owner meeting, and a nervous grin on your face, trying to figure out what functions or classes to write so that you can test them; and all without having a clear idea of what the thing does!
 
-So let's start out by writing down a little story for ourselves as to how the lap functionality might work
+Let's tackle *that* first. Let's start by writing down a little story for ourselves as to how the lap functionality might work
 
     - When we have a new stopwatch with main and lap slots
       - when it is started
@@ -207,11 +204,11 @@ So let's start out by writing down a little story for ourselves as to how the la
             - then it reads 11s in main
             - the are no laps
             
-Hmm, actually now that I've written it out, there's an obvious specification oversight. What does the main slot read *before* the timer is started? Well we go back to our product owner and...well the answer we get is slightly surprising, it should only read `0` *after* the timer has started. Therefore
+Hmm, actually now that I've written it out, there's an obvious specification oversight. What does the main slot read *before* the timer is started? Well we go back to our product owner and...well the answer we get is slightly surprising, it should only read `0` *after* the timer has been started. Therefore
      
-- When we have a new stopwatch with main and lap slots
-  - then the main slot should be empty
-  - it has no laps
+    - When we have a new stopwatch with main and lap slots
+      - then the main slot should be empty
+      - it has no laps
 
 Ok, we should probably flush out what the lapping mechanism does next
 
@@ -230,7 +227,6 @@ Ok, we should probably flush out what the lapping mechanism does next
                     - lap1 reads 10s
                     - lap2 reads 11s
 
-So notice there's a branching possiblity here - after we've accumulated a few laps we can specify what should happen if we were to let the timer run versus what should happen if we were to reset things. I find the ability to do this quite useful, though not strictly mandatory for the technique.
 
 Now, some specifications on what resetting does (kills the tracked time in `main` and `laps`, does not affect the state of the timer).
 
@@ -240,6 +236,8 @@ Now, some specifications on what resetting does (kills the tracked time in `main
                 - when 2s have passed
                   - it reads 2s on main
                   - there are no laps
+
+So notice there's a branching possiblity here - after we've accumulated a few laps we can specify what should happen if we were to let the timer run versus what should happen if we were to reset things. I find the ability of a testing framework to do this quite useful, though not strictly mandatory for the technique.
 
 And finally lets flush out some examples of pausing/resuming 
 
@@ -252,66 +250,64 @@ And finally lets flush out some examples of pausing/resuming
                   - when 2s have passed
                     - it reads 12s on main
     
-This seems good enough for now. Putting that all together we have a nice little story about what exactly we want this stopwatch to be doing. Now we can start implementing.
+This seems good enough for now. Putting that all together we have a [nice little story](https://github.com/togakangaroo/tdd-with-no-tears/blob/master/tdd-with-no-tears.org) about what exactly we want this stopwatch to be doing. Now we can start implementing.
 
 But you don't have to.
 
 In fact, what you have now is already *massively valuable*. Commit it!
 
-What is it that you have here?
+What is it that you have?
 
 Well it is
 
-- Documentation that conveys succinctly and in user-centric terms what the component actually does
+- Documentation that conveys succinctly and in user-centric terms what the application feature actually does
 - Acceptance criteria for what it means for the feature to be complete
 - A test plan for how to test against regressions (one that is very valuable even if *not* automated)
 - A blueprint for what you need to implement
 
 I will often start by saving and committing this in a block comment in a test file.
 
-The next step is to actually implement these tests, but it would at this point be perfectly reasonable to make a business decision that implementation might not be worth it for some reason or another and to push it off to tech debt. By carefully structuring requirements up front in a manner such as this, so long as when you implement your code with these tests in mind, you have already achieved a good portion of the benefits to be had from TDD.
+The next step is to actually implement these tests, but it would at this point be perfectly reasonable to make a business decision that implementation might not be worth it and to push it off to tech debt. By carefully structuring requirements up front in a manner such as this - so long as when you implement your code with these tests in mind - you have already achieved a good portion of the benefits to be had from TDD.
 
-This point of view serves well to highlight the difference between TDD and automated testing that I previously alluded to. Technically, test-*driven*-development doesn't even have to be be automated!
+This point of view serves well to highlight the difference between TDD and automated testing that I previously alluded to. Technically, test *driven* development just has to have test scenarios written first, they don't even technically have to be be automated!
 
-I think now is a good time to talk about 
+I think now is a good time to talk about... 
 
 # What is a unit test anyways?
 
-I can already hear the grumbles:
+I can already hear the grumbling:
 
 > But...but...this isn't unit testing, it is integration testing!
 
-And to that, person-I-just-made-up; I roll my eyes at you.
+And to that, person-I-just-made-up, I roll my eyes at you.
 
 We can spend forever playing around with the definition of what is a unit.
 
-Is a unit a single function? Why a function? A unit is meant to be indivisible, but we divide up functions up all the time. [It is the most popular refactoring operation](https://refactoring.com/catalog/extractFunction.html).
+Is a unit a single function? Why a function? A unit is meant to be indivisible, but we divide up functions up all the time. It is indeed [the most popular refactoring operation](https://refactoring.com/catalog/extractFunction.html).
 
 Is a unit a class? Spend some time programming in a class-less paradigm and tell me what is so special about classes. A factory function that returns a tuple does much the same job as a constructor, and we've already tackled functions.
 
-Is it a feature then? How do we even define this?
+The BDD definition is also fuzzy. By insisting on naming tests from the user's point of view, the unit corresponds more or less to a minimal workflow that a user would find useful.
 
-The BDD definition is also fuzzy. By insisting on naming tests from the user point of view, the unit corresponds more or less to a minimal workflow that a user would find useful.
+For me - while I bias toward the latter - I prefer going back to first principles. What is it that we look for in a "unit test"?
 
-For me - while I bias toward the latter - I prefer going to first principles. What do we look for in a traditional "unit test"?
-
-* We want it to be reasonably isolated so that a failure can be properly attributed to a failure of the system under test. This means (but doesn't mandate) minimizing any dependencies on external systems like network availability, database servers, or other tests running properly in sequence.
+* We want it to be reasonably isolated so that a test failure can be properly attributed to a failure of the system under test. This means (but doesn't mandate) minimizing any dependencies on external systems like network availability, database servers, or other tests running properly.
 * We want it to be fast. A major goal here is to tighten the feedback loop between code and verification. If a test suite is so slow that developers are discouraged from running all relevant tests in response to even the smallest change, then it is not serving that purpose.
 * We want the test to be focused so that if it fails, we can have a good idea where an error might reside and can isolate the issue and repair it rapidly. Personally I find this to generally be of lesser importance than the other two, but it is important nevertheless.
 
-If we can keep to these goals while implementing our tests, especially given the intentional broadness of the Behavior Driven Development approach, then what is it to say they are not "unit" but an argument over semantics?
+If we can keep to these goals while implementing our tests, especially given the intentional broadness of the Behavior Driven Development approach, then what is it to say they are not "unit tests" but an argument over semantics?
 
 # Let's start implementing
 
-We will implement this example in javascript but [see my repo for it in other languages](https://github.com/togakangaroo/tdd-with-no-tears).
+We will implement this example in javascript but [see the related repo for examples in other languages](https://github.com/togakangaroo/tdd-with-no-tears).
 
 Lets start by writing down some basics tests.
 
-I like to think of our testing as proceding through several sets of priorities.
+I like to think of testing as proceding through several phases with shifting sets of priorities.
 
 ## Set up the basic testing flow
 
-The goal at this point is just to build out a shell for our tests. Just get writing *something* that runs and passes.
+The goal at this point is just to build out a shell for our tests. Just write *something* that runs and passes.
 
 We start by just inventing some methods that we wish existed.
 
@@ -319,41 +315,41 @@ We start by just inventing some methods that we wish existed.
 
 We create the stopwatch itself in the `sw` variable from a simple `createStopWatch` method and test a few properties on it - nothing fancy, just what makes sense.
 
-Set up a file watcher to auto-run testas on file change and you can see all our tests now failing. That's our red.
+Set up a file watcher to auto-run tests on file change and you can see all our tests now failing. That's our red.
 
 Now we might as well write the code implied by the above.
 
 {% gist 9d2f8ab785ad0de85083072b0e1e9ae6 %}
 
-Now we continue with more tests. At this point our goal is to focus on the red-green. We write testing code, and write enough to get it to pass. We can refactor where the right move is obvious but it is not yet the focus - we will have time for refactoring, but right now we want to focus on building out all the basics we need to get the red-green workflow going.
+That done, we continue with more tests. We still want to focus on the red-green; writing testing code and then writing just enough to get it to pass. We can refactor where the right move is obvious but it is not yet the focus - we will have time for refactoring, but right now we want to focus on building out all the basics we need - mocking, dependencies, etc - to get the-green workflow going.
 
-Also worth noting that I'm writing all code in the same file as it is simply faster to navigate and import dependencies for. I don't want to get caught up in what subdirectories to put things in, I just want to get the basic flow down.
+Also worth noting that I'm writing all code in the same file as it is simply faster to navigate and import dependencies for. I don't want to get caught up in an existential dilemma over which subdirectories to put things in, I just want to get the basic flow down.
 
 {% gist f7c0c83d5d70ef094be84cd995b22c2e %}
 
-And now we start to transition to the next set of priorities
+At this point we are transitioning to the next set of priorities.
 
 ## Make writing of tests easier
 
-Now that we're jiving, we are transition to a new phase of our testing. Yes, we still want to red and green, but we now are now starting to see the common patterns within our testing code. Once these become clear we can now introduce refactoring of our *test* code. So we will make the above test but also refactor our tests a bit.
+Now that we're jiving, we have new things we want to focus on. Yes, we still want to red and green, but we now are now starting to see the common patterns within our testing code. Once these become clear we can now introduce refactoring of our *test* code. So we will be implementing our scenarios but also refactoring our testing code itself (not our application code) as we go.
 
 {% gist 0f3cb5bee815e80c984eac80bce469fb %}
 
-As we notice how often we are asserting against both main and lap displays and decide to refactor (my rule-of-thumb is refactoring once I have three uses of a pattern) and so we create a `main_and_laps_should_display` function (yes, underscores aren't the javascript naming standard, but not having your function name look like scriptio continua trumps naming standards, and this is less of an issue for non-public functions).
+We notice how often we are asserting against both main and lap displays and decide to refactor (my rule-of-thumb is refactoring once I have three uses of a pattern) and so we create a `main_and_laps_should_display` function (yes, underscores aren't the javascript naming standard, but not having your function name be [unreadable scriptio continua](https://en.wikipedia.org/wiki/Scriptio_continua) trumps naming standards, and this is less of an issue for non-public functions anyways).
 
-The idea here is that by identifying common patterns and refactoring, you are creating a mini-library for the generation of further test scenarios. It is not uncommon for me to take hours writing out test stories, an hour or two getting the testing workflow down, and then another hour in this phase of writing tests and refactoring, then once on the other side, generating the remaining majority balance of scenarios and implementations in 30 minutes.
+The idea here is that by identifying common patterns and refactoring, you are creating a mini-library for the generation of further test scenarios. It is not uncommon for me to take hours writing out test stories, an hour or two getting the testing workflow down, and then another hour in this phase of writing tests and refactoring. Once on the other side though, generating the remaining majority balance of scenarios and implementations is 30 minutes of work.
 
-We are coders, we can and should write code that makes it easier for us to write code.
+Carpenters build tools to make their job easier all the time. We are coders - we specialize in creating tools. We can and should be writing code that makes it easier for us to write code!
 
-This in turn makes the next set of tests and implementations much faster and as we churn through are scenarios we find more opportunity to refactor our tests - for example by introducing an `elapses` function to replace a `describe` block which simply advances the timer.
+As we churn through are scenarios we find more opportunity to refactor our tests - for example by introducing an `elapses` function to replace a `describe` block which simply advances the timer.
 
 {% gist e7934b00571c397f1c96c009a82cf5e7 %}
 
-You want to use a light touch and not go nuts with refactoring tests. You still want it to be simple for someone new to be able to trace the logic without difficulty and to be able to read the specification as documentation. Remember, the goal is always to [keep things as simple as it makes sense and not a bit more](https://www.youtube.com/watch?v=34_L7t7fD_U). The fact that it makes tests easier to write is more of a pleasant bonus than an end goal.
+This takes practice of course. You want to use a light touch and not go nuts with refactoring tests. You still want it to be simple for someone new to be able to trace the logic without difficulty and to be able to read the specification as documentation. Remember, the goal is always to [keep things as simple as it makes sense and not a bit more](https://www.youtube.com/watch?v=34_L7t7fD_U). The fact that it makes tests easier to write is more of a pleasant bonus than an end goal. But it's a really pleasant bonus.
 
 ## Finish and fiddle
 
-As the test mini-library you've created starts falling into place it soon becomes much easier to implement subsequent parts of the story and your red-green loop really starts to fly.
+As the test mini-library you've created starts falling into place, it soon becomes much easier to implement subsequent parts of the story and your red-green loop really starts to fly.
 
 ```text
 8537e614da9da830e873c855194b3103a93df6b8 12:11 ticking passing elapses refactored
@@ -373,7 +369,7 @@ b00619e4fb07bda021c2a1b2c3d9971e276531e6 12:39 resume paused timer not passing
 109a3db831da5602b7b10b24e032e034dbdc9541 12:42 post pause resume passing
 ```
 
-And before long you've TDDed up a whole feature.
+I told you - 30 minutes! And before long you've TDDed up a whole feature.
 
 {% gist e83139f592a302e24cc7f0bc5ab6a3c7 %}
 
@@ -381,12 +377,14 @@ Now we are ready to do some hardcore refactoring. This is a good time for moving
 
 It is also a good time to revisit the structures we've created - should we use cascading `setTimeout` versus `setInterval`? Is tracking state by manually queueing the `nextToggle` function something we want to do? Is it a terrible idea to use the `displays` object as the cannonical time for internal calculations?
 
-All good questions and easy-to-hande implementation details that we can modify without affecting our tests at all. And that's the true test here isn't it? One of the biggest pain points about TDD we tend to see is when test *maintanance* is taking significant chunks of time. By focusing on the user's workflows and by taking a hard line to refactoring the testing code itself, we can make it so not only are tests a tool for understanding ambiguous requirements, but that they support our goals, without needing significant refactoring time *even when the underlying implementation changes significantly*. After all, even if our method of tracking time changes, the user's needs - and therefore our scenarios - will not.
+All good questions and all are implementation details that we can modify without affecting our tests at all. And that's the true determinator of how good we did is it not?
+
+One of the biggest pain points about TDD I tend to see is when test *maintanance* is taking significant chunks of time. By focusing on the user's workflows and by taking a hard line to refactoring the testing code itself, we can make it so not only are tests a tool for understanding ambiguous requirements, but that they support our goals, without needing significant refactoring time *even when the underlying implementation changes significantly*. After all, even if our method of tracking time changes, the user's needs - and therefore our scenarios - should not.
 
 # Conclusion
 
-So despite the preachy tone in the above, I'm not really trying to preach here. This sort of setup, where you use tests with a BDD style specifically to attack ambiguous requirements is what has worked well for me. I have also had no shortage of situations where I've gotten neck deep in a problem I thought i could just "knock out" and was wishing I had taken the time to write tests to begin with. Not because tests are any sort of pancea, but because ultimately it would have saved me.
+So despite the preachy tone in the above, I'm not really trying to preach here (too hard). This sort of setup, where you use tests with a BDD style specifically to attack ambiguous requirements is what has worked well for me. I have also had no shortage of situations where I've gotten neck deep in a problem I thought I could just "knock out" and was wishing I *had* taken the time to write tests to begin with. Not because tests are any sort of pancea, but because ultimately it would have saved me time.
 
 And this is a worthwhile thing to highlight. Test driven development - when done right - will save you time. It will do this not by helping you squash known bugs (after all, test-after will do that too), but by helping you understand requirements to such a degree that you should be avoiding many unforseen bugs to begin with.
 
-This all does take some practice, and you should do that - real dedicated practice is important. Implement the scenarios here as a kata for example. 
+This all does take some practice, and you should do that - real dedicated practice is important. Implement the scenarios here as a kata for example, but then get to it, get testing, and get to actually understanding the thing that you are trying to build! 
