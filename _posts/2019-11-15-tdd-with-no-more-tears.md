@@ -26,6 +26,10 @@ comments: true
     position: relative;
     left: calc(50% - 3em - 15px);
   }
+  blockquote {
+    border-left: 1px solid #ccc;
+    padding: 0 .7em;
+  }
 </style>
 
 This is a writeup of [Talk of the same title](https://docs.google.com/presentation/d/1mvzBX_vYvcfqSPNpMmYSwRzy__IstOfDiClxa_9iMRc/edit#slide=id.g5dff9559d2_2_835), exploring what I consider to be an approach to test driven development that is both more practical and easier to apply on a non-toy project.
@@ -53,23 +57,74 @@ To those people I'll say: It's not just you.
 
 # The Problem With TDD Education
 
-Think about your standard _"Let's all learn TDD"_ article: four times out of five we're implementing a calculator, right? And not a real calculator, that article will take far long to write and bloggers are so lazy that I'm going to give up searching for a metaphor! No, it's a simplistic calculator, doing like...addition. Swell!
+> Welcome, young padawan
 
-The format is always that you're given a method signature or a class interface and we write tests against that. They're red! We then implement things till they're green! And then - if the tutorial is a halfway decent one and doesn't leave it as an exercise to the reader - we refactor (Foreshadowing - this article will go on to do exactly that). Go!
+I say condescendingly.
 
-But here's the thing: We don't often get method signatures or class interfaces and are told to implement them. Instead, we get client requirements. And client requirements are...to put it kindly...a mess. In fact, you might recognize that identifying which methods and classes need to be created **is typically more difficult than implementing them**. That's that whole "software design" bit that no one is all that great at.
+> Today I will be teaching you all about Test Driven Development. That's TDD for short, you know.
+
+Excitedly, you sit up straight and pull out a pen. Finally! Someone is going to make sense of this stuff! 
+
+> So let's get started. We're going to start by writing a test for an add function. Time to write code.
+
+```js
+it(`can add 1 and 2 to be 3`, () => {
+   const result = add(1, 2)
+   assert.areEqual(3, result)
+})
+```
+
+> You see? We created a function for exactly what we want and passed some data through it. Bingo Bango, get it?
+
+Well that seems straightfoward enough, we run it, the console shows red, so now we implement `add`
+
+```js
+const add = () => 3
+```
+
+Green!
+
+> Oooh, clever, now lets add one more test
+
+```js
+it(`can add 3 and 4 to be 7`, () => {
+   const result = add(3, 4)
+   assert.areEqual(7, result)
+})
+```
+
+Ok, ok, now we refactor, right?
+
+```js
+const add = (a, b) => a + b
+```
+
+How easy! What's next?
+
+> Now I certify you a TDD master. Get to using this extremely important and straightforward technique, I'm going to sleep on my pile of programming-blogging money.
+
+And then you sit down to do TDD for real and get immediately...
+
+<figure>
+   <header>Lost</header>
+   <img src="/img/tdd_with_no_more_tears/Dharma_Initiative_logo.jpg" alt="Dharama Initiative Logo" />
+   <figcaption>
+     <a href="https://en.wikipedia.org/wiki/Lost_(TV_series)">Lost</a>
+     references are timely, right?
+   </figcaption>
+</figure>
+
+That `add` function was so obvious that we didn't even need to do any design, and barely any refactoring.
 
 And yet TDD is [meant](https://www.infoq.com/articles/test-driven-design-java/) [to be](https://www.thoughtworks.com/insights/blog/test-driven-development-best-thing-has-happened-software-design) a [software design](https://stackoverflow.com/questions/80243/does-test-driven-development-take-the-focus-from-design) technique. In fact, many people insist that the acronym is [Test Driven **Design**](https://stackoverflow.com/q/7538744/5056). Most of the world ignores this of course because...well...backronyming a popular acronym in order to subtly highlight a shift in mental focus is a shitty marketing strategy.
 
-So if TDD is not a software design technique then what is it? It's about having a test suite to guard against regressions, right? You make a change, you can tell right away if you broke something. That sounds useful and good.
+Ok, but come on, this design stuff sounds like hand-wavy mumbo jumbo. It's not really taught and no one will describe in detail what it means. And besides, isn't the point of TDD to have an automated test suite to guard against regressions? You make a change, you can tell right away if you broke something. That sounds Useful™ and Good™.
 
-Of course, *bugs don't actually care when you wrote the test that catches them*, do they? Regression protection applies just as well if you wrote your testing code first, after, or even just give just pay people money to meticulously follow a testing script.
+Of course...*bugs don't actually care when you wrote the test that catches them*, do they? Regression protection applies just as well if you wrote your testing code first, after, or even just give just pay people money to meticulously follow a testing script. Just logically, this cannot be the point of being test-**driven**.
 
-<aside style="width: 20em; margin: 10px; float: right; border: 1px solid grey; padding: 10px; box-sizing: border-box;">
-  <p>Ok, that might be overstating the case somewhat, I have no problem with teaching calculator just to get the basic flow-of-testing down kata-style, but then for goodness sake, don't stop there! At least don't imply that this half-step down the road is somehow all you need to understand to complete the journey.</p>
-</aside>
+So using TDD to shape the software design is important but no one teaches it or understands what it means? What are we even doing here?
 
-Ok, I actually agree with the tdd-is-a-design-technique idea. But not in quite the same way as people often mean. You see, I believe that test driven development as often taught is completely ass-backwards. Don't start with function signatures, **start with requirements**. And not just make-me-a-calculator requirements but realistic requirements. "Ok, I kinda see what you're maybe going for but goddamn does this need a lot of work" style requirements. Test driven development is a software design technique **especially in that it is a good technique for sharpening ambiguity.** Start with that.
+Yeah, I get it. You see, I believe that test driven development as-often-taught is completely ass-backwards. Don't start with functions , **start with requirements**. And not just make-me-a-calculator requirements but realistic requirements. "Ok, I kinda see what you're maybe going for but goddamn does this need a lot of work" style requirements. Test driven development is a software design technique **especially in that it is a good technique for sharpening ambiguity.** Start with that.
 
 But before we get into details on how to learn this stuff, lets sidebar.
 
