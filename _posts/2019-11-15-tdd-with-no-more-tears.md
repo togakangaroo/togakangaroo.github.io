@@ -400,7 +400,7 @@ As we churn through scenario after scenario, we find more opportunity to refacto
 
 {% gist e7934b00571c397f1c96c009a82cf5e7 %}
 
-This takes practice of course. You want to use a light touch and not go nuts with refactoring tests. You still want it to be simple for someone new to be able to trace the logic without difficulty and to be able to read the specification as documentation. Remember, the goal is always to [keep things as simple as it makes sense and not a bit more](https://www.youtube.com/watch?v=34_L7t7fD_U). The fact that it makes tests easier to write is more of a pleasant bonus than an end goal. But it's a really pleasant bonus.
+This takes practice of course. You want to use a light touch and not go nuts with refactoring tests. You still want it to be simple for someone new to be able to trace the logic without difficulty and to be able to read the specification as documentation. Remember, the goal is always to [keep things as simple as it makes sense for them to be](https://www.youtube.com/watch?v=34_L7t7fD_U). The fact that it makes tests easier to write is more of a pleasant bonus than an end goal. But it's a really pleasant bonus.
 
 ## Finish and fiddle
 
@@ -432,14 +432,16 @@ Now we are ready to do some hardcore refactoring. This is a good time for moving
 
 It is also a good time to revisit the structures we've created - should we use cascading `setTimeout` versus `setInterval`? Is tracking state by manually queueing the `nextToggle` function something we want to do? Is it a terrible idea to use the `displays` object as the cannonical time for internal calculations?
 
-All good questions and all are implementation details that we can modify without affecting our tests at all. And that's the true determinator of how good we did is it not?
+All good questions and all are implementation details that we can modify without affecting our tests at all. And that's the true determinator of our success here, is it not?
 
 One of the biggest pain points about TDD I tend to see is when test *maintanance* is taking significant chunks of time. By focusing on the user's workflows and by taking a hard line to refactoring the testing code itself, we can make it so not only are tests a tool for understanding ambiguous requirements, but that they support our goals, without needing significant refactoring time *even when the underlying implementation changes significantly*. After all, even if our method of tracking time changes, the user's needs - and therefore our scenarios - should not.
 
 # Conclusion
 
-So despite the preachy tone in the above, I'm not really trying to preach here (too hard). This sort of setup, where you use tests with a BDD style specifically to attack ambiguous requirements is what has worked well for me. I have also had no shortage of situations where I've gotten neck deep in a problem I thought I could just "knock out" and was wishing I *had* taken the time to write tests to begin with. Not because tests are any sort of pancea, but because ultimately it would have saved me time.
+Ok, despite the tone in the above, I'm not really trying to preach the TDD gospel (too hard). This sort of setup, where you use tests in a BDD-style to attack ambiguous requirements is what has worked well for me. I have also had no shortage of situations where I've gotten neck deep in a problem thinking I could just "knock it out" and before long was wishing I *had* taken the time to write tests from the beginning. This is not because tests are any sort of pancea, but because it would ultimately have saved me time.
 
-And this is a worthwhile thing to highlight. Test driven development - when done right - will save you time. It will do this not by helping you squash known bugs (after all, test-after will do that too), but by helping you understand requirements to such a degree that you should be avoiding many unforseen bugs to begin with.
+This is worthwhile to highlight. Test driven development - when done right - will save you time. It will not do this by helping you squash known bugs (after all, test-after will do that just as well), but by helping you understand requirements to such a degree that you should be avoiding many unforseen bugs to begin with.
 
-This all does take some practice, and you should do that - real dedicated practice is important. Implement the scenarios here as a kata for example, but then get to it, get testing, and get to actually understanding the thing that you are trying to build! 
+Additionally TDD should save you time *down the line* as well. With a properly selected "unit", future refactoring should require minimal changes to test. Conversely, the need to modify tests for anything less than core business requirement changes in in itself a code smell implying suboptimal design.
+
+Finally, I should emphasize that none of this is easy. You're not going to read one article and saunter into work the next day a testing hero. This all does take practice, and you should do that - real, dedicated practice. Implement the scenarios here as a kata to start with, but then find more problems! Practice. Practice, practice, practice. Get testing, and get to actually understanding the things that you are trying to build! 
