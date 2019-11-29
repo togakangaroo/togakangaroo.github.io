@@ -120,7 +120,7 @@ And yet TDD is [meant](https://www.infoq.com/articles/test-driven-design-java/) 
 
 Ok, but come on, this design stuff sounds like hand-wavy mumbo jumbo. It's not really taught and no one will describe in detail what it means. And besides, isn't the point of TDD to have an automated test suite to guard against regressions? You make a change, you can tell right away if you broke something. That sounds Useful™ and Good™.
 
-Of course...*bugs don't actually care when you wrote the test that catches them*, do they? Regression protection applies just as well if you wrote your testing code first, after, or even just give just pay people money to meticulously follow a testing script. Just logically, this cannot be the point of being test-**driven**.
+Of course...*bugs don't actually care when you wrote the test that catches them*, do they? Regression protection applies just as well if you wrote your testing code first, after, or even just pay a team of testers to meticulously follow a testing script. Logically, this cannot be the point of being test-**driven**.
 
 So using TDD to shape the software design is important but no one teaches it or understands what it means? What are we even doing here?
 
@@ -133,12 +133,12 @@ But before we get into details on how to learn this stuff, lets sidebar.
 Many people reading about testing would have seen the "Triple-A" recommendation. To wit, it is that a test typically has three parts.
 
 <figure class="tdd-terms">
-  <p>Act</p>
   <p>Arrange</p>
+  <p>Act</p>
   <p>Assert</p>
 </figure>
 
-The idea being that you **arrange** all the preconditions and context for running the test, **preform the action** that is to be tested, and finally you **assert** the outcome that was expected.
+The idea being that you **arrange** all the preconditions and context for running the test, **perform the action** that is to be tested, and finally you **assert** the outcome that was expected.
 
 This makes sense but its also rather...robotic. In the mid-2000s, [Behavior Driven Development](https://en.wikipedia.org/wiki/Behavior-driven_development) came along and in the subtlest of nods to considering actual requirements made the recommendation of simply subbing in words that skin-and-bone people actually use.
 
