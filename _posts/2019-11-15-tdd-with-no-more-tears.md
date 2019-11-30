@@ -216,7 +216,7 @@ So after a ton of back-and-forth, after conversations, after [impact mapping](ht
   </p>
 </figure>
 
-O.M.G! That's not just a feature request pushed ruluctantly into the "story" pile. It is an actual for-real user story with a "because" clause and everything!
+O.M.G! That's not just a feature request pushed reluctantly into the "story" pile. It is an actual for-real user story with a "because" clause and everything!
 
 This is important because - and let me be clear -**user stories are not tasks**. They are a placeholder for a conversation between technical and business people and as such, the proposal sandwiched in between the role and the problem statement is the least important part. It is just an illustratory example.
 
