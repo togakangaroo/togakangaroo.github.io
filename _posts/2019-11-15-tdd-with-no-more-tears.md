@@ -358,7 +358,7 @@ We will implement this example in javascript but [see the related repo for examp
 
 Let's start by writing down some basics tests.
 
-I like to think of testing as proceding through several phases with shifting sets of priorities.
+I like to think of testing as proceeding through several phases with shifting sets of priorities.
 
 ## Set up the basic testing flow
 
@@ -438,7 +438,7 @@ One of the biggest pain points about TDD I tend to see is when test *maintanance
 
 # Conclusion
 
-Ok, despite the tone in the above, I'm not really trying to preach the TDD gospel (too hard). This sort of setup, where you use tests in a BDD-style to attack ambiguous requirements is what has worked well for me. I have also had no shortage of situations where I've gotten neck deep in a problem thinking I could just "knock it out" and before long was wishing I *had* taken the time to write tests from the beginning. This is not because tests are any sort of pancea, but because it would ultimately have saved me time.
+Ok, despite the tone in the above, I'm not really trying to preach the TDD gospel (too hard). This sort of setup, where you use tests in a BDD-style to attack ambiguous requirements is what has worked well for me. I have also had no shortage of situations where I've gotten neck deep in a problem thinking I could just "knock it out" and before long was wishing I *had* taken the time to write tests from the beginning. This is not because tests are any sort of panacea, but because it would ultimately have saved me time.
 
 This is worthwhile to highlight. Test driven development - when done right - will save you time. It will not do this by helping you squash known bugs (after all, test-after will do that just as well), but by helping you understand requirements to such a degree that you should be avoiding many unforseen bugs to begin with.
 
