@@ -257,7 +257,7 @@ Why not *that* first? Let's start by writing down a little story for ourselves a
           - there are no laps
           - when 1s has passed
             - then it reads 11s in main
-            - the are no laps
+            - there are no laps
             
 Hmm, actually now that I've written it out, a specification oversight becomes obvious. What does the main slot read *before* the timer is started? We go back to our product owner and the answer we get is slightly surprising, it should only read `0` *after* the timer has been started. Therefore
      
