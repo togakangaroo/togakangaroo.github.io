@@ -140,7 +140,7 @@ Many people reading about testing would have seen the "Triple-A" recommendation.
 
 The idea being that you **arrange** all the preconditions and context for running the test, **perform the action** that is to be tested, and finally you **assert** the outcome that was expected.
 
-This makes sense but its also rather...robotic. In the mid-2000s, [Behavior Driven Development](https://en.wikipedia.org/wiki/Behavior-driven_development) came along and in the subtlest of nods to considering actual requirements made the recommendation of simply subbing in words that skin-and-bone people actually use.
+This makes sense but it's also rather...robotic. In the mid-2000s, [Behavior Driven Development](https://en.wikipedia.org/wiki/Behavior-driven_development) came along and in the subtlest of nods to considering actual requirements made the recommendation of simply subbing in words that skin-and-bone people actually use.
 
 <figure class="tdd-terms">
   <p>Given</p>
