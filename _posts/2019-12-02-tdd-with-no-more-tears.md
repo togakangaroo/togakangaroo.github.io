@@ -168,7 +168,7 @@ So in the interest of simplicity, let's shorten it (and to be clear, I'm not the
 
 This is nice as **Less Complex is More Better**.
 
-We really only have two clauses to worry about now, but - as a nod to the expediency of breaking things down - let's say we can arbitrarily chain together a series of **when** statements (meaing simply a sequential "do this, this, this, this, and this") and a series of **then** statements (meaning a parallel "assert this, that, and this other thing"). It can all be modeled for example as follows:
+We really only have two clauses to worry about now, but - as a nod to the expediency of breaking things down - let's say we can arbitrarily chain together a series of **when** statements (meaning simply a sequential "do this, this, this, this, and this") and a series of **then** statements (meaning a parallel "assert this, that, and this other thing"). It can all be modeled for example as follows:
 
 ```
 when
