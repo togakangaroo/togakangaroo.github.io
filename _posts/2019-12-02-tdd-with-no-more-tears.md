@@ -442,6 +442,6 @@ Ok, despite the tone in the above, I'm not really trying to preach the TDD gospe
 
 This is worthwhile to highlight. Test driven development - when done right - will save you time. It will not do this by helping you squash known bugs (after all, test-after will do that just as well), but by helping you understand requirements to such a degree that you should be avoiding many unforseen bugs to begin with.
 
-Additionally TDD should save you time *down the line* as well. With a properly selected "unit", future refactoring should require minimal changes to test. Conversely, the need to modify tests for anything less than core business requirement changes in in itself a code smell implying suboptimal design.
+Additionally TDD should save you time *down the line* as well. With a properly selected "unit", future refactoring should require minimal changes to test. Conversely, the need to modify tests for anything less than core business requirement changes is in itself a code smell implying suboptimal design.
 
 Finally, I should emphasize that none of this is easy. You're not going to read one article and saunter into work the next day a testing hero. This all does take practice, and you should do that - real, dedicated practice. Implement the scenarios here as a kata to start with, but then find more problems! Practice. Practice, practice, practice. Get testing, and get to actually understanding the things that you are trying to build! 
