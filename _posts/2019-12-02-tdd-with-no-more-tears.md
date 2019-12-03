@@ -328,7 +328,7 @@ This point of view serves to highlight the previously noted difference between T
 
 I think now is a good time to talk about... 
 
-# What is a unit test anyways?
+# What is a unit test anyway?
 
 I can already hear the grumbling:
 
@@ -390,7 +390,7 @@ Now that we're jiving, we acquire a new focus. Yes, we still want to red and gre
 
 {% gist 0f3cb5bee815e80c984eac80bce469fb %}
 
-We notice how often we are asserting against both main and lap displays and decide to refactor (my rule-of-thumb is refactoring once I have three uses of a pattern) and so we create a `main_and_laps_should_display` function (yes, underscores aren't the javascript naming standard, but not having your function name be [unreadable scriptio continua](https://en.wikipedia.org/wiki/Scriptio_continua) trumps naming standards, and this is less of an issue for non-public functions anyways).
+We notice how often we are asserting against both main and lap displays and decide to refactor (my rule-of-thumb is refactoring once I have three uses of a pattern) and so we create a `main_and_laps_should_display` function (yes, underscores aren't the javascript naming standard, but not having your function name be [unreadable scriptio continua](https://en.wikipedia.org/wiki/Scriptio_continua) trumps naming standards, and this is less of an issue for non-public functions anyway).
 
 The idea here is that by identifying common patterns and refactoring, you are creating a mini-library for the generation of further test scenarios. It is not uncommon for me to take hours writing out test stories, an hour or two getting the testing workflow down, and then another hour in this phase of writing tests and refactoring. Once on the other side though, generating the remaining majority balance of scenarios and implementations is 30 minutes of work.
 
