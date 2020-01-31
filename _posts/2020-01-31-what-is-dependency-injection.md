@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Chat Transcript - What is Dependency Injection"
+title: "What is Dependency Injection?"
 author: "George Mauer"
 comments: true
 ---
