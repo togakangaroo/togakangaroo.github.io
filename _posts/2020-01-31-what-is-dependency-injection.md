@@ -65,7 +65,7 @@ A very common form of dependecy injection is called "constructor injection". Thi
 
 ```
 class Greeter {
-  constructor(nameParser) {
+  constructor(getName) {
     this._getName = getName
   }
   sayHi = (person) => {
