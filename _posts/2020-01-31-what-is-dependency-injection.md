@@ -63,6 +63,7 @@ What we've done here is taken the dependency (the function that knows how to cal
 
 A very common form of dependecy injection is called "constructor injection". This comes up often when you use classes. I don’t love using classes in javascript, but here’s what that looks like:
 
+```
 class Greeter {
   constructor(nameParser) {
     this._getName = getName
@@ -72,6 +73,7 @@ class Greeter {
     console.log(`Hi there ${name}`)
   }
 }
+```
 
 In this case, the point of the constructor is specifically to separate the place where "dependencies" are passed in versus more regular parameters.
 
