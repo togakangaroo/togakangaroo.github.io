@@ -12,7 +12,9 @@ This is also in the context of javascript, though the concepts apply regardless.
 
 -----------
 
-This is one of those terms that feels all complex but is really so simple its kinda silly there’s a term for it. It’s really just a certain way of having your code use other bits of code. The term exists not as the title of a complex theory theory, but just make it easier for developers to talk to each other about how their code is structured.
+So what is *Dependency Injection*? 
+
+This is one of those terms that feels complex but is really so simple it is almost silly there exists a term for it. At it's core, dependency injection is really just a certain way of having your code use other bits of code. The term exists not as the an academic topic, but simply make it easier for developers to talk to each other about how their code is structured.
 
 <!--break-->
 
