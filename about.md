@@ -10,7 +10,7 @@ This is my low effort blog. Mostly about software development. I regularly do pr
 
 ## Bio
 
-I am a software developer, speaker, teacher, writer, and comedian with an interest in the various techniques that can make software simple, extensible, and communicative. I teach and help build curriculum with [Operation Spark](https://operationspark.org/). I mentor with [Operation Code (unrelated)](https://operationcode.org/). I speak regularly on Javascript, C#, MVC, testing, interviewing, etc at conferences, usergroups, and to my cat (singular - the other one won't listen to me).
+I am a software developer, speaker, teacher, writer, and comedian with an interest in the various techniques that can make software simple, extensible, and communicative. I have worked in software consulting for over a decade as an individual contributor, team lead, and director. I am currently CTO at [Operation Spark](https://operationspark.org/). I mentor with [Operation Code (unrelated)](https://operationcode.org/). I speak regularly on Javascript, C#, MVC, testing, interviewing, etc at conferences, usergroups, and to my cat (singular - the other one won't listen to me).
 
 [Find me on Twitter](https://twitter.com/togakangaroo) or try out the Disqus forms on my posts and let me know if they work. In general, it's not very hard to find a way to contact me.
 
@@ -18,7 +18,7 @@ I am a software developer, speaker, teacher, writer, and comedian with an intere
 
 ### The Most Accessible Pizza Pie
 
-[Slides with Notes](https://docs.google.com/presentation/d/19DjTcnDmYbToa4x_xaOZ7HRUM-ZF1Ol8LYstdSyfTrQ/edit#slide=id.g65459e8168_0_92)
+[Article](http://georgemauer.net/2019/11/04/dominos-v-robles.html), [Slides with Notes](https://docs.google.com/presentation/d/19DjTcnDmYbToa4x_xaOZ7HRUM-ZF1Ol8LYstdSyfTrQ/edit#slide=id.g65459e8168_0_92)
 
 The tech world is abuzz with the final word rendered in the Dominos vs Robles web accessibility case. Anyone can be sued for ADA compliance violations now! No one knows what to do! It's chaos! Reading the ruling brings things into sharper focus. We will go over what the ruling actually was, why it was issued, and what this means for us web developers. All from DEFINITELY NOT A LAWYER!
 
@@ -26,7 +26,7 @@ The tech world is abuzz with the final word rendered in the Dominos vs Robles we
 
 ### TDD With No More Tears
 
-[Sample Code](https://github.com/togakangaroo/tdd-with-no-tears) [Slides with Notes](https://docs.google.com/presentation/d/1mvzBX_vYvcfqSPNpMmYSwRzy__IstOfDiClxa_9iMRc/edit#slide=id.g5dfe60e86f_0_82)
+[Article](http://georgemauer.net/2019/12/02/tdd-with-no-more-tears.html), [Sample Code](https://github.com/togakangaroo/tdd-with-no-tears) [Slides with Notes](https://docs.google.com/presentation/d/1mvzBX_vYvcfqSPNpMmYSwRzy__IstOfDiClxa_9iMRc/edit#slide=id.g5dfe60e86f_0_82)
 
 A shift in perspective. How to do Test Driven Development/Design in a more human manner treating it as an actual specification technique, not the end result in itself.
 
