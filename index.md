@@ -20,7 +20,8 @@ title : George Mauer's Blog
 
                     {{ post.content | split:'<!--break-->' | first }}
                     <br />
-                    <a href="{{ post.url}}#disqus_thread">Comments</a>
+                    <hr/>
+                    <br />
                 {% else %}
                     <h2><a class="postlink" href="{{ post.url }}">{{ post.title }}</a></h2>
                     <div class="postdate">{{ post.date | date: "%e %B, %Y"  }}
@@ -31,8 +32,11 @@ title : George Mauer's Blog
                         </ul>
                     </div>
                     {{ post.content | split:'<!--break-->' | first }}
+                    <br />
+                    <hr/>
+                    <br />
+                    <br />
 
-                    <a href="{{ post.url }}#disqus_thread">Comments</a>
                 {% endif %}
             </div>
         </li>
