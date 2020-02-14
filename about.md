@@ -22,15 +22,17 @@ I am a software developer, speaker, teacher, writer, and comedian with an intere
 
 The tech world is abuzz with the final word rendered in the Dominos vs Robles web accessibility case. Anyone can be sued for ADA compliance violations now! No one knows what to do! It's chaos! Reading the ruling brings things into sharper focus. We will go over what the ruling actually was, why it was issued, and what this means for us web developers. All from DEFINITELY NOT A LAWYER!
 
-@Front End Party
+@ UI Arch Conf, Front End Party
 
 ### TDD With No More Tears
 
 [Article](http://georgemauer.net/2019/12/02/tdd-with-no-more-tears.html), [Sample Code](https://github.com/togakangaroo/tdd-with-no-tears) [Slides with Notes](https://docs.google.com/presentation/d/1mvzBX_vYvcfqSPNpMmYSwRzy__IstOfDiClxa_9iMRc/edit#slide=id.g5dfe60e86f_0_82)
 
-A shift in perspective. How to do Test Driven Development/Design in a more human manner treating it as an actual specification technique, not the end result in itself.
+Unit testing is hard to get right. Are you testing too much? Too little? How do you write tests that aren't a waste of time? Isn't testing supposed to enable refactoring? Then why do they seem to be in the way? What's this BDD thing I keep hearing about? Do we need to learn yet another tool?
 
-@ Surge Dev Meeting, SQL Saturday Baton Rouge
+This talk goes into the philosophy behind unit testing in general and test-driven development in particular. Discuss how to keep things simple yet useful and showcase a strategy for writing tests that achieve our goals without wasting anybody's time.
+
+@ AgileShift Houston 2020, GDG New Orleans, Surge Dev Meeting, SQL Saturday Baton Rouge
 
 ### Someone Asked Me To Talk About Open Source
 
