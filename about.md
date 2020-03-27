@@ -81,9 +81,9 @@ In order to understand things at a deeper level, it often helps to understand wh
 
 Less of a talk, more of a rant? There is no such thing as Front End or Back End Development as a job description. Skills? Sure, but not a job. Like I said, less a talk, more of a rant.
 
-@ FrontEnd Party
+@ FrontEnd Party, WFH Conf
 
-[Slides](https://docs.google.com/presentation/d/1VHIvpUXXFkcE0_MColGeZTl7Jbybxkn0OxgsNYCFJT8/edit#slide=id.p)
+[Slides](https://docs.google.com/presentation/d/1VHIvpUXXFkcE0_MColGeZTl7Jbybxkn0OxgsNYCFJT8/edit#slide=id.p) [Video](https://www.twitch.tv/videos/575913676?t=03h48m56s)
 
 ### Personal Security on the Internet
 
