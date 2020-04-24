@@ -83,7 +83,7 @@ Less of a talk, more of a rant? There is no such thing as Front End or Back End 
 
 @ FrontEnd Party, WFH Conf
 
-[Slides](https://docs.google.com/presentation/d/1VHIvpUXXFkcE0_MColGeZTl7Jbybxkn0OxgsNYCFJT8/edit#slide=id.p) [Video](https://www.twitch.tv/videos/575913676?t=03h48m56s)
+[Slides](https://docs.google.com/presentation/d/1VHIvpUXXFkcE0_MColGeZTl7Jbybxkn0OxgsNYCFJT8/edit#slide=id.p) [Video](https://youtu.be/3m_ECe5COrw?t=121)
 
 ### Personal Security on the Internet
 
@@ -125,10 +125,11 @@ In the age of the javascript framework, its worth to stop and ask - what was wro
 [Code (with a full explanation)](https://github.com/togakangaroo/gimgen)
 [Demo Page](http://georgemauer.net/gimgen/)
 [Interactive Slides](http://georgemauer.net/gimgen-preso/#/main)
+[Npm Package](https://www.npmjs.com/package/gimgen)
 
 For whatever reason, I decided to go absurdly deep with javascript generators. Really Really deep. I've even created my own micro-library. In this talk we walk throught he concept of generators, how it relates to asynchronous programming, co-routines, and then demo the weird, thought-provoking, and useful(?) patterns enabled by a library like gimgen.
 
-@ Front End Party, Jazzcon
+@ Front End Party, Jazzcon, Women Who Code
 
 ### Interviewing Developers
 
