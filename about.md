@@ -4,6 +4,12 @@ title: About Me
 comments: false
 ---
 
+<style>
+h3 + p > a + a:before {
+   content: "| ";
+}
+</style>
+
 I'm George Mauer
 
 This is my low effort blog. Mostly about software development. I regularly do presentations at various usergroups. I sometimes do them to my cat.
