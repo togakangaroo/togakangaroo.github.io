@@ -125,11 +125,12 @@ In the age of the javascript framework, its worth to stop and ask - what was wro
 [Code (with a full explanation)](https://github.com/togakangaroo/gimgen)
 [Demo Page](http://georgemauer.net/gimgen/)
 [Interactive Slides](http://georgemauer.net/gimgen-preso/#/main)
+[Talk video](https://us02web.zoom.us/rec/play/vcJ-IuurrjI3GNzBuQSDVPIqW43rJv2shCcZrvRZzBzhAnZVYFLwYLcaa-cA55OM33iDAVNHeCAR8OOj?continueMode=true&_x_zm_rtaid=NN9RcUb5THGILEyaoJmLcQ.1588094634610.9e6924a6730fc7845533110ce9b1a78b&_x_zm_rhtaid=877)
 [Npm Package](https://www.npmjs.com/package/gimgen)
 
 For whatever reason, I decided to go absurdly deep with javascript generators. Really Really deep. I've even created my own micro-library. In this talk we walk throught he concept of generators, how it relates to asynchronous programming, co-routines, and then demo the weird, thought-provoking, and useful(?) patterns enabled by a library like gimgen.
 
-@ Front End Party, Jazzcon, Women Who Code
+@ Front End Party, Jazzcon, Women Who Code Meetup
 
 ### Interviewing Developers
 
