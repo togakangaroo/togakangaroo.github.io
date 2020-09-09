@@ -20,6 +20,14 @@ I am a software developer, speaker, teacher, writer, and comedian with an intere
 
 [Find me on Twitter](https://twitter.com/togakangaroo) or try out the Disqus forms on my posts and let me know if they work. In general, it's not very hard to find a way to contact me.
 
+### Documentation, the README, and You
+
+[Slides with Notes](https://docs.google.com/presentation/d/1IQd4LWuGAwPm1VEUf2-ta-zh2t4VQbLuqBrinQagPlI/edit?usp=sharing)
+
+For how important we all say it is, we don't talk about documentation much at all. In code, we have design patterns, frameworks, systems design, architecture, SOLID and dozens of omnipresent rules of thumb, but what about for technical writing? Let's stop kicking the can down the road and get that conversation started.
+
+@ Operation Spark
+
 ## Talks I've Done / Do
 
 ### The Most Accessible Pizza Pie
