@@ -106,7 +106,7 @@
              padding-top: 10px;
              margin-top: 10px;
          }
-         #actions {
+         .actions {
              display: flex;
              justify-content: flex-end;
          }
@@ -135,7 +135,7 @@
              #contact .linkedin:before {
                  content: "linkedin.com/in/george-mauer/";
              }
-             #actions {
+             .actions {
                  display: none;
              }
          }
@@ -329,6 +329,9 @@
                     </details>
                 </li>
                 <li>
+                    <div class="actions">
+                        <button class="expand-all" el.open = true)">Expand All</button>
+                    </div>
                     <details>
                         <summary>
                             <div class="job-title">Senior Software Developer</div>
@@ -561,8 +564,13 @@
             </ul>
         </article>
 
-        <footer id="actions">
-            <button onClick="document.querySelectorAll('details').forEach(el => el.open = true)">Expand All</button>
+        <footer class="actions">
+            <button class="expand-all">Expand All</button>
         </footer>
+        <script>
+         document.querySelectorAll('.expand-all')
+                 .forEach(el => el.addEventListener('click', () => document.querySelectorAll('details')
+                                                                           .forEach(el => el.open = true)))
+        </script>
     </body>
 </html>
