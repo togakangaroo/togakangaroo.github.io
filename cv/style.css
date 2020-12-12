@@ -1,4 +1,6 @@
+/* ------------------------------------------------------------------------- */
 /* Reset from https://www.digitalocean.com/community/tutorials/css-minimal-css-reset */
+/* ------------------------------------------------------------------------- */
 html {
     box-sizing: border-box;
     font-size: 16px;
@@ -25,14 +27,13 @@ img {
 }
 
 /* ------------------------------------------------------------------------- */
-
-// New defaults
+/* New generic defaults */
+/* ------------------------------------------------------------------------- */
 h1 {
     color: blue;
     font-size: 200%;
     font-weight: bold;
 }
-
 a {
     color: inherit;
 }
@@ -51,10 +52,30 @@ details {
 details[open] > summary:before {
     display: none;
 }
+details > summary::-webkit-details-marker {
+    display: none;
+}
+details > summary:before {
+    content: "▼ ";
+    width: 1.5em;
+    font-family: monospace;
+    cursor: pointer;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Resume-specific defaults */
+/* ------------------------------------------------------------------------- */
 #content > header > h2 {
     display: none;
 }
+.timespan {
+    font-size: 80%;
+    font-style: italic;
+}
 
+/* ------------------------------------------------------------------------- */
+/* Resume Content */
+/* ------------------------------------------------------------------------- */
 #content {
     min-height: 100vh;
     max-width: 1200px;
@@ -71,29 +92,29 @@ details[open] > summary:before {
         " header   actions      ";
     grid-gap: 20px;
 }
-.timespan {
-    font-size: 80%;
-    font-style: italic;
+
+/* ------------------------------------------------------------------------- */
+/* Header and contact */
+/* ------------------------------------------------------------------------- */
+#content > header {
+    grid-area: header;
+    text-align: center;
 }
-.job-title, .title {
-    display: inline;
-}
-.my-name h3 {
+#content >header .my-name h3 {
     font-weight: bold;
     font-size: 140%;
 }
+
 .contact {
     font-size: 80%;
 }
-.contact, .my-name { text-align: center; }
 .contact h3, .contact h4 {
     display: none;
 }
 
-#content > header {
-    grid-area: header;
-}
-
+/* ------------------------------------------------------------------------- */
+/* Objective */
+/* ------------------------------------------------------------------------- */
 .objective {
     grid-area: objective;
 }
@@ -101,34 +122,36 @@ details[open] > summary:before {
     content: "-";
     margin: 0 .7ex 0 1ex;
 }
+
+/* ------------------------------------------------------------------------- */
+/* Buzzwords */
+/* ------------------------------------------------------------------------- */
 .buzzwords {
     grid-area: buzzwords;
 }
+.buzzwords li {
+    display: inline;
+}
+.buzzwords li+li:after {
+    content: ", ";
+}
+
+/* ------------------------------------------------------------------------- */
+/* Achievements */
+/* ------------------------------------------------------------------------- */
 .achievements {
     grid-area: achievements;
 }
+
+/* ------------------------------------------------------------------------- */
+/* Experience */
+/* ------------------------------------------------------------------------- */
 .experience {
     grid-area: experience;
     break-inside: auto;
 }
-.projects ul {
-    display: grid;
-    grid-template: 1fr 1fr / 1fr 1fr;
-    grid-gap: 20px;
-}
-details > summary::-webkit-details-marker {
-    display: none;
-}
-.experience ul, .projects ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-details > summary:before {
-    content: "▼ ";
-    width: 1.5em;
-    font-family: monospace;
-    cursor: pointer;
+.experience .job-title, .experience .title {
+    display: inline;
 }
 .experience summary {
     display: flex;
@@ -149,16 +172,28 @@ details > summary:before {
     padding-top: 10px;
     margin-top: 10px;
 }
-.buzzwords li {
-    display: inline;
+
+/* ------------------------------------------------------------------------- */
+/* Projects */
+/* ------------------------------------------------------------------------- */
+.projects ul {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    grid-gap: 20px;
 }
-.buzzwords li+li:after {
-    content: ", ";
-}
+
+/* ------------------------------------------------------------------------- */
+/* Actions */
+/* ------------------------------------------------------------------------- */
 .actions {
     display: flex;
     justify-content: flex-end;
 }
+
+
+/* ------------------------------------------------------------------------- */
+/* Print exceptions */
+/* ------------------------------------------------------------------------- */
 @media print {
     body {
         font-size: 80%;
@@ -188,6 +223,11 @@ details > summary:before {
         display: none;
     }
 }
+
+
+/* ------------------------------------------------------------------------- */
+/* Print, Small device exceptions */
+/* ------------------------------------------------------------------------- */
 @media print, (max-device-width: 600px), (max-width: 500px) {
     body {
         grid-template-areas:
