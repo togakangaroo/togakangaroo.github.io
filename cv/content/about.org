@@ -1,0 +1,49 @@
+* About
+  :PROPERTIES:
+  :HTML_CONTAINER: header
+  :END:
+** George Mauer
+   :PROPERTIES:
+   :HTML_CONTAINER_CLASS: my-name
+   :END:
+** Contact
+   :PROPERTIES:
+   :HTML_CONTAINER: article
+   :HTML_CONTAINER_CLASS: contact
+   :END:
+*** Location
+    :PROPERTIES:
+    :HTML_CONTAINER: aside
+    :HTML_CONTAINER_CLASS: city-state
+    :END:
+    New Orleans, LA
+*** Mobile
+    :PROPERTIES:
+    :HTML_CONTAINER_CLASS: mobile
+    :END:
+    860 463 8322
+*** Email
+    :PROPERTIES:
+    :HTML_CONTAINER_CLASS: email
+    :END:
+    [[mailto:gmauer@gmail.com][gmauer@gmail.com]]
+*** Blog
+    :PROPERTIES:
+    :HTML_CONTAINER_CLASS: blog
+    :END:
+    [[http://georgemauer.net][georgemauer.net]]
+*** LinkedIn
+    :PROPERTIES:
+    :HTML_CONTAINER_CLASS: linkedin
+    :END:
+    [[https://www.linkedin.com/in/george-mauer/][LinkedIn]]
+*** StackOverflow
+    :PROPERTIES:
+    :HTML_CONTAINER_CLASS: stackoverflow
+    :END:
+    [[https://stackoverflow.com/users/5056/george-mauer][StackOverflow]]
+*** GitHub
+    :PROPERTIES:
+    :HTML_CONTAINER_CLASS: github
+    :END:
+    [[https://github.com/togakangaroo/][GitHub]]

@@ -1,0 +1,6 @@
+((org-mode . ((org-export-with-section-numbers . nil)
+              (org-html-style . nil)
+              (org-html-html5-fancy . 't)
+              (org-export-with-toc . nil)
+              (org-export-headline-levels 10)
+              (org-html-postamble . nil))))

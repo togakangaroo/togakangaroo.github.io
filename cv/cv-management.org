@@ -1,0 +1,25 @@
+#+INCLUDE: "./content/document-head.org"
+
+#+INCLUDE: "./content/about.org"
+    
+* Objective
+
+  I am a technical and conscientious manager and experienced software developer. I have a long record of community building, mentoring, troubleshooting, and solving problems through a re-framing of perspective.
+
+  I speak at conferences, have mentored dozens of individuals, am a leader in several online and local communities, have written popular articles, been a guest lecturer, taught, and been interviewed for a variety of podcasts and publications on subjects ranging from very technical details of Javascript and .Net, to broad-grain topics such as web history, interviewing, Agile, documentation, and Open Source.
+
+* Experience 
+ 
+** Deep Problem Analysis 
+   I excel in boiling a problem down to the bare essentials and methodically restructuring process to attack it on that level. This has been my approach whether in management, software, or product design. For a time at Surge, I would regularly be approached by recent hires; they felt they were failing, or were unsure of how to do things within the company. While I did my best to resolve things where they could be or to pass along the issue where they couldn't, something was clearly amiss. After a series of conversations it became clear that because at that point I was still doing most interviewiewing, I was the only person who had actually had a real trust-building conversation with them before they were placed on client projects. I therefore naturally becoame a funnel for any more sensitive issues.
+  
+   I am a big believer in Conway's Law of Organizations and in removing bottlenecks. I therefore put together and pitched a proposal to set up an engineering-wide mentoring program to build up decentralized lines of communication that cross project silos. Once accepted, I was in charge of setting up and administering the program company-wide as we grew to over 200 developers.
+  
+
+* Achievements 
+  - Presented at [[http://georgemauer.net/about.html][many conferences and usergroups]] - Keynote speaker at Jazzcon 2017
+  - Discovered a - still unpatched - vulnerability in Excel and Google Sheets which allows exfiltration of data when viewing csv files. [[https://www.reddit.com/r/programming/comments/75cupe/the_absurdly_underestimated_dangers_of_csv/][Blog post on this was #1 on Hacker News and Programming Reddit]]
+  - Advisory and other board memberships: Public Advisory Board for Tulane's School of Continuing Studies Applied Computer Program, Coding Coach Guiding Committee, Operation Code
+- [[https://stackoverflow.com/users/5056/george-mauer][Stackoverflow reputation > 99,000]]
+
+  ...

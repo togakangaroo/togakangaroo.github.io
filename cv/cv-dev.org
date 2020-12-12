@@ -1,0 +1,24 @@
+#+INCLUDE: "./content/document-head.org"
+
+#+INCLUDE: "./content/about.org"
+
+* Objective
+  :PROPERTIES:
+  :HTML_CONTAINER: article
+  :HTML_CONTAINER_CLASS: objective
+  :END:
+
+  I have been a senior developer with a focus on architecture, simplicity, and building effective teams for over thirteen years. As a CTO and as a director I have also served as an engineering manager responsible for growing communities, building business strategy, and mentoring to dozens of people.
+
+  I speak at conferences, have mentored dozens of software devs, have written popular articles, and been interviewed for a variety of podcasts and publications. I suppose that makes me an industry leader.
+
+  I am especially interested in remote-friendly companies that can check any of the following boxes:
+
+  - Funded startups in need of a technical co-founder
+  - Product companies that help people
+  - Companies building innovative developer or productivity tooling
+  - Companies that do functional programming /(especially a Lisp such as Clojure or Racket)/
+  - Companies trying to do something interesting with WebAssembly
+
+#+INCLUDE: "./content/buzzwords.org" :minlevel 1
+

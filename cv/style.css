@@ -1,0 +1,206 @@
+/* Reset from https://www.digitalocean.com/community/tutorials/css-minimal-css-reset */
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ------------------------------------------------------------------------- */
+
+// New defaults
+h1 {
+    color: blue;
+    font-size: 200%;
+    font-weight: bold;
+}
+
+a {
+    color: inherit;
+}
+article {
+    break-inside: avoid;
+}
+p+p {
+    margin-top: 1em;
+}
+details > summary {
+    list-style: none;
+}
+details {
+    break-inside: avoid;
+}
+details[open] > summary:before {
+    display: none;
+}
+#content > header > h2 {
+    display: none;
+}
+
+#content {
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0;
+    padding: 20px;
+
+    display: grid;
+    grid-template-areas:
+        " header   objective    "
+        " header   buzzwords    "
+        " header   achievements "
+        " header   experience   "
+        " header   projects     "
+        " header   actions      ";
+    grid-gap: 20px;
+}
+.timespan {
+    font-size: 80%;
+    font-style: italic;
+}
+.job-title, .title {
+    display: inline;
+}
+.my-name h3 {
+    font-weight: bold;
+    font-size: 140%;
+}
+.contact {
+    font-size: 80%;
+}
+.contact, .my-name { text-align: center; }
+.contact h3, .contact h4 {
+    display: none;
+}
+
+#content > header {
+    grid-area: header;
+}
+
+.objective {
+    grid-area: objective;
+}
+.objective ul > li:before {
+    content: "-";
+    margin: 0 .7ex 0 1ex;
+}
+.buzzwords {
+    grid-area: buzzwords;
+}
+.achievements {
+    grid-area: achievements;
+}
+.experience {
+    grid-area: experience;
+    break-inside: auto;
+}
+.projects ul {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    grid-gap: 20px;
+}
+details > summary::-webkit-details-marker {
+    display: none;
+}
+.experience ul, .projects ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+details > summary:before {
+    content: "▼ ";
+    width: 1.5em;
+    font-family: monospace;
+    cursor: pointer;
+}
+.experience summary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.experience .timespan {
+    margin-left: auto;
+}
+.experience .employer {
+    width: 100%;
+}
+.experience li+li details:before {
+    content: "";
+    display: block;
+    width: 3em;
+    border-top: 1px solid gray;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+.buzzwords li {
+    display: inline;
+}
+.buzzwords li+li:after {
+    content: ", ";
+}
+.actions {
+    display: flex;
+    justify-content: flex-end;
+}
+@media print {
+    body {
+        font-size: 80%;
+        max-width: auto;
+    }
+    .contact {
+        display: grid;
+        grid-auto-flow: column;
+        grid-gap: 10px;
+    }
+    .blog a, .github a, .stackoverflow a, .linkedin a {
+        display: none;
+    }
+    .contact .blog:before {
+        content: "georgemauer.net";
+    }
+    .contact .github:before {
+        content: "github.com/togakangaroo";
+    }
+    .contact .stackoverflow:before {
+        content: "stackoverflow.com/users/5056";
+    }
+    .contact .linkedin:before {
+        content: "linkedin.com/in/george-mauer/";
+    }
+    .actions {
+        display: none;
+    }
+}
+@media print, (max-device-width: 600px), (max-width: 500px) {
+    body {
+        grid-template-areas:
+            "header      "
+            "objective   "
+            "buzzwords   "
+            "achievements"
+            "experience  "
+            "projects    "
+            "actions     ";
+    }
+    .projects ul {
+        display: flex;
+        flex-direction: column;
+    }
+}
