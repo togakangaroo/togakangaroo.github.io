@@ -1,0 +1,34 @@
+* Experience
+  :PROPERTIES:
+  :HTML_CONTAINER: article
+  :HTML_CONTAINER_CLASS: experience
+  :END:
+** Operation Spark
+   :PROPERTIES:
+   :HTML_CONTAINER: details
+   :END:
+*** Summary
+    :PROPERTIES:
+    :HTML_CONTAINER: summary
+    :END:
+****  Chief Technical Officer (CTO)
+     :PROPERTIES:
+     :HTML_CONTAINER_CLASS: job-title
+     :END:
+****  February 2020 - Present
+     :PROPERTIES:
+     :HTML_CONTAINER_CLASS: timespan
+     :END:
+**** [[https://operationspark.org][Operation Spark]]
+     :PROPERTIES:
+     :HTML_CONTAINER_CLASS: employer
+     :END:
+*** Description
+    :PROPERTIES:
+    :HTML_CONTAINER_CLASS: description
+    :END:
+    - Provided architectural and team leadership for a variety of development projects undertaken by the Operation Spark consulting wing - the DevShop.
+    - Worked daily alongside junior developers on their first professional project. Interviewed, formed teams, and mentored team members to become solid contributors.
+    - Together with the CEO and COO, built out DevShop business development strategy. Operated as the sales engineer, regularly meeting with prospective clients, building out, estimating, and pitching project proposals.
+    - Updated and improved curriculum and coursework, occasionally teaching, delivering lectures, and checking in with students studying software development.
+    - Consulted graduates on how to go about finding their first software development job. Helped optimize and bring depth to their job hunt strategies so as to best ensure success.

@@ -1,0 +1,16 @@
+* Achievements
+     - Committed code to jQuery. Mentioned in the [[https://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/][jQuery 2.2 changelog]]
+     - Discovered a - still unpatched - vulnerability in Excel and Google Sheets which allows exfiltration of data when viewing csv files. [[https://www.reddit.com/r/programming/comments/75cupe/the_absurdly_underestimated_dangers_of_csv/][Blog post on this was #1 on Hacker News and Programming Reddit]]
+     - Presented at many conferences and usergroups - Keynote speaker at Jazzcon 2017
+     - [[https://stackoverflow.com/users/5056/george-mauer][Stackoverflow reputation > 99,000]]
+     - Frequently interviewed and cited over article and thoughts on how to [[http://georgemauer.net/2017/11/03/take-home-interviewing-tests.html][and not to structure developer interviews]]
+     - Most Viewed Author on Quora in Javascript and Web Development
+     - Longtime co-host of the weekly [[http://virtualbrownbag.com/][VirtualBrownBag Online Meetup]]
+     - Former co-organizer for New Orleans' regional tech and entrepreneur conference: BarcampNola
+     - Former member of the Public Advisory Board for Tulane's School of Continuing Studies Applied Computing Program
+     - Wrote and performed a sketch comedy show in the 2011 New Orleans Fringe Festival
+     - Former leader of New Orleans .NET Usergroup: In charge of recruitment, speaker selection, organization, advertising, etc.
+     - Committer to and creator of many open source projects
+     - Presented at the 2006 AAAI Conference on Human-Robot Interaction
+     - Recieved a research stipend for Graduate School at Tulane University
+     - Awarded a Jiu-Jitsu blue belt by Rodrigo Gracie

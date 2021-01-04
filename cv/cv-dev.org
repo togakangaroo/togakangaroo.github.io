@@ -1,6 +1,6 @@
 #+INCLUDE: "./content/document-head.org"
 
-#+INCLUDE: "./content/about.org"
+#+INCLUDE: "./content/about.org" :minlevel 1
 
 * Objective
   :PROPERTIES:
@@ -21,4 +21,6 @@
   - Companies trying to do something interesting with WebAssembly
 
 #+INCLUDE: "./content/buzzwords.org" :minlevel 1
+
+#+INCLUDE: "./content/achievements.org" :minlevel 1
 
