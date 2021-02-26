@@ -16,9 +16,11 @@ This is my low effort blog. Mostly about software development. I regularly do pr
 
 ## Bio
 
-I am a software developer, speaker, teacher, writer, and comedian with an interest in the various techniques that can make software simple, extensible, and communicative. I have worked in software consulting in all sorts of positions for over a decade. I am currently CTO at the [Operation Spark](https://operationspark.org/) code school in New Orleans. I mentor with [Operation Code (unrelated)](https://operationcode.org/), write, teach, and speak regularly on Javascript, C#, testing, interviewing, etc at conferences, usergroups, and to my cat (singular - the other one won't listen to me).
+I am a software developer, speaker, teacher, writer, and comedian with an interest in the various techniques that can make software simple, extensible, and communicative. I have worked in software consulting in all sorts of positions for over a decade. I am currently a developer over at [findhelp.org (Aunt Bertha)](http://findhelp.org), and was previously CTO at the [Operation Spark](https://operationspark.org/) code school in New Orleans. I mentor with [Operation Code (unrelated)](https://operationcode.org/), write, teach, and speak regularly on Javascript, C#, testing, interviewing, etc at conferences, usergroups, and to my cat (singular - the other one won't listen to me).
 
 [Find me on Twitter](https://twitter.com/togakangaroo) or try out the Disqus forms on my posts and let me know if they work. In general, it's not very hard to find a way to contact me.
+
+## Talks I've Done / Do
 
 ### Documentation, the README, and You
 
@@ -26,9 +28,7 @@ I am a software developer, speaker, teacher, writer, and comedian with an intere
 
 For how important we all say it is, we don't talk about documentation much at all. In code, we have design patterns, frameworks, systems design, architecture, SOLID and dozens of omnipresent rules of thumb, but what about for technical writing? Let's stop kicking the can down the road and get that conversation started.
 
-@ Operation Spark
-
-## Talks I've Done / Do
+@ Operation Spark, Front End Party
 
 ### The Most Accessible Pizza Pie
 
