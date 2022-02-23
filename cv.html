@@ -12,14 +12,8 @@
          a {
              color: inherit;
          }
-         article {
-             break-inside: avoid;
-         }
          details > summary {
              list-style: none;
-         }
-         details {
-             break-inside: avoid;
          }
          details[open] > summary:before {
              display: none;
@@ -66,7 +60,12 @@
          }
          #experience {
              grid-area: experience;
-             break-inside: auto;
+         }
+         #projects {
+             grid-area: projects;
+         }
+         footer.actions {
+             grid-area: actions;
          }
          #projects ul {
              display: grid;
@@ -138,9 +137,13 @@
              .actions {
                  display: none;
              }
-             #experience {
-                 margin-top: 2cm; #make sure this starts on the next page
+
+             body > article, details {
+                 -webkit-column-break-inside: avoid;
+                 page-break-inside: avoid;
+                 break-inside: avoid;
              }
+         }
          @media print, (max-device-width: 600px), (max-width: 500px) {
              body {
                  grid-template-areas:
