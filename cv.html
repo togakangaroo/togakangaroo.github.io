@@ -113,6 +113,7 @@
              body {
                  font-size: 80%;
                  max-width: auto;
+                 display: block; # with grid the page breaks seem to not work
              }
              #contact {
                  display: grid;
@@ -138,7 +139,7 @@
                  display: none;
              }
 
-             body > article, details {
+             article:not(#experience), details {
                  -webkit-column-break-inside: avoid;
                  page-break-inside: avoid;
                  break-inside: avoid;
@@ -251,7 +252,7 @@
                     Former member of the Public Advisory Board for Tulane's School of Continuing Studies Applied Computing Program
                 </li>
                 <li>
-                    Mentor at and on the mentoring advisory commitees for <a href="https://operationcode.org/">Operation Code</a> and <a href="https://codingcoach.io/">Coding Coach<a>.
+                    Mentor at and on the mentoring advisory commitees for <a href="https://operationcode.org/">Operation Code</a> and <a href="https://codingcoach.io/">Coding Coach</li>a>.
                 </li>
                 <li>
                     Wrote and performed a sketch comedy show in the 2011 New Orleans Fringe Festival
@@ -601,9 +602,15 @@
             <button class="expand-all">Expand All</button>
         </footer>
         <script>
-         document.querySelectorAll('.expand-all')
-                 .forEach(el => el.addEventListener('click', () => document.querySelectorAll('details')
-                                                                           .forEach(el => el.open = true)))
- ;kkkkk       </script>
+         {
+            const expandAll = () => document.querySelectorAll('details').forEach(el => el.open = true)
+            const expanders = document.querySelectorAll('.expand-all')
+            expanders.forEach(el => el.addEventListener('click', expandAll))
+            if(new URLSearchParams(document.location.search).getAll('expand').length) {
+                expandAll()
+                expanders.forEach(el => el.hidden = true)
+            }
+         }
+        </script>
     </body>
 </html>
