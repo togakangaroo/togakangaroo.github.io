@@ -4,39 +4,36 @@ My low effort blog. Compiled to a static site with [[https://jekyllrb.com][Jekyl
   :PROPERTIES:
   :header-args: :results output
   :END:
-  
-** Build Image 
-   
-  First build the image from the local [[file:./Dockerfile][Dockerfile]].
- 
-  #+begin_src shell
-  docker build -t "jekyll" .
-  #+end_src
-  
-** Create and run container from image 
-   
-  If you would like to run from org mode directly, you will need to have ~ob-async~ installed so the ~:async~ directive below works.
-  
-  #+begin_src emacs-lisp
-  (require 'ob-async)
-  #+end_src
-  
-  Otherwise you can simply copy and paste the following into a shell.
-    
-  We can then run the site with [[./build-site.sh][build-site.sh]]
 
-  #+begin_src shell :async
-  ./build-site.sh --watch
+** Build Image
+
+  First build the image from the local [[file:./Dockerfile][Dockerfile]].
+
+  #+begin_src emacs-lisp :results silent
+    (async-shell-command "docker build -t \"jekyll\" .")
   #+end_src
 
   #+RESULTS:
+
+** Create and run container from image
+
+
+  We can then run the site with [[./build-site.sh][build-site.sh]]
+
+  #+begin_src emacs-lisp :results silent
+    (let* ((compilation-buffer (get-buffer-create "*Blog Compilation*")))
+      (when-let (process (get-buffer-process compilation-buffer))
+        (kill-process process))
+      (async-shell-command "./build-site.sh --watch" compilation-buffer))
+  #+end_src
+
 
   or if you don't care about watching the file system for changes and recompiling
 
   #+begin_src shell :async
   ./build-site.sh
   #+end_src
-  
+
   Give it a minute to start and you can then [[http://localhost:4000][visit the running site]].
 
   To stop the container run
@@ -48,13 +45,13 @@ My low effort blog. Compiled to a static site with [[https://jekyllrb.com][Jekyl
 ** Also useful
 
  List all running containers
- 
+
  #+begin_src shell :results output list
  docker ps -a
  #+end_src
 
  To list all local images
- 
+
  #+begin_src shell :results output table
  docker images
  #+end_src
