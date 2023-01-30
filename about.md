@@ -16,11 +16,18 @@ This is my low effort blog. Mostly about software development. I regularly do pr
 
 ## Bio
 
-I am a software developer, speaker, teacher, writer, and comedian with an interest in the various techniques that can make software simple, extensible, and communicative. I have worked in software consulting in all sorts of positions for over a decade. I am currently a developer over at [findhelp.org (Aunt Bertha)](http://findhelp.org), and was previously CTO at the [Operation Spark](https://operationspark.org/) code school in New Orleans. I mentor with [Operation Code (unrelated)](https://operationcode.org/), write, teach, and speak regularly on Javascript, C#, testing, interviewing, etc at conferences, usergroups, and to my cat (singular - the other one won't listen to me).
+I am a software developer, speaker, teacher, writer, and comedian with an interest in the various techniques that can make software simple, extensible, and communicative.  I am currently Director of Software Engineering at [BlocPower](https://www.blocpower.io/), was previously a principal developer and Director over at [findhelp](http://findhelp.org), and CTO at the [Operation Spark](https://operationspark.org/) code school in New Orleans. Previously I worked in software consulting in all sorts of positions for over a decade. I mentor with [Operation Code (unrelated)](https://operationcode.org/), write, teach, and speak regularly on Javascript, C#, testing, interviewing, etc at conferences, usergroups, and to my cat (singular - the other one won't listen to me).
 
 [Find me on Twitter](https://twitter.com/togakangaroo) or try out the Disqus forms on my posts and let me know if they work. In general, it's not very hard to find a way to contact me.
 
 ## Talks I've Done / Do
+
+### Org Workflows for Developers
+
+Emacs users all know org-mode is great but much of the discussion often focuses on the agendas, todo lists, and project planning. These are all valuable. yet rarely do we talk about workflows that do work, not just plan it. Inspired by literate programming ideas, this talk demonstrates a grab-bag of workflows developed over the years that are of use not only for planning, tracking, note keeping, and ops work, but in actual day-to-day enterprise software development.
+
+
+[Links to resources, Index, Q&A, and videos](https://emacsconf.org/2022/talks/workflows/)
 
 ### Documentation, the README, and You
 
