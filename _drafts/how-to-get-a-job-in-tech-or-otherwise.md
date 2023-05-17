@@ -50,3 +50,25 @@ things to help improve the chances:
 
 * Open source is great from the point of view of getting some practice, getting some talking points and experience, and from networking. But you have to do it with those things in mind. Pick your open source work to optimize for those goals
 
+-----
+
+So the thing with networking is ultimately what you want to do is get a network of people who are invested in your success and therefore pass you opportunities you wouldn't have heard of otherwise. Ideally they're well connected into places you're not and are likely to hear about stuff and make sure someone actually looks at your damn resume
+
+if that's the goal...well you can imagine there's a lot of different ways of going about it.
+
+Having serious numbers of applications is still important because I really believe that - unless you're already preternaturally good at networking (and then you don't need advice) - there's a certain level of stuff you have to go through to realistically land a job. Applying a lot at first is good because you
+- Are forced to build processes and schedules you can be consistent with
+- Are forced to write about yourself a lot
+- Are doing focused interview prep while you do this
+- Get a viewpoint and understanding of the market out there
+- Get data on how your job application process works
+- See point 1 again cause that's a really big one.
+
+Plenty of people get lucky within the round of mass-applying and frankly good for them. If you can get your foot in the door that way that's great.
+If you've done that though, and you feel like its not working there are other places you can take it to. Networking is the obvious next step and if you think about it in the terms I said above hopefully you can see there's a lot more room for creativity than maybe you think
+
+For ideas, it is helpful to focus in on an area - perhaps even artificially. So for example, lets say you decide you might want to work at a company that does a lot of data science stuff. Do you have connections to that industry? Probably not, so you need to get some. Take 2 weeks in which you apply less, but you spend the remainder of the time building out that network.
+
+So what I might do for example is spend one day listening to some podcasts, doing some research and learn what data science actually is and map out some of the concepts and players in the space. I would look to find data science based communities and join them. I'd try to read the backlog in those communities and keep an eye out for who the people who participate regularly are. I'd introduce myself and make myself visible by asking some thoughtful questions, or even just occasionally posting a fun meme. I'd maybe decide to do a project where I analyzed my own stats from 300 applications and I'd ask questions or for help with it and do a good job. I'd ask for informational interviews. The people who I end up talking to more are likely to be more social people who are fairly well connected. I can then start side conversations with them.
+
+I wouldn't hit them up for a job, I'd just talk to them, ask for advice, ask questions, be humble. Ideally they take a likeing and grow invested and we stay in touc
