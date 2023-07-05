@@ -13,7 +13,6 @@ My low effort blog. Compiled to a static site with [[https://jekyllrb.com][Jekyl
     (async-shell-command "docker build -t \"jekyll\" .")
   #+end_src
 
-  #+RESULTS:
 
 ** Create and run container from image
 

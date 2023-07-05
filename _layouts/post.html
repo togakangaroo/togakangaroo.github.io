@@ -17,12 +17,11 @@ layout: layout
   </div>
 </article>
 <div class="actions share">
-    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script src="//www.redditstatic.com/button/button2.js"></script>
 </div>
 <div id="page-navigation">
   <div class="left"> {% if page.previous.url %} <a href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}">&larr; {{page.previous.title}}</a> {% endif %} </div>
-  <div class="right"> {% if page.next.url %} <a href="{{page.next.url}}" title="next Post: {{page.next.title}}">{{page.next.title}} &rarr; </a> {% endif %} </div>
+  <div class="right"> {% if page.next.url %} <a href="{{page.next.url}}" title="Next Post: {{page.next.title}}">{{page.next.title}} &rarr; </a> {% endif %} </div>
   <div class="clear">&nbsp;</div>
 </div>
 
@@ -36,6 +35,7 @@ layout: layout
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        dsq.setAttribute('data-timestamp', +new Date());
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
