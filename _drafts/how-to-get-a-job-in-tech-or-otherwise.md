@@ -1,4 +1,4 @@
---- 
+---
 layout: post
 title: "How to Get a Job (In Tech or Otherwise)"
 author: "George Mauer"
@@ -16,6 +16,12 @@ As far as job-hunting skills, the items on the list and ordering chan change of 
 * Researching companies and Informational interviews/Reverse interviews
 * Talking about yourself and asking questions live
 * Interviewing skills (this is probably several different categories)
+  - Leetcode-style coding
+  - Project-style coding
+  - Talking about yourseof
+  - Talking about tech
+  - Behavioral interviews in front of a panel
+  - Asking questions
 * Network building
 * Network maintenance
 * Other self promotion
@@ -36,11 +42,11 @@ How exactly this works out is going to vary (the point of the weekly planning me
 things to help improve the chances:
 * The 2 hour job search book has been recommended a lot as a sort of guide on how to network
 
-* Be really really organized. Write down everything, have a spreadsheet of where you applied and when, when and how you followed up, interviewed, etc. Set weekly commitments - how many jobs will you apply to in a given week? Followups? Studying? What time will you spend on your own projects?  
+* Be really really organized. Write down everything, have a spreadsheet of where you applied and when, when and how you followed up, interviewed, etc. Set weekly commitments - how many jobs will you apply to in a given week? Followups? Studying? What time will you spend on your own projects?
 
 * Don’t neglect follow ups. Find a way to get in touch with someone. If you don’t have an email address then linkedin stalking, if you can’t connect with someone there then guess emails
 
-* Do research on companies and industries. Not two minutes worth of website scanning, real research, talk to people in those industries. When you write your cover letter customize it to what people at that company/in that industry/location are probably dealing with and be direct in how your specific experiences can help. Your cover letter should not simply reflect the job description and your resume back at them (https://www.freecodecamp.org/news/what-i-learned-from-doing-60-technical-interviews-in-30-days/ has a good example of a cover letter that stands out)  
+* Do research on companies and industries. Not two minutes worth of website scanning, real research, talk to people in those industries. When you write your cover letter customize it to what people at that company/in that industry/location are probably dealing with and be direct in how your specific experiences can help. Your cover letter should not simply reflect the job description and your resume back at them (https://www.freecodecamp.org/news/what-i-learned-from-doing-60-technical-interviews-in-30-days/ has a good example of a cover letter that stands out)
 
 * Don’t just click-apply. Remember, the easier it is for you to apply the easier it is for a million other people
 
