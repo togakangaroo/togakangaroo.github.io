@@ -48,8 +48,11 @@ The job hunt too is a funnel. Here is a rough list of stages you have to get thr
 
 This is a key concept to understand and we will revisit this throughout. There are things you can do to improve your odds at just about any stage, but time spent improving in one area is time not spent on another. You have to learn how to think about these odds and how they interact. Unless you're an ace at Bayesian probability, **your intution here is probably wrong**.
 
---
-Now if you have amazing, preexisting marketing and sales skills you probably don't need to hear any of this. If you are incredible at networking and can cold-call sell a wool coat to a sheep, you don't need my advice and you should just go do the things you already know how to do far better than I. But for the rest of you (or the marketing wizes who are reading this for "research"), let's press on.
+## Job Hunt Skills
 
-> “What do you mean job hunting skills? There’s nothing to applying at all. All I need to do is tailor my resume and click submit.”
+Now if you have amazing, preexisting marketing and sales skills you probably don't need to hear any of this. If you are incredible at networking and can cold-call sell a wool coat to a sheep, you don't need my advice and you should just go do the things you already know how to do far better than I. But for the rest of you (or the marketing wizes who are reading this for "research", good for you), lets talk about what I mean by "job hunt skills".
+
+> “There’s nothing to applying at all. All I need to do is tailor my resume and click submit.”
 >  - a mentee
+
+Yeah, it's not that simple. Let's do another list.
