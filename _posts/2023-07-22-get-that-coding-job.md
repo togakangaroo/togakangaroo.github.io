@@ -19,34 +19,46 @@ And I do think that over the years I have developed a set of mostly common sense
 
 Let's not be shy about this, Job hunt is a Sisyphean task.
 
-Except of course it is not. Sisyphus was the damned ancient Greek king cursed to roll a boulder up hill without ever reaching the top. A thing can only be Sisyphean if it is impossible to attain your goals. Otherwise, it is just hard. And job hunt is. You are best served getting into the right frame of mind.
+Except of course it is not. Sisyphus was the ancient Greek king damned to eternally roll a boulder uphill. A thing can only be Sisyphean if it is impossible to attain your goals. Otherwise, it is just hard. And job hunting is hard. You are best served getting into the right frame of mind.
 
-It's not hard because you have to push a heavy boulder, it is hard because every part of the job hunt will be all about failure. Sure, in the end you suddenly achieve your goals, but right up till there...well it sucks.
+Fortunately, it is not hard because you have to push a heavy boulder. It is hard because every part of the job hunt will be all about failure. Sure, in the end you suddenly achieve your goals, but right up till then...well it sucks.
 
 But what if job hunt is **not primarily** about that?
 
-So you've learned a lot about programming and have done projects. That's great! But that's not the full set of skills needed to get the job. That's a different set. Your *primary* goal is to build up the skills you need to get a job.
+Writing code, doing projects, being a good coworker. These are all important and valuable skills. But it's not the full set of skills needed to get the job. There is a different set. Your *primary* goal is to build up these job-hunt skills?
+
+Before we launch into that list though, let's consider the structure of a job hunt.
 
 ## The Funnel
 
 At its core, a job hunt is marketing, is it not? You are marketing yourself.
 
-Have you ever heard marketing or sales people talk about "the funnel"? The idea is that there is a series of stages, at each stage a decision is made and you other progress or get eliminated. At each stage therefore the number of people passing through gets smaller and the chances of any one of them reaching the end successfully gets higher.
+Have you ever heard marketing or sales people talk about "the funnel"? The idea is that opportunities pass through a series of stages. At each stage a decision is made and the opportunity either progresses or gets eliminated and falls out of the funnel. From a hiring manager's point of view, each applicant is an opportunity and - as they move through the process - at each stage the number of remaining applicants gets smaller. From the applicant's point of view, at each successive stage the chances of them reaching the end, and an offer, increases.
 
 So its really more of a sieve than a funnel, but I guess marketing folk aren't known for their nomenclature. (Also feel free to visualize this as a video game...but like, without checkpoints and you never get a chainsaw.)
 
-The job hunt too is a funnel. Here is a rough list of stages you have to get through.
+During the job hunt, with each job application, you enter a funnel. Here is a rough list of stages you have to get through:
 
-- Your resume needs to get looked at. That means someone has to actually be manning the hiring apparatus. You'll be shocked how often things have there's simply not someone on the other side. I would wager this is the case with 20-50% of all job postings. This isn't usually something insidious; no one needs to "harvest your resume" or anything like that. Just plain ol' disorganization and the fact that things change.
-- Alternately, they might have gotten so many resumes that they simply couldn't review every one. In fact, I encourage people in that position to pick at random a comfortable number of resumes they actually can review and mass-reject the rest. It sucks, but it sucks less than any alternative.
-- Next, your resume should stack up well enough against others to be selected for a phone screen.
-- Of course you have to be able to carry on a conversation in a phone screen and demonstrate enough to be passed through to an interview.
-- Then there's the rounds of interview - each a stage in itself. Let's be conservative and say there are three rounds. The details will vary, but lets say this includes a technical conversation with the hiring manager, a leetcode-style coding test, and a behavioral interview panel. At each point you might get eliminated and you're really rolling a die whether your preformance matched up with their expectations.
-- Now say that you get to the end of the interview process...well that's no guarantee you get an offer! There are other people also moving through the process. If they did it correctly, only a couple should reach the end, but either way, the offer goes to just one.
-- Then of course the offer has to be good enough that you're willing to take it.
-- And finally, at every point in time there's the possibility - small yet real - of the job simply disappearing, hiring being frozen, the hiring manager or recruiter leaving, or people just plain dropping the ball.
+- **Your resume needs to get looked at.** That means someone has to actually be manning the hiring apparatus. You'll be shocked how often things have there's simply not someone on the other side. I would wager this is the case with 20-50% of all job postings.
+- Alternately, **they might have gotten so many resumes that they simply couldn't review every one**. I encourage hiring managers in that position to pick at random a comfortable number of resumes they actually can review and mass-reject the rest. It sucks, but it sucks less than any alternative.
+- Next, **your resume should stack up well enough against others to be selected for a phone screen**.
+- Of course you have to be able to carry on a conversation and demonstrate some competence in a **phone screen and to be passed through to an interview**.
+- Then there's the **rounds of interview** - each a stage in itself. Let's be conservative and say there are three rounds. The details don't matter so much for the purposes of this list. Lets say these include **a technical conversation** with the hiring manager, a **leetcode-style coding test**, and **a behavioral interview panel**. At each point you might get eliminated as your performance always has a chance of not matching expectations.
+- Now say that you get to the end of the interview process...well that's no guarantee you **get an offer**! There are other people also moving through the process. If they did it correctly, only a couple should reach the end; the offer usually goes to just one.
+- Then of course the **offer has to be good enough** that you're willing to take it.
+- And finally, at every point in time there's the small, yet real **possibility of the job simply disappearing**, hiring being frozen, the hiring manager or recruiter leaving, or people just plain dropping the ball.
 
-This is a key concept to understand and we will revisit this throughout. There are things you can do to improve your odds at just about any stage, but time spent improving in one area is time not spent on another. You have to learn how to think about these odds and how they interact. Unless you're an ace at Bayesian probability, **your intution here is probably wrong**.
+This list is key to understand and we will revisit it throughout this series. There are things you can do to improve your odds at just about any stage, but you have to prioritize. Time spent improving in one area is time not spent on another. You have to learn how to think about these odds and how they interact. Unless you're an ace at Bayesian probability, **your intuition here is probably wrong**.
+
+<figure style="width: 500px; float: right;">
+  <img alt="Job hunt simulator screenshot. Calculation has finished showing means of 21.84 weeks in job hunt, 477.44 total applications, and a breakdown of stages. In most the resume was not selected or the listing was not real" src="/img/get-that-coding-job/job-hunt-simulator.png" />
+</figure>
+
+Which is why, after the 50th time I've had a conversation with a mentee about how the odds don't play out like they think, [I created a tool to help](http://georgemauer.net/job-hunt-simulator/)! You make a [Fermi estimate](https://brilliant.org/wiki/fermi-estimate/) for your odds representing all the above stages and it interactively runs thousands of simulations to show you how that job hunt might go.
+
+Its crude and purposefully worksheet-esque as I want people to focus on the relative impact of certain variables compared to others, but the math isn't complex and I think it demonstrates these things well. I'll be referring to this a lot throughout as well.
+
+<div style="clear: both;"></div>
 
 ## Job Hunt Skills
 
@@ -104,6 +116,7 @@ Yeah, it's not that simple. What is this entirely different set of skills anyway
   This again, affects the few stages at the front of your funnel directly and all others indirectly. For example in the course of networking, you will get lots of practice talking to people in industry. Surely that will affect interviews as well!
 
 This is a lot - almost an overwhelming amount - of stuff! Most of it is outside most people's comfort zone. So how do we climb a mountain like this when it is both uncomfortable and emotionally draining? Habit and organization are key
+
 
 # You have to get organized
 
