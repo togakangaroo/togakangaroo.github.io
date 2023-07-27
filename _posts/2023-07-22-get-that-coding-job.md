@@ -7,13 +7,13 @@ comments: true
 
 # Preface
 
-So far during my career, I've designed software developer hiring processes at three different companies. I've personally conducted a couple hundred interviews, I've run teams that have conducted thousands, and I've spoken on hiring at conferences. I also have mentored people for fifteen years, am involved in several online organizations based around helping people progress or move into tech, and - while CTO at Operation Spark bootcamp - have spent months helping run the job hunt phase of the program. In one form or another, I think about this stuff every day, and so people ask me for job hunt advice a lot.
+So far during my career, I've designed software developer hiring processes at three different companies. I've personally conducted a couple hundred interviews, I've run teams that have conducted thousands, I've written staffing software, and I've spoken on hiring at conferences. I also have mentored people for fifteen years, and am involved in several online organizations based around helping people progress or move into tech. And while CTO at [Operation Spark](https://www.operationspark.org/) bootcamp, I spent months helping run the job hunt phase of the program. In one form or another, I think about this stuff every day, and so people ask me for job hunt advice a lot.
 
-Now I've been meaning to write this article for a long time and I've got 6000 words of notes alone; so before we launch into this tome, let me just say that I very much acknowledge that my own experience is very much *not* that of someone trying to break through out of school or bootcamp. At this point, its not even similar to most senior developers. In addition, even expert advice, when offered on such an activity which you do relatively infrequently and where any feedback on whether your decisions are sound, is precisely the sort flagged by researchers in Thinking Fast and Slow as being no better than random.
+I've been meaning to write this article for a long time and I've got 6000 words of notes alone; so before we launch into this tome, let me just say that I very much acknowledge that my own experience is very much *not* that of someone trying to break through out of school or bootcamp. At this point, its not even similar to most senior developers. In addition, even expert advice on an activity which is performed relatively infrequently and with long delays for feedback, is precisely the sort [flagged by researchers](https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow) as being not much better than random.
 
-Yet people keep asking me for advice on job hunt.
+Yet people keep asking me for advice on job hunt. And I do think that over the years I have developed a set of mostly common sense things that I tell people, and they do seem to find helpful.
 
-And I do think that over the years I have developed a set of mostly common sense things that I tell people, and they do seem to find it helpful. There's a limit to how much you should listen to me, but here it is.
+We're going to cover the mental model of what I'm arguing for and the view from the hiring manager's side in this post, then ins subsequent ones we'll go into thoughts on resumes, interviewing, and job hunt strategy. There's a lot and there's a limit to how much you should listen to me, but here it is.
 
 # Mindset
 
@@ -25,7 +25,7 @@ Fortunately, it is not hard because you have to push a heavy boulder. It is hard
 
 But what if job hunt is **not primarily** about that?
 
-Writing code, doing projects, being a good coworker. These are all important and valuable skills. But it's not the full set of skills needed to get the job. There is a different set. Your *primary* goal is to build up these job-hunt skills?
+Writing code, doing projects, being a good coworker. These are all important and valuable skills. But it's not the full set of skills needed to get the job. [There is a different set](https://pbfcomics.com/comics/sisyphus-myth/). Your *primary* goal is to build up these job-hunt skills?
 
 Before we launch into that list though, let's consider the structure of a job hunt.
 
@@ -168,7 +168,7 @@ A cadence gives you a ratchet to improvement. Be honest with yourself and set yo
 
 Finally here, I'd like to address the focus on job applications versus other strategies. I emphasize with the desire to avoid an activity that is for most deeply ego-bruising, but lets be honest, ultimately all roads lead to Rome. Applying to jobs is the surest way to make sure that you actually do something measurable, it works as a last ditch effort, and frankly - it trains you quite well on many of the skills you'll need to succeed in other areas of the job hunt. There is really only one thing that you **must do** to get pretty much any job: You have to apply.
 
-## The reality from the hiring manager's side
+# The reality from the hiring manager's side
 
 There is a few things helpful to understand about the other side of the table.
 
