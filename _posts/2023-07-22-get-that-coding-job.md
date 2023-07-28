@@ -7,13 +7,13 @@ comments: true
 
 # Preface
 
-So far during my career, I've designed software developer hiring processes at three different companies. I've personally conducted a couple hundred interviews, I've run teams that have conducted thousands, I've written staffing software, and I've spoken on hiring at conferences. I also have mentored people for fifteen years, and am involved in several online organizations based around helping people progress or move into tech. And while CTO at [Operation Spark](https://www.operationspark.org/) bootcamp, I spent months helping run the job hunt phase of the program. In one form or another, I think about this stuff every day, and so people ask me for job hunt advice a lot.
+So far during my career, I've designed software developer hiring processes at three different companies. I've personally conducted a couple hundred interviews, I've run teams that have conducted thousands, I've written staffing software, and I've spoken on hiring at conferences. I have also mentored people for fifteen years, am involved in several online organizations based around helping people progress or move into tech, and while CTO at [Operation Spark](https://www.operationspark.org/) bootcamp, I spent months helping run the job hunt phase of the program. In one form or another, I think about this stuff every day, and people ask me for job hunt advice a lot.
 
-I've been meaning to write this article for a long time and I've got 6000 words of notes alone; so before we launch into this tome, let me just say that I very much acknowledge that my own experience is very much *not* that of someone trying to break through out of school or bootcamp. At this point, its not even similar to most senior developers. In addition, even expert advice on an activity which is performed relatively infrequently and with long delays for feedback, is precisely the sort [flagged by researchers](https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow) as being not much better than random.
+I've been meaning to write this article for a long time and I've got 6000 words of notes alone; so before we launch into this tome, let me just say that I very much acknowledge that my own experience is *not* that of someone trying to break into the industry. At this point, its not even similar to most senior developers. In addition, even expert advice on an activity which is performed relatively infrequently and with long delays for feedback, is precisely the sort [flagged by researchers](https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow) as being not much better than random.
 
 Yet people keep asking me for advice on job hunt. And I do think that over the years I have developed a set of mostly common sense things that I tell people, and they do seem to find helpful.
 
-We're going to cover the mental model of what I'm arguing for this post, then in subsequent ones we'll go into thoughts on resumes, interviewing, and job hunt strategy. There's a lot and there's a limit to how much you should listen to me, but here it is.
+We're going to cover the mental model of what I'm arguing for this post, then in subsequent ones we'll go into thoughts on resumes, interviewing, and job hunt strategy. There's a lot and there's a limit to how much you should listen to me, but you probably shouldn't just have AI summarize it. I tried to have Claude write it, it did not turn out well.
 
 # Mindset
 
@@ -25,7 +25,7 @@ Fortunately, it is not hard because you have to push a heavy boulder. It is hard
 
 But what if job hunt is **not primarily** about that?
 
-Writing code, doing projects, being a good coworker. These are all important and valuable skills. But it's not the full set of skills needed to get the job. [There is a different set](https://pbfcomics.com/comics/sisyphus-myth/). Your *primary* goal is to build up these job-hunt skills?
+Writing code, doing projects, being a good coworker. These are all important and valuable skills. But it's not the full set of skills needed to get the job. [There is a different set](https://pbfcomics.com/comics/sisyphus-myth/). Your *primary* goal is to build up these job-hunt skills.
 
 Before we launch into that list though, let's consider the structure of a job hunt.
 
@@ -33,25 +33,25 @@ Before we launch into that list though, let's consider the structure of a job hu
 
 At its core, a job hunt is marketing, is it not? You are marketing yourself.
 
-Have you ever heard marketing or sales people talk about "the funnel"? The idea is that opportunities pass through a series of stages. At each stage a decision is made and the opportunity either progresses or gets eliminated and falls out of the funnel. From a hiring manager's point of view, each applicant is an opportunity and - as they move through the process - at each stage the number of remaining applicants gets smaller. From the applicant's point of view, at each successive stage the chances of them reaching the end, and an offer, increases.
+Have you ever heard marketing or sales people talk about "the funnel"? The idea is that sales opportunities pass through a series of stages. At each stage a decision is made and the opportunity either progresses or gets eliminated and falls out of the funnel. From a hiring manager's point of view, each applicant is an opportunity and - as they move through the process - at each stage the number of remaining applicants gets smaller. From the applicant's point of view, at each successive stage the chances of them reaching the end, and an offer, increase.
 
-So its really more of a sieve than a funnel, but I guess marketing folk aren't known for their nomenclature. (Also feel free to visualize this as a video game...but like, without checkpoints and you never get a chainsaw.)
+So it is really more of a sieve than a funnel, but I guess marketing folk aren't known for their nomenclature. (Also feel free to visualize this as a video game...but like, without checkpoints and you never get a chainsaw.)
 
 During the job hunt, with each job application, you enter a funnel. Here is a rough list of stages you have to get through:
 
-- **Your resume needs to get looked at.** That means someone has to actually be manning the hiring apparatus. You'll be shocked how often things have there's simply not someone on the other side. I would wager this is the case with 20-50% of all job postings.
+- **Your resume needs to get looked at.** That means someone has to actually be manning the hiring apparatus. You'll be shocked how often there's simply not someone on the other side. it's not usually insidious, but I would wager this is the case with 20-50% of all job postings.
 - Alternately, **they might have gotten so many resumes that they simply couldn't review every one**. I encourage hiring managers in that position to pick at random a comfortable number of resumes they actually can review and mass-reject the rest. It sucks, but it sucks less than any alternative.
 - Next, **your resume should stack up well enough against others to be selected for a phone screen**.
 - Of course you have to be able to carry on a conversation and demonstrate some competence in a **phone screen and to be passed through to an interview**.
-- Then there's the **rounds of interview** - each a stage in itself. Let's be conservative and say there are three rounds. The details don't matter so much for the purposes of this list. Lets say these include **a technical conversation** with the hiring manager, a **leetcode-style coding test**, and **a behavioral interview panel**. At each point you might get eliminated as your performance always has a chance of not matching expectations.
-- Now say that you get to the end of the interview process...well that's no guarantee you **get an offer**! There are other people also moving through the process. If they did it correctly, only a couple should reach the end; the offer usually goes to just one.
+- Then there's the **rounds of interview** - each a stage in itself. Let's be conservative and say there are three rounds. The details don't matter so much for the purposes of this list. Lets say these include **a technical conversation** with the hiring manager, a **leetcode-style coding test**, and **a behavioral interview panel**. At each point you might get eliminated as your performance always has some chance of not matching expectations.
+- Now say that you get to the end of the interview process...well that's no guarantee you **get an offer**! There are other people also moving through the process. Ideally, only a couple should reach the end: the offer usually goes to just one.
 - Then of course the **offer has to be good enough** that you're willing to take it.
-- And finally, at every point in time there's the small, yet real **possibility of the job simply disappearing**, hiring being frozen, the hiring manager or recruiter leaving, or people just plain dropping the ball.
+- And finally, at every point in time there's the small, yet real **possibility of the job simply disappearing**, hiring being frozen, the manager or recruiter leaving, or people just plain dropping the ball.
 
 This list is key to understand and we will revisit it throughout this series. There are things you can do to improve your odds at just about any stage, but you have to prioritize. Time spent improving in one area is time not spent on another. You have to learn how to think about these odds and how they interact. Unless you're an ace at Bayesian probability, **your intuition here is probably wrong**.
 
 <figure style="width: 500px; float: right;">
-  <img alt="Job hunt simulator screenshot. Calculation has finished showing means of 21.84 weeks in job hunt, 477.44 total applications, and a breakdown of stages. In most the resume was not selected or the listing was not real" src="/img/get-that-coding-job/job-hunt-simulator.png" />
+  <img alt="Job hunt simulator screenshot. Calculation has finished showing means of 21.84 weeks in job hunt, 477.44 total applications, and a breakdown of stages. In most, the resume was not selected or the listing was not real" src="/img/get-that-coding-job/job-hunt-simulator.png" />
 </figure>
 
 Which is why, after the 50th time I've had a conversation with a mentee about how the odds don't play out like they think, [I created a tool to help](http://georgemauer.net/job-hunt-simulator/)! You make a [Fermi estimate](https://brilliant.org/wiki/fermi-estimate/) for your odds representing all the above stages and it interactively runs thousands of simulations to show you how that job hunt might go.
