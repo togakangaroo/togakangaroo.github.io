@@ -120,39 +120,39 @@ This is a lot - almost an overwhelming amount - of stuff! Even in this lengthy b
 
 # You have to get organized
 
-Yeah, ironically this advice is to you but not the companies you're applying to. It sucks, but - as I mentioned above - for some significant proportion of job postings you have no real chance no matter how good your job hunt skills are.
-
-There's a saying in advertising that half of all money spent on it is wasted, the problem is that you don't know which half. The same is going to (with some caveats) apply hear as well. And if we're taking lessons from marketing, then what did the advertising industry do in the late 90s to deal with this conundrum? Well, with adtech, they started to...
+There's a saying in advertising that half of all money spent on it is wasted, the problem is that you don't know which half. The same (with some caveats) applies here. And if we're taking lessons from advertising, then what did the industry do in the late 90s to deal with this conundrum? Well, wit[h adtech, they started to](https://www.internethistorypodcast.com/2014/10/the-webs-first-banner-ads/)...
 
 ## Track everything
+
+Yes, that bugbear of the modern internet - tracking - started initially as an attempt to simply understand what advertising actually did! Which is actually understandable and almost noble.
 
 If your primary goal is to build up job hunting skills, your **secondary goal** is to gather data that can be used to guide you further in the job hunting process.
 
 I've been paying a lot of attention recently on a forum of dozens of very high-level and senior people looking for and sharing job hunting tips. Here is an example of the sort of thing they are regularly posting.
 
-<<Snakey diagram image>>
+<figure style="width: 500px; display: block; margin: auto;">
+  <img alt="Snakey diagram showing a job hunt flow whit failures and successes at various stages and counts in each one" src="/img/get-that-coding-job/snakey-diagram.png" />
+  <figcaption>(Reprinted with permission.) A <a href="https://www.sankeymatic.com/">snakey diagram</a> of someone's job hunt.</figcaption>
+</figure>
 
-(Reprinted with permission.) A [snakey diagram](https://www.sankeymatic.com/) of someone's job hunt.
 
-Now your numbers will of course be very different, but at a bare minimum this is the sort of thing you should be able to generate at any point in time and with little effort. Note this does not mean - as people have told me in the past - "I can check my email and see where I applied" or "well Indeed has this nice tool to show you what stage you're at". You have access to a lot more data than such tools offer.
+Now your numbers will of course be very different, but at a bare minimum this is the sort of thing you should be able to generate at any point in time and with little effort. This does not mean "I can check my email and see where I applied" or "well Indeed has this nice tool to show you who has looked at your resume". You have access to a lot more data than such tools offer!
 
 Remember those weekly accountability and commitment meetings I mentioned? Well these work best if you can set goals and discuss success in terms of numbers. Ideally, all of the following are things that you should be able to give weekly updates on.
 
 - Exactly how many places you've applied, in the past week? Ever?
-- Exactly which stage in the process are you with each application.
+- Exactly which stage in the process (to the best of your knowledge) are you with each application.
 - Where have you followed up and when?
-- Which cover letter and/or resume did you use for every job application? If they have a custom form with essay questions, what exactly did you put in there?
+- Which cover letter and/or resume did you use for every job application? If they have a custom form with essay questions, what exactly did you write in there?
 - What industry is the company in and what they do? How large is the company?
 - How excited you are about the opportunity? (Putting a number to this is great when you are determining how to prioritize follow-ups!)
-- Which skills are the jobs you are looking at demanding? Which are seen as nice-to-haves?
+- Of the jobs you find yourself applying to, which skills are they demanding? Which are regularly nice-to-haves?
 
-  Note that this especially presents an opportunity to make data work for you. If you can code, you should code! Don't just copy-paste, standardize things. If you have a category for "Javascript" and they're asking for "ReactJs" or "Node", then that still counts as Javascript. You should be making bar charts of this stuff and using this to guide what you invest your time into!
+  All of this presents an opportunity. Make your data work for you. If you're a coder, you should code! Don't just copy-paste skill lists, standardize things. If you have a category for "Javascript" and they're asking for "ReactJs" or "Node", then that still counts as Javascript. Are you making bar charts about this stuff? Are you using it to guide your study? Is this *at least* the sort of thing you're organized enough to do in theory?
 
 This is all starting to sound a lot like a spreadsheet, does it not? Probably a good idea to have one.
 
-Ultimately it's a good thing though. With this get-the-data framing, you take the terrifying prospect of hundreds of job applications and convert it into a positive source of much-needed data.
-
-Yes, all this means That you are not going to get a job within the first six weeks of job hunt. Forget about that prospect. First, you need data.
+So yes, this is a lot. An awful lot. It does take the pressure off though, doesn't it? You still want a job of course, but there are many shorter-term wins available! You are taking those job applications and converting them into a positive source of much-needed data.
 
 ## It's all about cadence
 
