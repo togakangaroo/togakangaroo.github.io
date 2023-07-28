@@ -62,60 +62,60 @@ Its crude and purposefully worksheet-esque as I want people to focus on the rela
 
 ## Job Hunt Skills
 
-Now if you have amazing, preexisting marketing and sales skills you probably don't need to hear any of this. If you are incredible at networking and can cold-call sell a wool coat to a sheep, you don't need my advice and you should just go do the things you already know how to do far better than I. But for the rest of you (or the marketing wizes who are reading this for "research", good for you), lets talk about what I mean by "job hunt skills".
+Lets first give a disclaimer: If you have amazing, preexisting marketing and sales skills you probably don't need to hear any of this. If you are incredible at networking and can cold-call sell a wool coat to a sheep, you don't need my advice and you should just go do the things you already know how to do far better than I. But for the rest, lets talk about what I mean by "job hunt skills".
 
-> *“There’s nothing to applying at all. All I need to do is tailor my resume and click submit.”*
+> *“There’s nothing to applying at all. All I need to do is tailor my resume and click submit, right?”*
 >  -- a mentee
 
-Yeah, it's not that simple. What is this entirely different set of skills anyways? Let's do another list.
+Yeah, it's not that simple. But fair question, what is this entirely different set of skills anyways? Let's do another list.
 
-- Goal setting and sticking to a schedule. Including the ability to set small-yet-achievable short-term goals, set commitments, do regular accountability check-ins, and adjust as needed.
+- **Goal setting and sticking to a schedule**. Including the ability to set small-yet-achievable short-term **goals**, set **commitments**, do regular **accountability check-ins**, and **adjust** as needed.
 
-  This is the key to improving at *most things* and rarely something - outside of practicing sports or music - that people do explicitly.
+  This is the key to improving at *most things*. Musicians and high-level athletes already know this, but now you're in on the secret as well!
 
-- Ability to find jobs to simply find apply to.
+- Ability to simply **find jobs** find apply to.
 
-  Ever look at a job board and dejectedly feel like none of these listings are a fit? It's not just you. This influences the rate at which you fill up that funnel and how many chances at this stuff per week do you get.
+  Ever look at a job board and dejectedly feel like none of these listings are a fit? It's not just you? This influences the rate at which you can apply for jobs, so how many chances to progress through funnel do you get per week?
 
-- The mere act of applying is an emotional roller coaster. You have to put yourself out there, you get hopeful, open up yourself to dejection.
+- The mere act of applying is hard. **You have to deal repeatedly with an emotional roller coaster**. You have to put yourself out there, you get hopeful, open up yourself to dejection, and *if you are lucky* it comes crashing down on you when you get a rejection (which is still better than no rejection).
 
-  As humans, we try to avoid these situations. You have to desensitize yourself so that it simply doesn't sting so bad. Again this directly influences that front-of-funnel, how frequently you will need to take breaks, and the likelihood of you giving up and walking away from the whole thing. No one **wants** to apply to 3000 jobs and you very likely won't have to, but wouldn't it be nice if such a high number didn't give you all-night indigestion?
+  As humans, we try to avoid these situations, yet [the only way out is through](https://www.youtube.com/watch?v=MZtuo8yJRH0). There are no magic bullets, you can desensitize yourself so that it doesn't sting so bad or...well there are no better options, just hoping things work out. This again influences that application rate, how frequently you will need to take breaks, and the likelihood you end up giving up and walking away from the whole thing. No one **wants** to apply to 3000 jobs and you very likely won't have to, but wouldn't it be nice if such a high number didn't give you all-night indigestion?
 
-- You have to get to a point where it is easy to write and talk about yourself.
+- You have to get to a point where it is easy to **write and talk about yourself**.
 
   It's not a natural thing for most people, yet what much of the interview and application process consists of. Getting good at this is going to affect most of your process. Your application, phone screen, interviews are in no small part exactly this!
 
-- Following up.
+- **Following up**.
 
-  This is key to get people to actually pick up and look at your resume where they otherwise might not.
+  This is key to get people to actually pick up and look at your resume where they otherwise might not. There's several different strategies available, how do you (tastefully) become impossible to ignore?
 
-- Cold reach-out.
+- **Cold reach-out**.
 
-  Contacting individuals you do not know, requesting favors of connections or information can often feel socially prohibitive. Yet it is key to several networking strategies that increase your chances during interviews and ensure that you are applying to jobs where you are likely to be considered. It is a worthwhile tool to have in your pocket
+  Contacting individuals you do not know, requesting favors of connection or information can often feel socially taboo, yet it is key to several networking strategies. These can improve your odds of applying to jobs where you are likely to be considered, increase your chances of getting past the screen, and improve your ability to talk shop during interviews. It is a very worthwhile tool to have in your pocket
 
-- Researching companies and industries.
+- **Researching companies and industries**.
 
-  Most people have no idea how to do real research. It's not ten minutes browsing the company website. Understanding how to join communities and how to conduct informational/reverse interviews are key here and take a decent amount of practice.
+  Most people have no idea how to do real research. It's not ten minutes browsing the company website. Understanding how to **join communities** and how to conduct **informational/reverse interviews** is key here and takes a decent amount of practice.
 
-- The ability to have engaging conversation live and asking good questions.
+- The ability to **have engaging conversation** live and **asking good questions**.
 
-  Of course a must for interview, phone screen, and offer stages as well as supporting techniques in many others. In these post-COVID pandemic days, we all need some work to improve here.
+  These are of course a must for interview, phone screen, and offer stages, as well as a supporting techniques in many others. In these post-COVID pandemic days, we all need some work to improve here.
 
-- Ability to talk about technology.
+- Ability to **talk about technology**.
 
-  It's great that you know X, Y, and Z. But can you actually demonstrate it live in a conversation? When the questions people ask are not those you practiced in terms that are different than what you might be used to?
+  It's great that you know React, C++, and Kubernetes. But can you actually **demonstrate that knowledge live in a conversation**? Can you make it mutually enjoyable to demonstrate what a convivial coworker you would be?
 
-- Leetcode-style coding. Or live-coding, or take-home-project coding.
+- **Leetcode-style coding**. Or **live-coding**. Or **take-home-project coding**.
 
-  Well you knew this would be on the list as it affects those interview stages, but you're probably surprised how small a proportion of this list it really is.
+  Well you knew this would be on the list as it affects those interview stages, but you are probably surprised how small a proportion of this list these skills really are. They are important, and you should work on them (but keep in mind how many other skills are just as important).
 
-- Network building and maintenance
+- **Network building** and **maintenance**
 
-  The core of "networking". **How** do you actually "build a network"? What is one? How do you use it? How do you tend it and grow it?
+  This is the core of "networking". How do you actually "build a network"? What is one? How do you use it? How do you tend it so it doesn't decay?
 
-  This again, affects the few stages at the front of your funnel directly and all others indirectly. For example in the course of networking, you will get lots of practice talking to people in industry. Surely that will affect interviews as well!
+  This again, affects stages at the front of your funnel directly and all others indirectly. For example in the course of networking, you might hear about un-posted roles, you might get ideas for new places to apply, you might get a referral. You *will* get lots of practice talking to people in industry; that seems rather useful.
 
-This is a lot - almost an overwhelming amount - of stuff! Most of it is outside most people's comfort zone. So how do we climb a mountain like this when it is both uncomfortable and emotionally draining? Habit and organization are key
+This is a lot - almost an overwhelming amount - of stuff! Even in this lengthy blog series I don't think I'll get to everything. Worse, most of it is well outside most people's comfort zone. So how do we climb a mountain like this when it is both uncomfortable and emotionally draining? Habit and organization are key.
 
 
 # You have to get organized
