@@ -75,15 +75,15 @@ Yeah, it's not that simple. But fair question, what is this entirely different s
 
 - Ability to simply **find jobs** find apply to.
 
-  Ever look at a job board and dejectedly feel like none of these listings are a fit? It's not just you? This influences the rate at which you can apply for jobs, so how many chances to progress through funnel do you get per week?
+  Ever look at a job board and dejectedly feel like none of these listings are a fit? It's not just you. This influences the rate at which you can apply for jobs and therefore how many chances to progress through funnel do you get per week.
 
-- The mere act of applying is hard. **You have to deal repeatedly with an emotional roller coaster**. You have to put yourself out there, you get hopeful, open up yourself to dejection, and *if you are lucky* it comes crashing down on you when you get a rejection (which is still better than no rejection).
+- The mere act of applying is hard. **You have to deal repeatedly with an emotional roller coaster**. You have to put yourself out there, you get hopeful, open up yourself to dejection, and *if you are lucky* it all comes crashing down on you when you get a rejection (which is still better than no response).
 
-  As humans, we try to avoid these situations, yet [the only way out is through](https://www.youtube.com/watch?v=MZtuo8yJRH0). There are no magic bullets, you can desensitize yourself so that it doesn't sting so bad or...well there are no better options, just hoping things work out. This again influences that application rate, how frequently you will need to take breaks, and the likelihood you end up giving up and walking away from the whole thing. No one **wants** to apply to 3000 jobs and you very likely won't have to, but wouldn't it be nice if such a high number didn't give you all-night indigestion?
+  As humans, we try to avoid these situations, yet [the only way out is through](https://www.youtube.com/watch?v=MZtuo8yJRH0). There are ways to increase your odds, but there are no magic bullets. You can desensitize yourself so that it doesn't sting so bad or...well there are no better options. This again influences that application rate, how frequently you will need to take breaks, and the likelihood you end up giving up and walking away from the whole thing entirely. No one **wants** to apply to 3000 jobs and you very likely won't have to, but wouldn't it be nice if such a high number didn't give you all-night indigestion?
 
 - You have to get to a point where it is easy to **write and talk about yourself**.
 
-  It's not a natural thing for most people, yet what much of the interview and application process consists of. Getting good at this is going to affect most of your process. Your application, phone screen, interviews are in no small part exactly this!
+  It's not a natural thing for most people, yet is what much of the interview and application process consists of. Getting good at this is going to affect much of your experience. Your application, phone screen, interviews are in no small part exactly this!
 
 - **Following up**.
 
@@ -91,19 +91,19 @@ Yeah, it's not that simple. But fair question, what is this entirely different s
 
 - **Cold reach-out**.
 
-  Contacting individuals you do not know, requesting favors of connection or information can often feel socially taboo, yet it is key to several networking strategies. These can improve your odds of applying to jobs where you are likely to be considered, increase your chances of getting past the screen, and improve your ability to talk shop during interviews. It is a very worthwhile tool to have in your pocket
+  Contacting individuals you do not know, requesting favors of connection or information can often feel socially taboo, yet it is key to several networking approaches. These can improve your odds of applying to jobs where you are likely to be considered, increase your chances of getting past the screen, and improve your ability to talk shop during interviews. It is a very worthwhile tool to have in your pocket
 
 - **Researching companies and industries**.
 
-  Most people have no idea how to do real research. It's not ten minutes browsing the company website. Understanding how to **join communities** and how to conduct **informational/reverse interviews** is key here and takes a decent amount of practice.
+  Most people have no idea how to do real research. It's not ten minutes browsing the company website. Understanding how to **take notes,** **join communities,** and how to conduct **informational/reverse interviews** is key here and takes a decent amount of practice.
 
 - The ability to **have engaging conversation** live and **asking good questions**.
 
-  These are of course a must for interview, phone screen, and offer stages, as well as a supporting techniques in many others. In these post-COVID pandemic days, we all need some work to improve here.
+  These are of course a must for interview, phone screen, and offer stages, as well as supporting techniques in many others. In these post-COVID pandemic days, we all need some work to improve here.
 
 - Ability to **talk about technology**.
 
-  It's great that you know React, C++, and Kubernetes. But can you actually **demonstrate that knowledge live in a conversation**? Can you make it mutually enjoyable to demonstrate what a convivial coworker you would be?
+  It's great that you know React, C++, and Kubernetes. But can you actually **demonstrate that knowledge live in a conversation**? Can you make it mutually enjoyable to show what a convivial coworker you would be?
 
 - **Leetcode-style coding**. Or **live-coding**. Or **take-home-project coding**.
 
@@ -115,7 +115,9 @@ Yeah, it's not that simple. But fair question, what is this entirely different s
 
   This again, affects stages at the front of your funnel directly and all others indirectly. For example in the course of networking, you might hear about un-posted roles, you might get ideas for new places to apply, you might get a referral. You *will* get lots of practice talking to people in industry; that seems rather useful.
 
-This is a lot - almost an overwhelming amount - of stuff! Even in this lengthy blog series I don't think I'll get to everything. Worse, most of it is well outside most people's comfort zone. So how do we climb a mountain like this when it is both uncomfortable and emotionally draining? Habit and organization are key.
+This is a lot - almost an overwhelming amount! Even in this lengthy blog series I don't think I'll get to everything. Worse, most of it is well outside most people's comfort zone. So how do we climb a mountain like this when it is both uncomfortable and emotionally draining? 
+
+Habit and organization are key.
 
 
 # You have to get organized
