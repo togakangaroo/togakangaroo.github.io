@@ -13,7 +13,7 @@ I've been meaning to write this article for a long time and I've got 6000 words 
 
 Yet people keep asking me for advice on job hunt. And I do think that over the years I have developed a set of mostly common sense things that I tell people, and they do seem to find helpful.
 
-We're going to cover the mental model of what I'm arguing for and the view from the hiring manager's side in this post, then ins subsequent ones we'll go into thoughts on resumes, interviewing, and job hunt strategy. There's a lot and there's a limit to how much you should listen to me, but here it is.
+We're going to cover the mental model of what I'm arguing for this post, then in subsequent ones we'll go into thoughts on resumes, interviewing, and job hunt strategy. There's a lot and there's a limit to how much you should listen to me, but here it is.
 
 # Mindset
 
@@ -160,40 +160,24 @@ Here is the general shape of the job-hunt I am proposing:
 
 First, you find a schedule that you can stick to. Next, you find a baseline of what sort of effort you can maintain long term.
 
-In its simplest form, you want to be able to say something like "I have maintained it for a while and I know that I can apply to X amount of jobs per week without breaking a sweat." `X` is going to be different for you than for others, it can be very low or quite high, and it **should not be guessed at**; you need to have actual numbers on a spreadsheet of your experience that you can point to. And you absolutely need to know what `X` is, because once you do, you can start tweaking.
+In its simplest form, you want to be able to say something like "I have maintained it for a while and I know that I can apply to `X` amount of jobs per week without breaking a sweat."
 
-Now remember the aforementioned accountability meetings? You want those. Use a mentor, your school/bootcamp, a friend, a group of others on the job search, or even a formal [Job Search Council](https://www.phyl.org/join-jsc). At each meeting, you review your week, review your numbers blame-free, make any adjustments (eg. is `X` actually lower/higher than you initially proposed?) and commit to some goals for your next week. What goals you ask? Well, this is where the tweaking comes in. Say your number `X` is 25. You know, that using a reasonable amount of effort, in the time available, you could certainly apply to 25 jobs each week. You decide that you want to increase the odds that your resume is actually looked at. Follow-ups are exactly such a tool as we'll discuss. They can be time intensive however, and require their own set of skills to get working effectively. What if for next week you committed to scaling back to only 15 job applications, but you did 5 followups to jobs you applied to over the previous two weeks? In the following week, can you go back up to 20 job applications, while maintaining the follow ups?
+Now, `X` is going to be different for you than for others, it can be very low or quite high, and it **should not be guessed at**; you need to have actual numbers on a spreadsheet of your experience that you can point to. And, yes, you absolutely need to know what `X` is, because once you do, you can start tweaking.
 
-A cadence gives you a ratchet to improvement. Be honest with yourself and set your goals well, and you will always be improving.
+Remember the aforementioned accountability meetings? You want those. Use a mentor, your school/bootcamp, a friend, a group of others on the job search, an AI assistant, a journal, or even a formal [Job Search Council](https://www.phyl.org/join-jsc). At each meeting, you review your week, review your numbers blame-free, make any adjustments (eg. is `X` actually lower/higher than you previously believed?) and commit to some goals for your next week.
 
-Finally here, I'd like to address the focus on job applications versus other strategies. I emphasize with the desire to avoid an activity that is for most deeply ego-bruising, but lets be honest, ultimately all roads lead to Rome. Applying to jobs is the surest way to make sure that you actually do something measurable, it works as a last ditch effort, and frankly - it trains you quite well on many of the skills you'll need to succeed in other areas of the job hunt. There is really only one thing that you **must do** to get pretty much any job: You have to apply.
+This, is where the tweaking comes in. Say your number `X` is 25. You know, that using a reasonable amount of effort, in the time available, you could certainly apply to 25 jobs each week, every week. You set a goal to increase the odds that your resume is actually looked at. What tools are available? Follow-ups are one such. However, these can be time intensive, and require their own set of skills to get working effectively; how to get better at these?
 
-# The reality from the hiring manager's side
+Well, what if for next week you committed to something different? You scale back to only 15 job applications, but you commit to 5 followups to jobs you applied to over the previous two weeks. You should still be able to handle this effort quite easily, and as you improve you become more efficient. Soon you can try going back up to 20 job applications but maintaining the follow ups.
 
-There is a few things helpful to understand about the other side of the table.
+A cadence gives you a ratchet to improvement. Be honest with yourself and set your goals well, and you will always be getting better.
 
-First, job postings. I assume you've heard are rarely lists of concrete requirements. Understand that what happens a lot of the time is that you have an overworked manager or team lead who is asking repeatedly for help. Eventually - after navigating all sorts of internal politics - they manage to get approval to hire. An HR representatives asks them what they need and ask what exactly they need. The manager looks around and replies with a list of tech that is a combination of what they are using (since they likely won't have too much time to onboard) and things they are having issues with and desperately wish someone would take that problem off their hands.
+---
 
-HR takes that, slaps a custom preamble on, and posts the job, sending the hiring manager a link to the opportunity in Lever or in Greenhouse or Indeed or some other ATS wishing them the best of luck.
+  I should probably stop and address the focus on job applications versus other strategies.
 
-Note that first, the job posting is rarely well thought through. A decent amount of hiring is for teams and projects that don't even exist yet. It's hardly surprising that some postings will ask for the moon. Now as hiring kicks into gear, the organization will often get a better idea of what they want, yet the hiring manager often has relatively little control over the job posting itself. Even when organizationally there isn't an HR department to get in the way, they might simply not know where or have no access to edit it. They will very often have no control over where a posting appears after it's been picked up by job description reposting services, and no power to make updates.
-
-<aside>
-  <p>
-    If you are yourself green, consider what this means. Requirements are not what they seem; they are all too often wish lists. You've probably heard before that you should limit yourself only to job postings that match your skills exactly. That is true! It is rarely a well thought through hard line. As a guideline, a completely green developer will usually have a chance at a role when they ask for 2 or fewer years of experience; a developer with a few years and confidence will have a chance at anything requesting senior skills/5+ years; and beyond that it doesn't matter.
-  </p>
-</aside>
-
-A hiring manager also almost always has other priorities. It is relatively rare that just because you are doing a hiring cycle you have less "other" work. The essence of managerial work is after all such that you usually cannot easily offload it. It is therefore perfectly possible that the ATS goes for days or even weeks unchecked.
-
-Worse, the manager might never have been trained on the ATS. This is surprisingly common and my personal favorite experience here was when I was asked to take over resume screening and first-round interviews at [company name redacted]. After 4 weeks, resumes were coming in a trickle - a couple a week at most. This was very surprising and I checked and re-checked that our job posting had no red flags, was actually appearing in online searches, and there was nothing on Glassdoor to scare people off too bad. I was flummoxed as were others I consulted with. That is, until I found a whole section of the Lever ATS bursting with resumes! People *were* applying, simply most were hidden on the default candidate-review screen. I still have no idea why.
-
-And yes, there are times where there are hundreds of applicants. For most roles at most companies that won't quite be the case, but it can happen. When the system is overwhelmed like this my own recommendation is just to save everyone some time, pick a random number of resumes that you *can* commit to reviewing, and mass-reject the rest. It sucks, but it sucks less than every other alternative.
-
-Finally, just to dispel the urban legend, there is no ATS-scanner. I mean of course such things *do* exist and are used by some large companies who get tends of thousands of resumes, but outside of that? I have been involved in hiring in six companies and I've never seen it. I've never spoken to anyone who has seen it commonly used first-hand. Stop worrying about "getting past the scanner". Your resume goes into a folder and if you are lucky a person eventually looks at it. What else is there?
-
-Now some might counter that AI-based resume graders are rapidly becoming a thing, and I am sure they are. But there is no reason to think the tired "beat he ATS" advice from years past applies to this new world. Nor is it clear that anyone is using these systems in a way that requires, or is even possible to, game.
+  I emphasize with the desire to avoid an activity that is for most, deeply ego-bruising. But lets be honest, ultimately all roads lead to Rome. Applying to jobs is the surest way to make sure that you **actually do something measurable**, it is an effective **backstop when nothing else works**, and frankly - it **trains you quite well on many of the skills you'll need** to succeed in other areas of the job hunt. There is really only one thing that you **must do** to get pretty much any job after all: You have to apply.
 
 # To be continued
 
-Well, we're over 3500 words already and good lord, we're nowhere near done. I think we'll stop here and pick up next time with more on resumes, interviews, and what on earth it actually means when people tell you to network.
+Well, we're over 3300 words already and good lord, we're nowhere near done. I think we'll stop here and pick up next time with more on the view from the hiring manager's side, resumes, interviews, and what on earth it actually means when people tell you to network.
