@@ -52,6 +52,7 @@ This list is key to understand and we will revisit it throughout this series. Th
 
 <figure style="width: 500px; float: right;">
   <img alt="Job hunt simulator screenshot. Calculation has finished showing means of 21.84 weeks in job hunt, 477.44 total applications, and a breakdown of stages. In most, the resume was not selected or the listing was not real" src="/img/get-that-coding-job/job-hunt-simulator.png" />
+  <figcaption><a href="http://georgemauer.net/job-hunt-simulator/">Job Hunt Simulator</a></figcaption>
 </figure>
 
 Which is why, after the 50th time I've had a conversation with a mentee about how the odds don't play out like they think, [I created a tool to help](http://georgemauer.net/job-hunt-simulator/)! You make a [Fermi estimate](https://brilliant.org/wiki/fermi-estimate/) for your odds representing all the above stages and it interactively runs thousands of simulations to show you how that job hunt might go.
@@ -115,70 +116,75 @@ Yeah, it's not that simple. But fair question, what is this entirely different s
 
   This again, affects stages at the front of your funnel directly and all others indirectly. For example in the course of networking, you might hear about un-posted roles, you might get ideas for new places to apply, you might get a referral. You *will* get lots of practice talking to people in industry; that seems rather useful.
 
-This is a lot - almost an overwhelming amount! Even in this lengthy blog series I don't think I'll get to everything. Worse, most of it is well outside most people's comfort zone. So how do we climb a mountain like this when it is both uncomfortable and emotionally draining? 
+This is a lot - almost an overwhelming amount! Even in this lengthy blog series I don't think I'll get to everything. Worse, most of it is well outside most people's comfort zone. So how do we climb a mountain like this when it is both uncomfortable and emotionally draining?
 
 Habit and organization are key.
 
 
 # You have to get organized
 
-There's a saying in advertising that half of all money spent on it is wasted, the problem is that you don't know which half. The same (with some caveats) applies here. And if we're taking lessons from advertising, then what did the industry do in the late 90s to deal with this conundrum? Well, wit[h adtech, they started to](https://www.internethistorypodcast.com/2014/10/the-webs-first-banner-ads/)...
+There's a saying in advertising that half of all money spent on it is wasted, the problem is that you don't know which half. The same (with some caveats) applies here. And if we're taking lessons from advertising, then what did the industry do in the late 90s to deal with this conundrum? Well, with [adtech, they started to](https://www.internethistorypodcast.com/2014/10/the-webs-first-banner-ads/)...
 
 ## Track everything
 
-Yes, that bugbear of the modern internet - tracking - started initially as an attempt to simply understand what advertising actually did! Which is actually understandable and almost noble.
+Yes, that bugbear of the modern internet - tracking - started initially as an attempt to simply understand which advertising worked and which was merely annoying! Which is actually understandable and almost noble.
 
 If your primary goal is to build up job hunting skills, your **secondary goal** is to gather data that can be used to guide you further in the job hunting process.
 
-I've been paying a lot of attention recently on a forum of dozens of very high-level and senior people looking for and sharing job hunting tips. Here is an example of the sort of thing they are regularly posting.
+I've been following recently on a forum of dozens of very high-level software engineers and managers looking for and sharing job hunting tips. Here is an example of the sort of thing they are regularly posting.
 
-<figure style="width: 500px; display: block; margin: auto;">
-  <img alt="Snakey diagram showing a job hunt flow whit failures and successes at various stages and counts in each one" src="/img/get-that-coding-job/snakey-diagram.png" />
+<figure style="width: 400px; display: block; margin: auto;">
+  <img alt="Snakey diagram showing a job hunt flow. A structure emerges with success/fail branches following an upwards path ending in several offers." src="/img/get-that-coding-job/snakey-diagram.png" />
   <figcaption>(Reprinted with permission.) A <a href="https://www.sankeymatic.com/">snakey diagram</a> of someone's job hunt.</figcaption>
 </figure>
 
-
-Now your numbers will of course be very different, but at a bare minimum this is the sort of thing you should be able to generate at any point in time and with little effort. This does not mean "I can check my email and see where I applied" or "well Indeed has this nice tool to show you who has looked at your resume". You have access to a lot more data than such tools offer!
+Now your numbers will of course be very different, but at a bare minimum this is the sort of thing you should be able to generate at any point in time and with little effort. This does not mean *"I can check my email and see where I applied"* or *"well Indeed has this nice tool to show you who has looked at your resume"*. You have access to a lot more data than such tools offer!
 
 Remember those weekly accountability and commitment meetings I mentioned? Well these work best if you can set goals and discuss success in terms of numbers. Ideally, all of the following are things that you should be able to give weekly updates on.
 
 - Exactly how many places you've applied, in the past week? Ever?
-- Exactly which stage in the process (to the best of your knowledge) are you with each application.
-- Where have you followed up and when?
+- To the best of your knowledge, exactly which stage in the process are you with each application.
+- What follow-ups have you done? When? Where will you follow-up next?
 - Which cover letter and/or resume did you use for every job application? If they have a custom form with essay questions, what exactly did you write in there?
-- What industry is the company in and what they do? How large is the company?
-- How excited you are about the opportunity? (Putting a number to this is great when you are determining how to prioritize follow-ups!)
+- What industry is every company in and what they do? How large is the company?
+- How excited are you about the opportunity? Putting a number to this is great when you are determining how to prioritize follow-ups!
+- What is the list of mistakes you have made in interviews? What is the list of feedback you have received?
 - Of the jobs you find yourself applying to, which skills are they demanding? Which are regularly nice-to-haves?
 
-  All of this presents an opportunity. Make your data work for you. If you're a coder, you should code! Don't just copy-paste skill lists, standardize things. If you have a category for "Javascript" and they're asking for "ReactJs" or "Node", then that still counts as Javascript. Are you making bar charts about this stuff? Are you using it to guide your study? Is this *at least* the sort of thing you're organized enough to do in theory?
+  All of this presents an opportunity. If you're a coder, you should code! Make your data work for you; play with it. Don't just copy-paste skill lists, standardize things. If you have a category for "Javascript" and they're asking for "ReactJs" or "Node", then that still counts as Javascript. Are you making bar charts about this stuff? Are you using it to guide your study? Is this *at least* the sort of thing you're organized enough to do in theory?
 
-This is all starting to sound a lot like a spreadsheet, does it not? Probably a good idea to have one.
+This is all starting to sound a lot like a spreadsheet, does it not? Probably a good idea to have one. Or use a markdown file. Or design a database! But be consistent and detail-oriented.
 
-So yes, this is a lot. An awful lot. It does take the pressure off though, doesn't it? You still want a job of course, but there are many shorter-term wins available! You are taking those job applications and converting them into a positive source of much-needed data.
+So yes, this is a lot. An awful lot. It does take the pressure off though, doesn't it? You still want a job of course, but there are many shorter-term wins available! You are taking those job applications and converting them into a positive source of much-needed data that in turn you can use to improve your job hunt.
 
 ## It's all about cadence
 
 Here is the general shape of the job-hunt I am proposing:
 
-First, you find a schedule that you can stick to. Next, you find a baseline of what sort of effort you can maintain long term.
+First, you **find a schedule that you can stick to**.
 
-In its simplest form, you want to be able to say something like "I have maintained it for a while and I know that I can apply to `X` amount of jobs per week without breaking a sweat."
+Next, you **find a baseline of what sort of effort you can maintain long-term**. In its most basic form, you want to be able to say something like "I have maintained it for a while and I know that I can apply to `X` amount of jobs per week without breaking a sweat."
 
-Now, `X` is going to be different for you than for others, it can be very low or quite high, and it **should not be guessed at**; you need to have actual numbers on a spreadsheet of your experience that you can point to. And, yes, you absolutely need to know what `X` is, because once you do, you can start tweaking.
+Now, `X` is going to be different for you than for others, it can be very low or quite high, and it *should not be guessed at*. You need to have actual numbers on a spreadsheet of your experience that you can point to. And, yes, you absolutely need to know what `X` is; because once you do, you can start tweaking.
 
-Remember the aforementioned accountability meetings? You want those. Use a mentor, your school/bootcamp, a friend, a group of others on the job search, an AI assistant, a journal, or even a formal [Job Search Council](https://www.phyl.org/join-jsc). At each meeting, you review your week, review your numbers blame-free, make any adjustments (eg. is `X` actually lower/higher than you previously believed?) and commit to some goals for your next week.
+Remember the aforementioned accountability meetings? You need those. Use a mentor, your school/bootcamp, a friend, a group of others on the job search, an AI assistant, a journal, or even a formal [Job Search Council](https://www.phyl.org/join-jsc). At each meeting, review your week, go over your numbers blame-free, discuss any adjustments (eg. is `X` actually lower/higher than you previously believed?) and commit to some goals for your next week.
 
-This, is where the tweaking comes in. Say your number `X` is 25. You know, that using a reasonable amount of effort, in the time available, you could certainly apply to 25 jobs each week, every week. You set a goal to increase the odds that your resume is actually looked at. What tools are available? Follow-ups are one such. However, these can be time intensive, and require their own set of skills to get working effectively; how to get better at these?
+This, is where the tweaking comes in. Say your `X` number is 25. You know that using a reasonable amount of effort, in the time available, you could consistently apply to 25 jobs each week, every week. You are working to increase the odds that your resume is actually looked at. What tools are available? Follow-ups are such a tool. However, these can be time intensive, and require their own set of skills to get working effectively; how to get better at these without overloading yourself and burning out on the process?
 
-Well, what if for next week you committed to something different? You scale back to only 15 job applications, but you commit to 5 followups to jobs you applied to over the previous two weeks. You should still be able to handle this effort quite easily, and as you improve you become more efficient. Soon you can try going back up to 20 job applications but maintaining the follow ups.
+Well, what if for next week you committed to something different? You scale back to only 15 job applications, but you commit to 5 followups to jobs you applied to over the previous two weeks. You should still be able to handle this effort, and as you improve you become more efficient. Once it becomes easy, you can try going back up to 20 job applications but maintaining the follow ups.
 
-A cadence gives you a ratchet to improvement. Be honest with yourself and set your goals well, and you will always be getting better.
+A cadence gives you a ratchet to improvement. Be honest with yourself and set your goals well; you will always be getting better.
 
 ---
 
-  I should probably stop and address the focus on job applications versus other strategies.
+  I should probably stop and address the focus on job applications versus other strategies. It's not common to hear advice after all that cold-applying is the worst thing to do, it doesn't work! No one gets a job that way!
 
-  I emphasize with the desire to avoid an activity that is for most, deeply ego-bruising. But lets be honest, ultimately all roads lead to Rome. Applying to jobs is the surest way to make sure that you **actually do something measurable**, it is an effective **backstop when nothing else works**, and frankly - it **trains you quite well on many of the skills you'll need** to succeed in other areas of the job hunt. There is really only one thing that you **must do** to get pretty much any job after all: You have to apply.
+  I emphasize with the desire to avoid an activity that is, for most, deeply ego-bruising.
+
+  So yes, if you have an uncle's brother who can get you a job super-easy you of course should do that. Do that before reading another article. But for everyone else...then what? There are other techniques of course, you can study industries, join communities, and these are all things we will cover, but ultimately all roads lead to Rome. There is really only one thing that you **must do** to get pretty much any job after all: You have to apply.
+
+
+  Applying to jobs is the surest way to make sure that you **actually do something measurable**, it is an effective **backstop when nothing else works**, and frankly - it **trains you quite well on many of the skills you'll need** to succeed in other areas of the job hunt.
 
 # To be continued
 
