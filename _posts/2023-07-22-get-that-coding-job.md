@@ -179,13 +179,12 @@ A cadence gives you a ratchet to improvement. Be honest with yourself and set yo
 
   I should probably stop and address the focus on job applications versus other strategies. It's not common to hear advice after all that cold-applying is the worst thing to do, it doesn't work! No one gets a job that way!
 
-  I emphasize with the desire to avoid an activity that is, for most, deeply ego-bruising.
+  I emphasize with the desire to avoid an activity that is, for most, deeply ego-bruising. And yes, there are other techniques of course, you can study industries, join communities, reach out to old coworkers, and these are all things we will cover. But - when you have no process - those can be hard techniques to get started with. It so happens that the process of applying is a workout that builds some very specific and useful skills.
 
-  So yes, if you have an uncle's brother who can get you a job super-easy you of course should do that. Do that before reading another article. But for everyone else...then what? There are other techniques of course, you can study industries, join communities, and these are all things we will cover, but ultimately all roads lead to Rome. There is really only one thing that you **must do** to get pretty much any job after all: You have to apply.
-
+  So yes, if you have an uncle's brother who can get you a job super-easy you of course should do that. Do that before reading another article. But for everyone else...then what? Because ultimately, all roads lead to Rome. There is really only one thing that you **must do** to get pretty much any job after all: You have to apply.
 
   Applying to jobs is the surest way to make sure that you **actually do something measurable**, it is an effective **backstop when nothing else works**, and frankly - it **trains you quite well on many of the skills you'll need** to succeed in other areas of the job hunt.
 
 # To be continued
 
-Well, we're over 3300 words already and good lord, we're nowhere near done. I think we'll stop here and pick up next time with more on the view from the hiring manager's side, resumes, interviews, and what on earth it actually means when people tell you to network.
+Well, we're over 3500 words already and good lord, we're nowhere near done. I think we'll stop here and pick up next time with more on the view from the hiring manager's side, resumes, interviews, and what on earth it actually means when people tell you to network.
