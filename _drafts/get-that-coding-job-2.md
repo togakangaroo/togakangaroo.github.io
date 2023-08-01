@@ -5,6 +5,8 @@ author: "George Mauer"
 comments: true
 ---
 
+
+
 # The reality from the hiring manager's side
 
 There is a few things helpful to understand about the other side of the table.

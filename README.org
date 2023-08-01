@@ -23,7 +23,7 @@ My low effort blog. Compiled to a static site with [[https://jekyllrb.com][Jekyl
     (let* ((compilation-buffer (get-buffer-create "*Blog Compilation*")))
       (when-let (process (get-buffer-process compilation-buffer))
         (kill-process process))
-      (async-shell-command "./build-site.sh --watch" compilation-buffer))
+      (async-shell-command "./build-site.sh --drafts --watch" compilation-buffer))
   #+end_src
 
 

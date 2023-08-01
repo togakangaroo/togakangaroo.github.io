@@ -50,7 +50,7 @@ During the job hunt, with each job application, you enter a funnel. Here is a ro
 
 This list is key to understand and we will revisit it throughout this series. There are things you can do to improve your odds at just about any stage, but you have to prioritize. Time spent improving in one area is time not spent on another. You have to learn how to think about these odds and how they interact. Unless you're an ace at Bayesian probability, **your intuition here is probably wrong**.
 
-<figure style="width: 500px; float: right;">
+<figure style="width: 400px; float: right;">
   <img alt="Job hunt simulator screenshot. Calculation has finished showing means of 21.84 weeks in job hunt, 477.44 total applications, and a breakdown of stages. In most, the resume was not selected or the listing was not real" src="/img/get-that-coding-job/job-hunt-simulator.png" />
   <figcaption><a href="http://georgemauer.net/job-hunt-simulator/">Job Hunt Simulator</a></figcaption>
 </figure>
@@ -188,3 +188,5 @@ A cadence gives you a ratchet to improvement. Be honest with yourself and set yo
 # To be continued
 
 Well, we're over 3500 words already and good lord, we're nowhere near done. I think we'll stop here and pick up next time with more on the view from the hiring manager's side, resumes, interviews, and what on earth it actually means when people tell you to network.
+
+For those who do not want to wait for the next few posts, feel free to [grab my raw notes](https://www.dropbox.com/scl/fi/w7u5sjhzk9dbjffdveil8/20230708231824-job_hunt_presentation.org?rlkey=5noay8yeas3etfj4nbklh43tc&dl=0). It is an org file - similar to markdown - which you should be able to open in your text editor of choice.
