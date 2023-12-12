@@ -191,27 +191,3 @@ Well, we're over 3500 words already and good lord, we're nowhere near done. I th
 
 For those who do not want to wait for the next few posts, feel free to [grab my raw notes](https://www.dropbox.com/scl/fi/w7u5sjhzk9dbjffdveil8/20230708231824-job_hunt_presentation.org?rlkey=5noay8yeas3etfj4nbklh43tc&dl=0). It is an org file - similar to markdown - which you should be able to open in your text editor of choice.
 
-<script defer>
-document.addEventListener('DOMContentLoaded', (event) => {
-  const entryContent = document.querySelector('.entry-content'); 
-  if(!entryContent) return;
-  
-  const contentNodes = Array.from(entryContent.childNodes);
-  const h1Indices = contentNodes.reduce((arr, child, index) => 
-    (child.nodeName === "H1") ? [...arr, index] : arr, []);
-
-  h1Indices.forEach((h1Index, i) => {
-    let nextH1Index = h1Indices[i + 1] || contentNodes.length;
-        let group = contentNodes.slice(h1Index, nextH1Index);
-
-    let details = document.createElement('details');
-    let summary = document.createElement('summary');
-    summary.appendChild(group.shift());
-
-    group.forEach(node => details.appendChild(node));
-    details.insertBefore(summary, details.firstChild);
-
-    entryContent.insertBefore(details, entryContent.childNodes[h1Index]);
-  });
-});
-</script>
