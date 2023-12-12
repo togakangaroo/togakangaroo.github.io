@@ -177,7 +177,7 @@ A cadence gives you a ratchet to improvement. Be honest with yourself and set yo
 
 ---
 
-  I should probably stop and address the focus on job applications versus other strategies. It's not common to hear advice after all that cold-applying is the worst thing to do, it doesn't work! No one gets a job that way!
+  I should probably stop and address the focus on job applications versus other strategies. It's not uncommon to hear advice after all that cold-applying is the worst thing to do, it doesn't work! No one gets a job that way!
 
   I emphasize with the desire to avoid an activity that is, for most, deeply ego-bruising. And yes, there are other techniques of course, you can study industries, join communities, reach out to old coworkers, and these are all things we will cover. But - when you have no process - those can be hard techniques to get started with. It so happens that the process of applying is a workout that builds some very specific and useful skills.
 
@@ -190,3 +190,28 @@ A cadence gives you a ratchet to improvement. Be honest with yourself and set yo
 Well, we're over 3500 words already and good lord, we're nowhere near done. I think we'll stop here and pick up next time with more on the view from the hiring manager's side, resumes, interviews, and what on earth it actually means when people tell you to network.
 
 For those who do not want to wait for the next few posts, feel free to [grab my raw notes](https://www.dropbox.com/scl/fi/w7u5sjhzk9dbjffdveil8/20230708231824-job_hunt_presentation.org?rlkey=5noay8yeas3etfj4nbklh43tc&dl=0). It is an org file - similar to markdown - which you should be able to open in your text editor of choice.
+
+<script defer>
+document.addEventListener('DOMContentLoaded', (event) => {
+  const entryContent = document.querySelector('.entry-content'); 
+  if(!entryContent) return;
+  
+  const contentNodes = Array.from(entryContent.childNodes);
+  const h1Indices = contentNodes.reduce((arr, child, index) => 
+    (child.nodeName === "H1") ? [...arr, index] : arr, []);
+
+  h1Indices.forEach((h1Index, i) => {
+    let nextH1Index = h1Indices[i + 1] || contentNodes.length;
+        let group = contentNodes.slice(h1Index, nextH1Index);
+
+    let details = document.createElement('details');
+    let summary = document.createElement('summary');
+    summary.appendChild(group.shift());
+
+    group.forEach(node => details.appendChild(node));
+    details.insertBefore(summary, details.firstChild);
+
+    entryContent.insertBefore(details, entryContent.childNodes[h1Index]);
+  });
+});
+</script>

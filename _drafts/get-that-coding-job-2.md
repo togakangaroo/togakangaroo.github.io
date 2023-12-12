@@ -5,13 +5,19 @@ author: "George Mauer"
 comments: true
 ---
 
+This continues on from my previous article on the framing and mindset that I believe is most effective in looking for a job in tech (I focus largely on software development, but most of this should be adaptable to other roles and even fields). With this article we will dive into details discussing skills and techniques that are relevant to the early stages of the job hunt.
 
+But first, a digression
 
 # The reality from the hiring manager's side
 
 There is a few things helpful to understand about the other side of the table.
 
-First, job postings. I assume you've heard are rarely lists of concrete requirements. Understand that what happens a lot of the time is that you have an overworked manager or team lead who is asking repeatedly for help. Eventually - after navigating all sorts of internal politics - they manage to get approval to hire. An HR representatives asks them what they need and ask what exactly they need. The manager looks around and replies with a list of tech that is a combination of what they are using (since they likely won't have too much time to onboard) and things they are having issues with and desperately wish someone would take that problem off their hands.
+First, job postings. It is often repeated but there's still people who need to hear it: there are almost never lists of concrete requirements. Seriously. As an example take...yesterday. I was asked to validate a job posting for a developer my brother wants to post for his company. I pointed out that most of the requirements he lists can easily be removed. Some are just pointless (who *isn't* going to say they're a hard worker and a self-starter), but even most of the technical requirements simiply describe the system they have *now*. An applicant not knowing those particular things wouldn't preclude them being hired at all, they just want someone who would be willing to pick things up in a reasonable time.
+
+Ao what does get posted? Sometimes its a synthesis between what an overworked hiring manager put together, and HR required.
+
+Understand that what happens a lot of the time is that you have an overworked manager or team lead who is asking repeatedly for help. Eventually - after navigating all sorts of internal politics - they manage to get approval to hire. An HR representatives asks them what they need and ask what exactly they need. The manager looks around and replies with a list of tech that is a combination of what they are using (since they likely won't have too much time to onboard) and things they are having issues with and desperately wish someone would take that problem off their hands.
 
 HR takes that, slaps a custom preamble on, and posts the job, sending the hiring manager a link to the opportunity in Lever or in Greenhouse or Indeed or some other ATS wishing them the best of luck.
 
