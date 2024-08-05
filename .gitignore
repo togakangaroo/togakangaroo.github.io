@@ -9,3 +9,4 @@ _posts/*.html
 .jekyll-metadata
 
 .#*
+.DS_Store
