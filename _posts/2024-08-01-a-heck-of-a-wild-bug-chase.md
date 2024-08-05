@@ -5,7 +5,9 @@ author: "George Mauer"
 comments: true
 ---
 
-I just tracked down a bug with more twists, turns, and interconnecting weirdness than I've seen in years - maybe ever. I feel like I'm going to be telling the story of Olympic-level Bug-Chase-2024 for years, and I feel compelled to write about it.
+I just tracked down a bug with more twists, turns, and interconnecting weirdness than I've seen in years - maybe ever. I feel like I'm going to be telling the story of Olympic-level Bug-Chase-2024 for years, and I feel compelled to write about it. To be clear, the following is a streamlined retelling. I'm omitting the twists, turns and dead-ends that abounded. 
+
+Also, now is a good time to mention that I just coincidentally got laid off in a "Reduction in Force", want to hire me?!
 
 First, some context. (Commence handwaving) Some time ago, [our tech team](https://www.blocpower.io/) received a request to create a way of showcasing graduates of our workforce training program on a job board. Because this was scheduled for only a pilot and we were already committed to a lot of other work, I recommended a relatively simple NextJs application thrown up on Vercel and secured by Auth0. As we were outside of our AWS infrastructure and this was meant to be just for a small-scale pilot, I didn't want to deal with databases. Again, keeping things simple, I recommended simply storing all user/employer/job data in json files and if we ever needed to make an update, we'd simply update the file. The only persisted state on top of this was a favoriting system where jobs/employers/users could "star" each other. This was simply persisted in browser localStorage but - as we wanted to explore some data-driven matchmaking - we wanted access to who starred whom as well. So, my solution was a simple AWS Lambda behind an Api Gateway in our infrastructure that would dump results into a Google Sheet. The NextJS backend could hit it whenever someone was starred, and we'd have some basic data we could do live analysis on directly in the sheet. It worked quite well!
 
