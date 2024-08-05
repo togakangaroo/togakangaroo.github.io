@@ -31,7 +31,7 @@ Now this is interesting as there is no particular reason for the application to 
 
 This is getting really out there. There is no code in our application that explicitly logs us out. At this point, the move is again to go to debugging. Finding the initiator of the network request (this is a potentially hidden column on the network panel) allows us to pinpoint the generic "fetch request" wrapper code that invokes the logout endpoint with NextJS. By setting conditional breakpoint triggers on the `href` prop, I can avoid unrelated requests and only break on this one. Unfortunately, this hits a sort of dead end. As ReactJS does this stuff at virtual DOM reconciliation time, not at component execution time, the backtrace isn't terribly helpful in figuring out *why* this call is being triggered. Worse, with the application being minified, we get no clues from naming.
 
-![Frazzled developer in front of a complicated and tangled yet wordless conspiracy-diagram](./wild-bug-chase/frazzled-dev.png)
+<img src="/img/wild-bug-chase/frazzled-dev.png" alt="Frazzled developer in front of a complicated and tangled yet wordless conspiracy-diagram" style="float: right; margin: 20px;">
 
 Cue montage of me pacing and scratching my head in befuddlement. In desperation, I figure out how to disable minification in NextJS deployment (people talk shit about one-shot ChatGPT prompting for answers, but I find this sort of thing is *exactly* what it excels at over and over again). And yes indeed, now the backtrace - while still not directly helpful - does hold a valuable clue. A function named `prefetch` was being invoked.
 
