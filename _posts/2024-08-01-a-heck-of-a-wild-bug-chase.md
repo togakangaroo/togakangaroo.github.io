@@ -38,13 +38,19 @@ This is getting really out there. There is no code in our application that expli
 
 Cue montage of me pacing and scratching my head in befuddlement. In desperation, I figure out how to disable minification in NextJS deployment (people talk shit about one-shot ChatGPT prompting for answers, but I find this sort of thing is *exactly* what it excels at over and over again). And yes indeed, now the backtrace - while still not directly helpful - does hold a valuable clue. A function named `prefetch` was being invoked.
 
+<img src="/img/wild-bug-chase/hamster-machine.png" alt="Hamsters in a sort of Rube Goldberg machine that results in something happening on a computer monitor" style="float: right; margin: 20px;" />
+
 Now this is absolutely bizarre. Prefetching is a feature of *browsers* where certain anchor links (those tagged with the `prefetch` attribute) will be loaded ahead of anyone clicking on them. This is useful when you have a good idea where your user might click next and so speeds up their workflow significantly. Now I was not aware that if a prefetch request received a response with `Set-Cookie` that it would do so at that time; I had assumed it would be later when the link was actually activated. But even more importantly - what does NextJS have to do with prefetching? This is, again, a browser feature, further down the stack.
 
 We're almost done now as the latter solves the former. The NextJS implementation of the `Link` component contains its *own* implementation of prefetching. This is *why* the `Set-Cookie` behavior made no sense. From the browser's point of view, this was just a regular request/response pair; it was only NextJS giving it that prefetch semantic.
 
-<img src="/img/wild-bug-chase/hamster-machine.png" alt="Hamsters in a sort of Rube Goldberg machine that results in something happening on a computer monitor" style="float: right; margin: 20px;" />
+And yes, now it all becomes clear. We were displaying
 
-And yes, now it all becomes clear. We were displaying a `<Link href="/api/auth/logout">Log Out</Link>`. And [prefetching is enabled by default on production builds](https://nextjs.org/docs/pages/api-reference/components/link#prefetch). So, as soon as I logged in with my "production build" version, the `appSession` cookie was set. With this, the "log out" link was displayed. This triggered a prefetch to the Auth0 "log out" route. Which - as it was managed by JS and not the browser - unset our cookie when the response was received. This was however *after* the UI had rendered, so UI-level auth had already been checked based on the previously existing cookie and therefore the UI itself stayed accessible. Right up until I did the only thing that required an authenticated response from the back end - recording our starring action. At that time, no `appSession` cookie was available, and the server dutifully rejected our request with a "401 - I don't know who you are" status code.
+```html
+<Link href="/api/auth/logout">Log Out</Link>
+```
+
+And [prefetching is enabled by default on production builds](https://nextjs.org/docs/pages/api-reference/components/link#prefetch). So, as soon as I logged in with my "production build" version, the `appSession` cookie was set. With this, the "log out" link was displayed. This triggered a prefetch to the Auth0 "log out" route. Which - as it was managed by JS and not the browser - unset our cookie when the response was received. This was however *after* the UI had rendered, so UI-level auth had already been checked based on the previously existing cookie and therefore the UI itself stayed accessible. Right up until I did the only thing that required an authenticated response from the back end - recording our starring action. At that time, no `appSession` cookie was available, and the server dutifully rejected our request with a "401 - I don't know who you are" status code.
 
 I feel dizzy writing this. I realize it's not [the absolute best bug-hunting story](https://web.mit.edu/jemorris/humor/500-miles), but I hope it contributes to the genre. I've tracked down plenty of shocking bugs in my time, but this is the first time I've felt inspired to write about it. It *is* wild how decisions made in one part of a technical stack can manifest at another point in time, in another place in the stack, and in such a convoluted manner.
 
