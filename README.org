@@ -5,7 +5,7 @@ My low effort blog. Compiled to a static site with [[https://jekyllrb.com][Jekyl
   :header-args: :results output
   :END:
 
-** Build Image
+** Build and run Image
 
   First build the image from the local [[file:./Dockerfile][Dockerfile]].
 
@@ -13,6 +13,9 @@ My low effort blog. Compiled to a static site with [[https://jekyllrb.com][Jekyl
     (async-shell-command "docker build -t \"jekyll\" .")
   #+end_src
 
+  #+begin_src emacs-lisp :results silent
+    (async-shell-command "docker run jekyll")
+  #+end_src
 
 ** Create and run container from image
 
