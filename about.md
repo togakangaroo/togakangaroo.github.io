@@ -16,11 +16,31 @@ This is my low effort blog. Mostly about software development. I regularly do pr
 
 ## Bio
 
-I am a software developer, speaker, teacher, writer, and comedian with an interest in the various techniques that can make software simple, extensible, and communicative.  I am currently Director of Software Engineering at [BlocPower](https://www.blocpower.io/), was previously a principal developer and Director over at [findhelp](http://findhelp.org), and CTO at the [Operation Spark](https://operationspark.org/) code school in New Orleans. Previously I worked in software consulting in all sorts of positions for over a decade. I mentor with [Operation Code (unrelated)](https://operationcode.org/), write, teach, and speak regularly on Javascript, C#, testing, interviewing, etc at conferences, usergroups, and to my cat (singular - the other one won't listen to me).
+I am a software developer, speaker, teacher, writer, and comedian with an interest in the various techniques that can make software simple, extensible, and communicative.  I have been a Director of Software Engineering [in climate tech](https://www.blocpower.io/), a principal developer and Director over at [findhelp](http://findhelp.org), and CTO at the [Operation Spark](https://operationspark.org/) code school in New Orleans. Previously I worked in software consulting in all sorts of positions for over a decade. I mentor with [Operation Code (unrelated)](https://operationcode.org/) and [Underdog Devs](https://www.underdogdevs.org/), write, teach, and speak regularly on coding, testing, interviewing, etc (just see the list below) at conferences, usergroups, and to my cat (singular - the other one won't listen to me).
 
 [Find me on Mastadon](https://emacs.ch/@togakangaroo) or try out the Disqus forms on my posts and let me know if they work. In general, it's not very hard to find a way to contact me.
 
 ## Talks I've Done / Do
+
+### A Commentary on Code Comments
+
+[Slides with Notes](https://docs.google.com/presentation/d/1FP9I-_5fQNMrN2KmRdrq2E9GUjj9gtuRQ7u4iReRo30/edit)
+
+Code comments! You can have too few, you can have too many! What makes the porrige "just right"? Consolidating experiences and opinions from 20 years building and maintaining production software, let's get into it. What is the point of code comments? What are the forces in play? What about doc comments? What guidance can we give? And of course, what is the best worst-comment I have ever encountered in the wild? Exciting stuff!
+
+@ SQL Saturday 2024, Underdog Devs tech talk,
+
+### Get that Coding Job
+
+[Writeup Part 1](https://georgemauer.net/2023/07/22/get-that-coding-job.html) [Full Notes](https://www.dropbox.com/scl/fi/w7u5sjhzk9dbjffdveil8/20230708231824-job_hunt_presentation.org?rlkey=5noay8yeas3etfj4nbklh43tc&e=1&dl=0)
+
+There is an unscientific number that half of the software industry has under 5 years experience at any time. That's a lot of early-career people constantly trying to get their foot in the door of the first, second, or maybe even third job.
+
+Go through lessons learned from over a decade of mentoring, hiring, advising beginners and mid-level people, and working with coding bootcamps and university grads.
+
+How important is Leetcode? Are cover letters really useless? Does "networking" mean something more than just eating pizza at meetups? Lets explore the range of options to getting that coding job.
+
+@ Operation Spark NED Talks, SQL Saturday 2023
 
 ### Org Workflows for Developers
 
