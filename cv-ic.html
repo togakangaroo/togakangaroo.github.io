@@ -200,7 +200,7 @@
         <article id="buzzwords">
             <h2>Buzzwords</h2>
             <p>
-                    <b>Software Architecture</b>, <b>Test Driven Development</b>, <b>Software Design</b>, <b>Web Development</b>, <b>Javascript</b>, <b>Python</b>, <b>C#</b>, <b>Domain-Driven Design (DDD)</b>, <b>React.js</b>, React Native, Agile Methodologies, Design Patterns, Database Design, Microservices, Project Management, Software Development Life Cycle (SDLC), Cybersecurity, Product Management, Object-Oriented Programming (OOP), Terraform, Kubernetes, Technical Writing, ASP.NET MVC, .NET, HTML, CSS, AWS (EC2, SQS, SNS, EventBridge, Lambda, Bedrock, EKS, etc), Google Cloud Platform (GCP), jQuery, Emacs, CSS, AngularJs, Java, SQL, Powershell, Node.js, Open Source, Community Development, Public Speaking, Team Building, Mentoring, Training, Functional Programming, Lisp, TypeScript, Data Science, SOLID Design Principles, Racket, Clojure, Staff Engineering, MLOps
+                <b>Software Architecture</b>, <b>Test Driven Development</b>, <b>Software Design</b>, <b>Web Development</b>, <b>Javascript</b>, <b>Python</b>, <b>C#</b>, <b>Domain-Driven Design (DDD)</b>, <b>React.js</b>, React Native, Agile Methodologies, Design Patterns, Database Design, Microservices, Project Management, Software Development Life Cycle (SDLC), Cybersecurity, Product Management, Object-Oriented Programming (OOP), Terraform, Kubernetes, Technical Writing, ASP.NET MVC, .NET, HTML, CSS, AWS (EC2, SQS, SNS, EventBridge, Lambda, Bedrock, EKS, etc), Google Cloud Platform (GCP), jQuery, Emacs, CSS, AngularJs, Java, SQL, Powershell, Node.js, Open Source, Community Development, Public Speaking, Team Building, Mentoring, Training, Functional Programming, Lisp, TypeScript, Data Science, SOLID Design Principles, Racket, Clojure, Staff Engineering, MLOps
             </p>
         </article>
 
@@ -242,16 +242,17 @@
                         </summary>
                         <div class="description">
                             <p>
-                                Main architect and team lead for effort to standardize and document cloud infrastructure and move to infrastructure-as-code as well as multiple other projects critical to business and/or platform-stability goals.
+                                Spearheaded the successful standardization and documentation of cloud infrastructure, driving the transition to infrastructure-as-code across multiple critical projects, significantly enhancing business and platform stability.
                             </p>
                             <p>
-                                Regularly involved in department planning, sizing, and team structure conversations. Managed a small team including 1-1s, mentoring, performance reviews, backlog grooming, and product design work.
+                                Played a pivotal role in shaping departmental strategy through impactful contributions to planning, team structure, and resource allocation discussions. Lead a team, encouraging professional growth for all through regular coaching and mentoring.
                             </p>
                             <p>
-                                Managed proof of concept development in building a data platform built on top of emerging privacy web standards (SOLID) that provides participants with a way of sharing hyper-local and personal data while retaining full data control and portability.
+                                Took ownership of Blocpower's flagship SaaS product. Designed and led efforts to dramatically improve performance, stability, and the ability to monitor the application in production.
                             </p>
                             <p>
-                                Acted as product manager and designer as well as tech lead for contractors and universities working within the scope of this Building Data Collective project. Made sure that work is purposeful, clear, and directed toward a goal.
+                                Acted as both product manager and tech lead for the Building Data Collective project, building a proof of concept privacy-respecting data platform for the Bezos Earth Fund on top of emerging web standards. Ensured clear direction and purpose in collaboration with contractors and university researchers and students.
+                            </p>
                         </div>
                     </details>
                 </li>
@@ -265,18 +266,9 @@
                             </div>
                         </summary>
                         <div class="description">
-                            <p>
-                                As an engineering manager, stabilized and managed a team through a period of extreme transition. Stepped in and performed product manager and team lead duties. Led the team through the completion of several important roadmap projects resulting in promotions for over half of the team.
-                            </p>
-                            <p>
-                                Built and charged with running the developer interviewing and hiring process as the department aims to double in size.
-                            </p>
-                            <p>
-                                As an individual contributor, took over understanding and delivery for one of the least documented, most convoluted areas of the data model. Identified and repaired a complex series of long-standing bugs that were resulting in improperly handled customer data.
-                            </p>
-                            <p>
-                                As a principal developer, regularly worked with people on other teams to improve their development workflows, identify issues in their areas of responsibility, and address product-wide technical debt. Assisted with identifying and addressing wide-ranging security vulnerabilities and accessibility issues.
-                            </p>
+                            <p>Transformed one of the most challenging areas of the data model by identifying and resolving a complex set of long-standing bugs, significantly improving the accuracy and integrity of customer data.</p>
+                            <p>Worked across teams to enhance development workflows, tackle product-wide technical debt, and successfully mitigate a range of security vulnerabilities and accessibility issues. Developed debugging and testing processes and tools to help thers investigate and address issues rapidly and early.</p>
+                            <p>Stabilized and led a critical engineering team hrough completion of key roadmap projects during an organizational and staffing transition. This reslted in promotions for over half of the team.</p>
                         </div>
                     </details>
                 </li>
@@ -591,13 +583,13 @@
         </footer>
         <script>
          {
-            const expandAll = () => document.querySelectorAll('details').forEach(el => el.open = true)
-            const expanders = document.querySelectorAll('.expand-all')
-            expanders.forEach(el => el.addEventListener('click', expandAll))
-            if(new URLSearchParams(document.location.search).getAll('expand').length) {
-                expandAll()
-                expanders.forEach(el => el.hidden = true)
-            }
+             const expandAll = () => document.querySelectorAll('details').forEach(el => el.open = true)
+             const expanders = document.querySelectorAll('.expand-all')
+             expanders.forEach(el => el.addEventListener('click', expandAll))
+             if(new URLSearchParams(document.location.search).getAll('expand').length) {
+                 expandAll()
+                 expanders.forEach(el => el.hidden = true)
+             }
          }
         </script>
     </body>
