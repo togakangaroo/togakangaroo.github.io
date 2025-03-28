@@ -38,3 +38,54 @@ And yes, there are times where there are hundreds of applicants. For most roles 
 Finally, just to dispel the urban legend, there is no ATS-scanner. I mean of course such things *do* exist and are used by some large companies who get tends of thousands of resumes, but outside of that? I have been involved in hiring in six companies and I've never seen it. I've never spoken to anyone who has seen it commonly used first-hand. Stop worrying about "getting past the scanner". Your resume goes into a folder and if you are lucky a person eventually looks at it. What else is there?
 
 Now some might counter that AI-based resume graders are rapidly becoming a thing, and I am sure they are. But there is no reason to think the tired "beat he ATS" advice from years past applies to this new world. Nor is it clear that anyone is using these systems in a way that requires, or is even possible to, game.
+
+# Resumes
+
+## Length
+First and foremost. One page. You've got some experience but lets say 8-10yoe before you start considering a second page. Minimum. I'm still on one page (though I mess around with margins a lot)
+
+
+## Summaries
+I'm generally not a fan of summaries in resumes. It takes up a big block of space and usually doesn't say anything everyone else can't claim either. This is common enough that nearly everyone I know who reads resumes doesn't even read the summary section.
+
+## Tech Skills
+
+Example
+
+Technical Skills
+Markup Languages: HTML
+Styling: CSS, Bootstrap, MUI, React-Bootstrap, Semantic UI
+Languages: JavaScript, TypeScript
+Frameworks & Libraries: React.js, Next.js, React Hook Forms, GraphQL
+Database/Server: SQL, Node.js
+Testing: React Testing Library, Jest 
+State Management: React Hooks, React Context, Redux, 
+Version Control: Git, GitHub
+
+The purpose of a "Skills list" is twofold:
+- Give hiring managers a very quick overview of "type of dev you are" from a tech perspective
+- Help with buzzword matching for recruiters/consulting companies who rely on it to filter through resumes
+
+Something I ask this a lot when I see stuff like this - What exactly is the point of breaking skills out by category? It eats up space, has the potential to cause arguments with a recruiter (why group SQL and Node together?) and just feels really novice.
+
+Think of the above two purposes here. Why would you include "HTML", does anyone not understand from your list that you know web stuff? Is any recruiter going to be searching for that? (no) Why include Git or github? CSS?
+
+My own resume literally says "buzzwords" and gives a long list. If you like categories for aesthetic reasons then do a max of two. List every tech that might be interesting to a recruiter and you are comfortable talking about in an interview (include c#!). Those that are toward the front are the ones I would expect you to be able to talk about longest. You can use bold face to bring attention to the couple of "core" skills that describe the type of dev you are
+
+## Job Bullet Points
+
+> Develop, implement, and test front-end user interfaces to enhance user experience.
+> Collaborate with cross-functional teams to refine task descriptions and gather requirements for optimized development workflows.
+> Implemented custom components from design systems descriptions and Figma wireframes.  
+
+Here's the thing, all these bullet points again say the same thing that everyone else would be saying. Everyone is collaborating, and refining tasks, and thinking about user experience. The only thing that really sticks out to me here is that you are familiar with building out things component-first, and even that's not much to distinguish yourself by.
+
+The thing is that you did do things worth talking about. Go back to your writeups of what you did. What are the interesting things that stood out? That not everyone can say? What you did in the routine is not so important here. Think instead of how you can highlight achievements and impact. For example did you adapt a major component to follow WCAG2 guidelines? Did you build out an abstraction for paged tables used throughout the company? What were the interesting bits?
+
+Good place to talk about more tech that you touched. REALLY good place to talk about those research-driven techniques
+
+Just to be clear, what you have here isn't bad. It's got no grammatical errors and completes a thought. I'm not going to eliminate you for it, but it's just normal - like that of 100 other resumes I'll see in a day. You're missing an opportunity to stand out.
+
+Also, focusing on achievements and impact shows that you understand the assignment of a resume. It is not to dutifully list things about yourself. It is to get yourself noticed and into an intervie
+
+One more thing, people often talk about using numbers to quantify your impact. That's good if that's how KPIs at your job were actually structured and you have that ready to go. But most people are not working in a structure which makes such things easy. I wouldn't force it. Its pretty easy to tell when someone is just adding numbers because they heard that as advice and it just rings hollow
