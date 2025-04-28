@@ -10,3 +10,4 @@ _posts/*.html
 
 .#*
 .DS_Store
+.aider*
