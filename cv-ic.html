@@ -18,6 +18,16 @@
          details[open] > summary:before {
              display: none;
          }
+         .pdf-version {
+             position: absolute;
+             top: 10px;
+             right: 10px;
+             text-decoration: none;
+             font-size: 1.2rem;
+         }
+         .pdf-version:before {
+             content: "🖶 "
+         }
          body {
              min-height: 100vh;
              max-width: 1200px;
@@ -26,12 +36,12 @@
 
              display: grid;
              grid-template-areas:
-                 " header   objective    "
-                 " header   achievements "
-                 " header   experience   "
-                 " header   projects     "
-                 " header   buzzwords    "
-                 " header   actions      ";
+             " header   objective    "
+             " header   achievements "
+             " header   experience   "
+             " header   projects     "
+             " header   buzzwords    "
+             " header   actions      ";
              grid-gap: 20px;
          }
          .timespan {
@@ -120,7 +130,7 @@
                  grid-auto-flow: column;
                  grid-gap: 10px;
              }
-             .blog a, .github a, .stackoverflow a, .linkedin a {
+             .blog a, .github a, .stackoverflow a, .linkedin a, .pdf-version {
                  display: none;
              }
              #contact .blog:before {
@@ -148,14 +158,14 @@
          @media print, (max-device-width: 600px), (max-width: 500px) {
              body {
                  grid-template-areas:
-                     "header      "
-                     "objective   "
-                     "buzzwords   "
-                     "achievements"
-                     "experience  "
-                     "projects    "
-                     "actions     ";
-             }
+                 "header      "
+                 "objective   "
+                 "buzzwords   "
+                 "achievements"
+                 "experience  "
+                 "projects    "
+                 "actions     ";
+         }
              #projects ul {
                  display: flex;
                  flex-direction: column;
@@ -580,6 +590,7 @@
 
         <footer class="actions">
             <button class="expand-all">Expand All</button>
+            <a class="pdf-version" href="./cv-ic.pdf">Print</a>
         </footer>
         <script>
          {
