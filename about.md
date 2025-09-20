@@ -22,6 +22,13 @@ I am a software developer, speaker, teacher, writer, and comedian with an intere
 
 ## Talks I've Done / Do
 
+### README.md - Can We Do Better?
+
+[Slides](https://docs.google.com/presentation/d/1uictWGrottNU3ltEa8QgnLhE4YDgwrkB4AsrQlhwiIU/edit?usp=sharing) [Code Repo](https://github.com/togakangaroo/better-readmes/blob/main/README.ipynb)
+
+The venerable README file has a long history going back to at least the 1970s. Nowadays, when all code lives on Github it is basically a standard. README files are great and we all encourage more use of them except...can we do better? In this session we explore some other supported README formats and make a recommendation that yes, indeed, we can.
+
+
 ### A Commentary on Code Comments
 
 [Slides with Notes](https://docs.google.com/presentation/d/1FP9I-_5fQNMrN2KmRdrq2E9GUjj9gtuRQ7u4iReRo30/edit)
