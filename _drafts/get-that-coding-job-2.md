@@ -89,3 +89,17 @@ Just to be clear, what you have here isn't bad. It's got no grammatical errors a
 Also, focusing on achievements and impact shows that you understand the assignment of a resume. It is not to dutifully list things about yourself. It is to get yourself noticed and into an intervie
 
 One more thing, people often talk about using numbers to quantify your impact. That's good if that's how KPIs at your job were actually structured and you have that ready to go. But most people are not working in a structure which makes such things easy. I wouldn't force it. Its pretty easy to tell when someone is just adding numbers because they heard that as advice and it just rings hollow
+
+
+# Strategies
+
+Spray and pray remains valid. It's low effort-high bulk and is sometimes all you can do especially when the #1 rule is to just apply at a regular rate. Within it there's a few possible sub strategies with my favorite being to put something in your resume that really stands out. A joke, a big claim (that you can back up), a truly different format. The idea here is that as much it will turn some off, if you're spraying and praying there's at least some people who'd be intrigued enough by it to put you in the "lets see" pile 
+
+Hit list is basically the "2 hour job search" approach. You create a list of companies, do deep research and work to build connections up within those companies. That means joining spaces where their employees might hang out, talking to people who might know them, daisy chaining connections, etc. Its a lot of work up front and really only works when you have time to explore and/or are targeting companies that are pretty much always hiring. I would still recommend combining it with a bit of spray and pray on the side if only so that you have something to fall back on if nothing comes through.
+I also like a related strategy where instead of companies you focus on more niche industries. That tends to be easier to find places where they congregate and gives you more general stuff you can learn to get noticed. It does put a higher premium on actually being active within those communities so that people notice you though
+
+Networking is a big deal though my experience (confirmed by others I've spoken to) is that referrals don't go anywhere near as far as they used to. You need an advocate even more than a referral so the networking really needs to be proactive at which point you're blending into one of the above strategies.
+
+I do think there' something to be said for whenever you apply, reaching out to someone at the company who ideally has eyes on applications and basically saying "hey, I just applied, I think I'm a good fit, but I also want you to know that I'm a real person not an AI bulk-applying"
+
+That is a big more effort than spray-and pray but also I think makes it way more likely someone looks at your resume
