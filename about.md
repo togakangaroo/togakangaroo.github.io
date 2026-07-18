@@ -26,7 +26,7 @@ I am a software developer, speaker, teacher, writer, and comedian with an intere
 
 [Interactive Demo](https://georgemauer.net/fizzybuzzy/) [Code Repo](https://github.com/togakangaroo/fizzybuzzy)
 
-Ah Fizzbuzz, a staple of dev interview ghost stories, always lurking around the corner, rarely actually seen in the wild. But for the last decade I've been collecting fun and unusual FizzBuzz implementations over a variety of programming languages. Here I go over them with a good ol' fashioned S-tier ranking. The best one will shock and amaze you!
+Ah Fizzbuzz, a staple of scary dev interview ghost stories, always lurking around the corner, rarely actually seen in the wild. But for the last decade I've been collecting fun and unusual FizzBuzz implementations over a variety of programming languages. Here I go over them with a good ol' fashioned S-tier ranking. The best one will shock and amaze you!
 
 @ Day of Data 2026
 
