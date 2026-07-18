@@ -22,12 +22,21 @@ I am a software developer, speaker, teacher, writer, and comedian with an intere
 
 ## Talks I've Done / Do
 
+### FizzBuzz For Fun NOT profit
+
+[Interactive Demo](https://georgemauer.net/fizzybuzzy/) [Code Repo](https://github.com/togakangaroo/fizzybuzzy)
+
+Ah Fizzbuzz, a staple of dev interview ghost stories, always lurking around the corner, rarely actually seen in the wild. But for the last decade I've been collecting fun and unusual FizzBuzz implementations over a variety of programming languages. Here I go over them with a good ol' fashioned S-tier ranking. The best one will shock and amaze you!
+
+@ Day of Data 2026
+
 ### README.md - Can We Do Better?
 
 [Slides](https://docs.google.com/presentation/d/1uictWGrottNU3ltEa8QgnLhE4YDgwrkB4AsrQlhwiIU/edit?usp=sharing) [Code Repo](https://github.com/togakangaroo/better-readmes/blob/main/README.ipynb)
 
 The venerable README file has a long history going back to at least the 1970s. Nowadays, when all code lives on Github it is basically a standard. README files are great and we all encourage more use of them except...can we do better? In this session we explore some other supported README formats and make a recommendation that yes, indeed, we can.
 
+@ Day of Data 2025, XO Ruby Nola
 
 ### A Commentary on Code Comments
 
